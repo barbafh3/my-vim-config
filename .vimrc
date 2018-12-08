@@ -15,10 +15,17 @@ Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
 Plugin 'KabbAmine/vullScreen.vim'
 Plugin 'alvan/vim-closetag'
+Plugin 'vim-syntastic/syntastic'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"Set true colors to work with tmux aswell
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -48,10 +55,15 @@ autocmd VimEnter * VullScreen
 
 cd /home/barbafh/Dev
 
-set guifont=Source\ Code\ Pro\ 15 
+set guifont=Source\ Code\ Pro\ 14
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4
+set expandtab
+set shiftwidth=4
+set smarttab
+set autoindent
+set smartindent
 
 let g:vrc_curl_opts = {
   \ '--connect-timeout' : 10,
@@ -67,11 +79,29 @@ let g:vrc_curl_opts = {
 autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
 
 inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O<TAB>
 inoremap ( ()<Left>
+inoremap (<CR> (<CR>)<Esc>O<TAB>
 inoremap [ []<Left>
+inoremap [<CR> [<CR>]<Esc>O<TAB>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ` ``<Left>
+
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>'')'')
+
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Closes ) and ], ignoring it if they are already present
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
+
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
