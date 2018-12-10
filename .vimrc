@@ -16,7 +16,9 @@ Plugin 'ervandew/supertab'
 Plugin 'KabbAmine/vullScreen.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'vim-syntastic/syntastic'
-
+"Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,8 +46,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-let g:gruvbox_italic=1
-colorscheme gruvbox
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
+colorscheme solarized8
 
 "colorscheme tone
 "colorscheme goodwolf
@@ -64,6 +67,7 @@ set shiftwidth=4
 set smarttab
 set autoindent
 set smartindent
+set number
 
 let g:vrc_curl_opts = {
   \ '--connect-timeout' : 10,
@@ -92,6 +96,13 @@ inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>'')'')
 
 nnoremap <leader>n :NERDTreeToggle<CR>
+vnoremap <leader>dq :s/\%V\(.*\)\%V/"\1"/<CR>
+vnoremap <leader>sq :s/\%V\(.*\)\%V/'\1'/<CR>
+vnoremap <leader>p :s/\%V\(.*\)\%V/(\1)/<CR>
+vnoremap <leader>b :s/\%V\(.*\)\%V/{\1}/<CR>
+
+
+
 
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)

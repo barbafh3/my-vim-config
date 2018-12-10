@@ -4,3 +4,5 @@
 # Except for
 !.gitignore
 !.vimrc
+!.tmux.conf
+!.zshrc
