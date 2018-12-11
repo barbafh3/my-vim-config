@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
   export ZSH="/home/barbafh/.oh-my-zsh"
@@ -10,7 +11,8 @@ export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="gruvbox-powerline"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,6 +68,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,7 +99,14 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias tmuxconf="vim ~/.tmux.conf"
+alias terminatorconf="vim ~/.config/terminator/config"
+alias d:="cd ~/Drive-D"
+alias D:="cd ~/Drive-D"
+alias downloads="cd ~/Downloads"
+alias ..="cd .."
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/antigen.zsh
 
@@ -110,6 +120,7 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle chrissicool/zsh-256color
+antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -121,3 +132,35 @@ antigen theme agnoster
 
 # Tell Antigen that you're done.
 antigen apply
+
+
+######### POWERLEVEL9K SETTINGS
+POWERLEVEL9K_MODE='awesome-patched'
+
+prompt_zsh_showStatus () {
+	local color='%F{white}'
+  #state=`osascript -e 'tell application "Spotify" to player state as string'`;
+  #if [ $state = "playing" ]; then
+    #artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+    #track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+    currentSong=`spotifycli --status`;
+    echo -n "%{$color%} \uF9C6  $currentSong" ; 
+
+  #fi
+}
+
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#OS_ICON='\uF312'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus pyenv nvm node_version)
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
+## source oh-my-zsh config
+source $ZSH/oh-my-zsh.sh
