@@ -143,9 +143,9 @@ antigen apply
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 prompt_zsh_showStatus () {
-	local color='%F{white}'
+	local color='%F{022}'
     currentSong=`spotifycli --status`;
-    echo -n " %{$color%} \uF9C6  $currentSong" ; 
+    echo -n "   %{$color%}\uf9c6$currentSong" ; 
 }
 
 lang_segment () {
@@ -163,12 +163,12 @@ zsh_internet_signal(){
   #Try to ping google DNS to see if you have internet
   local net=$(ping 8.8.8.8 -c 1| grep transmitted | awk '{print $6}' | grep 0)
   local color='%F{red}'
-  local symbol="\uf127"
+  local symbol="\uf818"
   if [[ ! -z "$net" ]] ;
-  then color='%F{darkgreen}' ; symbol="\uf1e6" ;
+  then color='%F{022}' ; symbol="\uf817" ;
   fi
 
-  echo -n "$color$symbol" # \f1eb is wifi bars
+  echo -n "$color$symbol%f" # \f1eb is wifi bars
 }
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -178,10 +178,10 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #ICON=$(print_icon 'LINUX_ICON')
 #CUSTOM_ICON='\uF312'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon custom_internet_signal user dir custom_lang_segment vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus time) 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir custom_lang_segment vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus custom_internet_signal time) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460%F{220}\uF460%F{white} "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰"
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰ %K{darkgreen}%F{white}`echo $USER` %f%k%F{white}%f "
 
