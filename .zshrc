@@ -143,20 +143,124 @@ antigen apply
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 prompt_zsh_showStatus () {
-	local color='%F{022}'
+    local color='%F{022}'
     currentSong=`spotifycli --status`;
     echo -n "   %{$color%}\uf9c6$currentSong" ; 
 }
 
-lang_segment () {
-    dir="$(dirname "$PWD")"
-    if [[ $dir == *"Dev/python"* ]] ; then 
-        echo -n "%{%F{yellow}%K{blue}'\uf81f' Python}"
+getLanguageOrFramework(){
+    dir="$( cd "$(dirname "$0")" ; pwd -P )"
+    if [[ $dir == *"Dev/python"* ]] ; then
+		echo "python";
     fi
     if [[ $dir == *"Dev/javascript"* ]] ; then
-        echo -n "%{%F{black}%K{yellow}'\ue781' Javascript}"
+        echo "javascript";
     fi
-        
+    if [[ $dir == *"Dev/react"* ]] ; then
+		echo "react";
+    fi
+    if [[ $dir == *"Dev/nodejs"* ]] ; then
+        echo "nodejs";
+    fi
+    if [[ $dir == *"Dev/flask"* ]] ; then
+        echo "flask";
+    fi
+    if [[ $dir == *"Dev/java"* ]] ; then
+        echo "java";
+    fi
+    if [[ $dir == *"Dev/rubyonrails"* ]] ; then
+        echo "rails";
+    fi
+    if [[ $dir == *"Dev/c++"* ]] ; then
+        echo "c++";
+    fi
+    if [[ $dir == *"Dev/angular"* ]] ; then
+        echo "angular";
+    fi
+    if [[ $dir == *"Dev/php"* ]] ; then
+        echo "php";
+    fi
+    if [[ $dir == *"Dev/vuejs"* ]] ; then
+        echo "vuejs";
+    fi
+    if [[ $dir == *"Dev/django"* ]] ; then
+        echo "django";
+    fi
+    if [[ $dir == *".vim"* ]] ; then
+        echo "vim";
+    fi
+}
+
+getForeColor(){
+    lang=$( getLanguage );
+    if [[ $lang == "python" ]] ; then 
+        echo "yellow";
+    fi
+    if [[ $lang == "javascript" ]] ; then
+        echo "black";
+    fi 
+}
+
+getBackColor(){
+    lang=$( getLanguage );
+    if [[ $lang == "python" ]] ; then 
+        echo "blue";
+    fi
+    if [[ $lang == "javascript" ]] ; then
+        echo "yellow";
+    fi 
+}
+
+prompt_lang_segment () {
+    lang=$( getLanguageOrFramework )
+    if [[ $lang == *"python"* ]] ; then 
+        content="\uf81f Python%f"
+		"$1_prompt_segment" "$0" "$2" "blue" "yellow" "$content" "#"
+    fi
+    if [[ $lang == *"javascript"* ]] ; then
+        content="\ue781 Javascript%f"
+		"$1_prompt_segment" "$0" "$2" "yellow" "black" "$content" "#"
+    fi
+	if [[ $lang == *"react"* ]] ; then
+        content="\ufc06 React%f"
+		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
+    fi   
+	if [[ $lang == *"nodejs"* ]] ; then
+        content="\uf898 Node.js%f"
+		"$1_prompt_segment" "$0" "$2" "black" "green" "$content" "#"
+    fi 
+	if [[ $lang == *"java"* ]] ; then
+        content="\ue256 Java%f"
+		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
+    fi
+	if [[ $lang == *"rails"* ]] ; then
+        content="\ue604 Ruby on Rails%f"
+		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
+    fi
+	if [[ $lang == *"c++"* ]] ; then
+        content="\ue61d C++%f"
+		"$1_prompt_segment" "$0" "$2" "blue" "white" "$content" "#"
+    fi
+	if [[ $lang == *"angular"* ]] ; then
+        content="\ufbbd Angular%f"
+		"$1_prompt_segment" "$0" "$2" "red" "white" "$content" "#"
+    fi
+	if [[ $lang == *"php"* ]] ; then
+        content="\uf81e PHP%f"
+		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
+    fi
+	if [[ $lang == *"vuejs"* ]] ; then
+        content="\ufd42 Vue.js%f"
+		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
+    fi
+	if [[ $lang == *"django"* ]] ; then
+        content="\ue71d Django%f"
+		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
+    fi
+	if [[ $lang == *"vim"* ]] ; then
+        content="\ue62b Vim%f"
+		"$1_prompt_segment" "$0" "$2" "green" "gray" "$content" "#"
+    fi
 }
 
 zsh_internet_signal(){
@@ -178,7 +282,7 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #ICON=$(print_icon 'LINUX_ICON')
 #CUSTOM_ICON='\uF312'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir custom_lang_segment vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir lang_segment vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus custom_internet_signal time) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
@@ -199,7 +303,12 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="white"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="darkgreen"
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="white"
 
-POWERLEVEL9K_CUSTOM_LANG_SEGMENT="lang_segment"
+#POWERLEVEL9K_CUSTOM_LANG_SEGMENT="lang_segment"
+#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_FOREGROUND="$(getForeColor)"
+#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_FOREGROUND="yellow"
+#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_BACKGROUND="$(getBackColor)"
+#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_BACKGROUND="blue"
+
 POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
 
 source $ZSH/oh-my-zsh.sh
