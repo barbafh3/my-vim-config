@@ -71,7 +71,7 @@ plugins=(
   tmux
 )
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -107,7 +107,11 @@ alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"
 alias ..="cd .."
+alias szsh="source ~/.zshrc"
+alias dbx="cd ~/Dropbox"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
 source ~/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -135,32 +139,67 @@ antigen apply
 
 
 ######### POWERLEVEL9K SETTINGS
-POWERLEVEL9K_MODE='awesome-patched'
+#POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 prompt_zsh_showStatus () {
 	local color='%F{white}'
-  #state=`osascript -e 'tell application "Spotify" to player state as string'`;
-  #if [ $state = "playing" ]; then
-    #artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
-    #track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
     currentSong=`spotifycli --status`;
-    echo -n "%{$color%} \uF9C6  $currentSong" ; 
-
-  #fi
+    echo -n " %{$color%} \uF9C6  $currentSong" ; 
 }
 
-#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+lang_segment () {
+    dir="$(dirname "$PWD")"
+    if [[ $dir == *"Dev/python"* ]] ; then 
+        echo -n "%{%F{yellow}%K{blue}'\uf81f' Python}"
+    fi
+    if [[ $dir == *"Dev/javascript"* ]] ; then
+        echo -n "%{%F{black}%K{yellow}'\ue781' Javascript}"
+    fi
+        
+}
+
+zsh_internet_signal(){
+  #Try to ping google DNS to see if you have internet
+  local net=$(ping 8.8.8.8 -c 1| grep transmitted | awk '{print $6}' | grep 0)
+  local color='%F{red}'
+  local symbol="\uf127"
+  if [[ ! -z "$net" ]] ;
+  then color='%F{darkgreen}' ; symbol="\uf1e6" ;
+  fi
+
+  echo -n "$color$symbol" # \f1eb is wifi bars
+}
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #OS_ICON='\uF312'
+#ICON=$(print_icon 'LINUX_ICON')
+#CUSTOM_ICON='\uF312'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus pyenv nvm node_version)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon custom_internet_signal user dir custom_lang_segment vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus time) 
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460%F{220}\uF460%F{white} "
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰"
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰ %K{darkgreen}%F{white}`echo $USER` %f%k%F{white}%f "
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
-POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="darkgreen"
 
-## source oh-my-zsh config
+POWERLEVEL9K_USER_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_USER_DEFAULT_BACKGROUND="darkgreen"
+POWERLEVEL9K_USER_ICON="\uF007"
+
+POWERLEVEL9K_DIR_HOME_FOREGROUND="darkgreen"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="darkgreen"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="darkgreen"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="white"
+
+POWERLEVEL9K_CUSTOM_LANG_SEGMENT="lang_segment"
+POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
+
 source $ZSH/oh-my-zsh.sh

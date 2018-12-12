@@ -58,7 +58,7 @@ autocmd VimEnter * VullScreen
 
 cd /home/barbafh/Dev
 
-set guifont=Source\ Code\ Pro\ 14
+set guifont=SauceCodePro\ Nerd\ Font\ Bold\ 14
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4
