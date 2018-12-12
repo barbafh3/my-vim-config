@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
@@ -23,6 +26,9 @@ Plugin 'mxw/vim-jsx'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 
 "Set true colors to work with tmux aswell
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"

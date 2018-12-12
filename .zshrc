@@ -3,7 +3,13 @@
 #
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/barbafh/.oh-my-zsh"
+export ZSH="/home/barbafh/.oh-my-zsh"
+
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,11 +112,19 @@ alias terminatorconf="vim ~/.config/terminator/config"
 alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"
+alias dev="cd ~/Dev"
+alias Dev="cd ~/Dev"
 alias ..="cd .."
 alias szsh="source ~/.zshrc"
 alias dbx="cd ~/Dropbox"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias s-n="spotifycli --next"
+alias s-p="spotifycli --prev"
+alias s-tgl="spotifycli --playpause"
+alias s-vu="spotifycli --volumeup"
+alias s-vd="spotifycli --volumedown"
+alias activate="source bin/activate"
 
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/antigen.zsh
 
@@ -142,10 +156,10 @@ antigen apply
 #POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-prompt_zsh_showStatus () {
-    local color='%F{022}'
-    currentSong=`spotifycli --status`;
-    echo -n "   %{$color%}\uf9c6$currentSong" ; 
+prompt_show_spotify () {
+    content=`spotifycli --status-short`;
+    #"$1_prompt_segment" "$0" "$2" "black" "darkgreen" "\uf1bc $content"
+    "$1_prompt_segment" "$0" "$2" "darkgreen" "black" "\uf1bc $content" 
 }
 
 getLanguageOrFramework(){
@@ -212,67 +226,72 @@ getBackColor(){
 }
 
 prompt_lang_segment () {
-    lang=$( getLanguageOrFramework )
-    if [[ $lang == *"python"* ]] ; then 
+	dir="$( cd "$(dirname "$0")" ; pwd -P )"
+    if [[ $dir == *"Dev/python"* ]] ; then 
         content="\uf81f Python%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "yellow" "$content" "#"
     fi
-    if [[ $lang == *"javascript"* ]] ; then
+    if [[ $dir == *"Dev/js"* ]] ; then
         content="\ue781 Javascript%f"
 		"$1_prompt_segment" "$0" "$2" "yellow" "black" "$content" "#"
     fi
-	if [[ $lang == *"react"* ]] ; then
+	if [[ $dir == *"Dev/react"* ]] ; then
         content="\ufc06 React%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
     fi   
-	if [[ $lang == *"nodejs"* ]] ; then
+	if [[ $dir == *"Dev/nodejs"* ]] ; then
         content="\uf898 Node.js%f"
 		"$1_prompt_segment" "$0" "$2" "black" "green" "$content" "#"
     fi 
-	if [[ $lang == *"java"* ]] ; then
+	if [[ $dir == *"Dev/java"* ]] ; then
         content="\ue256 Java%f"
 		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
     fi
-	if [[ $lang == *"rails"* ]] ; then
+	if [[ $dir == *"Dev/rubyonrails"* ]] ; then
         content="\ue604 Ruby on Rails%f"
 		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
     fi
-	if [[ $lang == *"c++"* ]] ; then
+	if [[ $dir == *"Dev/c++"* ]] ; then
         content="\ue61d C++%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "white" "$content" "#"
     fi
-	if [[ $lang == *"angular"* ]] ; then
+	if [[ $dir == *"Dev/angular"* ]] ; then
         content="\ufbbd Angular%f"
 		"$1_prompt_segment" "$0" "$2" "red" "white" "$content" "#"
     fi
-	if [[ $lang == *"php"* ]] ; then
+	if [[ $dir == *"Dev/php"* ]] ; then
         content="\uf81e PHP%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
     fi
-	if [[ $lang == *"vuejs"* ]] ; then
+	if [[ $dir == *"Dev/vuejs"* ]] ; then
         content="\ufd42 Vue.js%f"
 		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
     fi
-	if [[ $lang == *"django"* ]] ; then
+	if [[ $dir == *"Dev/django"* ]] ; then
         content="\ue71d Django%f"
 		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
     fi
-	if [[ $lang == *"vim"* ]] ; then
-        content="\ue62b Vim%f"
+	if [[ $dir == *"Dev/flask"* ]] ; then
+        content="\uf592 Flask%f"
+		"$1_prompt_segment" "$0" "$2" "white" "black" "$content" "#"
+    fi
+	if [[ $dir == *".vim"* ]] ; then
+        content="\ue7c5 Vim%f"
 		"$1_prompt_segment" "$0" "$2" "green" "gray" "$content" "#"
     fi
 }
 
-zsh_internet_signal(){
+prompt_internet_signal(){
   #Try to ping google DNS to see if you have internet
   local net=$(ping 8.8.8.8 -c 1| grep transmitted | awk '{print $6}' | grep 0)
-  local color='%F{red}'
-  local symbol="\uf818"
   if [[ ! -z "$net" ]] ;
-  then color='%F{022}' ; symbol="\uf817" ;
+    then 
+        content="\uf817" ;
+        "$1_prompt_segment" "$0" "$2" "white" "darkgreen" "$content"
+    else
+        content="\uf818"
+        "$1_prompt_segment" "$0" "$2" "white" "red" "$content"
   fi
-
-  echo -n "$color$symbol%f" # \f1eb is wifi bars
 }
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -281,13 +300,15 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #OS_ICON='\uF312'
 #ICON=$(print_icon 'LINUX_ICON')
 #CUSTOM_ICON='\uF312'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir lang_segment vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_showStatus custom_internet_signal time) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰"
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰ %K{darkgreen}%F{white}`echo $USER` %f%k%F{white}%f "
+
+POWERLEVEL9K_TIME_FORMAT="%D{%d/%m/%Y \uf073  %H:%M:%S}"
+
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 POWERLEVEL9K_OS_ICON_FOREGROUND="darkgreen"
@@ -302,13 +323,5 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="darkgreen"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="white"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="darkgreen"
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="white"
-
-#POWERLEVEL9K_CUSTOM_LANG_SEGMENT="lang_segment"
-#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_FOREGROUND="$(getForeColor)"
-#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_FOREGROUND="yellow"
-#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_BACKGROUND="$(getBackColor)"
-#POWERLEVEL9K_CUSTOM_LANG_SEGMENT_BACKGROUND="blue"
-
-POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
 
 source $ZSH/oh-my-zsh.sh
