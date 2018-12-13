@@ -19,16 +19,17 @@ Plugin 'ervandew/supertab'
 Plugin 'KabbAmine/vullScreen.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'diepm/vim-rest-console'
 "Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+filetype on
+syntax on
 
 "Set true colors to work with tmux aswell
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -41,7 +42,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<c-Space>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
@@ -54,6 +55,15 @@ colorscheme solarized8
 
 "colorscheme tone
 "colorscheme goodwolf
+
+set noshowmode
+set timeoutlen=300
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * VullScreen
@@ -83,6 +93,15 @@ let g:vrc_curl_opts = {
 \}
 
 autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
+
+vnoremap <Up> <NOP>
+inoremap <Up> <NOP>
+vnoremap <Down> <NOP>
+inoremap <Down> <NOP>
+vnoremap <Left> <NOP>
+inoremap <Left> <NOP>
+vnoremap <Right> <NOP>
+inoremap <Right> <NOP>
 
 nnoremap ; :
 inoremap { {}<Left>
