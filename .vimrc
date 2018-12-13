@@ -48,10 +48,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
 "let g:gruvbox_italic=1
 "colorscheme gruvbox
 colorscheme solarized8
@@ -64,7 +60,7 @@ autocmd VimEnter * VullScreen
 
 cd /home/barbafh/Dev
 
-set guifont=SauceCodePro\ Nerd\ Font\ Bold\ 14
+set guifont=Source\ Code\ Pro\ Regular\ 14
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4
@@ -73,7 +69,7 @@ set shiftwidth=4
 set smarttab
 set autoindent
 set smartindent
-set number
+set number relativenumber
 
 let g:vrc_curl_opts = {
   \ '--connect-timeout' : 10,
@@ -88,6 +84,7 @@ let g:vrc_curl_opts = {
 
 autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
 
+nnoremap ; :
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O<TAB>
 inoremap ( ()<Left>
@@ -107,9 +104,6 @@ vnoremap <leader>sq :s/\%V\(.*\)\%V/'\1'/<CR>
 vnoremap <leader>p :s/\%V\(.*\)\%V/(\1)/<CR>
 vnoremap <leader>b :s/\%V\(.*\)\%V/{\1}/<CR>
 
-
-
-
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -118,7 +112,6 @@ function ClosePair(char)
         return a:char
     endif
 endf
-
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
