@@ -24,6 +24,8 @@ Plugin 'diepm/vim-rest-console'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,7 +68,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 autocmd VimEnter * NERDTree
-autocmd VimEnter * VullScreen
+"autocmd VimEnter * VullScreen
 
 cd /home/barbafh/Dev
 

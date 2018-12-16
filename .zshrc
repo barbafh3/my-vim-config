@@ -1,9 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
+neofetch --w3m ~/Imagens/cat_basket_by_guweiz_dbbzitx-pre.jpg
+
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
 export ZSH="/home/barbafh/.oh-my-zsh"
+
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 TMOUT=1
 
@@ -116,6 +120,10 @@ alias dev="cd ~/Dev"
 alias Dev="cd ~/Dev"
 alias ..="cd .."
 alias szsh="source ~/.zshrc"
+alias i3config="vim ~/.config/i3/config"
+alias i3bconfig="vim ~/.config/i3blocks/config"
+alias polybarconf="vim ~/.config/polybar/config"
+alias polybarlaunch="vim ~/.config/polybar/launch.sh"
 alias dbx="cd ~/Dropbox"
 alias s-n="spotifycli --next"
 alias s-p="spotifycli --prev"
