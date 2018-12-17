@@ -1,7 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
-neofetch --w3m ~/Imagens/cat_basket_by_guweiz_dbbzitx-pre.jpg
+imageSource=~/Imagens/ilya-kuvshinov-catears_edit_resized.png
+imageSize=500px
+neofetch --tycat --size $imageSize  --source $imageSource
+#neofetch --tycat ~/Imagens/ilya-kuvshinov-catears_edit.png
 
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
@@ -118,12 +121,19 @@ alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"
 alias dev="cd ~/Dev"
 alias Dev="cd ~/Dev"
+alias pyf="cd ~/Dev/python"
+alias jsf="cd ~/Dev/js"
+alias rtf="cd ~/Dev/react"
+alias angf="cd ~/Dev/angular"
+alias phpf="cd ~/Dev/php"
+alias fkf="cd ~/Dev/flask"
 alias ..="cd .."
 alias szsh="source ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
 alias i3bconfig="vim ~/.config/i3blocks/config"
 alias polybarconf="vim ~/.config/polybar/config"
 alias polybarlaunch="vim ~/.config/polybar/launch.sh"
+alias rangerconf="vim ~/.config/ranger/rc.conf"
 alias dbx="cd ~/Dropbox"
 alias s-n="spotifycli --next"
 alias s-p="spotifycli --prev"
@@ -213,26 +223,6 @@ getLanguageOrFramework(){
     fi
 }
 
-getForeColor(){
-    lang=$( getLanguage );
-    if [[ $lang == "python" ]] ; then 
-        echo "yellow";
-    fi
-    if [[ $lang == "javascript" ]] ; then
-        echo "black";
-    fi 
-}
-
-getBackColor(){
-    lang=$( getLanguage );
-    if [[ $lang == "python" ]] ; then 
-        echo "blue";
-    fi
-    if [[ $lang == "javascript" ]] ; then
-        echo "yellow";
-    fi 
-}
-
 prompt_lang_segment () {
 	dir="$( cd "$(dirname "$0")" ; pwd -P )"
     if [[ $dir == *"Dev/python"* ]] ; then 
@@ -311,7 +301,8 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir lang_segment vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv internet_signal background_jobs load ram) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
 

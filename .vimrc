@@ -52,8 +52,8 @@ let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 "let g:gruvbox_italic=1
-"colorscheme gruvbox
-colorscheme solarized8
+colorscheme gruvbox
+"colorscheme solarized8
 
 "colorscheme tone
 "colorscheme goodwolf
@@ -67,8 +67,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-autocmd VimEnter * NERDTree
+""autocmd VimEnter * NERDTree
 "autocmd VimEnter * VullScreen
+
+" set leader key to space
+:let mapleader = " "
 
 cd /home/barbafh/Dev
 
@@ -115,6 +118,11 @@ inoremap [<CR> [<CR>]<Esc>O<TAB>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ` ``<Left>
+
+noremap <C-l> <c-w>l
+noremap <C-k> <c-w>k
+noremap <C-j> <c-w>j
+noremap <C-h> <c-w>h
 
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>'')'')
