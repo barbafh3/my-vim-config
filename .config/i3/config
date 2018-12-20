@@ -34,7 +34,9 @@ font pango:SauceCodePro Nerd Font Regular 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminology
+#bindsym $mod+Return exec terminology
+bindsym $mod+Return exec kitty
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -61,29 +63,36 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# # alternatively, you can use the cursor keys:
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Ctrl+h resize grow width 1 px or 1 ppt
+bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+l resize shrink width 1 px or 1 ppt
 
-# split in horizontal orientation
-bindsym $mod+Shift+h layout splith
+# # alternatively, you can use the cursor keys:
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
-# split in vertical orientation
-bindsym $mod+Shift+v layout splitv
+# # split in horizontal orientation
+# bindsym $mod+h layout splith
+# bindsym $mod+Shift+h split h
+
+# # split in vertical orientation
+# bindsym $mod+v layout splitv
+# bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -147,9 +156,10 @@ hide_edge_borders both
 
 #windows which should never have title and edge bar
 for_window [class="Firefox"] border pixel 0
-for_window [class="spotify"] border pixel 0
+for_window [class="Spotify"] border pixel 0
 for_window [class="discord"] border pixel 0
 for_window [class="terminology"] border pixel 0
+for_window [class="kitty"] border pixel 0
 for_window [class="Lutris"] border pixel 0
 for_window [class="Gimp"] border pixel 0
 for_window [class="Vlc"] border pixel 0
@@ -172,9 +182,9 @@ bindsym $mod+Tab  workspace back_and_forth
 #assign names to workspaces
 set $workspace1 "1:Terminal"
 set $workspace2 "2:Firefox"
-set $workspace3 "3:Spotify"
-set $workspace4 "4:Discord"
-set $workspace5 "5:Steam"
+set $workspace3 "3:Code"
+set $workspace4 "4:Misc"
+set $workspace5 5
 set $workspace6 6
 set $workspace7 7
 set $workspace8 8
@@ -206,11 +216,12 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 #assign windows to different workspaces
-assign [class="terminology"] $workspace1 
+#assign [class="terminology"] $workspace1 
 assign [class="URxvt"] $workspace1 
 assign [class="Firefox"] $workspace2
-for_window [class="Spotify"] move to workspace $workspace3
+for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="discord"] move to workspace $workspace4
+for_window [class="Discord"] move to workspace $workspace4
 assign [class="Clementine"] $workspace3
 assign [class="Vlc"] $workspace3 
 assign [class="mpv"] $workspace3 
@@ -223,7 +234,7 @@ assign [class="Mousepad"] $workspace4
 assign [class="Subl3"] $workspace4 
 assign [class="jetbrains-studio"] $workspace4
 assign [class="qBittorrent"] $workspace5
-assign [class="Lutris"] $workspace6
+assign [class="Lutris"] $workspace5
 assign [class="Steam"] $workspace5
 
 #if window with particular class is in another workspace, switch to it immediately
@@ -236,7 +247,7 @@ for_window [class="Evince"] focus
 for_window [class="feh"] focus
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -319,4 +330,6 @@ exec_always xmodmap -e "clear lock" #disable caps lock switch
 exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 # Set volume to 100% - 65500 (40% == 26000)
 exec_always pacmd set-sink-volume 0 65500
+# Automount USB drives usin udiskie
+exec_always udiskie &
 

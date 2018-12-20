@@ -15,48 +15,63 @@ markup=pango
 #interval=5
 #signal=10
 
+[separator]
+color=#cac08e
+
 [spotify]
 full_text=
 command=~/scripts/spotify
 interval=persist
 #background=#021215
-color=#CCFF90
+color=#cac08e
 
 [spotify-previous]
 full_text=
-color=#FFD54F
+color=#cac08e
 command=playerctl --player=spotify previous
 
 [spotify-play-pause]
 full_text=
-color=#FF7043
+color=#cac08e
 command=playerctl --player=spotify play-pause
 
 [spotify-next]
 full_text=
-color=#FFD54F
+color=#cac08e
 command=playerctl --player=spotify next
 
 [separator]
+color=#cac08e
 
 [volume]
 label=
 command=/usr/lib/i3blocks/volume
 interval=1
 signal=10
-color=#d70a53
+color=#cac08e
 
 [separator]
+color=#cac08e
 
 [weather]
 full_text=
 interval=120
 command=~/scripts/weather
+color=#cac08e
 
 [separator]
+color=#cac08e
 
 [time]
-command=date '+ %a %d/%m/%y %l:%M:%S %p'
+command=date '+ %a %d/%m/%y'
 interval=1
-color=#50C878
+color=#cac08e
+
+[separator]
+color=#cac08e
+
+[time]
+command=date '+ %l:%M:%S %p'
+interval=1
+color=#cac08e
 
