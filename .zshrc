@@ -3,7 +3,9 @@
 #
 imageSource=~/Imagens/ilya-kuvshinov-catears_edit_resized.png
 imageSize=500px
-neofetch --tycat --size $imageSize  --source $imageSource
+#neofetch --tycat --size $imageSize  --source $imageSource
+#neofetch --w3m --size $imageSize  --source $imageSource
+neofetch --kitty --size $imageSize  --source $imageSource
 #neofetch --tycat ~/Imagens/ilya-kuvshinov-catears_edit.png
 
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
@@ -116,6 +118,12 @@ alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias tmuxconf="vim ~/.tmux.conf"
 alias terminatorconf="vim ~/.config/terminator/config"
+alias i3config="vim ~/.config/i3/config"
+alias i3bconfig="vim ~/.config/i3blocks/config"
+alias polybarconf="vim ~/.config/polybar/config"
+alias polybarlaunch="vim ~/.config/polybar/launch.sh"
+alias rangerconf="vim ~/.config/ranger/rc.conf"
+alias kittyconf="vim ~/.config/kitty/kitty.conf"
 alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"
@@ -129,11 +137,7 @@ alias phpf="cd ~/Dev/php"
 alias fkf="cd ~/Dev/flask"
 alias ..="cd .."
 alias szsh="source ~/.zshrc"
-alias i3config="vim ~/.config/i3/config"
-alias i3bconfig="vim ~/.config/i3blocks/config"
-alias polybarconf="vim ~/.config/polybar/config"
-alias polybarlaunch="vim ~/.config/polybar/launch.sh"
-alias rangerconf="vim ~/.config/ranger/rc.conf"
+alias zr="source ~/.zshrc > /dev/null 2>&1"
 alias dbx="cd ~/Dropbox"
 alias s-n="spotifycli --next"
 alias s-p="spotifycli --prev"
@@ -302,7 +306,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir lang_segment vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv internet_signal background_jobs load ram) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv background_jobs load ram) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
 

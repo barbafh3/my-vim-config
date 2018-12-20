@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -25,7 +25,13 @@ Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
-
+"Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-user'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,9 +57,12 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP ~/Dev'
+
 "let g:gruvbox_italic=1
-colorscheme gruvbox
-"colorscheme solarized8
+"colorscheme gruvbox
+colorscheme solarized8
 
 "colorscheme tone
 "colorscheme goodwolf
@@ -73,9 +82,9 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " set leader key to space
 :let mapleader = " "
 
-cd /home/barbafh/Dev
+"cd /home/barbafh/Dev
 
-set guifont=Source\ Code\ Pro\ Regular\ 14
+set guifont=Fira\ Code\ Regular\ 14
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4
@@ -131,7 +140,12 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 vnoremap <leader>dq :s/\%V\(.*\)\%V/"\1"/<CR>
 vnoremap <leader>sq :s/\%V\(.*\)\%V/'\1'/<CR>
 vnoremap <leader>p :s/\%V\(.*\)\%V/(\1)/<CR>
-vnoremap <leader>b :s/\%V\(.*\)\%V/{\1}/<CR>
+" Mappings for next buffer(bn), previous buffer(bp) and close buffer(bd)
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>d :bd<CR>
+
+nnoremap <c-p> :Files<CR>
 
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)
