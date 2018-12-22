@@ -1,3 +1,10 @@
+"        _
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
+"
+" ____________________________
 
 filetype off                  " required
 
@@ -145,7 +152,7 @@ nnoremap <leader>l :bn<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
 
-nnoremap <c-p> :Files<CR>
+nnoremap <c-p> :FZF<CR>
 
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)

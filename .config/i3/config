@@ -299,6 +299,7 @@ bar {
     font pango:SauceCodePro Nerd Font Regular 12
     #font pango: DejaVu Sans Mono, Awesome 12
 	status_command i3blocks -c ~/.config/i3blocks/config
+    tray_output primary
   colors {
     separator #268bd2
     background $bg
@@ -332,4 +333,5 @@ exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 exec_always pacmd set-sink-volume 0 65500
 # Automount USB drives usin udiskie
 exec_always udiskie &
-
+# Run pamac-tray on startup
+exec --no-startup-id pamac-tray

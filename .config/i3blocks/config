@@ -20,7 +20,7 @@ color=#cac08e
 
 [spotify]
 full_text=
-command=~/scripts/spotify
+command=~/.scripts/spotify
 interval=persist
 #background=#021215
 color=#cac08e
@@ -56,7 +56,7 @@ color=#cac08e
 [weather]
 full_text=
 interval=120
-command=~/scripts/weather
+command=~/.scripts/weather
 color=#cac08e
 
 [separator]
@@ -71,7 +71,7 @@ color=#cac08e
 color=#cac08e
 
 [time]
-command=date '+ %l:%M:%S %p'
+command=date '+ %H:%M:%S %p'
 interval=1
 color=#cac08e
 

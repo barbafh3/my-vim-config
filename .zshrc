@@ -11,6 +11,8 @@ neofetch --kitty --size $imageSize  --source $imageSource
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
 export ZSH="/home/barbafh/.oh-my-zsh"
+# Ignore NEODE_MODULES folder on fuzzy finding FZF
+export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
@@ -304,9 +306,9 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #CUSTOM_ICON='\uF312'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir lang_segment vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir lang_segment vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv background_jobs load ram) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv background_jobs ram disk_usage) 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
 
