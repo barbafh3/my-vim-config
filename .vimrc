@@ -39,6 +39,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-user'
+Plugin 'sjl/badwolf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,7 +70,8 @@ let g:ctrlp_cmd = 'CtrlP ~/Dev'
 
 "let g:gruvbox_italic=1
 "colorscheme gruvbox
-colorscheme solarized8
+"colorscheme solarized8
+colorscheme badwolf
 
 "colorscheme tone
 "colorscheme goodwolf

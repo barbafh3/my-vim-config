@@ -1,3 +1,12 @@
+#            _              
+#           | |             
+#    _______| |__  _ __ ___ 
+#   |_  / __| '_ \| '__/ __|
+#    / /\__ \ | | | | | (__ 
+#   /___|___/_| |_|_|  \___|
+#
+#   ________________________
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
@@ -126,6 +135,8 @@ alias polybarconf="vim ~/.config/polybar/config"
 alias polybarlaunch="vim ~/.config/polybar/launch.sh"
 alias rangerconf="vim ~/.config/ranger/rc.conf"
 alias kittyconf="vim ~/.config/kitty/kitty.conf"
+alias i3bar-rs="vim ~/.config/i3/config.toml"
+alias roficonf="vim ~/.config/rofi/config.rasi"
 alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"

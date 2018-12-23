@@ -1,5 +1,6 @@
 configuration {
-    theme: "gruvbox-dark-soft";
+/*  theme: "gruvbox-dark-soft";*/
+   theme: "oxide";
 /*	modi: "window,run,ssh";*/
 /*	width: 50;*/
 /*	lines: 15;*/
