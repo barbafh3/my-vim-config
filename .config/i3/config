@@ -344,15 +344,17 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id ~/scripts/autorename_workspaces.py
 
 # Set wallpaper
-exec --no-startup-id feh --bg-scale ~/Imagens/a0609dbc105fdb49ca9789c72887048b.jpg
+exec_always --no-startup-id feh --bg-scale ~/Imagens/Firewatch.png
 # Enable compton for all applications
-exec_always compton -f
+exec_always --no-startup-id compton -f
 # Disable caps and set Caps key to escape
-exec_always xmodmap -e "clear lock" #disable caps lock switch
-exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+exec_always --no-startup-id xmodmap ~/.Xmodmap 
+#exec_always xmodmap -e "clear lock"
+#exec_always xmodmap -e "keysym 66 = Escape NoSymbol Escape" #set caps_lock as escape
+#exec --no-startup-id setxkbmap -layout whatever -variant whatever -option caps:escape
 # Set volume to 100% - 65500 (40% == 26000)
-exec_always pacmd set-sink-volume 0 65500
+exec_always --no-startup-id pacmd set-sink-volume 0 65500
 # Automount USB drives usin udiskie
-exec_always udiskie &
+exec_always --no-startup-id udiskie &
 # Run pamac-tray on startup
 #exec --no-startup-id pamac-tray

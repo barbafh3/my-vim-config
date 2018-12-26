@@ -45,7 +45,7 @@ font-1 = NotoSans Symbols2:pixelsize=12;3
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=12;3
 
-modules-left = left-icon i3 arrowi3
+modules-left = left-icon arrowi3 i3
 modules-right = arrowspotify spotify arrowkeyboard openweathermap-detailed arrowvolume volume arrowcpu network cpu arrowmemory memory arrowdate date
 
 ;tray-position = right
@@ -60,13 +60,14 @@ modules-right = arrowspotify spotify arrowkeyboard openweathermap-detailed arrow
 [module/left-icon]
 type = custom/text
 content = "    "
-content-background = #222d32
+;content-background = #222d32
+content-background = #2e8b57
 
 [module/arrowi3]
 type = custom/text
-content = " "
+content = ""
 content-font = 2
-content-foreground = #222d32
+content-foreground = #2e8b57
 content-background = #222d32
 
 [module/arrowspotify]
