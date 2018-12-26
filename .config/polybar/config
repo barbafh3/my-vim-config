@@ -31,6 +31,13 @@ width = 100%
 height = 20
 fixed-center = false 
 
+radius = 5.0
+
+border-color = #00000000
+border-left-size = 20
+border-right-size = 20
+border-top-size = 10
+
 background = ${colors.background}
 foreground = ${colors.white}
 font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3
@@ -38,15 +45,23 @@ font-1 = NotoSans Symbols2:pixelsize=12;3
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=12;3
 
-modules-left = i3 arrowi3
+modules-left = left-icon i3 arrowi3
 modules-right = arrowspotify spotify arrowkeyboard openweathermap-detailed arrowvolume volume arrowcpu network cpu arrowmemory memory arrowdate date
 
-tray-position = right
-tray-background = ${colors.black}
-tray-padding = 1
+;tray-position = right
+;tray-background = ${colors.black}
+;tray-padding = 1
+;tray-detached = true
+;tray-offset-x = -4
+
 ;-------------------------------------------------------------------------------;
 ;                    		D E C O R A T I O N S								;
 ;-------------------------------------------------------------------------------;
+[module/left-icon]
+type = custom/text
+content = "    "
+content-background = #222d32
+
 [module/arrowi3]
 type = custom/text
 content = " "
@@ -248,12 +263,16 @@ label-disconnected-background = #029dff
 ;label-background = #029dff
 
 [module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "  "
+type = custom/script
+tail = true
+label = %output%
+interval = 300
+exec = pacman -Qu | wc -l
+;format-prefix = "  "
+format-prefix = "  "
 format-prefix-foreground = ${colors.black}
 format-prefix-background = #027dff
-label = %gb_used%
+;label = %gb_used%
 label-foreground = ${colors.black}
 label-background = #027dff
 
