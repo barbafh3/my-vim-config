@@ -12,10 +12,7 @@
 #
 imageSource=~/Imagens/ilya-kuvshinov-catears_edit_resized.png
 imageSize=500px
-#neofetch --tycat --size $imageSize  --source $imageSource
-#neofetch --w3m --size $imageSize  --source $imageSource
-neofetch --kitty --size $imageSize  --source $imageSource
-#neofetch --tycat ~/Imagens/ilya-kuvshinov-catears_edit.png
+#neofetch --kitty --size $imageSize  --source $imageSource
 
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 # Path to your oh-my-zsh installation.
@@ -138,6 +135,7 @@ alias kittyconf="vim ~/.config/kitty/kitty.conf"
 alias i3bar-rs="vim ~/.config/i3/config.toml"
 alias roficonf="vim ~/.config/rofi/config.rasi"
 alias neoconf="vim ~/.config/neofetch/config.conf"
+alias dunstrc="vim ~/.config/dunst/dunstrc"
 alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
 alias downloads="cd ~/Downloads"

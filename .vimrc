@@ -40,6 +40,9 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-user'
 Plugin 'sjl/badwolf'
+Plugin 'previm/previm'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'christianrondeau/vim-base64'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,6 +70,13 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP ~/Dev'
+
+let g:previm_open_cmd = 'firefox'
+
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
 "let g:gruvbox_italic=1
 "colorscheme gruvbox
@@ -156,6 +166,9 @@ nnoremap <leader>d :bd<CR>
 
 nnoremap <c-p> :FZF<CR>
 
+" Find and replaces the next placeholder <++> while in insert mode
+inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -164,6 +177,16 @@ function ClosePair(char)
         return a:char
     endif
 endf
+
+" Word Processor Function
+func! WordProcessorMode()
+ setlocal textwidth=80
+ setlocal smartindent
+ setlocal spell spelllang=pt_br
+ setlocal noexpandtab
+endfu
+" WordProcessor Mapping
+com! WP call WordProcessorMode()
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
