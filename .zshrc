@@ -10,6 +10,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
+
 imageSource=~/Imagens/ilya-kuvshinov-catears_edit_resized.png
 imageSize=500px
 #neofetch --kitty --size $imageSize  --source $imageSource
@@ -92,6 +93,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   git
   tmux
+  vi-mode
 )
 
 #source $ZSH/oh-my-zsh.sh
@@ -310,9 +312,9 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #CUSTOM_ICON='\uF312'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir lang_segment vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon vi_mode user dir_writable dir lang_segment vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status show_spotify virtualenv nodeenv time) 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv background_jobs ram disk_usage) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv nodeenv background_jobs)  
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{white}╰\uF460\uF460\uF460%F{white} "
 
