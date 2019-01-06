@@ -121,45 +121,15 @@ plugins=(
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias tmuxconf="vim ~/.tmux.conf"
-alias terminatorconf="vim ~/.config/terminator/config"
-alias i3config="vim ~/.config/i3/config"
-alias i3bconfig="vim ~/.config/i3blocks/config"
-alias polybarconf="vim ~/.config/polybar/config"
-alias polybarlaunch="vim ~/.config/polybar/launch.sh"
-alias rangerconf="vim ~/.config/ranger/rc.conf"
-alias kittyconf="vim ~/.config/kitty/kitty.conf"
-alias i3bar-rs="vim ~/.config/i3/config.toml"
-alias roficonf="vim ~/.config/rofi/config.rasi"
-alias neoconf="vim ~/.config/neofetch/config.conf"
-alias dunstrc="vim ~/.config/dunst/dunstrc"
-alias d:="cd ~/Drive-D"
-alias D:="cd ~/Drive-D"
-alias downloads="cd ~/Downloads"
-alias dev="cd ~/Dev"
-alias Dev="cd ~/Dev"
-alias pyf="cd ~/Dev/python"
-alias jsf="cd ~/Dev/js"
-alias rtf="cd ~/Dev/react"
-alias angf="cd ~/Dev/angular"
-alias phpf="cd ~/Dev/php"
-alias fkf="cd ~/Dev/flask"
-alias rrf="cd ~/Dev/rubyonrails"
-alias cd..="cd .."
-alias szsh="source ~/.zshrc"
-alias zr="source ~/.zshrc > /dev/null 2>&1"
-alias dbx="cd ~/Dropbox"
-alias s-n="spotifycli --next"
-alias s-p="spotifycli --prev"
-alias s-tgl="spotifycli --playpause"
-alias s-vu="spotifycli --volumeup"
-alias s-vd="spotifycli --volumedown"
-alias activate="source bin/activate"
 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Loads alias file
+source ~/.aliases
+
+# Return the glyph from given NerdFont code
+function glyph(){
+    echo -ne "\u$1" | xclip -selection primary
+    notify-send "Glyph $(xclip -o) was added to the clipboard." &> /dev/null
+}
 
 source ~/antigen.zsh
 
@@ -341,3 +311,5 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="darkgreen"
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="white"
 
 source $ZSH/oh-my-zsh.sh
+
+#xmodmap ~/.Xmodmap

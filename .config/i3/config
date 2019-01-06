@@ -129,6 +129,7 @@ bindsym $mod+KP_Page_Down exec spotify
 bindsym $mod+KP_Left exec discord
 bindsym $mod+KP_Begin exec steam
 bindsym $mod+KP_Right exec lutris
+bindsym $mod+KP_Home exec manjaro-settings-manager
 bindsym $mod+KP_Up exec kitty -e calcurse
 bindsym $mod+KP_Page_Up exec kitty -e twitch-curses
 
@@ -189,6 +190,8 @@ for_window [class="Zathura"] border pixel 0
 for_window [class="Nemo"] border pixel 0
 for_window [class="ksysguard"] border pixel 0
 for_window [class="Telegram"] border pixel 0
+for_window [class="Keepassx"] border pixel 0
+for_window [class="Manjaro Settings Manager"] border pixel 0
 
 #----------------------------------------
 #Workspaces
@@ -241,13 +244,10 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 #assign windows to different workspaces
 #assign [class="terminology"] $workspace1 
-assign [class="URxvt"] $workspace1 
+#for_window [class="kitty"] $workspace3 
 assign [class="Firefox"] $workspace2
 for_window [class="Spotify"] move to workspace $workspace4
-assign [class="Discord"] $workspace4
 assign [class="discord"] $workspace4
-for_window [class="discord"] move to workspace $workspace4
-for_window [class="Discord"] move to workspace $workspace4
 assign [class="Clementine"] $workspace3
 assign [class="Vlc"] $workspace3 
 assign [class="mpv"] $workspace3 
@@ -354,22 +354,28 @@ client.background       #2B2C2B
 
 #exec_always --no-startup-id ~/.scripts/per-workspace-layout.pl
 # Disable caps and set Caps key to escape
-exec_always --no-startup-id xmodmap ~/.Xmodmap 
+#exec_always --no-startup-id xmodmap ~/.Xmodmap 
 
 # Load Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh | notify-send "Xmodmap atualizado" &> /dev/null
 
 #exec_always --no-startup-id ~/scripts/autorename_workspaces.py
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Imagens/Firewatch.png
+exec_always --no-startup-id feh --bg-scale ~/Imagens/thumb-1920-862181.jpg
 # Enable compton for all applications
 exec_always --no-startup-id compton -f --config ~/.config/compton/compton.conf
 # Set volume to 100% - 65500 (40% == 26000)
 exec_always --no-startup-id pacmd set-sink-volume 0 65550
-# Automount USB drives usin udiskie
+# Automount USB drives using udiskie
 exec_always --no-startup-id udiskie &
 # Run pamac-tray on startup
-exec_always --no-startup-id pamac-tray
+#exec_always --no-startup-id pamac-tray
 # Run dunst for desktop notifications
 exec_always --no-startup-id dunst
+# Start KDE Connect 
+exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send "KDE Connect is running" &> /dev/null
+# Start KDE Connect tray indicator
+exec_always --no-startup-id /usr/bin/indicator-kdeconnect
+# Set Caps Lock to Escape
+exec_always setxkbmap -option caps:escape
