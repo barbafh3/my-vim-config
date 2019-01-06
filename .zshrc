@@ -123,12 +123,35 @@ plugins=(
 #
 
 # Loads alias file
-source ~/.aliases
+ALIAS_PATH=~/.aliases
+source $ALIAS_PATH
 
-# Return the glyph from given NerdFont code
-function glyph(){
-    echo -ne "\u$1" | xclip -selection primary
-    notify-send "Glyph $(xclip -o) was added to the clipboard." &> /dev/null
+# Adds a new alias
+function add-alias(){
+    # Gets the alias name from the parameter
+    ALIAS_NAME=`echo "$1" | grep -o ".*="`
+
+    # Checks if the given alias namer is empty
+    if [[ -z "$ALIAS_NAME" ]]; then
+      echo 'USAGE: add-alias alias_name="command" ' 1>&2
+      echo '       add-alias hello="echo hello world" \n' 1>&2
+      echo "Wrong format. Exiting..." 1>&2
+      exit 1
+    fi
+    
+    # Deletes the alias if it already exists
+    sed -i "/alias $ALIAS_NAME/d" $ALIAS_PATH
+
+    # Adds quotes to the second part of the alias after the =
+    QUOTED=`echo "$1"\" | sed "s/$ALIAS_NAME/$ALIAS_NAME\"/g"`
+
+    # Adds the alias to the alias file
+    sed -i "/# END ALIASES/i alias $QUOTED" $ALIAS_PATH
+    
+    echo "Alias sucessfully added to .zshrc"
+
+    # Sources the alias file
+    source $ALIAS_PATH
 }
 
 source ~/antigen.zsh
