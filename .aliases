@@ -6,7 +6,7 @@ function glyph(){
     notify-send "Glyph $(xclip -o) was added to the clipboard." &> /dev/null
 }
 
-alias zshrc="vim ~/.zshrc"
+alias zrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias tmuxconf="vim ~/.tmux.conf"
 alias terminatorconf="vim ~/.config/terminator/config"
@@ -33,7 +33,7 @@ alias phpf="cd ~/Dev/php"
 alias fkf="cd ~/Dev/flask"
 alias rrf="cd ~/Dev/rubyonrails"
 alias cd..="cd .."
-alias szsh="source ~/.zshrc > /dev/null 2>&1"
+alias szrc="source ~/.zshrc > /dev/null 2>&1"
 alias dbx="cd ~/Dropbox"
 alias s-n="spotifycli --next"
 alias s-p="spotifycli --prev"
