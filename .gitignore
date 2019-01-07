@@ -12,4 +12,6 @@
 !.tmux.conf
 !.zshrc
 !.aliases
+!.p9krc
+!.p9k_segments
 !README.md
