@@ -4,11 +4,9 @@ function glyph(){
     echo -ne "\u$1" | xclip -selection primary
     notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
 }
-
+# Creates a directory and moves into it
 function mkd(){
     mkdir $1 && cd $1    
 }
-
-function ls(){
-    ls -ahN --color=auto --group-directories-first    
-}
+# Lists all files including hidden, with color and listing folders first
+alias ls="ls -ahN --color=auto --group-directories-first"
