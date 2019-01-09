@@ -192,6 +192,7 @@ for_window [class="ksysguard"] border pixel 0
 for_window [class="Telegram"] border pixel 0
 for_window [class="Keepassx"] border pixel 0
 for_window [class="Manjaro Settings Manager"] border pixel 0
+for_window [class="Thunar"] border pixel 0
 
 #----------------------------------------
 #Workspaces
@@ -357,7 +358,7 @@ client.background       #2B2C2B
 #exec_always --no-startup-id xmodmap ~/.Xmodmap 
 
 # Load Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh | notify-send "Xmodmap atualizado" &> /dev/null
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 
 #exec_always --no-startup-id ~/scripts/autorename_workspaces.py
 
@@ -378,4 +379,6 @@ exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send "KDE Connect is r
 # Start KDE Connect tray indicator
 exec_always --no-startup-id /usr/bin/indicator-kdeconnect
 # Set Caps Lock to Escape
-exec_always setxkbmap -option caps:escape
+exec_always setxkbmap -option caps:escape && notify-send "Caps lock mapped to Escape" &> /dev/null
+# Disable suspend and energy saving
+exec_always --no-startup-id xset s off && xset -dpms

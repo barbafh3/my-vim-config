@@ -1,78 +1,54 @@
 # vi: syntax=zsh
-
-alias zrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias tmuxconf="vim ~/.tmux.conf"
-alias terminatorconf="vim ~/.config/terminator/config"
-alias i3config="vim ~/.config/i3/config"
-alias i3bconfig="vim ~/.config/i3blocks/config"
-alias polybarconf="vim ~/.config/polybar/config"
-alias polybarlaunch="vim ~/.config/polybar/launch.sh"
-alias rangerconf="vim ~/.config/ranger/rc.conf"
-alias kittyconf="vim ~/.config/kitty/kitty.conf"
-alias i3bar-rs="vim ~/.config/i3/config.toml"
-alias roficonf="vim ~/.config/rofi/config.rasi"
-alias neoconf="vim ~/.config/neofetch/config.conf"
-alias dunstrc="vim ~/.config/dunst/dunstrc"
+# Folder aliases
 alias d:="cd ~/Drive-D"
 alias D:="cd ~/Drive-D"
-alias downloads="cd ~/Downloads"
+alias dl="cd ~/Downloads"
+alias dc="cd ~/Documentos"
 alias dev="cd ~/Dev"
 alias pyf="cd ~/Dev/python"
 alias jsf="cd ~/Dev/js"
 alias rtf="cd ~/Dev/react"
 alias angf="cd ~/Dev/angular"
 alias phpf="cd ~/Dev/php"
-alias fkf="cd ~/Dev/flask"
-alias rrf="cd ~/Dev/rubyonrails"
-alias cd..="cd .."
-alias szrc="source ~/.zshrc > /dev/null 2>&1"
-alias dbx="cd ~/Dropbox"
-alias s-n="spotifycli --next"
-alias s-p="spotifycli --prev"
-alias s-tgl="spotifycli --playpause"
-alias s-vu="spotifycli --volumeup"
-alias s-vd="spotifycli --volumedown"
-alias activate="source bin/activate"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias aliases="vim ~/.aliases"
+alias flkf="cd ~/Dev/flask"
+alias rorf="cd ~/Dev/rubyonrails"
+alias dbc="cd ~/Dropbox"
+# Config files aliases
+alias zrc="vim ~/.zshrc"
+alias vrc="vim ~/.vimrc"
+alias txcf="vim ~/.tmux.conf"
+alias i3cf="vim ~/.config/i3/config"
+alias pbcf="vim ~/.config/polybar/config"
+alias pbsh="vim ~/.config/polybar/launch.sh"
+alias rgcf="vim ~/.config/ranger/rc.conf"
+alias kcf="vim ~/.config/kitty/kitty.conf"
+alias rfcf="vim ~/.config/rofi/config.rasi"
+alias nfcf="vim ~/.config/neofetch/config.conf"
+alias dtrc="vim ~/.config/dunst/dunstrc"
+alias als="vim ~/.aliases"
+# Command aliases
+alias sz="source ~/.zshrc"
+alias sn="spotifycli --next"
+alias sp="spotifycli --prev"
+alias stg="spotifycli --playpause"
+alias svu="spotifycli --volumeup"
+alias svd="spotifycli --volumedown"
 alias pac="sudo pacman"
-alias documentos="cd ~/Documentos"
-# END ALIASES
-
-# Adds a new alias - intentionally outside the END so it doesnt modify itself
-function add-alias(){
-    # Gets the alias name from the parameter
-    ALIAS_NAME=`echo "$1" | grep -o ".*="`
-
-    # Checks if the given alias namer is empty
-    if [[ -z "$ALIAS_NAME" ]]; then
-      echo 'USAGE: add-alias alias_name="command" ' 1>&2
-      echo '       add-alias hello="echo hello world" \n' 1>&2
-      echo "Wrong format. Exiting..." 1>&2
-      exit 1
-    fi
-
-    # Deletes the alias if it already exists
-    sed -i "/alias $ALIAS_NAME/d" $ALIAS_PATH
-
-    # Adds quotes to the second part of the alias after the =
-    QUOTED=`echo "$1"\" | sed "s/$ALIAS_NAME/$ALIAS_NAME\"/g"`
-
-    # Adds the alias to the alias file
-alias pac="sudo pacman"
-alias documentos="cd ~/Documentos"
-    sed -i "/# END ALIASES/i alias $QUOTED" $ALIAS_PATH
-
-    echo "Alias sucessfully added to .zshrc"
-
-    # Sources the alias file
-    source $ALIAS_PATH
-}
-
-# Return the glyph from given NerdFont code
+alias sctl="sudo systemctl"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+# Function based aliases
 function glyph(){
     echo -ne "\u$1" | xclip -selection primary
-    notify-send "Glyph $(xclip -o) was added to the clipboard." &> /dev/null
+    notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
 }
 
+function mkd(){
+    mkdir $1 && cd $1    
+}
+
+function ls(){
+    ls -ahN --color=auto --group-directories-first    
+}

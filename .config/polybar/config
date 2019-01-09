@@ -42,12 +42,13 @@ foreground = ${colors.white}
 font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3
 font-1 = NotoSans Symbols2:pixelsize=16;3
 font-2 = FontAwesome:pixelsize=12;3
-font-3 = Weather Icons:size=12;3
+font-3 = Weather Icons:size=12;1
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = left-icon arrowi3 i3
-modules-right = arrowspotify spotify previous play next arrowkeyboard openweathermap-detailed arrowvolume volume arrowcpu network cpu arrowmemory updates-arch-combined arrowdate date
+modules-center = arrowspotify spotify  previous play next arrowspotify2
+modules-right = arrowvolume volume arrowcpu network cpu arrowmemory updates-arch-combined arrowdate date
 
 tray-position = right
 tray-background = ${colors.black}
@@ -71,6 +72,13 @@ content = "%{T5}%{T1}"
 content-foreground = #ffffff
 content-background = #222d32
 
+[module/arrowspotify2]
+type = custom/text
+content = "%{T5}%{T1}"
+content-foreground = #2e8b57
+content-background = #222d32
+
+
 [module/arrowspotify]
 type = custom/text
 content = "%{T5} %{T1}"
@@ -85,7 +93,7 @@ content-font = 2
 content-foreground = ${colors.black}
 content-background = ${colors.background}
 
-[module/arrowkeyboard]
+[module/arrowweather]
 ; grey to bg
 type = custom/text
 content = "%{T5} %{T1}"
@@ -98,7 +106,8 @@ type = custom/text
 content = "%{T5} %{T1}"
 content-font = 2
 content-foreground = #02bdff
-content-background = #0b6623
+;content-background = #0b6623
+content-background = #222d32
 
 [module/arrowcpu]
 ; grey to bg
@@ -326,7 +335,7 @@ format-prefix = "  "
 format-prefix-background = #0b6623
 exec = ~/.scripts/openweathermap-detailed.sh
 interval = 600
-label-font = 4
+label-font = 1
 label-foreground = #ffffff
 label-background = #0b6623
 
