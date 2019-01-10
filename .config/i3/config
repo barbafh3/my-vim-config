@@ -133,6 +133,8 @@ bindsym $mod+KP_Home exec manjaro-settings-manager
 bindsym $mod+KP_Up exec kitty -e calcurse
 bindsym $mod+KP_Page_Up exec kitty -e twitch-curses
 
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 -e 'mv $f ~/Imagens/screenshots/'
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -363,7 +365,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id ~/scripts/autorename_workspaces.py
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Imagens/thumb-1920-862181.jpg
+exec_always --no-startup-id feh --randomize --bg-fill ~/Imagens/wallpapers
 # Enable compton for all applications
 exec_always --no-startup-id compton -f --config ~/.config/compton/compton.conf
 # Set volume to 100% - 65500 (40% == 26000)

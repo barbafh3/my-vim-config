@@ -15,3 +15,5 @@ echo -e "\n# Command aliases\n" >> $alias_file
 sed "/^#/d" $command_file | awk '{print "alias "$1"=\""$2" "$3"\""}' >> $alias_file
 echo -e "\n# Function based aliases\n" >> $alias_file
 sed "1d" $misc_file >> $alias_file
+
+source ~/.zshrc

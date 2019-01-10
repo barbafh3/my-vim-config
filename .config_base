@@ -10,3 +10,4 @@ rfcf    ~/.config/rofi/config.rasi
 nfcf    ~/.config/neofetch/config.conf
 dtrc    ~/.config/dunst/dunstrc
 als     ~/.aliases
+alsh    ~/.scripts/aliases.sh
