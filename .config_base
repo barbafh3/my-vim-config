@@ -11,3 +11,5 @@ nfcf    ~/.config/neofetch/config.conf
 dtrc    ~/.config/dunst/dunstrc
 als     ~/.aliases
 alsh    ~/.scripts/aliases.sh
+nbcf    ~/.newsboat/config
+nburl   ~/.newsboat/urls
