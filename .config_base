@@ -4,8 +4,9 @@ txcf    ~/.tmux.conf
 i3cf    ~/.config/i3/config
 pbcf    ~/.config/polybar/config
 pbsh    ~/.config/polybar/launch.sh
+ctcf    ~/.config/compton/compton.conf
 rgcf    ~/.config/ranger/rc.conf
-kcf     ~/.config/kitty/kitty.conf
+ktcf     ~/.config/kitty/kitty.conf
 rfcf    ~/.config/rofi/config.rasi
 nfcf    ~/.config/neofetch/config.conf
 dtrc    ~/.config/dunst/dunstrc

@@ -355,7 +355,7 @@ click-left = playerctl --player=spotify previous
 
 [module/next]
 type = custom/text
-content = " "
+content = "  "
 content-foreground = #ffffff
 content-background = #2e8b57
 click-left = playerctl --player=spotify next

@@ -1,0 +1,27 @@
+# Configure Internet Message Access Protocol for reading mail
+
+source "gpg -dq $HOME/neomutt_gmail.gpg |"
+
+# Username and password for your Gmail or G Suite account
+set imap_user = "barbafh@gmail.com"
+set imap_pass = $my_pass
+# Specifies the default location of your mailboxes
+set folder = "imaps://imap.gmail.com:993"
+
+# Configure Simple Mail Transfer Protocol for sending mail
+set smtp_url = "smtps://barbafh@smtp.gmail.com:587"
+set smtp_pass = $my_pass
+
+# Location of inbox
+set spoolfile = "+INBOX"
+# Location of drafts
+set postponed = "+[GMail]/Drafts"
+
+mailboxes +INBOX +social +updates +forums +promotions
+
+# Activate caching, as it can greatly improve speed
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+
+# Disable saving outgoing mail since Gmail saves them by default.
+set record = ""
