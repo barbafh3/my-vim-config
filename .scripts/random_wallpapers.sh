@@ -1,1 +1,1 @@
-feh --randomize --bg-fill ~/Imagens/wallpapers
+feh --randomize --bg-fill ~/Imagens/wallpapers/games
