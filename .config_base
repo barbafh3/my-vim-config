@@ -14,3 +14,4 @@ als     ~/.aliases
 alsh    ~/.scripts/aliases.sh
 nbcf    ~/.newsboat/config
 nburl   ~/.newsboat/urls
+nmrc    ~/.neomuttrc

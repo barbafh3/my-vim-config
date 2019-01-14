@@ -11,3 +11,6 @@ ga   git         add
 gr   git         remove 
 gc   git         commit
 gp   git         push
+mv   mv          -i
+cp   cp          -i
+rm   rm          -i
