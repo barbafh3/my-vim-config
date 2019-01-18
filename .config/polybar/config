@@ -31,7 +31,7 @@ width = 100%
 height = 27
 fixed-center = false 
 
-line-size = 3
+line-size = 2
 
 ;radius = 5.0
 ;border-color = #00000000
@@ -50,12 +50,13 @@ font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = left-icon i3
 modules-center = spotify  previous play next
-modules-right = volume network cpu updates-arch-combined date
+modules-right = volume sep network sep updates-arch-combined sep date sep
 
 tray-position = right
-tray-background = ${colors.black}
+tray-background = #222b32
 tray-padding = 1
 tray-detached = false
+tray-maxsize = 25
 ;tray-offset-x = -4
 
 ;-------------------------------------------------------------------------------;
@@ -67,6 +68,12 @@ content = "%{T6}  %{T6}"
 ;content-background = #222d32
 content-foreground = #2e8b57
 content-background = #ffffff
+click-left = bash ~/.scripts/rofi_system_menu
+
+[module/sep]
+type = custom/text
+content = " "
+content-background = #222b32
 
 [module/arrowi3]
 type = custom/text
@@ -322,7 +329,8 @@ type = internal/volume
 label-volume = "  %percentage%% "
 label-volume-foreground = ${colors.white}
 label-volume-underline = #02bdff
-label-muted = " 
+label-muted = "  %percentage%% "
+label-muted-underline = #02bdff
 
 [module/spotify]
 type = custom/script
@@ -333,8 +341,8 @@ exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 ;format-underline = #1db954
 ;label-foreground = #ffffff
 ;label-background = #2e8b57
-label-underline = #2e8b57
-format-prefix-underline = #2e8b57
+label-underline = #008000
+format-prefix-underline = #008000
 
 [module/openweathermap-detailed]
 type = custom/script
@@ -344,14 +352,14 @@ exec = ~/.scripts/openweathermap-detailed.sh
 interval = 600
 label-font = 1
 label-foreground = #ffffff
-label-background = #0b6623
+label-background = #008000
 
 [module/play]
 type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #2e8b57
+content-underline = #008000
 click-left = playerctl --player=spotify play-pause
 
 [module/previous]
@@ -359,7 +367,7 @@ type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #2e8b57
+content-underline = #008000
 click-left = playerctl --player=spotify previous
 
 [module/next]
@@ -367,7 +375,7 @@ type = custom/text
 content = "  "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #2e8b57
+content-underline = #008000
 click-left = playerctl --player=spotify next
 
 [module/updates-arch-combined]
@@ -380,7 +388,8 @@ format-underline = #027dff
 format-prefix-foreground = ${colors.white}
 format-prefix-underline = #027dff
 exec = ~/.scripts/updates-arch-combined.sh
-interval = 300
+interval = 120
+click-left = pamac-manager & disown
 
 [module/updates-arch]
 type = custom/script

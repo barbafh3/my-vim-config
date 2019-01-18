@@ -20,6 +20,8 @@ export ZSH="/home/barbafh/.oh-my-zsh"
 # Ignore node_modules folders on fuzzy finding FZF
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
+export PATH=/home/barbafh/.scripts:$PATH
+
 # Set vim as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
@@ -53,6 +55,7 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle momo-lab/zsh-abbrev-alias
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
