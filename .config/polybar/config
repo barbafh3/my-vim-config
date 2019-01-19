@@ -48,9 +48,9 @@ font-3 = Weather Icons:size=12;1
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
-modules-left = left-icon i3
+modules-left = left-icon sep i3
 modules-center = spotify  previous play next
-modules-right = volume sep network sep updates-arch-combined sep date sep
+modules-right = volume sep battery sep wireless-network sep updates-arch-combined sep date sep
 
 tray-position = right
 tray-background = #222b32
@@ -270,7 +270,7 @@ label-separator-background = ${colors.background}
 
 [module/network]
 type = internal/network
-interface = enp3s0
+interface = wlp3s0
 format-connected =  <label-connected>
 format-disconnected =  <label-disconnected>
 format-prefix = " "
@@ -322,6 +322,100 @@ label = %date% %time%
 label-foreground = ${colors.white}
 label-underline = ${colors.white} 
 
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-charging-underline = #ffa500
+format-discharging-underline = #ffa500
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = Charging %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
 [module/volume]
 type = internal/volume
 ; mapping = true
@@ -341,8 +435,9 @@ exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 ;format-underline = #1db954
 ;label-foreground = #ffffff
 ;label-background = #2e8b57
-label-underline = #008000
-format-prefix-underline = #008000
+;label-underline = #008000
+label-underline = #39ff14
+format-prefix-underline = #39ff14
 
 [module/openweathermap-detailed]
 type = custom/script
@@ -352,14 +447,14 @@ exec = ~/.scripts/openweathermap-detailed.sh
 interval = 600
 label-font = 1
 label-foreground = #ffffff
-label-background = #008000
+label-background = #39ff14
 
 [module/play]
 type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #008000
+content-underline = #39ff14
 click-left = playerctl --player=spotify play-pause
 
 [module/previous]
@@ -367,7 +462,7 @@ type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #008000
+content-underline = #39ff14
 click-left = playerctl --player=spotify previous
 
 [module/next]
@@ -375,7 +470,7 @@ type = custom/text
 content = "  "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #008000
+content-underline = #39ff14
 click-left = playerctl --player=spotify next
 
 [module/updates-arch-combined]
@@ -400,3 +495,17 @@ format-prefix = "  "
 click-right = "arch_updates -u&"
 click-left = "arch_updates -c&"
 click-middle = "arch_updates -n"
+
+[module/wireless-network]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+udspeed-minwidth = 0
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected =  直
+label-connected-foreground = #eefafafa
+label-disconnected = 睊
+label-disconnected-foreground = #66ffffff
+label-connected-underline = #ffff00
+label-disconnected-underline = #ffff00

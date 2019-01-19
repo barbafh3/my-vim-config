@@ -15,12 +15,12 @@
 export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/barbafh/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Ignore node_modules folders on fuzzy finding FZF
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
-export PATH=/home/barbafh/.scripts:$PATH
+export PATH=$HOME/.scripts:$PATH
 
 # Set vim as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
@@ -42,7 +42,7 @@ plugins=(
 )
 
 # Load Antigen config
-source ~/antigen.zsh
+source $HOME/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -69,10 +69,10 @@ antigen theme agnoster
 antigen apply
 
 # Load Powerline9k custom segments
-source ~/.p9k_segments
+source $HOME/.p9k_segments
 
 # Load Powerlevel9k settings
-source ~/.p9krc
+source $HOME/.p9krc
 
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
