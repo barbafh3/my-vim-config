@@ -135,7 +135,7 @@ bindsym $mod+Shift+7 exec manjaro-settings-manager
 bindsym $mod+Shift+8 exec kitty -e calcurse
 bindsym $mod+Shift+9 exec kitty -e twitch-curses
 
-bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 -e 'mv $f ~/Imagens/screenshots/'
+bindsym $mod+F12 exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 -e 'mv $f ~/Imagens/screenshots/' && notify-send "Screenshot taken"
 
 # Sets up a dropdown terminal window
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
@@ -394,7 +394,7 @@ exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send "KDE Connect is r
 # Start KDE Connect tray indicator
 exec_always --no-startup-id /usr/bin/indicator-kdeconnect
 # Set Caps Lock to Escape
-exec_always setxkbmap -option caps:escape && notify-send "Caps lock mapped to Escape" &> /dev/null
+exec_always setxkbmap -option caps:escape 
 # Disable suspend and energy saving
 exec_always --no-startup-id xset s off && xset -dpms
 # Starts keyrings for pamac-manager
