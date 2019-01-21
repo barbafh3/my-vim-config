@@ -373,9 +373,8 @@ client.background       #2B2C2B
 # Disable caps and set Caps key to escape
 #exec_always --no-startup-id xmodmap ~/.Xmodmap 
 
-# Set Caps Lock to Escape
-exec_always --no-startup-id setxkbmap -option caps:escape 
-exec_always --no-startup-id setxkbmap -option altwin:prtsc_rwin
+# Set Caps Lock to Escape and PrtSc to Super key
+exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option altwin:prtsc_rwin && notify-send "Keys remapped"
 # Load Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Set wallpaper

@@ -364,13 +364,14 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-charging-underline = #ffa500
+format-full-underline = #ffa500
 format-discharging-underline = #ffa500
 
 ; Available tags:
 ;   <label-full> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
-;format-full = <ramp-capacity> <label-full>
+format-full = <ramp-capacity> <label-full>
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -386,7 +387,7 @@ label-discharging = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-full = Fully charged
+label-full = "100%"
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
