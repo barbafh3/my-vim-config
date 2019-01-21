@@ -22,10 +22,6 @@ gaps outer 5
 
 set $mod Mod4
 
-set $shutdown shutdown
-set $reboot reboot
-set $logout i3-msg exit
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:DejaVu Sans Mono, FontAwesome 14
@@ -57,11 +53,11 @@ bindsym $mod+Shift+q kill
 bindsym XF86ScreenSaver exec i3lock-fancy
 
 # shutdown
-bindsym $mod+Shift+s exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja desligar o computador?" $shutdown
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.scripts/prompt "Tem certeza que deseja desligar o computador?" "shutdown"
 # logout
-bindsym $mod+Shift+e exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja encerrar a sessão?" $logout
+bindsym $mod+Shift+e exec --no-startup-id $HOME/.scripts/prompt "Tem certeza que deseja encerrar a sessão?" "quit"
 # reboot
-bindsym $mod+Shift+b exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja reiniciar o computador?" $reboot
+bindsym $mod+Shift+b exec --no-startup-id $HOME/.scripts/prompt "Tem certeza que deseja reiniciar o computador?" "reboot"
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run#
@@ -222,6 +218,7 @@ for_window [class="Keepassx"] border pixel 3
 for_window [class="Manjaro Settings Manager"] border pixel 3
 for_window [class="Thunar"] border pixel 3
 for_window [class="mpv"] border pixel 3
+for_window [class="kate"] border pixel 3
 
 #----------------------------------------
 #Workspaces
@@ -380,6 +377,9 @@ client.background       #2B2C2B
 # Disable caps and set Caps key to escape
 #exec_always --no-startup-id xmodmap ~/.Xmodmap 
 
+# Set Caps Lock to Escape
+exec_always --no-startup-id setxkbmap -option caps:escape 
+exec_always --no-startup-id setxkbmap -option altwin:prtsc_rwin
 # Load Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Set wallpaper
@@ -398,9 +398,6 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send "KDE Connect is running" &> /dev/null
 # Start KDE Connect tray indicator
 exec_always --no-startup-id /usr/bin/indicator-kdeconnect
-# Set Caps Lock to Escape
-exec_always setxkbmap -option caps:escape 
-exec_always setxkbmap -option altwin:prtsc_rwin
 # Disable suspend and energy saving
 exec_always --no-startup-id xset s off && xset -dpms
 # Starts keyrings for pamac-manager

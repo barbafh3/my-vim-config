@@ -22,6 +22,7 @@ export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
 export PATH=$HOME/.scripts:$PATH
 
+export PAGER=most
 # Set vim as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 

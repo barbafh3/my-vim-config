@@ -376,7 +376,7 @@ format-discharging-underline = #ffa500
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = Charging %percentage%%
+label-charging = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
