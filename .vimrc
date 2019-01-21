@@ -152,6 +152,10 @@ noremap <C-k> <c-w>k
 noremap <C-j> <c-w>j
 noremap <C-h> <c-w>h
 
+inoremap `a ã
+inoremap `o õ
+inoremap `c ç
+
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>'')'')
 

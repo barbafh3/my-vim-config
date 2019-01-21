@@ -1,0 +1,24 @@
+#!/bin/bash
+
+CHOICE=$(printf "Bloquear\\nSair\\nReiniciar\\nDesligar" | dmenu -i -p "Sistema" -nb \#222b32 -sb \#2e8b57 -sf white -nf grey -h 27 )
+
+YN=$(printf "Não\\nSim" | dmenu -i -p "Tem certeza?" -nb \#222b32 -sb \#2e8b57 -sf white -nf grey -h 27 )
+
+if [ "$YN" = "Sim" ]; then
+    if [ "$CHOICE" = "Bloquear" ]; then
+        i3lock-fancy
+        exit 0
+    fi
+    if [ "$CHOICE" = "Sair" ]; then
+        i3-msg exit
+        exit 0
+    fi
+    if [ "$CHOICE" = "Reiniciar" ]; then
+        reboot
+        exit 0
+    fi
+    if [ "$CHOICE" = "Desligar" ]; then
+        shutdown -h now
+        exit 0
+    fi
+fi
