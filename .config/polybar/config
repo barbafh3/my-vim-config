@@ -68,7 +68,7 @@ content = "%{T6}  %{T6}"
 ;content-background = #222d32
 content-foreground = #2e8b57
 content-background = #ffffff
-click-left = bash ~/.scripts/rofi_system_menu
+click-left = bash ~/.scripts/system_menu
 
 [module/sep]
 type = custom/text
