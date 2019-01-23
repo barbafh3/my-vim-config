@@ -381,7 +381,8 @@ click-left = playerctl --player=spotify next
 [module/updates-arch-combined]
 type = custom/script
 format = "<label> " 
-format-prefix = "  "
+format-prefix = "  "
+;format-prefix = "  "
 ;format-prefix = "  "
 format-foreground = ${colors.white}
 format-underline = #027dff

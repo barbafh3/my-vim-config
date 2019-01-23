@@ -57,12 +57,8 @@ bindsym $mod+Shift+q kill
 # i3lock
 bindsym $mod+Shift+x exec i3lock-fancy
 
-# shutdown
-bindsym $mod+Shift+s exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja desligar o computador?" $shutdown
-# logout
-bindsym $mod+Shift+e exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja encerrar a sessão?" $logout
-# reboot
-bindsym $mod+Shift+b exec --no-startup-id ~/.scripts/prompt "Tem certeza que deseja reiniciar o computador?" $reboot
+# shutdown, reboot, logout and lock selection menu
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.scripts/system_menu
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run#
@@ -386,7 +382,7 @@ exec_always --no-startup-id pacmd set-sink-volume 0 65550
 # Automount USB drives using udiskie
 exec_always --no-startup-id udiskie &
 # Run pamac-tray on startup
-exec_always --no-startup-id pamac-tray
+# exec_always --no-startup-id pamac-tray
 # Run dunst for desktop notifications
 exec_always --no-startup-id dunst
 # Start KDE Connect 
