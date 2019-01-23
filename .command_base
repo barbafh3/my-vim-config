@@ -1,4 +1,5 @@
 sz   source      ~/.zshrc
+sf   source      ~/.config/fish/config.fish
 sn   spotifycli  --next
 sp   spotifycli  --prev
 stg  spotifycli  --playpause

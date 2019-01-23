@@ -167,6 +167,7 @@ vnoremap <leader>p :s/\%V\(.*\)\%V/(\1)/<CR>
 nnoremap <leader>l :bn<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
+nnoremap <leader>ms :silent !groff -ms -ks % -T pdf > %:r.pdf<CR>:redraw!<CR>
 
 nnoremap <c-p> :FZF<CR>
 

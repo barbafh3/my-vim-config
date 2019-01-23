@@ -215,6 +215,7 @@ for_window [class="Manjaro Settings Manager"] border pixel 3
 for_window [class="Thunar"] border pixel 3
 for_window [class="mpv"] border pixel 3
 for_window [class="kate"] border pixel 3
+for_window [class="Pamac-manager"] border pixel 3
 
 #----------------------------------------
 #Workspaces

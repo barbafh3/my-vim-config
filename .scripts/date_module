@@ -1,0 +1,1 @@
+echo "  $(date +%d/%m/%y)  $(date +%H:%M:%S)"

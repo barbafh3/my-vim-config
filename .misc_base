@@ -10,3 +10,5 @@ function mkd(){
 }
 # Lists all files including hidden, with color and listing folders first
 alias ls="ls -ahN --color=auto --group-directories-first"
+# Lists all processes with given text
+alias proc="ps aux | grep"
