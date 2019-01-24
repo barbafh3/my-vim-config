@@ -57,6 +57,7 @@ abbr rm "rm -i"
 
 # Function based aliases
 
+abbr ls "ls -a --color=auto --group-directories-first"
 abbr proc "ps aux | grep"
 function mkd 
     mkdir $argv && cd $argv

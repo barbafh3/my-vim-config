@@ -1,0 +1,12 @@
+
+abbr ls "ls -a --color=auto --group-directories-first"
+
+abbr proc "ps aux | grep"
+
+function mkd 
+    mkdir $argv && cd $argv
+end
+function glyph
+    echo -ne '\u$argv' | xclip -selection primary && notify-send 'Glyph (xclip -o) added to the clipboard' 
+end
+
