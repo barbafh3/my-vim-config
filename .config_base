@@ -1,5 +1,6 @@
 zrc     ~/.zshrc
 vrc     ~/.vimrc
+frc     ~/.config/fish/config.fish
 txcf    ~/.tmux.conf
 i3cf    ~/.config/i3/config
 pbcf    ~/.config/polybar/config

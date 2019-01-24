@@ -82,3 +82,5 @@ source $ZSH/oh-my-zsh.sh
 ALIAS_PATH=~/.aliases
 source $ALIAS_PATH
 
+# Start fish
+fish

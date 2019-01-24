@@ -1,58 +1,7 @@
-# vi: syntax=fish
-abbr d: "cd ~/Drive-D"
-abbr D: "cd ~/Drive-D"
-abbr dl "cd ~/Downloads"
-abbr dc "cd ~/Documentos"
-abbr dev "cd ~/Dev"
-abbr pyf "cd ~/Dev/python"
-abbr jsf "cd ~/Dev/js"
-abbr rtf "cd ~/Dev/react"
-abbr angf "cd ~/Dev/angular"
-abbr phpf "cd ~/Dev/php"
-abbr flkf "cd ~/Dev/flask"
-abbr rorf "cd ~/Dev/rubyonrails"
-abbr dbc "cd ~/Dropbox"
-abbr grf "cd ~/.config/groff"
+# vi: syntax=zsh
 
-# Config files aliases
+# Enable vim like keybindings
+fish_vi_key_bindings
 
-abbr zrc "vim ~/.zshrc"
-abbr vrc "vim ~/.vimrc"
-abbr txcf "vim ~/.tmux.conf"
-abbr i3cf "vim ~/.config/i3/config"
-abbr pbcf "vim ~/.config/polybar/config"
-abbr pbsh "vim ~/.config/polybar/launch.sh"
-abbr ctcf "vim ~/.config/compton/compton.conf"
-abbr rgcf "vim ~/.config/ranger/rc.conf"
-abbr ktcf "vim ~/.config/kitty/kitty.conf"
-abbr rfcf "vim ~/.config/rofi/config.rasi"
-abbr nfcf "vim ~/.config/neofetch/config.conf"
-abbr dtrc "vim ~/.config/dunst/dunstrc"
-abbr als "vim ~/.aliases"
-abbr alsh "vim ~/.scripts/aliases.sh"
-abbr nbcf "vim ~/.newsboat/config"
-abbr nburl "vim ~/.newsboat/urls"
-abbr nmrc "vim ~/.neomuttrc"
-
-# Command aliases
-
-abbr sz "source ~/.zshrc"
-abbr sf "source ~/.config/fish/config.fish"
-abbr sn "spotifycli --next"
-abbr sp "spotifycli --prev"
-abbr stg "spotifycli --playpause"
-abbr svu "spotifycli --volumeup"
-abbr svd "spotifycli --volumedown"
-abbr pac "sudo pacman"
-abbr sctl "sudo systemctl"
-abbr gs "git status"
-abbr ga "git add"
-abbr gr "git remove"
-abbr gc "git commit"
-abbr gp "git push"
-abbr mv "mv -i"
-abbr cp "cp -i"
-abbr rm "rm -i"
-
-# Function based aliases
-
+# Load the abbreviations file
+source $HOME/.abbreviations
