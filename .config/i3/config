@@ -399,3 +399,5 @@ exec_always --no-startup-id xset s off && xset -dpms
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 # Adds ~/.scripts folder to PATH
 exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
+# Starts TLP for battery management
+exec_always --no-startup-id tlp start && notify-send "TLP started"
