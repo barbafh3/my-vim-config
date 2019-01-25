@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 folder_file=$HOME/.folder_base
 config_file=$HOME/.config_base

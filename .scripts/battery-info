@@ -1,0 +1,4 @@
+#!/bin/bash
+
+notify-send "$(acpi -b | sed "s/,//g" | awk '{print " Battery: "$4" - Time remaining: "$5""}')"
+

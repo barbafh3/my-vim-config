@@ -58,11 +58,7 @@ abbr rm "rm -i"
 # Function based aliases
 
 abbr ls "ls -a --color=auto --group-directories-first"
-abbr proc "ps aux | grep"
-function mkd 
-    mkdir $argv && cd $argv
-end
-function glyph
-    echo -ne '\u$argv' | xclip -selection primary && notify-send 'Glyph (xclip -o) added to the clipboard' 
-end
 
+abbr proc "ps aux | grep"
+
+abbr glyph "nerd-font-glyph-gen"

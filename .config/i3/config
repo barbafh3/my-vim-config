@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 bindsym XF86ScreenSaver exec i3lock-fancy
 
 # shutdown/reboot/logout/lock
-bindsym $mod+Shift+s exec --no-startup-id $HOME/.scripts/system_menu 
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.scripts/system-dmenu 
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run#
@@ -378,7 +378,7 @@ exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option a
 # Load Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Set wallpaper
-exec_always --no-startup-id feh --randomize --bg-fill ~/Imagens/wallpapers
+exec_always --no-startup-id $HOME/.scripts/random-wallpaper
 # Enable compton for all applications
 exec_always --no-startup-id compton -f --config ~/.config/compton/compton.conf
 # Set volume to 100% - 65500 (40% == 26000)

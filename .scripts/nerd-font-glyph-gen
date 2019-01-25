@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -ne "\u$1" | xclip -selection primary | notify-send "Glyph $(xclip -o) added to clipboard" &

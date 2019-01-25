@@ -50,7 +50,7 @@ font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = left-icon sep i3
 modules-center = spotify  previous play next
-modules-right = volume sep battery sep wireless-network sep updates-arch-combined sep mydate sep
+modules-right = volume sep battery battery-info sep wireless-network sep updates-arch-combined sep mydate sep
 
 tray-position = right
 tray-background = #222b32
@@ -68,7 +68,14 @@ content = "%{T6}  %{T6}"
 ;content-background = #222d32
 content-foreground = #2e8b57
 content-background = #ffffff
-click-left = bash ~/.scripts/system_menu
+click-left = bash ~/.scripts/system-dmenu
+
+[module/battery-info]
+type = custom/text
+content = "  "
+content-foreground = ${colors.white}
+content-underline = #ffa500
+click-left = $HOME/.scripts/battery-info
 
 [module/sep]
 type = custom/text
@@ -325,7 +332,7 @@ label-underline = ${colors.white}
 [module/mydate]
 type = custom/script
 label = %output%
-exec = ~/.scripts/date_module
+exec = $HOME/.scripts/date-module
 interval = 1
 click-left = kitty -e calcurse
 label-foreground = ${colors.white}
@@ -333,7 +340,7 @@ label-underline = ${colors.white}
 
 [module/battery]
 type = internal/battery
-
+click-left = $HOME/.scripts/battery-info
 ; This is useful in case the battery never reports 100% charge
 full-at = 99
 
