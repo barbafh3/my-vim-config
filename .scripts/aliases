@@ -1,25 +1,25 @@
 #!/bin/bash
 
-folder_file=$HOME/.folder_base
-config_file=$HOME/.config_base
-command_file=$HOME/.command_base
-misc_file=$HOME/.misc_base
+folder_file=$HOME/.folder-base
+config_file=$HOME/.config-base
+command_file=$HOME/.command-base
+misc_file=$HOME/.misc-base
 zsh_file=$HOME/.aliases
 fish_file=$HOME/.abbreviations
-fish_base=$HOME/.fish_base
+fish_base=$HOME/.fish-base
 
 rm $HOME/.aliases
 rm $HOME/.abbreviations
 
-echo "# vi: syntax=zsh" | tee -a $zsh_file $fish_file
+echo "# vi: syntax=bash" | tee -a $zsh_file $fish_file
 echo -e "\n# Folder aliases\n" >> $zsh_file
-sed "/^#/d" $folder_file | tee >(awk '{print "alias "$1"=\"cd "$2"\""}' >> $zsh_file) \
+sed "s/\s*#.*$//;/^\s*$/d" $folder_file | tee >(awk '{print "alias "$1"=\"cd "$2"\""}' >> $zsh_file) \
                             >(awk '{print "abbr "$1" \"cd "$2"\""}' >> $fish_file)
 echo -e "\n# Config files aliases\n" | tee -a $zsh_file $fish_file
-sed "/^#/d" $config_file | tee >(awk '{print "alias "$1"=\"vim "$2"\""}' >> $zsh_file) \
+sed "s/\s*#.*$//;/^\s*$/d" $config_file | tee >(awk '{print "alias "$1"=\"vim "$2"\""}' >> $zsh_file) \
                             >(awk '{print "abbr "$1" \"vim "$2"\""}' >> $fish_file)
 echo -e "\n# Command aliases\n" | tee -a $zsh_file $fish_file
-sed "/^#/d" $command_file | tee >(awk '{print "alias "$1"=\""$2" "$3"\""}' >> $zsh_file) \
+sed "s/\s*#.*$//;/^\s*$/d" $command_file | tee >(awk '{print "alias "$1"=\""$2" "$3"\""}' >> $zsh_file) \
                             >(awk '{print "abbr "$1" \""$2" "$3"\""}' >> $fish_file)
 echo -e "\n# Function based aliases\n" | tee -a $zsh_file $fish_file
 sed "1d" $fish_base >> $fish_file

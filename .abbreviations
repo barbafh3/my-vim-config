@@ -1,4 +1,4 @@
-# vi: syntax=zsh
+# vi: syntax=bash
 abbr d: "cd ~/Drive-D"
 abbr D: "cd ~/Drive-D"
 abbr dl "cd ~/Downloads"
@@ -37,6 +37,9 @@ abbr nmrc "vim ~/.neomuttrc"
 
 # Command aliases
 
+
+# Function based aliases
+
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -54,9 +57,6 @@ abbr gp "git push"
 abbr mv "mv -i"
 abbr cp "cp -i"
 abbr rm "rm -i"
-
-# Function based aliases
-
 abbr ls "ls -a --color=auto --group-directories-first"
 
 abbr proc "ps aux | grep"

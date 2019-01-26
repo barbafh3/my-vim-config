@@ -2,38 +2,38 @@
 
 PERCENT="$(acpi -b | sed "s/,//g" | awk '{print ""$4""}' | sed "s/%//g")"
 
-if [ $PERCENT -eq 100 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 90 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 80 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 70 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 60 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 50 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 40 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 30 ] ; then
-    icon=""
-fi
-if [ $PERCENT -ge 20 ] ; then
-    icon=""
+if [ $PERCENT -lt 10 ] ; then
+    icon=""
 fi
 if [ $PERCENT -ge 10 ] ; then
     icon=""
 fi
-if [ $PERCENT -lt 10 ] ; then
-    icon=""
+if [ $PERCENT -ge 20 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 30 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 40 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 50 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 60 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 70 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 80 ] ; then
+    icon=""
+fi
+if [ $PERCENT -ge 90 ] ; then
+    icon=""
+fi
+if [ $PERCENT -eq 100 ] ; then
+    icon=""
 fi
 notify-send "$(acpi -b | sed "s/,//g" | awk -v icon=$icon '{print icon " Battery: "$4" - Time remaining: "$5""}')"
 
