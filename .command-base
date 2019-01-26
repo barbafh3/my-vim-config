@@ -8,6 +8,7 @@ svd  spotifycli  --volumedown
 pac  sudo        pacman
 sctl sudo        systemctl
 gs   git         status
+gd   git         difftool
 ga   git         add
 gr   git         remove 
 gc   git         commit
