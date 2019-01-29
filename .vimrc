@@ -43,6 +43,7 @@ Plugin 'sjl/badwolf'
 Plugin 'previm/previm'
 Plugin 'prabirshrestha/async.vim'
 Plugin 'christianrondeau/vim-base64'
+Plugin 'dylanaraps/wal.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,10 +82,10 @@ augroup END
 "let g:gruvbox_italic=1
 "colorscheme gruvbox
 "colorscheme solarized8
-colorscheme badwolf
-
+"colorscheme badwolf
 "colorscheme tone
 "colorscheme goodwolf
+colorscheme wal
 
 set noshowmode
 set timeoutlen=300

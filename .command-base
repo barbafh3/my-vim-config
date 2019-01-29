@@ -16,3 +16,4 @@ gp   git         push
 mv   mv          -i
 cp   cp          -i
 rm   rm          -i
+ctb  crontab     -e

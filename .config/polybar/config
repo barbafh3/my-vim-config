@@ -12,8 +12,14 @@
 ;-------------------------------------------------------------------------------;
 ;								V A R I A B L E S								;
 ;-------------------------------------------------------------------------------;
+
 [colors]
-background = #222d32
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 white = #fff
 red = #f00
 black = #000
@@ -22,7 +28,8 @@ violet = #8e1eff
 gruv-active-bg = #665c54
 gruv-active-fg = #ffffff
 gruv-inactive-bg = #282828
-gruv-inactive-fg = #665c54
+gpruv-inactive-fg = #665c54
+
 ;-------------------------------------------------------------------------------;
 ;							        B A R S										;
 ;-------------------------------------------------------------------------------;
@@ -40,7 +47,7 @@ line-size = 2
 ;border-top-size = 10
 
 background = ${colors.background}
-foreground = ${colors.white}
+foreground = ${colors.foreground}
 font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3
 font-1 = NotoSans Symbols2:pixelsize=16;3
 font-2 = FontAwesome:pixelsize=12;3
@@ -48,9 +55,9 @@ font-3 = Weather Icons:size=12;1
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
-modules-left = left-icon sep i3
+modules-left = i3
 modules-center = spotify  previous play next
-modules-right = volume sep battery battery-info sep wireless-network sep updates-arch-combined sep mydate sep
+modules-right = volume sep battery battery-info sep wireless-network sep updates-arch-combined mydate power-icon sep
 
 tray-position = right
 tray-background = #222b32
@@ -70,17 +77,24 @@ content-foreground = #2e8b57
 content-background = #ffffff
 click-left = bash ~/.scripts/system-dmenu
 
+[module/power-icon]
+type = custom/text
+content = "%{T6} ⏻%{T1}"
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+click-left = bash ~/.scripts/system-dmenu
+
 [module/battery-info]
 type = custom/text
 content = "  "
-content-foreground = ${colors.white}
-content-underline = #ffa500
+content-foreground = ${colors.foreground}
+;content-underline = #ffa500
 click-left = $HOME/.scripts/battery-info
 
 [module/sep]
 type = custom/text
 content = " "
-content-background = #222b32
+content-background = ${colors.background}
 
 [module/arrowi3]
 type = custom/text
@@ -231,13 +245,12 @@ format = <label-state><label-mode>
 ;enable-click = true 
 ;enable-scroll = false
 ws-icon-0 = 10;0[]
-ws-icon-1 = 1;1  
+ws-icon-1 = 1; 
 ;ws-icon-3 = 1;1    
-ws-icon-2 = 2;2  
-;ws-icon-2 = 3;3 
-ws-icon-3 = 3;3 
-ws-icon-4 = 4;4 ﭮ  
-ws-icon-5 = 5;5 
+ws-icon-2 = 2; 
+ws-icon-3 = 3;
+ws-icon-4 = 4;ﭮ
+ws-icon-5 = 5;5
 ws-icon-6 = 6;6
 ws-icon-7 = 7;7
 ws-icon-8 = 8;8
@@ -252,23 +265,23 @@ label-mode-background = #282828
 ;label-focused = %{F#222d32 B#665c54 T5}%{F-}%{T6} %icon% %{B#222d32 F#665c54 T5}%{F-}%{T1}
 ;label-focused = %{F#ffffff B#665c54 T6} %icon% %{F- B-}%{T1}
 label-focused = %{T6} %icon% %{T1}
-;label-focused-foreground = ${colors.white}
-;label-focused-background = ${colors.black}
-label-focused-underline = #2e8b57
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.primary}
+;label-focused-underline = #2e8b57
 
 label-visible = "%{A1:i3-msg workspace %index%}%{T6} %icon% %{T1}%{A}"
 label-visible-foreground = ${colors.white}
 label-visible-background = ${colors.background}
 
 label-unfocused = "%{A1:i3-msg workspace %index%:}%{T6} %icon% %{T1}%{A}"
-label-unfocused-foreground = ${colors.white}
-label-unfocused-background = #222d32
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
 
 ;label-urgent = %{F#222d32 B#f00 T5}%{F-}%{T6} %icon% %{B#222d32 F#f00 T5}%{F-}%{T1}
 label-urgent = %{F#ffffff B#f00 T6} %icon% %{F-}%{T1}
 ;label-urgent = " %icon% "
-label-urgent-foreground = ${colors.red}
-label-urgent-background = ${colors.blue}
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.alert}
 
 ;label-separator = //
 label-separator-padding = 0
@@ -335,8 +348,8 @@ label = %output%
 exec = $HOME/.scripts/date-module
 interval = 1
 click-left = kitty -e calcurse
-label-foreground = ${colors.white}
-label-underline = ${colors.white}
+label-foreground = ${colors.foreground}
+;label-underline = ${colors.white}
 
 [module/battery]
 type = internal/battery
@@ -379,9 +392,10 @@ format-charging = <animation-charging> <label-charging>
 ;   <animation-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-charging-underline = #ffa500
-format-full-underline = #ffa500
-format-discharging-underline = #ffa500
+label-foreground = ${colors.foreground}
+;format-charging-underline = #ffa500
+;format-full-underline = #ffa500
+;format-discharging-underline = #ffa500
 
 ; Available tags:
 ;   <label-full> (default)
@@ -438,10 +452,11 @@ type = internal/volume
 ; mapping = true
 ;format-volume = <ramp-volume><label-volume>
 label-volume = "  %percentage%% "
-label-volume-foreground = ${colors.white}
-label-volume-underline = #02bdff
+;label-volume-foreground = ${colors.white}
+;label-volume-underline = #02bdff
 label-muted = "  %percentage%% "
-label-muted-underline = #02bdff
+;label-muted-underline = #02bdff
+label-foreground = ${colors.foreground}
 
 [module/spotify]
 type = custom/script
@@ -453,8 +468,8 @@ exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 ;label-foreground = #ffffff
 ;label-background = #2e8b57
 ;label-underline = #008000
-label-underline = #39ff14
-format-prefix-underline = #39ff14
+;label-underline = #39ff14
+;format-prefix-underline = #39ff14
 
 [module/openweathermap-detailed]
 type = custom/script
@@ -471,7 +486,7 @@ type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #39ff14
+;content-underline = #39ff14
 click-left = playerctl --player=spotify play-pause
 
 [module/previous]
@@ -479,7 +494,7 @@ type = custom/text
 content = " "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #39ff14
+;content-underline = #39ff14
 click-left = playerctl --player=spotify previous
 
 [module/next]
@@ -487,7 +502,7 @@ type = custom/text
 content = "  "
 ;content-foreground = #ffffff
 ;content-background = #2e8b57
-content-underline = #39ff14
+;content-underline = #39ff14
 click-left = playerctl --player=spotify next
 
 [module/updates-arch-combined]
@@ -495,10 +510,10 @@ type = custom/script
 format = "<label> " 
 format-prefix = "  "
 ;format-prefix = "  "
-format-foreground = ${colors.white}
-format-underline = #027dff
-format-prefix-foreground = ${colors.white}
-format-prefix-underline = #027dff
+format-foreground = ${colors.foreground}
+;format-underline = #027dff
+format-prefix-foreground = ${colors.foreground}
+;format-prefix-underline = #027dff
 exec = ~/.scripts/updates-arch-combined.sh
 interval = 120
 click-left = pamac-manager & disown
@@ -521,8 +536,8 @@ udspeed-minwidth = 0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 label-connected =  直
-label-connected-foreground = #eefafafa
+label-connected-foreground = ${colors.foreground}
 label-disconnected = 睊
-label-disconnected-foreground = #66ffffff
-label-connected-underline = #ffff00
-label-disconnected-underline = #ffff00
+label-disconnected-foreground = ${colors.foreground}
+;label-connected-underline = #ffff00
+;label-disconnected-underline = #ffff00

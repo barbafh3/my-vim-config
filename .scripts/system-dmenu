@@ -1,8 +1,10 @@
 #!/bin/bash
 
-CHOICE=$(printf "Bloquear\\nSair\\nReiniciar\\nDesligar" | dmenu -i -p "Sistema" -nb \#222b32 -sb \#2e8b57 -sf white -nf grey -h 27 )
+. "${HOME}/.cache/wal/colors.sh"
 
-YN=$(printf "Não\\nSim" | dmenu -i -p "Tem certeza?" -nb \#222b32 -sb \#2e8b57 -sf white -nf grey -h 27 )
+CHOICE=$(printf "Bloquear\\nSair\\nReiniciar\\nDesligar" | dmenu -i -p "Sistema" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
+
+YN=$(printf "Não\\nSim" | dmenu -i -p "Tem certeza?" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
 
 if [ "$YN" = "Sim" ]; then
     if [ "$CHOICE" = "Bloquear" ]; then
