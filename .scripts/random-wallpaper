@@ -1,0 +1,6 @@
+#!/bin/bash
+
+files=($HOME/Imagens/wallpapers/*)
+image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
+wal -i $image -o dunst-pywal
+#feh --randomize --bg-fill $image

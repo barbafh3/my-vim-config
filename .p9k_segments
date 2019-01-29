@@ -7,40 +7,40 @@ prompt_show_spotify () {
 
 getLanguageOrFramework(){
     dir="$( cd "$(dirname "$0")" ; pwd -P )"
-    if [[ $dir == *"Dev/python"* ]] ; then
+    if [[ $dir == *"dev/python"* ]] ; then
 		echo "python";
     fi
-    if [[ $dir == *"Dev/javascript"* ]] ; then
+    if [[ $dir == *"dev/javascript"* ]] ; then
         echo "javascript";
     fi
-    if [[ $dir == *"Dev/react"* ]] ; then
+    if [[ $dir == *"dev/react"* ]] ; then
 		echo "react";
     fi
-    if [[ $dir == *"Dev/nodejs"* ]] ; then
+    if [[ $dir == *"dev/nodejs"* ]] ; then
         echo "nodejs";
     fi
-    if [[ $dir == *"Dev/flask"* ]] ; then
+    if [[ $dir == *"dev/flask"* ]] ; then
         echo "flask";
     fi
-    if [[ $dir == *"Dev/java"* ]] ; then
+    if [[ $dir == *"dev/java"* ]] ; then
         echo "java";
     fi
-    if [[ $dir == *"Dev/rubyonrails"* ]] ; then
+    if [[ $dir == *"dev/rubyonrails"* ]] ; then
         echo "rails";
     fi
-    if [[ $dir == *"Dev/c++"* ]] ; then
+    if [[ $dir == *"dev/c++"* ]] ; then
         echo "c++";
     fi
-    if [[ $dir == *"Dev/angular"* ]] ; then
+    if [[ $dir == *"dev/angular"* ]] ; then
         echo "angular";
     fi
-    if [[ $dir == *"Dev/php"* ]] ; then
+    if [[ $dir == *"dev/php"* ]] ; then
         echo "php";
     fi
-    if [[ $dir == *"Dev/vuejs"* ]] ; then
+    if [[ $dir == *"dev/vuejs"* ]] ; then
         echo "vuejs";
     fi
-    if [[ $dir == *"Dev/django"* ]] ; then
+    if [[ $dir == *"dev/django"* ]] ; then
         echo "django";
     fi
     if [[ $dir == *".vim"* ]] ; then
@@ -50,51 +50,51 @@ getLanguageOrFramework(){
 
 prompt_lang_segment () {
 	dir="$( cd "$(dirname "$0")" ; pwd -P )"
-    if [[ $dir == *"Dev/python"* ]] ; then 
+    if [[ $dir == *"dev/python"* ]] ; then 
         content="\uf81f Python%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "yellow" "$content" "#"
     fi
-    if [[ $dir == *"Dev/js"* ]] ; then
+    if [[ $dir == *"dev/js"* ]] ; then
         content="\ue781 Javascript%f"
 		"$1_prompt_segment" "$0" "$2" "yellow" "black" "$content" "#"
     fi
-	if [[ $dir == *"Dev/react"* ]] ; then
+	if [[ $dir == *"dev/react"* ]] ; then
         content="\ufc06 React%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
     fi   
-	if [[ $dir == *"Dev/nodejs"* ]] ; then
+	if [[ $dir == *"dev/nodejs"* ]] ; then
         content="\uf898 Node.js%f"
 		"$1_prompt_segment" "$0" "$2" "black" "green" "$content" "#"
     fi 
-	if [[ $dir == *"Dev/java"* ]] ; then
+	if [[ $dir == *"dev/java"* ]] ; then
         content="\ue256 Java%f"
 		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
     fi
-	if [[ $dir == *"Dev/rubyonrails"* ]] ; then
+	if [[ $dir == *"dev/rubyonrails"* ]] ; then
         content="\ue604 Ruby on Rails%f"
 		"$1_prompt_segment" "$0" "$2" "white" "red" "$content" "#"
     fi
-	if [[ $dir == *"Dev/c++"* ]] ; then
+	if [[ $dir == *"dev/c++"* ]] ; then
         content="\ue61d C++%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "white" "$content" "#"
     fi
-	if [[ $dir == *"Dev/angular"* ]] ; then
+	if [[ $dir == *"dev/angular"* ]] ; then
         content="\ufbbd Angular%f"
 		"$1_prompt_segment" "$0" "$2" "red" "white" "$content" "#"
     fi
-	if [[ $dir == *"Dev/php"* ]] ; then
+	if [[ $dir == *"dev/php"* ]] ; then
         content="\uf81e PHP%f"
 		"$1_prompt_segment" "$0" "$2" "blue" "black" "$content" "#"
     fi
-	if [[ $dir == *"Dev/vuejs"* ]] ; then
+	if [[ $dir == *"dev/vuejs"* ]] ; then
         content="\ufd42 Vue.js%f"
 		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
     fi
-	if [[ $dir == *"Dev/django"* ]] ; then
+	if [[ $dir == *"dev/django"* ]] ; then
         content="\ue71d Django%f"
 		"$1_prompt_segment" "$0" "$2" "darkgreen" "white" "$content" "#"
     fi
-	if [[ $dir == *"Dev/flask"* ]] ; then
+	if [[ $dir == *"dev/flask"* ]] ; then
         content="\uf592 Flask%f"
 		"$1_prompt_segment" "$0" "$2" "white" "black" "$content" "#"
     fi

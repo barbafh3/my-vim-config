@@ -60,7 +60,7 @@ modules-center = spotify  previous play next
 modules-right = volume sep battery battery-info sep wireless-network sep updates-arch-combined mydate power-icon sep
 
 tray-position = right
-tray-background = #222b32
+tray-background = ${colors.background}
 tray-padding = 1
 tray-detached = false
 tray-maxsize = 25
