@@ -1,6 +1,7 @@
 # vi: syntax=bash
-abbr d: "cd ~/Drive-D"
-abbr D: "cd ~/Drive-D"
+
+# Config files aliases
+
 abbr dl "cd ~/Downloads"
 abbr dc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -13,9 +14,6 @@ abbr flkf "cd ~/dev/flask"
 abbr rorf "cd ~/dev/rubyonrails"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
-
-# Config files aliases
-
 abbr zrc "vim ~/.zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
