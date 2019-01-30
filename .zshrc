@@ -83,4 +83,4 @@ ALIAS_PATH=~/.aliases
 source $ALIAS_PATH
 
 # Start fish
-#fish
+fish
