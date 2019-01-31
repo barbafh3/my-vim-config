@@ -227,7 +227,8 @@ bindsym $mod+Shift+grave workspace prev
 bindsym $mod+comma workspace prev
 bindsym $mod+shift+period move container to workspace next
 bindsym $mod+shift+comma move container to workspace prev
-bindsym $mod+Tab  workspace back_and_forth
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace back_and_forth
 
 #assign names to workspaces
 set $workspace1 1
@@ -270,7 +271,7 @@ bindsym $mod+Ctrl+0 move container to workspace $workspace10
 #for_window [class="kitty"] $workspace3 
 assign [class="Firefox"] $workspace2
 assign [class="qutebrowser"] $workspace2
-assign [class="Spotify"] $workspace3
+for_window [class="Spotify"] move to workspace $workspace3
 assign [class="discord"] $workspace4
 assign [class="Clementine"] $workspace3
 assign [class="Vlc"] $workspace3 
@@ -283,9 +284,11 @@ assign [class="Slack"] $workspace4
 assign [class="Mousepad"] $workspace4 
 assign [class="Subl3"] $workspace4 
 assign [class="jetbrains-studio"] $workspace4
-assign [class="qBittorrent"] $workspace5
-assign [class="Lutris"] $workspace5
-assign [class="Steam"] $workspace5
+for_window [class="ranger"] move to workspace $workspace5
+assign [class="Lutris"] $workspace7
+assign [class="Steam"] $workspace7
+assign [class="Zathura"] $workspace5
+assign [class="mpv"] $workspace6
 
 #if window with particular class is in another workspace, switch to it immediately
 for_window [class="Terminology"] focus  
