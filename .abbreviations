@@ -2,6 +2,17 @@
 
 # Config files aliases
 
+
+# Command aliases
+
+
+# Function based aliases
+
+abbr ls "ls -a --color=auto --group-directories-first"
+abbr proc "ps aux | grep"
+abbr glyph "nerd-font-glyph-gen"
+abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
+abbr buku "env BROWSER=qutebrowser buku"
 abbr dl "cd ~/Downloads"
 abbr dc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -14,27 +25,6 @@ abbr flkf "cd ~/dev/flask"
 abbr rorf "cd ~/dev/rubyonrails"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
-abbr zrc "vim ~/.zshrc"
-abbr vrc "vim ~/.vimrc"
-abbr frc "vim ~/.config/fish/config.fish"
-abbr txcf "vim ~/.tmux.conf"
-abbr i3cf "vim ~/.config/i3/config"
-abbr pbcf "vim ~/.config/polybar/config"
-abbr pbsh "vim ~/.config/polybar/launch.sh"
-abbr ctcf "vim ~/.config/compton/compton.conf"
-abbr rgcf "vim ~/.config/ranger/rc.conf"
-abbr ktcf "vim ~/.config/kitty/kitty.conf"
-abbr rfcf "vim ~/.config/rofi/config.rasi"
-abbr nfcf "vim ~/.config/neofetch/config.conf"
-abbr dtrc "vim ~/.config/dunst/dunstrc"
-abbr als "vim ~/.aliases"
-abbr alsh "vim ~/.scripts/aliases.sh"
-abbr nbcf "vim ~/.newsboat/config"
-abbr nburl "vim ~/.newsboat/urls"
-abbr nmrc "vim ~/.neomuttrc"
-
-# Command aliases
-
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -54,11 +44,21 @@ abbr mv "mv -i"
 abbr cp "cp -i"
 abbr rm "rm -i"
 abbr ctb "crontab -e"
-
-# Function based aliases
-
-abbr ls "ls -a --color=auto --group-directories-first"
-
-abbr proc "ps aux | grep"
-
-abbr glyph "nerd-font-glyph-gen"
+abbr zrc "vim ~/.zshrc"
+abbr vrc "vim ~/.vimrc"
+abbr frc "vim ~/.config/fish/config.fish"
+abbr txcf "vim ~/.tmux.conf"
+abbr i3cf "vim ~/.config/i3/config"
+abbr pbcf "vim ~/.config/polybar/config"
+abbr pbsh "vim ~/.config/polybar/launch.sh"
+abbr ctcf "vim ~/.config/compton/compton.conf"
+abbr rgcf "vim ~/.config/ranger/rc.conf"
+abbr ktcf "vim ~/.config/kitty/kitty.conf"
+abbr rfcf "vim ~/.config/rofi/config.rasi"
+abbr nfcf "vim ~/.config/neofetch/config.conf"
+abbr dtrc "vim ~/.config/dunst/dunstrc"
+abbr als "vim ~/.aliases"
+abbr alsh "vim ~/.scripts/aliases.sh"
+abbr nbcf "vim ~/.newsboat/config"
+abbr nburl "vim ~/.newsboat/urls"
+abbr nmrc "vim ~/.neomuttrc"
