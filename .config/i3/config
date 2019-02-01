@@ -116,7 +116,7 @@ bindsym Alt+Ctrl+Del ksysguard
 
 ## Number Pad Bindings
 bindsym $mod+Shift+1 exec kitty --name ranger -e ranger
-bindsym $mod+Shift+2 exec firefox
+bindsym $mod+Shift+2 exec qutebrowser
 bindsym $mod+Shift+3 exec spotify
 bindsym $mod+Shift+4 exec discord
 bindsym $mod+Shift+5 exec steam
@@ -287,8 +287,8 @@ assign [class="jetbrains-studio"] $workspace4
 for_window [class="ranger"] move to workspace $workspace5
 assign [class="Lutris"] $workspace7
 assign [class="Steam"] $workspace7
-assign [class="Zathura"] $workspace5
-assign [class="mpv"] $workspace6
+assign [class="Zathura"] $workspace4
+assign [class="mpv"] $workspace5
 
 #if window with particular class is in another workspace, switch to it immediately
 for_window [class="Terminology"] focus  
