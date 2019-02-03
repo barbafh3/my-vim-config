@@ -138,15 +138,9 @@ vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
 nnoremap ; :
-inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O<TAB>
-inoremap ( ()<Left>
 inoremap (<CR> (<CR>)<Esc>O<TAB>
-inoremap [ []<Left>
 inoremap [<CR> [<CR>]<Esc>O<TAB>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ` ``<Left>
 
 noremap <C-l> <c-w>l
 noremap <C-k> <c-w>k
@@ -158,22 +152,26 @@ inoremap `o õ
 inoremap `c ç
 
 inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>'')'')
+inoremap ] <c-r>=ClosePair(']')<CR>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
-vnoremap <leader>dq :s/\%V\(.*\)\%V/"\1"/<CR>
-vnoremap <leader>sq :s/\%V\(.*\)\%V/'\1'/<CR>
-vnoremap <leader>p :s/\%V\(.*\)\%V/(\1)/<CR>
+nnoremap <leader>dq ciw"<Esc>pa"<Esc>
+nnoremap <leader>sq ciw'<Esc>pa'<Esc>
+nnoremap <leader>p ciw(<Esc>pa)<Esc>
+nnoremap <leader>bc ciw[<Esc>pa]<Esc>
+
 " Mappings for next buffer(bn), previous buffer(bp) and close buffer(bd)
 nnoremap <leader>l :bn<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
+
+" Groff compile mapping
 nnoremap <leader>ms :silent !groff -ms -ks % -T pdf > %:r.pdf<CR>:redraw!<CR>
 
 nnoremap <c-p> :FZF<CR>
 
 " Find and replaces the next placeholder <++> while in insert mode
-inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+"inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 " Closes ) and ], ignoring it if they are already present
 function ClosePair(char)
