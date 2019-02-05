@@ -1,5 +1,6 @@
 # Configure Internet Message Access Protocol for reading mail
 
+source $HOME/.config/neomutt/neomutt_colors
 source "gpg -dq $HOME/neomutt_gmail.gpg |"
 
 # Username and password for your Gmail or G Suite account
@@ -31,8 +32,15 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 set sidebar_width = 40
 
+# Show newest e-mails first
 set sort = reverse-date-received
 
+# Vim like bindings for sidebar
 bind index,pager \CK sidebar-prev       # Ctrl-Shift-K - Previous Mailbox
 bind index,pager \CJ sidebar-next       # Ctrl-Shift-J - Next Mailbox
 bind index,pager \CL sidebar-open       # Ctrl-Shift-L - Open Highlighted Mailbox
+
+color index_author color5 default '.*'
+color sidebar_divider color5 default
+color indicator color0 color1
+color hdrdefault color0 color15

@@ -381,8 +381,6 @@ client.background       #2B2C2B
 exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option altwin:prtsc_rwin && notify-send "Keys remapped"
 # Load Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
-# Set wallpaper
-exec_always --no-startup-id $HOME/.scripts/random-wallpaper
 # Enable compton for all applications
 exec_always --no-startup-id compton -f --config ~/.config/compton/compton.conf
 # Set volume to 100% - 65500 (40% == 26000)
@@ -405,3 +403,6 @@ exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-ag
 exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
 # Starts TLP for battery management
 exec_always --no-startup-id tlp start && notify-send "TLP started"
+# Set wallpaper
+exec_always --no-startup-id $HOME/.scripts/random-wallpaper
+

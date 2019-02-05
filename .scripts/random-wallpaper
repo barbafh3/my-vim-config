@@ -3,4 +3,4 @@
 files=($HOME/Imagens/wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
 wal -i $image -o dunst-pywal
-#feh --randomize --bg-fill $image
+cat .cache/wal/colors.sh | grep "'#" | sed "s/^/set my_/g; s/=/ = /g" > ~/.config/neomutt/neomutt_colors
