@@ -1,0 +1,82 @@
+# vi: syntax=bash
+
+# Folder aliases
+
+alias dl="cd ~/Downloads"
+alias dc="cd ~/Documentos"
+alias dev="cd ~/dev"
+alias pyf="cd ~/dev/python"
+alias jsf="cd ~/dev/js"
+alias rtf="cd ~/dev/react"
+alias angf="cd ~/dev/angular"
+alias phpf="cd ~/dev/php"
+alias flkf="cd ~/dev/flask"
+alias rorf="cd ~/dev/rubyonrails"
+alias dbc="cd ~/Dropbox"
+alias grf="cd ~/.config/groff"
+alias gal="cd ~/.scripts/gen-aliases"
+
+# Config files aliases
+
+
+# Command aliases
+
+alias zrc="vim ~/.zshrc"
+alias vrc="vim ~/.vimrc"
+alias frc="vim ~/.config/fish/config.fish"
+alias txcf="vim ~/.tmux.conf"
+alias i3cf="vim ~/.config/i3/config"
+alias pbcf="vim ~/.config/polybar/config"
+alias pbsh="vim ~/.config/polybar/launch.sh"
+alias ctcf="vim ~/.config/compton/compton.conf"
+alias rgcf="vim ~/.config/ranger/rc.conf"
+alias ktcf="vim ~/.config/kitty/kitty.conf"
+alias rfcf="vim ~/.config/rofi/config.rasi"
+alias nfcf="vim ~/.config/neofetch/config.conf"
+alias dtrc="vim ~/.config/dunst/dunstrc"
+alias als="vim ~/.scripts/gen-aliases/aliases"
+alias nbcf="vim ~/.newsboat/config"
+alias nburl="vim ~/.newsboat/urls"
+alias nmrc="vim ~/.config/neomutt/neomuttrc"
+alias fbs="vim ~/.scripts/gen-aliases/folder-base"
+alias cfbs="vim ~/.scripts/gen-aliases/config-base"
+alias cmbs="vim ~/.scripts/gen-aliases/command-base"
+alias fsbs="vim ~/.scripts/gen-aliases/fish-base"
+alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
+
+# Function based aliases
+
+alias sz="source ~/.zshrc"
+alias sf="source ~/.config/fish/config.fish"
+alias sn="spotifycli --next"
+alias sp="spotifycli --prev"
+alias stg="spotifycli --playpause"
+alias svu="spotifycli --volumeup"
+alias svd="spotifycli --volumedown"
+alias pac="sudo pacman"
+alias sctl="sudo systemctl"
+alias gs="git status"
+alias gd="git difftool"
+alias gr="git remove"
+alias gc="git commit"
+alias gp="git push"
+alias mv="mv -i"
+alias cp="cp -i"
+alias rm="rm -i"
+alias ctb="crontab -e"
+alias z="zathura "
+# Return the glyph from given NerdFont code
+function glyph(){
+    echo -ne "\u$1" | xclip -selection primary
+    notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
+}
+# Creates a directory and moves into it
+function mkd(){
+    mkdir $1 && cd $1    
+}
+# Lists all files including hidden, with color and listing folders first
+alias ls="ls -ahN --color=auto --group-directories-first"
+# Lists all processes with given text
+alias proc="ps aux | grep"
+
+alias ga="git add -f"

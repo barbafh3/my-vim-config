@@ -4,4 +4,4 @@
 fish_vi_key_bindings
 
 # Load the abbreviations file
-source $HOME/.abbreviations
+source $HOME/.config/fish/abbreviations

@@ -11,8 +11,12 @@ ktcf     ~/.config/kitty/kitty.conf
 rfcf    ~/.config/rofi/config.rasi
 nfcf    ~/.config/neofetch/config.conf
 dtrc    ~/.config/dunst/dunstrc
-als     ~/.aliases
-alsh    ~/.scripts/aliases.sh
 nbcf    ~/.newsboat/config
 nburl   ~/.newsboat/urls
-nmrc    ~/.neomuttrc
+nmrc    ~/.config/neomutt/neomuttrc
+als     ~/.scripts/gen-aliases/aliases
+fbs     ~/.scripts/gen-aliases/folder-base
+cfbs    ~/.scripts/gen-aliases/config-base
+cmbs    ~/.scripts/gen-aliases/command-base
+fsbs    ~/.scripts/gen-aliases/fish-base
+zbs     ~/.scripts/gen-aliases/zsh-base

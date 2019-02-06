@@ -1,7 +1,4 @@
 # vi: syntax=bash
-
-# Config files aliases
-
 abbr dl "cd ~/Downloads"
 abbr dc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -14,6 +11,13 @@ abbr flkf "cd ~/dev/flask"
 abbr rorf "cd ~/dev/rubyonrails"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
+abbr gal "cd ~/.scripts/gen-aliases"
+
+# Config files aliases
+
+
+# Command aliases
+
 abbr zrc "vim ~/.zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
@@ -27,14 +31,15 @@ abbr ktcf "vim ~/.config/kitty/kitty.conf"
 abbr rfcf "vim ~/.config/rofi/config.rasi"
 abbr nfcf "vim ~/.config/neofetch/config.conf"
 abbr dtrc "vim ~/.config/dunst/dunstrc"
-abbr als "vim ~/.aliases"
-abbr alsh "vim ~/.scripts/aliases.sh"
+abbr als "vim ~/.scripts/gen-aliases/aliases"
 abbr nbcf "vim ~/.newsboat/config"
 abbr nburl "vim ~/.newsboat/urls"
-abbr nmrc "vim ~/.neomuttrc"
-
-# Command aliases
-
+abbr nmrc "vim ~/.config/neomutt/neomuttrc"
+abbr fbs "vim ~/.scripts/gen-aliases/folder-base"
+abbr cfbs "vim ~/.scripts/gen-aliases/config-base"
+abbr cmbs "vim ~/.scripts/gen-aliases/command-base"
+abbr fsbs "vim ~/.scripts/gen-aliases/fish-base"
+abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -46,7 +51,6 @@ abbr pac "sudo pacman"
 abbr sctl "sudo systemctl"
 abbr gs "git status"
 abbr gd "git difftool"
-abbr ga "git add"
 abbr gr "git remove"
 abbr gc "git commit"
 abbr gp "git push"
@@ -58,6 +62,7 @@ abbr z "zathura "
 
 # Function based aliases
 
+abbr ga "git add -f"
 abbr ls "ls -a --color=auto --group-directories-first"
 abbr proc "ps aux | grep"
 abbr glyph "nerd-font-glyph-gen"

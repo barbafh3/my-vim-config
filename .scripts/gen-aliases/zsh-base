@@ -12,3 +12,5 @@ function mkd(){
 alias ls="ls -ahN --color=auto --group-directories-first"
 # Lists all processes with given text
 alias proc="ps aux | grep"
+
+alias ga="git add -f"

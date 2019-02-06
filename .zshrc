@@ -70,17 +70,13 @@ antigen theme agnoster
 antigen apply
 
 # Load Powerline9k custom segments
-source $HOME/.p9k_segments
+source $HOME/.config/zsh/p9k-segments
 
 # Load Powerlevel9k settings
-source $HOME/.p9krc
+source $HOME/.config/zsh/p9krc
 
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Loads alias file
-ALIAS_PATH=~/.aliases
-source $ALIAS_PATH
-
-# Start fish
-#fish
+source $HOME/.config/zsh/aliases

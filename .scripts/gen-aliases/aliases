@@ -1,15 +1,16 @@
 #!/bin/bash
 
-folder_file=$HOME/.folder-base
-config_file=$HOME/.config-base
-command_file=$HOME/.command-base
-misc_file=$HOME/.misc-base
-zsh_file=$HOME/.aliases
-fish_file=$HOME/.abbreviations
-fish_base=$HOME/.fish-base
+folder_file=$HOME/.scripts/gen-aliases/folder-base
+config_file=$HOME/.scripts/gen-aliases/config-base
+command_file=$HOME/.scripts/gen-aliases/command-base
+zsh_base=$HOME/.scripts/gen-aliases/zsh-base
+fish_base=$HOME/.scripts/gen-aliases/fish-base
 
-rm $HOME/.aliases
-rm $HOME/.abbreviations
+zsh_file=$HOME/.config/zsh/aliases
+fish_file=$HOME/.config/fish/abbreviations
+
+rm $HOME/.config/zsh/aliases
+rm $HOME/.config/fish/abbreviations
 
 echo "# vi: syntax=bash" | tee -a $zsh_file $fish_file
 echo -e "\n# Folder aliases\n" >> $zsh_file
@@ -23,4 +24,4 @@ sed "s/\s*#.*$//;/^\s*$/d" $command_file | tee >(awk '{print "alias "$1"=\""$2" 
                             >(awk '{print "abbr "$1" \""$2" "$3"\""}' >> $fish_file)
 echo -e "\n# Function based aliases\n" | tee -a $zsh_file $fish_file
 sed "1d" $fish_base >> $fish_file
-sed "1d" $misc_file >> $zsh_file
+sed "1d" $zsh_base >> $zsh_file
