@@ -6,7 +6,13 @@
 #   /___|___/_| |_|_|  \___|
 #
 #   ________________________
-
+#
+#
+#
+# >>> This file should be at $HOME folder or symlinked to it <<<
+# 
+#
+#
 # Image settings for neofetch running on terminal startup
 #imageSource=~/Imagens/ilya-kuvshinov-catears_edit_resized.png
 #imageSize=500px

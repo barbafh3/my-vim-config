@@ -18,7 +18,7 @@ alias gal="cd ~/.scripts/gen-aliases"
 
 # Config files aliases
 
-alias zrc="vim ~/.zshrc"
+alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
 alias frc="vim ~/.config/fish/config.fish"
 alias txcf="vim ~/.config/tmux/tmux.conf"
@@ -43,9 +43,6 @@ alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
 
 # Command aliases
 
-
-# Function based aliases
-
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
 alias sn="spotifycli --next"
@@ -65,6 +62,9 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias ctb="crontab -e"
 alias z="zathura "
+
+# Function based aliases
+
 # Return the glyph from given NerdFont code
 function glyph(){
     echo -ne "\u$1" | xclip -selection primary

@@ -1,4 +1,4 @@
-zrc     ~/.zshrc
+zrc     ~/.config/zsh/zshrc
 vrc     ~/.vimrc
 frc     ~/.config/fish/config.fish
 txcf    ~/.config/tmux/tmux.conf

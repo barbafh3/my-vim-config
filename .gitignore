@@ -9,8 +9,4 @@
 !.config/ranger/*
 !.gitignore
 !.vimrc
-!.tmux.conf
-!.zshrc
-!.p9krc
-!.p9k_segments
 !README.md

@@ -15,7 +15,7 @@ abbr gal "cd ~/.scripts/gen-aliases"
 
 # Config files aliases
 
-abbr zrc "vim ~/.zshrc"
+abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
 abbr txcf "vim ~/.config/tmux/tmux.conf"
@@ -40,9 +40,6 @@ abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
 
 # Command aliases
 
-
-# Function based aliases
-
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -62,6 +59,9 @@ abbr cp "cp -i"
 abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
+
+# Function based aliases
+
 abbr ga "git add -f"
 abbr ls "ls -a --color=auto --group-directories-first"
 abbr proc "ps aux | grep"
