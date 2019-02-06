@@ -114,8 +114,8 @@ bindsym $mod+a focus parent
 # open ksysguard task manager
 bindsym Alt+Ctrl+Del ksysguard
 
-## Number Pad Bindings
-bindsym $mod+Shift+1 exec kitty --name ranger -e ranger
+## Number Bindings
+bindsym $mod+Shift+1 exec kitty -e vifm
 bindsym $mod+Shift+2 exec qutebrowser
 bindsym $mod+Shift+3 exec spotify
 bindsym $mod+Shift+4 exec discord
@@ -125,6 +125,7 @@ bindsym $mod+Shift+7 exec manjaro-settings-manager
 bindsym $mod+Shift+8 exec kitty -e calcurse
 bindsym $mod+Shift+9 exec kitty -e twitch-curses
 
+# Screenshot binding
 bindsym $mod+F12 exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 -e 'mv $f ~/Imagens/screenshots/' && notify-send "Screenshot taken"
 
 # Sets up a dropdown terminal window

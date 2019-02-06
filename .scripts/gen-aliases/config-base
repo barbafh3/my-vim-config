@@ -1,7 +1,7 @@
 zrc     ~/.zshrc
 vrc     ~/.vimrc
 frc     ~/.config/fish/config.fish
-txcf    ~/.tmux.conf
+txcf    ~/.config/tmux/tmux.conf
 i3cf    ~/.config/i3/config
 pbcf    ~/.config/polybar/config
 pbsh    ~/.config/polybar/launch.sh

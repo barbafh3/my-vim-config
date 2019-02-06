@@ -15,13 +15,10 @@ abbr gal "cd ~/.scripts/gen-aliases"
 
 # Config files aliases
 
-
-# Command aliases
-
 abbr zrc "vim ~/.zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
-abbr txcf "vim ~/.tmux.conf"
+abbr txcf "vim ~/.config/tmux/tmux.conf"
 abbr i3cf "vim ~/.config/i3/config"
 abbr pbcf "vim ~/.config/polybar/config"
 abbr pbsh "vim ~/.config/polybar/launch.sh"
@@ -31,15 +28,21 @@ abbr ktcf "vim ~/.config/kitty/kitty.conf"
 abbr rfcf "vim ~/.config/rofi/config.rasi"
 abbr nfcf "vim ~/.config/neofetch/config.conf"
 abbr dtrc "vim ~/.config/dunst/dunstrc"
-abbr als "vim ~/.scripts/gen-aliases/aliases"
 abbr nbcf "vim ~/.newsboat/config"
 abbr nburl "vim ~/.newsboat/urls"
 abbr nmrc "vim ~/.config/neomutt/neomuttrc"
+abbr als "vim ~/.scripts/gen-aliases/aliases"
 abbr fbs "vim ~/.scripts/gen-aliases/folder-base"
 abbr cfbs "vim ~/.scripts/gen-aliases/config-base"
 abbr cmbs "vim ~/.scripts/gen-aliases/command-base"
 abbr fsbs "vim ~/.scripts/gen-aliases/fish-base"
 abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
+
+# Command aliases
+
+
+# Function based aliases
+
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -59,9 +62,6 @@ abbr cp "cp -i"
 abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
-
-# Function based aliases
-
 abbr ga "git add -f"
 abbr ls "ls -a --color=auto --group-directories-first"
 abbr proc "ps aux | grep"
@@ -70,3 +70,4 @@ abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
 abbr buku "env BROWSER=qutebrowser buku"
 abbr pu "sudo pacman -Syyu"
 abbr yu "yay -Syyu"
+abbr tmux "tmux -f ~/.config/tmux/tmux.conf"
