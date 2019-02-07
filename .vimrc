@@ -147,9 +147,15 @@ noremap <C-k> <c-w>k
 noremap <C-j> <c-w>j
 noremap <C-h> <c-w>h
 
-inoremap `a ã
-inoremap `o õ
-inoremap `c ç
+" Bindings for portuguese characters on US keyboard
+inoremap ;a ã
+inoremap ;o õ
+inoremap ;c ç
+inoremap `e é
+inoremap `i í
+inoremap `a á
+inoremap `o ó
+inoremap `u ú
 
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>
@@ -166,7 +172,9 @@ nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
 
 " Groff compile mapping
-nnoremap <leader>ms :silent !groff -ms -ks % -T pdf > %:r.pdf<CR>:redraw!<CR>
+"nnoremap <leader>ms :silent !groff -ms -ks % -T pdf > %:r.pdf<CR>:redraw!<CR>
+nnoremap <leader>ms :silent !entr-groff %:r
+nnoremap <leader>ke :silent !killall entr
 
 nnoremap <c-p> :FZF<CR>
 
