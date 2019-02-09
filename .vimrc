@@ -115,6 +115,10 @@ set autoindent
 set smartindent
 set number relativenumber
 
+" Set the default spellcheck languages and binding to toggle on/off
+set spelllang=pt,en
+nnoremap <leader>sc :set spell!<CR>
+
 let g:vrc_curl_opts = {
   \ '--connect-timeout' : 10,
   \ '-b': '/path/to/cookie',
@@ -156,6 +160,7 @@ inoremap `i í
 inoremap `a á
 inoremap `o ó
 inoremap `u ú
+inoremap ^e ê
 
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>

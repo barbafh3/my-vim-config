@@ -115,7 +115,7 @@ bindsym $mod+a focus parent
 bindsym Alt+Ctrl+Del ksysguard
 
 ## Number Bindings
-bindsym $mod+Shift+1 exec kitty -e vifm
+bindsym $mod+Shift+1 exec kitty -e ranger
 bindsym $mod+Shift+2 exec qutebrowser
 bindsym $mod+Shift+3 exec spotify
 bindsym $mod+Shift+4 exec discord
