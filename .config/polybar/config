@@ -50,7 +50,7 @@ font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = left-icon i3
 modules-center = spotify  previous play next
-modules-right = volume sep network sep updates-arch-combined sep date sep
+modules-right = volume sep network sep updates-arch-combined sep mydate sep
 
 tray-position = right
 tray-background = #222b32
@@ -321,6 +321,15 @@ time= "%H:%M:%S "
 label = %date% %time%
 label-foreground = ${colors.white}
 label-underline = ${colors.white} 
+
+[module/mydate]
+type = custom/script
+label = %output%
+click-left = kitty -e calcurse
+interval = 1
+exec = ~/.scripts/date_module
+label-foreground = ${colors.white}
+label-underline = ${colors.white}
 
 [module/volume]
 type = internal/volume
