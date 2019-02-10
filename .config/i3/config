@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 bindsym XF86ScreenSaver exec i3lock-fancy
 
 # shutdown/reboot/logout/lock
-bindsym $mod+Shift+s exec --no-startup-id $HOME/.scripts/system-dmenu 
+bindsym $mod+Shift+s exec $HOME/.scripts/system-dmenu 
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run#
@@ -142,11 +142,11 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Spotify controls
-bindsym XF86AudioPlay exec spotifycli --playpause
-bindsym XF86AudioNext exec spotifycli --next
-bindsym XF86AudioPrev exec spotifycli --prev
-bindsym $mod+XF86AudioRaiseVolume exec spotifycli --volumeup
-bindsym $mod+XF86AudioLowerVolume exec spotifycli --volumedown
+bindsym XF86AudioPlay exec playerclt --player=spotify play-pause
+bindsym XF86AudioNext exec playerclt --player=spotify next
+bindsym XF86AudioPrev exec playerclt --player=spotify prev
+bindsym $mod+XF86AudioRaiseVolume exec playerclt --player=spotify --volumeup
+bindsym $mod+XF86AudioLowerVolume exec playerclt --player=spotify --volumedown
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -377,6 +377,8 @@ client.background       #2B2C2B
 #exec_always --no-startup-id ~/.scripts/per-workspace-layout.pl
 # Disable caps and set Caps key to escape
 #exec_always --no-startup-id xmodmap ~/.Xmodmap 
+
+exec_always export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Set Caps Lock to Escape and PrtSc to Super key
 exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option altwin:prtsc_rwin && notify-send "Keys remapped"

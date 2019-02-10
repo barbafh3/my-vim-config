@@ -62,6 +62,7 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias ctb="crontab -e"
 alias z="zathura "
+alias sdnf="sudo dnf"
 
 # Function based aliases
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PATH="$PATH:$HOME/.local/bin/"
 files=($HOME/Imagens/wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
-wal -i $image -o dunst-pywal
+wal -i $image 

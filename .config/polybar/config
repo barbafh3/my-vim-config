@@ -56,8 +56,8 @@ font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = i3
-modules-center = spotify  previous play next
-modules-right = volume sep battery battery-info sep wireless-network sep updates-arch-combined mydate power-icon sep
+modules-center = previous play next
+modules-right = volume sep battery battery-info sep wireless-network sep updates mydate power-icon sep
 
 tray-position = right
 tray-background = ${colors.background}
@@ -504,16 +504,17 @@ content = "  "
 ;content-underline = #39ff14
 click-left = playerctl --player=spotify next
 
-[module/updates-arch-combined]
+[module/updates]
 type = custom/script
 format = "<label> " 
-format-prefix = "  "
+format-prefix = "  "
 ;format-prefix = "  "
 format-foreground = ${colors.foreground}
 ;format-underline = #027dff
 format-prefix-foreground = ${colors.foreground}
 ;format-prefix-underline = #027dff
-exec = ~/.scripts/updates-arch-combined.sh
+exec = ~/.scripts/fedora-updates
+;exec = ~/.scripts/updates-arch-combined.sh
 interval = 120
 click-left = pamac-manager & disown
 
