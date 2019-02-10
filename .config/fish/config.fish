@@ -8,3 +8,4 @@ source $HOME/.config/fish/abbreviations
 
 set PATH ~/.scripts $PATH
 set PATH ~/.scripts/gen-aliases $PATH
+set PATH /snap/bin $PATH
