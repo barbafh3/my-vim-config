@@ -161,6 +161,7 @@ inoremap `a á
 inoremap `o ó
 inoremap `u ú
 inoremap ^e ê
+inoremap ``a à
 
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>
