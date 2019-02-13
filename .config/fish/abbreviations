@@ -15,6 +15,9 @@ abbr gal "cd ~/.scripts/gen-aliases"
 
 # Config files aliases
 
+
+# Command aliases
+
 abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
@@ -37,9 +40,6 @@ abbr cfbs "vim ~/.scripts/gen-aliases/config-base"
 abbr cmbs "vim ~/.scripts/gen-aliases/command-base"
 abbr fsbs "vim ~/.scripts/gen-aliases/fish-base"
 abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
-
-# Command aliases
-
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -49,17 +49,18 @@ abbr svu "spotifycli --volumeup"
 abbr svd "spotifycli --volumedown"
 abbr pac "sudo pacman"
 abbr sctl "sudo systemctl"
-abbr gs "git status"
-abbr gd "git difftool"
-abbr gr "git remove"
-abbr gc "git commit"
-abbr gp "git push"
+abbr gits "git status"
+abbr gita "git add"
+abbr gitd "git difftool"
+abbr gitr "git remove"
+abbr gitc "git commit"
+abbr gitp "git push"
 abbr mv "mv -i"
 abbr cp "cp -i"
 abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
-abbr sdnf "sudo dnf"
+abbr eop "sudo eopkg"
 
 # Function based aliases
 

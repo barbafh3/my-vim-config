@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo $1.ms | entr groff -ms -ks $1.ms -T pdf > $1.pdf
