@@ -1,0 +1,10 @@
+[Unit]
+Description=Change wallpaper every 15min
+
+[Service]
+User=junior
+Environment=DISPLAY=:0
+ExecStart=/home/junior/.scripts/random-wallpaper
+
+[Install]
+WantedBy=multi-user.target

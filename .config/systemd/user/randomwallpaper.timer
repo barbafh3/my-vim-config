@@ -1,0 +1,12 @@
+[Unit]
+Description=Change wallpaper every 15min
+
+[Service]
+User=junior
+ExecStart=~/.scripts/random-wallpaper
+
+[Timer]
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target
