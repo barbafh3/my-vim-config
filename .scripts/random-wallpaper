@@ -1,12 +1,12 @@
 #!/bin/bash
 
 export PATH="$PATH:$HOME/.local/bin/"
+
+USER=$(whoami)
+PID=$(pgrep -u $USER gnome-session)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
+
 files=($HOME/Imagens/wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
 wal -i $image 
-# Checks if gsettings is present. If so, changes the wallpaper using it aswell
-# so it works on gnome desktop
-#gs="$(rpm -qa | grep gsettings | wc -l)"
-#if [ $gs -gt 0 ] ; then
 gsettings set org.gnome.desktop.background picture-uri file://$image
-#fi
