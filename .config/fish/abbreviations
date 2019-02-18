@@ -1,4 +1,7 @@
 # vi: syntax=bash
+
+# Config files aliases
+
 abbr dl "cd ~/Downloads"
 abbr dc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -12,12 +15,6 @@ abbr rorf "cd ~/dev/rubyonrails"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
 abbr gal "cd ~/.scripts/gen-aliases"
-
-# Config files aliases
-
-
-# Command aliases
-
 abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
@@ -40,6 +37,9 @@ abbr cfbs "vim ~/.scripts/gen-aliases/config-base"
 abbr cmbs "vim ~/.scripts/gen-aliases/command-base"
 abbr fsbs "vim ~/.scripts/gen-aliases/fish-base"
 abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
+
+# Command aliases
+
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sn "spotifycli --next"
@@ -66,7 +66,6 @@ abbr eop "sudo eopkg"
 
 abbr ga "git add -f"
 abbr ls "ls -a --color=auto --group-directories-first"
-abbr proc "ps aux | grep"
 abbr glyph "nerd-font-glyph-gen"
 abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
 abbr buku "env BROWSER=qutebrowser buku"

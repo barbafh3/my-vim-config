@@ -1,0 +1,12 @@
+#!/bin/bash
+
+process="["
+for (( i=0 ; i<${#1} ; i++ )); do
+    if [ $i -eq 1 ] ; then
+        process+="]"
+    fi
+    process+=${1:i:1}
+done
+echo "Command: ps aux | grep $process"
+echo ""
+ps aux | grep $process

@@ -6,6 +6,8 @@
 "
 " ____________________________
 
+set shell=/bin/bash
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -131,6 +133,7 @@ let g:vrc_curl_opts = {
 \}
 
 autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
+autocmd BufWritePost,FileWritePost *.ms execute "!groff -ms %:r.ms -k -T pdf > %:r.pdf"
 
 vnoremap <Up> <NOP>
 inoremap <Up> <NOP>
@@ -179,7 +182,7 @@ nnoremap <leader>d :bd<CR>
 
 " Groff compile mapping
 "nnoremap <leader>ms :silent !groff -ms -ks % -T pdf > %:r.pdf<CR>:redraw!<CR>
-nnoremap <leader>ms :silent !entr-groff %:r
+nnoremap <leader>ms :silent !groff -ms %:r.ms -k -T pdf > %:r.pdf<CR>:redraw!<CR>
 nnoremap <leader>ke :silent !killall entr
 
 nnoremap <c-p> :FZF<CR>

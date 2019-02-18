@@ -1,7 +1,6 @@
 
 abbr ga "git add -f"
 abbr ls "ls -a --color=auto --group-directories-first"
-abbr proc "ps aux | grep"
 abbr glyph "nerd-font-glyph-gen"
 abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
 abbr buku "env BROWSER=qutebrowser buku"
