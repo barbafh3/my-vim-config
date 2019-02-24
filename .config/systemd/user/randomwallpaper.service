@@ -2,7 +2,6 @@
 Description=Change wallpaper every 15min
 
 [Service]
-User=junior
 Environment=DISPLAY=:0
 ExecStart=%h/.scripts/random-wallpaper
 

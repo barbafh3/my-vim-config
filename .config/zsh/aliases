@@ -2,9 +2,6 @@
 
 # Folder aliases
 
-
-# Config files aliases
-
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documentos"
 alias dev="cd ~/dev"
@@ -15,9 +12,13 @@ alias angf="cd ~/dev/angular"
 alias phpf="cd ~/dev/php"
 alias flkf="cd ~/dev/flask"
 alias rorf="cd ~/dev/rubyonrails"
+alias njsf="cd ~/dev/nodejs"
 alias dbc="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
+
+# Config files aliases
+
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
 alias frc="vim ~/.config/fish/config.fish"
@@ -43,9 +44,6 @@ alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
 
 # Command aliases
 
-
-# Function based aliases
-
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
 alias sn="spotifycli --next"
@@ -67,6 +65,9 @@ alias rm="rm -i"
 alias ctb="crontab -e"
 alias z="zathura "
 alias eop="sudo eopkg"
+
+# Function based aliases
+
 # Return the glyph from given NerdFont code
 function glyph(){
     echo -ne "\u$1" | xclip -selection primary
