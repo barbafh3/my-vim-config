@@ -1,0 +1,9 @@
+[Unit]
+Description=Logs randomwallpaper.service status
+
+[Service]
+Type=forking
+ExecStart=%h/.scripts/wallpaperlog
+
+[Install]
+WantedBy=default.target

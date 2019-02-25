@@ -1,0 +1,9 @@
+#!/bin/bash
+
+data="$(date +%d%m%Y)"
+filename=$HOME/.config/log/wallpaper-$data.log
+echo "" >> $filename
+echo "LOG TIME - $(date +%H:%M) ############" >> $filename
+echo "" >> $filename
+systemctl --user status randomwallpaper.service >> $filename
+exit 0

@@ -1,0 +1,8 @@
+[Unit]
+Description=Logs randomwallpaper.service status
+
+[Timer]
+OnUnitActiveSec=30min
+
+[Install]
+WantedBy=timers.target
