@@ -20,3 +20,4 @@ cfbs    ~/.scripts/gen-aliases/config-base
 cmbs    ~/.scripts/gen-aliases/command-base
 fsbs    ~/.scripts/gen-aliases/fish-base
 zbs     ~/.scripts/gen-aliases/zsh-base
+lgbs    ~/.scripts/gen-aliases/log-base

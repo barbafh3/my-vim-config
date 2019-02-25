@@ -38,8 +38,12 @@ abbr cfbs "vim ~/.scripts/gen-aliases/config-base"
 abbr cmbs "vim ~/.scripts/gen-aliases/command-base"
 abbr fsbs "vim ~/.scripts/gen-aliases/fish-base"
 abbr zbs "vim ~/.scripts/gen-aliases/zsh-base"
+abbr lgbs "vim ~/.scripts/gen-aliases/log-base"
 
 # Command aliases
+
+
+# Log aliases
 
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
@@ -62,6 +66,7 @@ abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
 abbr eop "sudo eopkg"
+abbr wplog "cat ~/.config/log/wallpaper-(date '+%d%m%Y').log"
 
 # Function based aliases
 
