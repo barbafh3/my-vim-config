@@ -142,11 +142,11 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Spotify controls
-bindsym XF86AudioPlay exec playerclt --player=spotify play-pause
-bindsym XF86AudioNext exec playerclt --player=spotify next
-bindsym XF86AudioPrev exec playerclt --player=spotify prev
-bindsym $mod+XF86AudioRaiseVolume exec playerclt --player=spotify --volumeup
-bindsym $mod+XF86AudioLowerVolume exec playerclt --player=spotify --volumedown
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify prev
+bindsym $mod+XF86AudioRaiseVolume exec playerctl --player=spotify --volumeup
+bindsym $mod+XF86AudioLowerVolume exec playerctl --player=spotify --volumedown
 
 # Brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -276,7 +276,6 @@ assign [class="qutebrowser"] $workspace2
 assign [class="discord"] $workspace5
 assign [class="Clementine"] $workspace3
 assign [class="Vlc"] $workspace3 
-#assign [class="mpv"] $workspace3 
 assign [class="feh"] $workspace3 
 assign [class="Inkscape"] $workspace4
 assign [class="Gimp-2.8"] $workspace4
@@ -289,7 +288,7 @@ for_window [class="ranger"] move to workspace $workspace5
 assign [class="Lutris"] $workspace7
 assign [class="Steam"] $workspace7
 assign [class="Zathura"] $workspace4
-assign [class="mpv"] $workspace5
+#assign [class="mpv"] $workspace5
 
 #if window with particular class is in another workspace, switch to it immediately
 for_window [class="Terminology"] focus  

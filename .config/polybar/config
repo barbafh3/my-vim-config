@@ -507,14 +507,14 @@ click-left = playerctl --player=spotify next
 [module/updates]
 type = custom/script
 format = "<label> " 
-format-prefix = "  "
-;format-prefix = "  "
+;format-prefix = "  "
+format-prefix = "  "
 format-foreground = ${colors.foreground}
 ;format-underline = #027dff
 format-prefix-foreground = ${colors.foreground}
 ;format-prefix-underline = #027dff
-exec = ~/.scripts/fedora-updates
-;exec = ~/.scripts/updates-arch-combined.sh
+;exec = ~/.scripts/fedora-updates
+exec = ~/.scripts/updates-arch-combined.sh
 interval = 120
 click-left = pamac-manager & disown
 
