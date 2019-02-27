@@ -197,25 +197,26 @@ hide_edge_borders vertical
 hide_edge_borders both
 
 #windows which should never have title and edge bar
-for_window [class="qutebrowser"] border pixel 3
-for_window [class="Firefox"] border pixel 3 
-for_window [class="Spotify"] border pixel 3
-for_window [class="discord"] border pixel 3
-for_window [class="terminology"] border pixel 3
-for_window [class="kitty"] border pixel 3
-for_window [class="Lutris"] border pixel 3
-for_window [class="Gimp"] border pixel 3
-for_window [class="vlc"] border pixel 3
-for_window [class="Zathura"] border pixel 3
-for_window [class="Nemo"] border pixel 3
-for_window [class="ksysguard"] border pixel 3
-for_window [class="Telegram"] border pixel 3
-for_window [class="Keepassx"] border pixel 3
-for_window [class="Manjaro Settings Manager"] border pixel 3
-for_window [class="Thunar"] border pixel 3
-for_window [class="mpv"] border pixel 3
-for_window [class="kate"] border pixel 3
-for_window [class="Pamac-manager"] border pixel 3
+for_window [class="qutebrowser"] border pixel 2
+for_window [class="Firefox"] border pixel 2
+for_window [class="Spotify"] border pixel 2
+for_window [class="discord"] border pixel 2
+for_window [class="terminology"] border pixel 2
+for_window [class="kitty"] border pixel 2
+for_window [class="Lutris"] border pixel 2
+for_window [class="Gimp"] border pixel 2
+for_window [class="vlc"] border pixel 2
+for_window [class="Zathura"] border pixel 2
+for_window [class="Nemo"] border pixel 2
+for_window [class="ksysguard"] border pixel 2
+for_window [class="Telegram"] border pixel 2
+for_window [class="Keepassx"] border pixel 2
+for_window [class="Manjaro Settings Manager"] border pixel 2
+for_window [class="Thunar"] border pixel 2
+for_window [class="mpv"] border pixel 2
+for_window [class="kate"] border pixel 2
+for_window [class="Pamac-manager"] border pixel 2
+for_window[class="konsole"] border pixel 2
 
 #----------------------------------------
 #Workspaces
@@ -407,5 +408,3 @@ exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
 exec_always --no-startup-id tlp start && notify-send "TLP started"
 # Set wallpaper
 exec_always --no-startup-id $HOME/.scripts/random-wallpaper
-# Set natural scrolling for the touchpad
-exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113

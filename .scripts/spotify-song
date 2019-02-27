@@ -1,7 +1,13 @@
 #!/bin/bash
 
-song=$(playerctl -p spotify metadata xesam:title)
-artist=$(playerctl -p spotify metadata xesam:artist)
-response=" Spotify | $artist - $song "
+playerctl -p spotify metadata &> /dev/null
+result=$(echo $?)
+if [ $result -eq 0 ] ; then
+    song=$(playerctl -p spotify metadata xesam:title)
+    artist=$(playerctl -p spotify metadata xesam:artist)
+    response=" Spotify | $artist - $song "
+else
+    response="Spotify not running"
+fi
 
 echo "$response"
