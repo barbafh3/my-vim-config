@@ -1,0 +1,7 @@
+#!/bin/bash
+
+song=$(playerctl -p spotify metadata xesam:title)
+artist=$(playerctl -p spotify metadata xesam:artist)
+response=" Spotify | $artist - $song "
+
+echo "$response"

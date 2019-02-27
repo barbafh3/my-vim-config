@@ -56,7 +56,7 @@ font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = i3
-modules-center = previous play next
+modules-center = spotify previous play next
 modules-right = volume sep battery battery-info sep wireless-network sep updates mydate power-icon sep
 
 tray-position = right
@@ -460,9 +460,9 @@ label-foreground = ${colors.foreground}
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "  "
+;format-prefix = "  "
 format = <label>
-exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
+exec = $HOME/.scripts/spotify-song
 ;format-underline = #1db954
 ;label-foreground = #ffffff
 ;label-background = #2e8b57
