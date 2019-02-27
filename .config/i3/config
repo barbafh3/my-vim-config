@@ -407,4 +407,5 @@ exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
 exec_always --no-startup-id tlp start && notify-send "TLP started"
 # Set wallpaper
 exec_always --no-startup-id $HOME/.scripts/random-wallpaper
-
+# Set natural scrolling for the touchpad
+exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
