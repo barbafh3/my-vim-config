@@ -1,7 +1,7 @@
 # Configure Internet Message Access Protocol for reading mail
 
 source $HOME/.config/neomutt/neomutt_colors
-source "gpg -dq $HOME/.config/neomutt/neomutt_gmail.gpg |"
+source "gpg -dq $HOME/.config/neomutt/neomutt-gmail-info.gpg |"
 
 # Username and password for your Gmail or G Suite account
 set imap_user = $my_email
