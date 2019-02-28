@@ -56,7 +56,8 @@ font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = i3
-modules-center = spotify previous play next
+modules-center = spotify
+;modules-center = spotify previous play next
 modules-right = volume sep battery battery-info sep wireless-network sep updates mydate power-icon sep
 
 tray-position = right
