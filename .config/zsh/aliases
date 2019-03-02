@@ -2,6 +2,9 @@
 
 # Folder aliases
 
+
+# Config files aliases
+
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documentos"
 alias dev="cd ~/dev"
@@ -16,9 +19,6 @@ alias njsf="cd ~/dev/nodejs"
 alias dbc="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
-
-# Config files aliases
-
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
 alias frc="vim ~/.config/fish/config.fish"
@@ -50,11 +50,6 @@ alias lgbs="vim ~/.scripts/gen-aliases/log-base"
 
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
-alias sn="spotifycli --next"
-alias sp="spotifycli --prev"
-alias stg="spotifycli --playpause"
-alias svu="spotifycli --volumeup"
-alias svd="spotifycli --volumedown"
 alias pac="sudo pacman"
 alias sctl="sudo systemctl"
 alias gits="git status"

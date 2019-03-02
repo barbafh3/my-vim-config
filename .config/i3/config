@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 bindsym XF86ScreenSaver exec i3lock-fancy
 
 # shutdown/reboot/logout/lock
-bindsym $mod+Shift+s exec $HOME/.scripts/system-dmenu 
+bindsym $mod+Shift+s exec $HOME/.scripts/system/system-dmenu 
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run#

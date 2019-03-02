@@ -345,7 +345,7 @@ label-underline = ${colors.white}
 [module/mydate]
 type = custom/script
 label = %output%
-exec = $HOME/.scripts/date-module
+exec = $HOME/.scripts/polybar/date-module
 interval = 1
 click-left = kitty -e calcurse
 label-foreground = ${colors.foreground}
@@ -353,7 +353,7 @@ label-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
-click-left = $HOME/.scripts/battery-info
+click-left = $HOME/.scripts/polybar/battery-info
 ; This is useful in case the battery never reports 100% charge
 full-at = 99
 
@@ -463,7 +463,7 @@ type = custom/script
 interval = 1
 ;format-prefix = "  "
 format = <label>
-exec = $HOME/.scripts/spotify-song
+exec = $HOME/.scripts/polybar/spotify-song
 ;format-underline = #1db954
 ;label-foreground = #ffffff
 ;label-background = #2e8b57

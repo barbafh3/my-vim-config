@@ -1,10 +1,5 @@
 sz   source      ~/.zshrc
 sf source ~/.config/fish/config.fish
-sn spotifycli --next
-sp spotifycli --prev
-stg spotifycli --playpause
-svu spotifycli --volumeup
-svd spotifycli --volumedown
 pac sudo pacman
 sctl sudo systemctl
 gits git status
