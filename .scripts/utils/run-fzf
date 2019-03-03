@@ -1,16 +1,24 @@
 #!/bin/bash
 
 mode=$1
-echo $mode
 folder=/home/$USER
 
-if [ $mode == scripts ]; then
-    folder=/home/$USER/.scripts
-    echo $folder
-fi
-if [ $mode == dev ]; then
-    folder=/home/$USER/dev
-    echo $folder
-fi
+case $mode in
+    scripts)
+        folder+=/.scripts
+        ;;
+    dev)
+        folder+=/dev
+        ;;
+    documents)
+        folder+=/Documentos
+        ;;
+    images)
+        folder+=/Imagens
+        ;;
+    downloads)
+        folder+=/Downloads
+esac
 
-du -a $folder/* | awk '{print $2}' | fzf | xargs -r $EDITOR 2>/dev/null
+du -a --exclude={*node_modules,*venv,*.git,*python3*} $folder/* | 
+    awk '{print $2}' | fzf | xargs -r $EDITOR

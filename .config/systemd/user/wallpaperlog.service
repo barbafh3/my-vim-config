@@ -3,7 +3,7 @@ Description=Logs randomwallpaper.service status
 
 [Service]
 Type=forking
-ExecStart=%h/.scripts/wallpaperlog
+ExecStart=%h/.scripts/system/wallpaperlog
 
 [Install]
 WantedBy=default.target

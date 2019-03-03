@@ -1,6 +1,6 @@
 # vi: syntax=bash
 abbr dl "cd ~/Downloads"
-abbr dc "cd ~/Documentos"
+abbr doc "cd ~/Documentos"
 abbr dev "cd ~/dev"
 abbr pyf "cd ~/dev/python"
 abbr jsf "cd ~/dev/js"
@@ -42,9 +42,6 @@ abbr lgbs "vim ~/.scripts/gen-aliases/log-base"
 
 # Command aliases
 
-
-# Log aliases
-
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr pac "sudo pacman"
@@ -61,6 +58,9 @@ abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
 abbr eop "sudo eopkg"
+
+# Log aliases
+
 abbr wplog "cat ~/.config/log/wallpaper-(date '+%d%m%Y').log"
 
 # Function based aliases
@@ -77,3 +77,6 @@ abbr svu "playerctl -p spotify volume +0.05"
 abbr svd "playerctl -p spotify volume -0.05"
 abbr sc "run-fzf scripts"
 abbr dv "run-fzf dev" 
+abbr dc "run-fzf documents"
+abbr img "run-fzf images"
+abbr dls "run-fzf downloads"
