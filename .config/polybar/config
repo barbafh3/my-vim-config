@@ -90,7 +90,7 @@ type = custom/text
 content = "  "
 content-foreground = ${colors.foreground}
 ;content-underline = #ffa500
-click-left = $HOME/.scripts/battery-info
+click-left = $HOME/.scripts/polybar/battery-info
 
 [module/sep]
 type = custom/text

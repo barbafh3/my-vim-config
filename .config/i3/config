@@ -407,4 +407,4 @@ exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
 # Starts TLP for battery management
 exec_always --no-startup-id tlp start && notify-send "TLP started"
 # Set wallpaper
-exec_always --no-startup-id $HOME/.scripts/random-wallpaper
+exec_always --no-startup-id $HOME/.scripts/utils/random-wallpaper
