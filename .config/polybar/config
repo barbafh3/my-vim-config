@@ -83,7 +83,7 @@ type = custom/text
 content = "%{T6} ⏻%{T1}"
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
-click-left = bash ~/.scripts/system-dmenu
+click-left = bash ~/.scripts/system/system-dmenu
 
 [module/battery-info]
 type = custom/text
