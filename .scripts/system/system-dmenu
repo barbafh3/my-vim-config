@@ -2,29 +2,34 @@
 
 . "${HOME}/.cache/wal/colors.sh"
 
-CHOICE=$(printf "Bloquear\\nSuspender\\nSair\\nReiniciar\\nDesligar" | dmenu -i -p "Sistema" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
+CHOICE=$(printf "Bloquear\\nSuspender\\nSair\\nReiniciar\\nDesligar\\nCancelar" \
+          | dmenu -i -p "Sistema" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
 
-YN=$(printf "Não\\nSim" | dmenu -i -p "Tem certeza?" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
+if [ "$CHOICE" != "Cancelar" ] && [ "$CHOICE" != "" ]; then
 
-if [ "$YN" = "Sim" ]; then
-    if [ "$CHOICE" = "Bloquear" ]; then
-        i3lock-fancy
-        exit 0
-    fi
-    if [ "$CHOICE" = "Sair" ]; then
-        i3-msg exit
-        exit 0
-    fi
-    if [ "$CHOICE" = "Reiniciar" ]; then
-        reboot
-        exit 0
-    fi
-    if [ "$CHOICE" = "Desligar" ]; then
-        shutdown -h now
-        exit 0
-    fi
-    if [ "$CHOICE" = "Suspender" ]; then
-        systemctl suspend
-        exit 0
+    YN=$(printf "Não\\nSim" \
+          | dmenu -i -p "Tem certeza?" -nb $color0 -sb $color1 -sf $color15 -nf $color15 -h 27 )
+
+    if [ "$YN" = "Sim" ]; then
+        if [ "$CHOICE" = "Bloquear" ]; then
+            i3lock-fancy
+            exit 0
+        fi
+        if [ "$CHOICE" = "Sair" ]; then
+            i3-msg exit
+            exit 0
+        fi
+        if [ "$CHOICE" = "Reiniciar" ]; then
+            reboot
+            exit 0
+        fi
+        if [ "$CHOICE" = "Desligar" ]; then
+            shutdown -h now
+            exit 0
+        fi
+        if [ "$CHOICE" = "Suspender" ]; then
+            systemctl suspend
+            exit 0
+        fi
     fi
 fi
