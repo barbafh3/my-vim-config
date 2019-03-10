@@ -1,4 +1,7 @@
 # vi: syntax=bash
+
+# Config files aliases
+
 abbr dl "cd ~/Downloads"
 abbr doc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -13,9 +16,6 @@ abbr njsf "cd ~/dev/nodejs"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
 abbr gal "cd ~/.scripts/gen-aliases"
-
-# Config files aliases
-
 abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
@@ -70,7 +70,6 @@ abbr ls "lsd --group-dirs first -a"
 abbr glyph "nerd-font-glyph-gen"
 abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
 abbr buku "env BROWSER=qutebrowser buku"
-abbr pu "sudo pacman -Syyu"
 abbr yu "yay -Syyu"
 abbr tmux "tmux -f ~/.config/tmux/tmux.conf"
 abbr svu "playerctl -p spotify volume +0.05"
