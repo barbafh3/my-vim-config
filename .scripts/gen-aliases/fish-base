@@ -1,6 +1,6 @@
 
 abbr ga "git add -f"
-abbr ls "lsd --group-dirs first -a"
+abbr ls "ls --color --group-directories-first -a"
 abbr glyph "nerd-font-glyph-gen"
 abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
 abbr buku "env BROWSER=qutebrowser buku"
