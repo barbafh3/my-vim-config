@@ -2,10 +2,12 @@
 
 response=""
 # Try to get metadata from spotify
-playerctl -p spotify metadata &> /dev/null
+state=$(playerctl -p spotify metadata 2>&1 | grep -c "xesam") 
 # If the status is 0 (Spotify is running), gets the information
 # else, tells that Spotify is not running
-if [ $(echo $?) -eq 0 ] ; then
+if [ $state -eq 0 ]; then
+    response=""
+else
     song=$(playerctl -p spotify metadata xesam:title)
     artist=$(playerctl -p spotify metadata xesam:artist)
     response=" Spotify | $artist - $song "
