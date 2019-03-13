@@ -145,9 +145,12 @@ vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
 nnoremap ; :
-inoremap {<CR> {<CR>}<Esc>O<TAB>
-inoremap (<CR> (<CR>)<Esc>O<TAB>
-inoremap [<CR> [<CR>]<Esc>O<TAB>
+inoremap {<CR> {<CR><BS>}<Esc>ko
+inoremap {<Space> {<Space><Space>}<Esc>hi
+inoremap (<CR> (<CR><BS>)<Esc>ko
+inoremap (<Space> (<Space><Space>)<Esc>hi
+inoremap [<CR> [<CR><BS>]<Esc>ko
+inoremap [<Space> [<Space><Space>]<Esc>hi
 
 noremap <C-l> <c-w>l
 noremap <C-k> <c-w>k

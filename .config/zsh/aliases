@@ -13,6 +13,7 @@ alias phpf="cd ~/dev/php"
 alias flkf="cd ~/dev/flask"
 alias rorf="cd ~/dev/rubyonrails"
 alias njsf="cd ~/dev/nodejs"
+alias jv="cd ~/dev/java"
 alias dbc="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
@@ -45,9 +46,6 @@ alias lgbs="vim ~/.scripts/gen-aliases/log-base"
 
 # Command aliases
 
-
-# Log aliases
-
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
 alias pac="sudo pacman"
@@ -64,6 +62,9 @@ alias rm="rm -i"
 alias ctb="crontab -e"
 alias z="zathura "
 alias eop="sudo eopkg"
+
+# Log aliases
+
 
 # Function based aliases
 
