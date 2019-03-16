@@ -26,7 +26,7 @@ EndSection
 
 Use vim as diff tool for git diff:
 
-```
+```shell
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.d difftool
@@ -36,7 +36,7 @@ git config --global alias.d difftool
 
 Disable ipv6 by adding these lines (or creating the file if it doesn't exist) to the file /etc/sysctl.conf (at this time ipv6 causes slowdown on every action that is internet dependant)
 
-```
+```shell
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
