@@ -215,7 +215,7 @@ com! WP call WordProcessorMode()
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.snippet'
+let g:closetag_filenames = '*.html,*.xml,*.xhtml,*.phtml,*.js,*.snippet'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.

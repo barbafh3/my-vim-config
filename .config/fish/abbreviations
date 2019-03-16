@@ -1,4 +1,7 @@
 # vi: syntax=bash
+
+# Config files aliases
+
 abbr dl "cd ~/Downloads"
 abbr doc "cd ~/Documentos"
 abbr dev "cd ~/dev"
@@ -14,9 +17,6 @@ abbr jv "cd ~/dev/java"
 abbr dbc "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
 abbr gal "cd ~/.scripts/gen-aliases"
-
-# Config files aliases
-
 abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
 abbr frc "vim ~/.config/fish/config.fish"
@@ -59,6 +59,7 @@ abbr rm "rm -i"
 abbr ctb "crontab -e"
 abbr z "zathura "
 abbr eop "sudo eopkg"
+abbr mkdir "mkdir -p"
 
 # Log aliases
 

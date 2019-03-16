@@ -14,3 +14,4 @@ rm rm -i
 ctb crontab -e
 z zathura
 eop sudo eopkg
+mkdir mkdir -p
