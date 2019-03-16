@@ -30,7 +30,7 @@ These are the packages I use or that I'm experimenting with. All packages marked
 [spotify - AUR](https://github.com/spotify)  
 [telegram-desktop](https://github.com/telegramdesktop/tdesktop)  
 [timeshift](https://github.com/teejee2008/timeshift)  
-[tlp](Search domain github.com/linrunner/TLPhttps://github.com/linrunner/TLP)  
+[tlp](https://github.com/linrunner/TLP)  
 [tmux](https://github.com/tmux/tmux)  
 [twitch-curses - AUR](https://gitlab.com/corbie/twitch-curses)  
 [udiskie](https://github.com/coldfix/udiskie)  
