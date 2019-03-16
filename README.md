@@ -10,7 +10,7 @@ Configurations
 ------
 
 
-###This section holds all configurations that are not in my home folder
+### This section holds all configurations that are not in my home folder
 
 ------
 
