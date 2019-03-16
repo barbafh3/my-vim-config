@@ -11,7 +11,7 @@ Configurations
 
 
 #### This section holds all configurations that are not in my home folder
-
+    
 ------
 
 For Touchpad natural scrolling I created the file /etc/X11/xorg.conf.d/30-touchpad.conf and added the following lines (as explained in the ArchWiki page https://wiki.archlinux.org/index.php/Libinput#Common_options):
