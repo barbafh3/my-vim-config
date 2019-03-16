@@ -7,7 +7,7 @@ and can be used at your own discretion.
 
 ### Configurations
 
-#### This section holds all configurations that are not in my home folder
+This section holds all configurations that are not in my home folder
     
 ------
 
@@ -44,6 +44,6 @@ net.ipv6.conf.lo.disable_ipv6 = 1
 
 After that, use the folowing command to commit the changes:
 
-```
+```fish
 sudo sysctl -p /etc/sysctl.conf
 ```
