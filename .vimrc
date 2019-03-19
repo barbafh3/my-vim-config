@@ -134,6 +134,7 @@ let g:vrc_curl_opts = {
 
 autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
 autocmd BufWritePost,FileWritePost *.ms execute "!groff -ms %:r.ms -k -T pdf > %:r.pdf"
+autocmd BufNewFile,BufRead .vrapperrc set syntax=vim
 
 vnoremap <Up> <NOP>
 inoremap <Up> <NOP>
