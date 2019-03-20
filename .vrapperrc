@@ -1,3 +1,7 @@
+let mapleader = " "
+
+inoremap <Shift>´ "
+
 nnoremap ; :
 
 vnoremap <Up> <NOP>
@@ -8,17 +12,6 @@ vnoremap <Left> <NOP>
 inoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
-
-inoremap ;a ã
-inoremap ;o õ
-inoremap ;c ç
-inoremap `e é
-inoremap `i í
-inoremap `a á
-inoremap `o ó
-inoremap `u ú
-inoremap ^e ê
-inoremap ``a à
 
 nnoremap <leader>dq ciw"<Esc>pa"<Esc>
 nnoremap <leader>sq ciw'<Esc>pa'<Esc>
