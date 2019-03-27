@@ -136,6 +136,11 @@ autocmd BufNewFile,BufRead *.http set syntax=rest ft=rest
 autocmd BufWritePost,FileWritePost *.ms execute "!groff -ms %:r.ms -k -T pdf > %:r.pdf"
 autocmd BufNewFile,BufRead .vrapperrc set syntax=vim
 
+""" Templates 
+
+" Html
+au BufNewFile * silent! 0r ~/.config/vim/templates/%:e.tpl
+
 vnoremap <Up> <NOP>
 inoremap <Up> <NOP>
 vnoremap <Down> <NOP>
