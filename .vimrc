@@ -68,8 +68,8 @@ let g:UltiSnipsExpandTrigger = "<c-Space>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsEditSplit = "context"
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/vim/UltiSnips']
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP ~/Dev'
