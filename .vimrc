@@ -81,18 +81,18 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
-"let g:gruvbox_italic=1
-"colorscheme gruvbox
+let g:gruvbox_italic=1
+colorscheme gruvbox
 "colorscheme solarized8
 "colorscheme badwolf
 "colorscheme tone
 "colorscheme goodwolf
-colorscheme wal
+"colorscheme wal
 
 set noshowmode
 set timeoutlen=300
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='gruvbox'
+"let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -106,7 +106,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "cd /home/barbafh/Dev
 
-set guifont=Fira\ Code\ Regular\ 14
+set guifont=Hasklig\ 14
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4
@@ -221,7 +221,7 @@ com! WP call WordProcessorMode()
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xml,*.xhtml,*.phtml,*.js,*.snippet'
+let g:closetag_filenames = '*.html,*.xml,*.xhtml,*.phtml,*.js,*.snippet,*.py'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
@@ -231,7 +231,7 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 " filetypes like xml, html, xhtml, ...
 " These are the file types where this plugin is enabled.
 "
-let g:closetag_filetypes = 'html,xhtml,phtml,js,snippet'
+let g:closetag_filetypes = 'html,xhtml,phtml,js,snippet,py'
 
 " filetypes like xml, xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.

@@ -16,8 +16,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-gaps inner 15 
-gaps outer 5 
+#gaps inner 15 
+#gaps outer 5 
+gaps inner 0 
+gaps outer 0 
 
 set $mod Mod4
 
@@ -42,7 +44,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec terminology
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec konsole
 
 
 # kill focused window
@@ -115,7 +117,7 @@ bindsym $mod+a focus parent
 bindsym Alt+Ctrl+Del ksysguard
 
 ## Number Bindings
-bindsym $mod+Shift+1 exec xfce4-terminal -e ranger
+bindsym $mod+Shift+1 exec xfce4-terminal -e vifm
 bindsym $mod+Shift+2 exec qutebrowser
 bindsym $mod+Shift+3 exec spotify
 bindsym $mod+Shift+4 exec discord
@@ -219,6 +221,7 @@ for_window [class="Pamac-manager"] border pixel 2
 for_window[class="konsole"] border pixel 2
 for_window[class="Eclipse"] border pixel 2
 for_window[class="Xfce4-terminal"] border pixel 2
+for_window[class="code-oss"] border pixel 2
 
 #----------------------------------------
 #Workspaces

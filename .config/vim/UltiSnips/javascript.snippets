@@ -1,11 +1,57 @@
-snippet react-index
+snippet ;react-index
 import React from 'react';
 import ReactDOM from 'react-dom';
-#import 'semantic-ui-css/semantic.min.css';
+//import 'semantic-ui-css/semantic.min.css';
 
-# Imports base component App
+// Imports base component App
 import App from './components/App';
 
-# Renders App component
+// Renders App component
 ReactDOM.render(<App />, document.querySelector('#root'));
+endsnippet
+
+snippet ;react-component
+import React, { Component } from 'react';
+
+class $1 extends Component{
+
+	render(){
+		return (
+				<div>
+					<p>$1</p>
+				</div>
+		);
+	};
+
+}
+
+export default $1;
+endsnippet
+
+snippet ;react-redux-component
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class $1 extends Component{
+
+	render (){
+		return (
+			<div>
+				<p>Hello!</p>
+			</div>
+		);
+	};
+}
+
+export default connect(null, {})($1);
+endsnippet
+
+snippet ;react-f-component
+import React from 'react';
+
+const $1 = () => {
+	return <div>$1</div>
+};
+
+export default $1;
 endsnippet
