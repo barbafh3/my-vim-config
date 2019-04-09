@@ -9,4 +9,5 @@ export PATH="$PATH:$HOME/.local/bin/"
 files=($HOME/Imagens/wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
 gsettings set org.gnome.desktop.background picture-uri file://$image
-wal -i $image 
+feh --bg-scale $image
+#wal -i $image 
