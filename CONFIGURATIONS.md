@@ -4,10 +4,6 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
-**build-essential on Solus** - Since the build-essential doesn't exist on Solus repository, use the following command: ´sudo eopkg it -c system.devel´
-
-------
-
 **Touchpad Natural Scrolling on i3/i3-gaps** - I created the file /etc/X11/xorg.conf.d/30-touchpad.conf and added the following lines (as explained in the ArchWiki page https://wiki.archlinux.org/index.php/Libinput#Common_options):
 
 ```
