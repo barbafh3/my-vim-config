@@ -4,7 +4,9 @@ Section specific for Solus OS. Since many packages are not present in their repo
 
 ------
 
-**build-essential package** - Since it doesn't exist in Solus repos, use the following command: `sudo eopkg it -c system.devel`
+**build-essential package** - Since it doesn't exist in Solus repos, use the following command: 
+
+`sudo eopkg it -c system.devel`
 
 ------
 
