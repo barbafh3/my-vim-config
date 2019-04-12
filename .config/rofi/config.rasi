@@ -1,7 +1,7 @@
 configuration {
-/*  theme: "gruvbox-dark-soft";*/
+  theme: "gruvbox-dark-soft";
 /*   theme: "oxide"; */
-theme: "~/.cache/wal/colors-rofi-dark.rasi";
+/* theme: "~/.cache/wal/colors-rofi-dark.rasi"; */
 /*	modi: "window,run,ssh";*/
 /*	width: 50;*/
 /*	lines: 15;*/
