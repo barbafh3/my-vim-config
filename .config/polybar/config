@@ -285,7 +285,7 @@ label-unfocused-background = ${colors.background}
 ;label-urgent = %{F#222d32 B#f00 T5}%{F-}%{T6} %icon% %{B#222d32 F#f00 T5}%{F-}%{T1}
 ;label-urgent = %{F#ffffff B#f00 T6} %icon% %{F-}%{T1}
 ;label-urgent = " %icon% "
-label-urgent = "{T6} %icon% %{T1}"
+label-urgent = "%{T6} %icon% %{T1}"
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.alert}
 
