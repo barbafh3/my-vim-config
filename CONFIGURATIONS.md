@@ -4,6 +4,16 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
+**Crackling/buggy sound with pulseaudio** - Edit the file /usr/share/pulseaudio/default.pa and add `tsched=0` to the line:
+
+`load-module module-udev-detect`
+
+End result:
+
+`load-module module-udev-detect tsched=0`
+
+------
+
 **Touchpad Natural Scrolling on i3/i3-gaps** - I created the file /etc/X11/xorg.conf.d/30-touchpad.conf and added the following lines (as explained in the ArchWiki page https://wiki.archlinux.org/index.php/Libinput#Common_options):
 
 ```
