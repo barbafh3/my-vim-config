@@ -3,6 +3,8 @@
     "editor.fontSize": 18,
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
+    "editor.renderWhitespace": "boundary",
     "keyboard.dispatch": "keyCode",
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
+    "vim.leader": "<space>",
 }

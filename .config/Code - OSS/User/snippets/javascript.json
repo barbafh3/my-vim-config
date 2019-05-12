@@ -25,7 +25,7 @@
 			"}\n",
 			"export default $1;"
 		],
-		"description": "Creates a basic React Class Component"
+		"description": "Creates a basic React class component"
 	},
 	"React Function Component": {
 		"prefix": ";react-f-component",
@@ -36,6 +36,6 @@
 			"}\n",
 			"export default $1;"
 		],
-		"description": "Creates a basic React Class Component"
+		"description": "Creates a basic React function component"
 	}
 }
