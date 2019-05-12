@@ -1,6 +1,6 @@
 # Configure Internet Message Access Protocol for reading mail
 
-source $HOME/.config/neomutt/neomutt_colors
+# source $HOME/.config/neomutt/neomutt_colors
 source "gpg -dq $HOME/.config/neomutt/neomutt-gmail-info.gpg |"
 
 # Username and password for your Gmail or G Suite account
@@ -30,7 +30,7 @@ set record = ""
 set sidebar_visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
-set sidebar_width = 40
+set sidebar_width = 30
 
 # Show newest e-mails first
 set sort = reverse-date-received
