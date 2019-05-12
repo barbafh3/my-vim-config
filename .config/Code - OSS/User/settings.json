@@ -6,5 +6,6 @@
     "editor.renderWhitespace": "boundary",
     "keyboard.dispatch": "keyCode",
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "vim.leader": "<space>",
 }
