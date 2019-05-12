@@ -8,7 +8,6 @@
     {
         "key": "ctrl+h",
         "command": "workbench.action.focusSideBar",
-        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+k",
@@ -24,4 +23,42 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "!terminalFocus"
     },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.copySelection",
+        "when": "terminalFocus && terminalTextSelected"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.closeFolder"
+    },
+    {
+        "key": "ctrl+k f",
+        "command": "-workbench.action.closeFolder"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "workbench.view.extension.project-manager"
+    }
 ]
