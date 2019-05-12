@@ -1,6 +1,7 @@
 {
     "editor.fontFamily": "'Hasklig'",
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
+    "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
     "keyboard.dispatch": "keyCode",
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
