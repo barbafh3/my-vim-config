@@ -15,7 +15,7 @@
 	"React Class Component": {
 		"prefix": ";react-component",
 		"body": [
-			"import { Component } from 'react';\n",
+			"import React, { Component } from 'react';\n",
 			"class $1 extends Component {\n",
 			"\trender(){",
 			"\t\treturn (",

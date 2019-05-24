@@ -8,4 +8,7 @@
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "vim.leader": "<space>",
+    "sync.gist": "0f51f60880f3c9b4ed3c0fab7db02810",
+    "editor.lineNumbers": "relative",
+    "python.pythonPath": "${workspaceFolder}/.venv",
 }
