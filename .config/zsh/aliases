@@ -21,14 +21,12 @@ alias vuef="cd ~/dev/vuejs"
 alias dbc="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
-
-# Command aliases
-
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
 alias frc="vim ~/.config/fish/config.fish"
 alias txcf="vim ~/.config/tmux/tmux.conf"
 alias i3cf="vim ~/.config/i3/config"
+alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 alias pbcf="vim ~/.config/polybar/config"
 alias pbsh="vim ~/.config/polybar/launch.sh"
 alias ctcf="vim ~/.config/compton/compton.conf"
@@ -47,6 +45,9 @@ alias cmbs="vim ~/.scripts/gen-aliases/command-base"
 alias fsbs="vim ~/.scripts/gen-aliases/fish-base"
 alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
 alias lgbs="vim ~/.scripts/gen-aliases/log-base"
+
+# Command aliases
+
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
 alias pac="sudo pacman"

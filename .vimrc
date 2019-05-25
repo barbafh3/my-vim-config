@@ -46,6 +46,7 @@ Plugin 'previm/previm'
 Plugin 'prabirshrestha/async.vim'
 Plugin 'christianrondeau/vim-base64'
 Plugin 'dylanaraps/wal.vim'
+Plugin 'kovetskiy/sxhkd-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

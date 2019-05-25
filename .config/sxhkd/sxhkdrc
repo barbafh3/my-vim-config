@@ -1,0 +1,55 @@
+
+# General Bindings
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
+XF86ScreenSaver
+	i3lock-fancy
+super + Return
+    $TERMINAL
+super + shift + s
+	system-dmenu &
+super + d
+	rofi -show run
+# Takes screenshots
+super + F12
+	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
+			-e 'mv $f ~/Imagens/screenshots/' \
+			&& notify-send 'Screenshot Taken'
+ctrl + alt + Delete
+	gnome-system-monitor
+
+# Media Bindings
+
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+XF86AudioPlay
+	playerctl -p spotify play-pause
+XF86AudioNext
+	playerctl -p spotify next
+XF86AudioPrev
+	playerctl -p spotify previous
+
+# Program Bindings
+
+super + shift + 1
+	nemo
+super + shift + 2
+	firefox
+super + shift + 3
+	spotify
+super + shift + 4
+	discord
+super + shift + 5
+	steam
+super + shift + 6
+	lutris
+super + shift + 7
+	manjaro-settings-manager
+

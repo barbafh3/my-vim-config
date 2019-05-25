@@ -3,6 +3,7 @@ vrc     ~/.vimrc
 frc     ~/.config/fish/config.fish
 txcf    ~/.config/tmux/tmux.conf
 i3cf    ~/.config/i3/config
+sxhkdrc ~/.config/sxhkd/sxhkdrc
 pbcf    ~/.config/polybar/config
 pbsh    ~/.config/polybar/launch.sh
 ctcf    ~/.config/compton/compton.conf

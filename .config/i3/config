@@ -16,8 +16,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-#gaps inner 15 
-#gaps outer 5 
+# Change gap spacing - i3-gaps only
 gaps inner 0 
 gaps outer 0 
 
@@ -27,56 +26,17 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:DejaVu Sans Mono, FontAwesome 14
 
-
-#This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec terminology
-bindsym $mod+Return exec kitty
-
-
-# kill focused window
+# Kill window
 bindsym $mod+Shift+q kill
-
-# i3lock
-bindsym XF86ScreenSaver exec i3lock-fancy
-
-# shutdown/reboot/logout/lock
-bindsym $mod+Shift+s exec $HOME/.scripts/system/system-dmenu 
-
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run#
-#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -bw 0 -width 30 -bc "#002b36" -bg "#002b36" -fg "#fdf6e3" 
-bindsym $mod+d exec rofi -show run 
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# # alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -113,87 +73,12 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# open ksysguard task manager
-bindsym Alt+Ctrl+Del ksysguard
-
-## Number Bindings
-bindsym $mod+Shift+1 exec xfce4-terminal -e vifm
-bindsym $mod+Shift+2 exec qutebrowser
-bindsym $mod+Shift+3 exec spotify
-bindsym $mod+Shift+4 exec discord
-bindsym $mod+Shift+5 exec steam
-bindsym $mod+Shift+6 exec lutris
-bindsym $mod+Shift+7 exec manjaro-settings-manager
-bindsym $mod+Shift+8 exec kitty -e calcurse
-bindsym $mod+Shift+9 exec kitty -e twitch-curses
-
-# Screenshot binding
-bindsym $mod+F12 exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 -e 'mv $f ~/Imagens/screenshots/' && notify-send "Screenshot taken"
-
-# Sets up a dropdown terminal window
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 800 400
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-exec --no-startup-id kitty --name dropdown
-
-# pulse audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
-
-# Spotify controls
-bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
-bindsym XF86AudioNext exec playerctl --player=spotify next
-bindsym XF86AudioPrev exec playerctl --player=spotify prev
-bindsym $mod+XF86AudioRaiseVolume exec playerctl --player=spotify --volumeup
-bindsym $mod+XF86AudioLowerVolume exec playerctl --player=spotify --volumedown
-
-# Brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# focus the child container
-#bindsym $mod+d focus child
-
-#######
-#THEME#
-#######
-
-## set primary gruvbox colorscheme colors
-#set $bg #282828
-#set $red #cc241d
-#set $green #98971a
-##set $yellow #d79921
-##set $yellow #cac08e
-#set $yellow #ffffff
-#set $blue #458588
-#set $purple #b16286
-##set $aqua #689d68
-#set $aqua #665c54
-#set $gray #a89984
-##set $darkgray #1d2021
-#set $darkgray #282828
-
 #----------------------------------------
 #Windows and borders
 #----------------------------------------
 
-
 #if current workspace is the one you switch to then go to last workspace
 workspace_auto_back_and_forth yes
-
-#completely remove border for all windows
-#for_window [class="^.*"] border pixel 0
-
-#window title and edge bar
-#class                  border  backgr  text    indicator child_border
-#client.focused 		    #83a598 #458588 #ffffff #2e9ef4   #285577
-#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-#client.urgent           #fe8019 #fb4834 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-#client.background       #ffffff
 
 hide_edge_borders vertical
 hide_edge_borders both
@@ -275,11 +160,8 @@ bindsym $mod+Ctrl+9 move container to workspace $workspace9
 bindsym $mod+Ctrl+0 move container to workspace $workspace10
 
 #assign windows to different workspaces
-#assign [class="terminology"] $workspace1 
-#for_window [class="kitty"] $workspace3 
 assign [class="Firefox"] $workspace2
 assign [class="qutebrowser"] $workspace2
-#for_window [class="Spotify"] move to workspace $workspace3
 assign [class="discord"] $workspace5
 assign [class="Clementine"] $workspace3
 assign [class="Vlc"] $workspace3 
@@ -295,7 +177,6 @@ for_window [class="ranger"] move to workspace $workspace5
 assign [class="Lutris"] $workspace7
 assign [class="Steam"] $workspace7
 assign [class="Zathura"] $workspace4
-#assign [class="mpv"] $workspace5
 
 #if window with particular class is in another workspace, switch to it immediately
 for_window [class="Terminology"] focus  
@@ -414,3 +295,5 @@ exec_always --no-startup-id PATH=$PATH:~/.scripts ; export PATH
 exec_always --no-startup-id tlp start && notify-send "TLP started"
 # Set wallpaper
 exec_always --no-startup-id $HOME/.scripts/utils/random-wallpaper
+# Run Simple X Hotkey Daemon
+exec_always --no-startup-id killall sxhkd && sxhkd &
