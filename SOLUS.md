@@ -1,6 +1,6 @@
 # Solus OS specific configurations/installations
 
-Section specific for Solus OS. Since many packages are not present in their repos and some configurations may be different from Manjaro(my previous distro), i made this section os my README.
+Section specific for Solus OS. Since some packages are not present in their repos and some configurations may be different from Manjaro(my previous distro), i made this section os my README.
 
 ------
 
