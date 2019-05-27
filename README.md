@@ -15,7 +15,7 @@ These files are open to everyone and can be used freely at your own discretion.
 
 [Games](https://www.github.com/barbafh3/dotfiles/blob/laptop/GAMES.md) - This section has game specific configurations
 
-[Fedora specific](https://www.github.com/barbafh3/dotfiles/blob/laptop/FEDORA.md) - This section has Fedora specific configurations and package installation
+[Fedora](https://www.github.com/barbafh3/dotfiles/blob/laptop/FEDORA.md) - This section has Fedora specific configurations and package installation
 
-[Solus OS specific](https://www.github.com/barbafh3/dotfiles/blob/laptop/SOLUS.md) - This section has Solus OS specific configurations and package installation
+[Solus OS](https://www.github.com/barbafh3/dotfiles/blob/laptop/SOLUS.md) - This section has Solus OS specific configurations and package installation
 
