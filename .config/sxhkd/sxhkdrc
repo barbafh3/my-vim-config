@@ -1,6 +1,7 @@
 
 # General Bindings
 
+# Brightness controls - requires xorg-xbacklight
 XF86MonBrightnessUp
 	xbacklight -inc 10
 XF86MonBrightnessDown
@@ -13,7 +14,7 @@ super + shift + s
 	system-dmenu &
 super + d
 	rofi -show run
-# Takes screenshots
+# Takes screenshots - requires scrot
 super + F12
 	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
 			-e 'mv $f ~/Imagens/screenshots/' \
@@ -21,7 +22,7 @@ super + F12
 ctrl + alt + Delete
 	gnome-system-monitor
 
-# Media Bindings
+# Media Bindings - requires pactl and playerctl
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume 0 +5%

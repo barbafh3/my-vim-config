@@ -107,7 +107,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "cd /home/barbafh/Dev
 
-set guifont=Hasklig\ 14
+set guifont=Hasklig\ 12
 set bg=dark 
 set splitbelow splitright 
 set tabstop=4

@@ -1,17 +1,17 @@
-sz   source      ~/.zshrc
-sf source ~/.config/fish/config.fish
-pac sudo pacman
-sctl sudo systemctl
-gits git status
-gita git add
-gitd git difftool
-gitr git remove 
-gitc git commit
-gitp git push
-mv mv -i
-cp cp -i
-rm rm -i
-ctb crontab -e
-z zathura
-eop sudo eopkg
-mkdir mkdir -p
+sz      source     ~/.zshrc
+sf      source     ~/.config/fish/config.fish
+pac     sudo       pacman
+sctl    sudo       systemctl
+gits    git        status
+gita    git        add
+gitd    git        difftool
+gitr    git        remove 
+gitc    git        commit
+gitp    git        push
+mv      mv         -i
+cp      cp         -i
+rm      rm         -i
+ctb     crontab    -e
+z       zathura
+eop     sudo       eopkg
+mkdir   mkdir      -p

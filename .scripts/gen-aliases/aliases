@@ -1,30 +1,110 @@
 #!/bin/bash
 
-folder_file=$HOME/.scripts/gen-aliases/folder-base
-config_file=$HOME/.scripts/gen-aliases/config-base
-command_file=$HOME/.scripts/gen-aliases/command-base
-zsh_base=$HOME/.scripts/gen-aliases/zsh-base
-fish_base=$HOME/.scripts/gen-aliases/fish-base
-log_file=$HOME/.scripts/gen-aliases/log-base
+# folder_file=$HOME/.scripts/gen-aliases/folder-base
+# config_file=$HOME/.scripts/gen-aliases/config-base
+# command_file=$HOME/.scripts/gen-aliases/command-base
+# zsh_base=$HOME/.scripts/gen-aliases/zsh-base
+# fish_base=$HOME/.scripts/gen-aliases/fish-base
+# log_file=$HOME/.scripts/gen-aliases/log-base
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname "$SCRIPT")
+
+folder_file=$BASEDIR/folder-base
+config_file=$BASEDIR/config-base
+command_file=$BASEDIR/command-base
+log_file=$BASEDIR/log-base
+zsh_base=$BASEDIR/zsh-base
+fish_base=$BASEDIR/fish-base
 
 zsh_file=$HOME/.config/zsh/aliases
 fish_file=$HOME/.config/fish/abbreviations
 
-rm $HOME/.config/zsh/aliases
-rm $HOME/.config/fish/abbreviations
+usage="$(basename "$0") [-h][-g][-e <type>] -- generates aliases for zsh and fish
 
-echo "# vi: syntax=bash" | tee -a $zsh_file $fish_file
-echo -e "\n# Folder aliases\n" >> $zsh_file
-sed "s/\s*#.*$//;/^\s*$/d" $folder_file | tee >(awk '{print "alias "$1"=\"cd "$2"\""}' >> $zsh_file) \
-                            >(awk '{print "abbr "$1" \"cd "$2"\""}' >> $fish_file)
-echo -e "\n# Config files aliases\n" | tee -a $zsh_file $fish_file
-sed "s/\s*#.*$//;/^\s*$/d" $config_file | tee >(awk '{print "alias "$1"=\"vim "$2"\""}' >> $zsh_file) \
-                            >(awk '{print "abbr "$1" \"vim "$2"\""}' >> $fish_file)
-echo -e "\n# Command aliases\n" | tee -a $zsh_file $fish_file
-sed "s/\s*#.*$//;/^\s*$/d" $command_file | tee >(awk '{print "alias "$1"=\""$2" "$3"\""}' >> $zsh_file) \
-                            >(awk '{print "abbr "$1" \""$2" "$3"\""}' >> $fish_file)
-echo -e "\n# Log aliases\n" | tee -a $zsh_file $fish_file
-sed "1d" $log_file >> $fish_file
-echo -e "\n# Function based aliases\n" | tee -a $zsh_file $fish_file
-sed "1d" $fish_base >> $fish_file
-sed "1d" $zsh_base >> $zsh_file
+usage:    aliases [arguments]
+   or:    aliases [arguments] [type]
+
+Arguments:
+    -h or --help        Prints help instructions
+    -g or --generate    Generates aliases
+    -e or --edit [type] Edits the specified alias base-file
+                        based on its type: folder, config
+                        command, or log
+
+This script uses four base-files: folder-base for folder aliases, 
+config-base for config editing aliases, command-base for custom command
+aliases and log-base for log based command aliases. All files should be 
+located in the same folder as this script file.
+
+The base files are layed out as follows:
+Desired alias      folder/file/command       arguments (in case of command base)
+
+The aliases are generated as follows (fish shell used as example):
+Folder - uses cd command. E.g. abbr <alias> 'cd <folder>'
+Config - uses vim. E.g. abbr <alias> 'vim <file>'
+Command/Log - uses specified command. E.g. abbr <alias> '<command> <argument>'
+
+Alias/Abbreviation files are the following:
+$HOME/.config/zsh/aliases
+$HOME/.config/fish/abbreviations
+
+Each file is included in their respective shell config file, zshrc or config.fish"
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ] ; then
+    echo "$usage"         
+    exit 0
+fi
+
+if [ "$1" = "-g" ] || [ "$1" = "--generate" ] ; then
+
+    rm $HOME/.config/zsh/aliases
+    rm $HOME/.config/fish/abbreviations
+
+    echo "# vi: syntax=bash" | tee -a $zsh_file $fish_file
+    echo -e "\n# Folder aliases\n" >> $zsh_file
+    sed "s/\s*#.*$//;/^\s*$/d" $folder_file | tee >(awk '{print "alias "$1"=\"cd "$2"\""}' >> $zsh_file) \
+                                >(awk '{print "abbr "$1" \"cd "$2"\""}' >> $fish_file)
+    echo -e "\n# Config files aliases\n" | tee -a $zsh_file $fish_file
+    sed "s/\s*#.*$//;/^\s*$/d" $config_file | tee >(awk '{print "alias "$1"=\"vim "$2"\""}' >> $zsh_file) \
+                                >(awk '{print "abbr "$1" \"vim "$2"\""}' >> $fish_file)
+    echo -e "\n# Command aliases\n" | tee -a $zsh_file $fish_file
+    sed "s/\s*#.*$//;/^\s*$/d" $command_file | tee >(awk '{print "alias "$1"=\""$2" "$3"\""}' >> $zsh_file) \
+                                >(awk '{print "abbr "$1" \""$2" "$3"\""}' >> $fish_file)
+    echo -e "\n# Log aliases\n" | tee -a $zsh_file $fish_file
+    sed "1d" $log_file >> $fish_file
+    echo -e "\n# Function based aliases\n" | tee -a $zsh_file $fish_file
+    sed "1d" $fish_base >> $fish_file
+    sed "1d" $zsh_base >> $zsh_file
+    echo "Aliases successfully generated!"
+    exit 0
+fi
+
+if [ "$1" = "-e" ] || [ "$1" = "--edit" ] ; then
+    if [ -z "$2" ] ; then
+        echo "$(basename "$0"): $1 needs a file type
+E.g. aliases -e folder"
+        exit 0
+    else
+        file=""
+        case $2 in
+            "folder")
+                file=$folder_file
+                ;;
+            "config")
+                file=$config_file
+                ;;
+            "command")
+                file=$command_file
+                ;;
+            "log")
+                file=$log_file
+                ;;
+        esac     
+        vim $file
+        exit 0
+    fi
+fi
+
+echo "$(basename "$0"): argument missing 
+Try -h or --help for more information"
+exit 0
