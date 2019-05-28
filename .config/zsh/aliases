@@ -2,9 +2,6 @@
 
 # Folder aliases
 
-
-# Config files aliases
-
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documentos"
 alias dev="cd ~/dev"
@@ -21,6 +18,12 @@ alias vuef="cd ~/dev/vuejs"
 alias dbc="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
+
+# Config files aliases
+
+
+# Command aliases
+
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
 alias frc="vim ~/.config/fish/config.fish"
@@ -45,9 +48,6 @@ alias cmbs="vim ~/.scripts/gen-aliases/command-base"
 alias fsbs="vim ~/.scripts/gen-aliases/fish-base"
 alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
 alias lgbs="vim ~/.scripts/gen-aliases/log-base"
-
-# Command aliases
-
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
 alias pac="sudo pacman"

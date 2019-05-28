@@ -19,6 +19,25 @@ fish_base=$BASEDIR/fish-base
 zsh_file=$HOME/.config/zsh/aliases
 fish_file=$HOME/.config/fish/abbreviations
 
+if [ ! -f $folder_file ] ; then
+    touch $folder_file
+fi
+if [ ! -f $config_file ] ; then
+    touch $config_file
+fi
+if [ ! -f $command_file ] ; then
+    touch $command_file
+fi
+if [ ! -f $log_file ] ; then
+    touch $log_file
+fi
+if [ ! -f $zsh_base ] ; then
+    touch $zsh_base
+fi
+if [ ! -f $fish_base ] ; then
+    touch $fish_base
+fi
+
 usage="$(basename "$0") [-h][-g][-e <type>] -- generates aliases for zsh and fish
 
 usage:    aliases [arguments]
@@ -57,8 +76,8 @@ fi
 
 if [ "$1" = "-g" ] || [ "$1" = "--generate" ] ; then
 
-    rm $HOME/.config/zsh/aliases
-    rm $HOME/.config/fish/abbreviations
+    rm $zsh_file
+    rm $fish_file
 
     echo "# vi: syntax=bash" | tee -a $zsh_file $fish_file
     echo -e "\n# Folder aliases\n" >> $zsh_file
