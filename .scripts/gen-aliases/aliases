@@ -7,7 +7,6 @@ folder_file=$BASEDIR/folder-base
 config_file=$BASEDIR/config-base
 command_file=$BASEDIR/command-base
 zsh_base=$BASEDIR/zsh-base
-fish_base=$BASEDIR/fish-base
 
 zsh_file=$HOME/.config/zsh/aliases
 fish_file=$HOME/.config/fish/abbreviations
@@ -23,9 +22,6 @@ if [ ! -f $command_file ] ; then
 fi
 if [ ! -f $zsh_base ] ; then
     touch $zsh_base
-fi
-if [ ! -f $fish_base ] ; then
-    touch $fish_base
 fi
 
 usage="$(basename "$0") [-h][-g][-e <type>] -- generates aliases for zsh and fish
@@ -66,18 +62,20 @@ add_fish_or_zsh_alias(){
     if [ "$1" = "fish" ] ; then
         if [ -f $fish_file  ] ; then
             rm $fish_file
+        else
+            touch $fish_file
         fi
         file=$fish_file
         cmd="abbr"
         comp=" "
-        echo "# vi: syntax=bash" >> $file
-        echo -e "\n# Function based aliases\n" >> $fish_file
-        sed "1d" $fish_base >> $fish_file
+        echo "# vi: syntax=sh" >> $file
     fi
 
     if [ "$1" = "zsh" ] ; then
         if [ -f $zsh_file  ] ; then
             rm $zsh_file
+        else
+            touch $zsh_file
         fi
         file=$zsh_file
         cmd="alias"
@@ -95,7 +93,11 @@ add_fish_or_zsh_alias(){
     sed "s/\s*#.*$//;/^\s*$/d" $config_file | awk -v c=$cmd -v o="$comp" '{ print c" "$1""o"\"vim "$2"\"" }' >> $file
 
     echo -e "\n# Command aliases\n" >> $file
-    sed "s/\s*#.*$//;/^\s*$/d" $command_file | awk -v c=$cmd -v o="$comp" '{ print c" "$1""o"\""$2" "${@:3}"\"" }' >> $file
+    sed "s/\s*#.*$//;/^\s*$/d" $command_file | awk -v c=$cmd -v o="$comp" '{
+        printf "%s %s%s", c, $1, o
+        $1=""; sub(/^\s*/, "", $0);
+        printf "\"%s\"\n", $0
+    }' >> $file
 
 }
 
@@ -107,6 +109,7 @@ fi
 if [ "$1" = "--fish" ] ; then
     if [ -z $2 ] ; then
         add_fish_or_zsh_alias fish
+        fish -c source ~/.config/fish/config.fish
         echo "Fish abbreviations successfully generated!"
         exit 0
     else
@@ -119,6 +122,7 @@ fi
 if [ "$1" = "--zsh" ] ; then
     if [ -z $2 ] ; then
         add_fish_or_zsh_alias zsh
+        fish -c source ~/.config/zsh/zshrc
         echo "Zsh aliases successfully generated!"
         exit 0
     else
@@ -133,6 +137,8 @@ if [ "$1" = "-g" ] || [ "$1" = "--generate" ] ; then
     if [ -z "$2" ] ; then
         add_fish_or_zsh_alias fish
         add_fish_or_zsh_alias zsh
+        fish -c source ~/.config/fish/config.fish
+        fish -c source ~/.config/zsh/zshrc
         echo "Aliases successfully generated!"
         exit 0
     else

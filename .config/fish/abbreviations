@@ -1,22 +1,4 @@
-# vi: syntax=bash
-
-# Function based aliases
-
-abbr ga "git add -f"
-abbr ls "ls --color --group-directories-first -a"
-abbr glyph "nerd-font-glyph-gen"
-abbr ddgr "env BROWSER=qutebrowser ddgr -n 5"
-abbr buku "env BROWSER=qutebrowser buku"
-abbr yu "yay -Syyu"
-abbr tx "tmux -f ~/.config/tmux/tmux.conf"
-abbr svu "playerctl -p spotify volume +0.05"
-abbr svd "playerctl -p spotify volume -0.05"
-abbr sc "run-fzf scripts"
-abbr dv "run-fzf dev" 
-abbr dc "run-fzf documents"
-abbr img "run-fzf images"
-abbr dls "run-fzf downloads"
-abbr pacu "sudo pacman -Syyu"
+# vi: syntax=sh
 
 # Folder aliases
 
@@ -33,7 +15,7 @@ abbr rorf "cd ~/dev/rubyonrails"
 abbr njsf "cd ~/dev/nodejs"
 abbr jv "cd ~/dev/java"
 abbr vuef "cd ~/dev/vuejs"
-abbr dbc "cd ~/Dropbox"
+abbr dbx "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
 abbr gal "cd ~/.scripts/gen-aliases"
 
@@ -66,3 +48,32 @@ abbr lgbs "vim ~/.scripts/gen-aliases/log-base"
 
 # Command aliases
 
+abbr sz "source ~/.zshrc"
+abbr sf "source ~/.config/fish/config.fish"
+abbr pac "sudo pacman"
+abbr sctl "sudo systemctl"
+abbr gits "git status"
+abbr gita "git add -f"
+abbr gitd "git difftool"
+abbr gitr "git remove"
+abbr gitc "git commit"
+abbr gitp "git push"
+abbr mv "mv -i"
+abbr cp "cp -i"
+abbr rm "rm -i"
+abbr ctb "crontab -e"
+abbr z "zathura"
+abbr eop "sudo eopkg"
+abbr mkdir "mkdir -p"
+abbr ls "ls --color --group-directories-first -a"
+abbr glyph "nerd-font-glyph-gen"
+abbr yu "yay -Syyu"
+abbr tx "tmux -f ~/.config/tmux/tmux.conf"
+abbr svu "playerctl -p spotify volume +0.05"
+abbr svd "playerctl -p spotify volume -0.05"
+abbr sc "run-fzf scripts"
+abbr dv "run-fzf dev"
+abbr dc "run-fzf documents"
+abbr img "run-fzf images"
+abbr dls "run-fzf downloads"
+abbr pacu "sudo pacman -Syyu"

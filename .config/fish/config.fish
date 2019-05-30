@@ -17,3 +17,7 @@ set PATH /snap/bin $PATH
 set PATH ~/.local/bin $PATH
 set PATH ~/.gem/ruby/2.6.0/bin $PATH
 set TERMINAL /usr/bin/kitty $TERMINAL
+
+fundle plugin 'edc/bass'
+
+fundle init

@@ -1,10 +1,9 @@
-ls      ls         --color --grou-directories-first -a
 sz      source     ~/.zshrc
 sf      source     ~/.config/fish/config.fish
 pac     sudo       pacman
 sctl    sudo       systemctl
 gits    git        status
-gita    git        add
+gita    git        add -f
 gitd    git        difftool
 gitr    git        remove 
 gitc    git        commit
@@ -16,3 +15,15 @@ ctb     crontab    -e
 z       zathura
 eop     sudo       eopkg
 mkdir   mkdir      -p
+ls      ls         --color --group-directories-first -a
+glyph   nerd-font-glyph-gen
+yu      yay        -Syyu
+tx      tmux       -f ~/.config/tmux/tmux.conf
+svu     playerctl  -p spotify volume +0.05
+svd     playerctl  -p spotify volume -0.05
+sc      run-fzf    scripts
+dv      run-fzf    dev
+dc      run-fzf    documents
+img     run-fzf    images
+dls     run-fzf    downloads
+pacu    sudo       pacman -Syyu
