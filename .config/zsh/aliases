@@ -1,4 +1,22 @@
-# vi: syntax=bash
+# vi: syntax=zsh
+
+# Function based aliases
+
+# Return the glyph from given NerdFont code
+function glyph(){
+    echo -ne "\u$1" | xclip -selection primary
+    notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
+}
+# Creates a directory and moves into it
+function mkd(){
+    mkdir $1 && cd $1    
+}
+# Lists all files including hidden, with color and listing folders first
+alias ls="ls -ahN --color=auto --group-directories-first"
+# Lists all processes with given text
+alias proc="ps aux | grep"
+
+alias ga="git add -f"
 
 # Folder aliases
 
@@ -20,9 +38,6 @@ alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
 
 # Config files aliases
-
-
-# Command aliases
 
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
@@ -48,41 +63,6 @@ alias cmbs="vim ~/.scripts/gen-aliases/command-base"
 alias fsbs="vim ~/.scripts/gen-aliases/fish-base"
 alias zbs="vim ~/.scripts/gen-aliases/zsh-base"
 alias lgbs="vim ~/.scripts/gen-aliases/log-base"
-alias sz="source ~/.zshrc"
-alias sf="source ~/.config/fish/config.fish"
-alias pac="sudo pacman"
-alias sctl="sudo systemctl"
-alias gits="git status"
-alias gita="git add"
-alias gitd="git difftool"
-alias gitr="git remove"
-alias gitc="git commit"
-alias gitp="git push"
-alias mv="mv -i"
-alias cp="cp -i"
-alias rm="rm -i"
-alias ctb="crontab -e"
-alias z="zathura "
-alias eop="sudo eopkg"
-alias mkdir="mkdir -p"
 
-# Log aliases
+# Command aliases
 
-
-# Function based aliases
-
-# Return the glyph from given NerdFont code
-function glyph(){
-    echo -ne "\u$1" | xclip -selection primary
-    notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
-}
-# Creates a directory and moves into it
-function mkd(){
-    mkdir $1 && cd $1    
-}
-# Lists all files including hidden, with color and listing folders first
-alias ls="ls -ahN --color=auto --group-directories-first"
-# Lists all processes with given text
-alias proc="ps aux | grep"
-
-alias ga="git add -f"

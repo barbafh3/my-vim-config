@@ -1,3 +1,4 @@
+ls      ls         --color --grou-directories-first -a
 sz      source     ~/.zshrc
 sf      source     ~/.config/fish/config.fish
 pac     sudo       pacman
