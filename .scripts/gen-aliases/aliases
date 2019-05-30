@@ -24,7 +24,7 @@ if [ ! -f $zsh_base ] ; then
     touch $zsh_base
 fi
 
-usage="$(basename "$0") [-h][-g][-e <type>] -- generates aliases for zsh and fish
+usage="$(basename "$0") [-h][-g][--fish][--zsh][-e <type>] -- generates aliases for zsh and fish
 
 usage:    aliases [arguments]
    or:    aliases [arguments] [type]
@@ -49,7 +49,7 @@ Desired alias      folder/file/command       argument (in case of command base)
 The aliases are generated as follows (fish shell used as example):
 Folder - uses cd command. E.g. abbr <alias> 'cd <folder>'
 Config - uses vim. E.g. abbr <alias> 'vim <file>'
-Command - uses specified command. E.g. abbr <alias> '<command> <argument>'
+Command - uses specified command. E.g. abbr <alias> '<command> <arguments>'
 
 Alias/Abbreviation files are the following:
 $HOME/.config/zsh/aliases
