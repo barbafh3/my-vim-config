@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FOLDER=$HOME/.scripts
+mkdir -p $FOLDER/bin
+
+{
+    ln -sf $FOLDER/gen-aliases/aliases $FOLDER/bin/aliases
+    ln -sf $FOLDER/system/system-dmenu $FOLDER/bin/system-dmenu
+    ln -sf $FOLDER/system/system-rofi $FOLDER/bin/system-rofi
+    ln -sf $FOLDER/system/wallpaperlog $FOLDER/bin/wallpaperlog
+    ln -sf $FOLDER/utils/entr-groff $FOLDER/bin/entr-groff
+    ln -sf $FOLDER/utils/nerd-font-glyph-gen $FOLDER/bin/nerd-font-glyph-gen
+    ln -sf $FOLDER/utils/proc $FOLDER/bin/proc
+    ln -sf $FOLDER/utils/random-wallpaper $FOLDER/bin/random-wallpaper
+    ln -sf $FOLDER/utils/run-fzf $FOLDER/bin/run-fzf
+    echo "Scripts successfully linked to PATH folder"
+    exit 0
+} || {
+    echo $1
+    exit $1
+}
+
