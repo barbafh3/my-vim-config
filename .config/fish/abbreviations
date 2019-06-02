@@ -18,6 +18,7 @@ abbr vuef "cd ~/dev/vuejs"
 abbr dbx "cd ~/Dropbox"
 abbr grf "cd ~/.config/groff"
 abbr gal "cd ~/.scripts/gen-aliases"
+abbr mp "cd ~/MyProjects"
 
 # Config files aliases
 

@@ -36,6 +36,7 @@ alias vuef="cd ~/dev/vuejs"
 alias dbx="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
+alias mp="cd ~/MyProjects"
 
 # Config files aliases
 
