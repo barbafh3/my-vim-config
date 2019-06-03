@@ -7,7 +7,7 @@ CHOICE=$(echo -e $OPTIONS | rofi -dmenu -i -p "Sistema")
 
 if [ "$CHOICE" != "Cancelar" ] && [ "$CHOICE" != "" ] ; then
 
-    OUTPUT=$(echo -e $CONFIRM | rofi -dmenu)
+    OUTPUT=$(echo -e $CONFIRM | rofi -dmenu -i -p "Tem certeza?")
     if [ "$OUTPUT" = "Sim" ] ; then
         case $CHOICE in
             "Bloquear")
