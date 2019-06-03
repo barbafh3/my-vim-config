@@ -11,7 +11,7 @@ XF86ScreenSaver
 super + Return
     $TERMINAL
 super + shift + s
-	system-dmenu &
+	system-rofi &
 super + d
 	rofi -show run
 # Takes screenshots - requires scrot

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPTIONS='Bloquear\nSuspender\nSair\nReiniciar\nDesligar\nCancelar'
+OPTIONS='Cancelar\nDesligar\nReiniciar\nBloquear\nSuspender\nSair\n'
 CONFIRM='Não\nSim'
 
 CHOICE=$(echo -e $OPTIONS | rofi -dmenu -i -p "Sistema")
