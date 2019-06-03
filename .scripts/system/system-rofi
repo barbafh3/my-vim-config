@@ -1,0 +1,31 @@
+#!/bin/bash
+
+OPTIONS='Bloquear\nSuspender\nSair\nReiniciar\nDesligar\nCancelar'
+CONFIRM='Não\nSim'
+
+CHOICE=$(echo -e $OPTIONS | rofi -dmenu -i -p "Sistema")
+
+if [ "$CHOICE" != "Cancelar" ] && [ "$CHOICE" != "" ] ; then
+
+    OUTPUT=$(echo -e $CONFIRM | rofi -dmenu)
+    if [ "$OUTPUT" = "Sim" ] ; then
+        case $CHOICE in
+            "Bloquear")
+                i3lock-fancy
+                ;;
+            "Sair")
+                i3-msg exit
+                ;;
+            "Reiniciar")
+                reboot
+                ;;
+            "Desligar")
+                shutdown -h now
+                ;;
+            "Suspender")
+                systemctl suspend
+                ;;
+        esac
+    fi
+fi
+exit 0
