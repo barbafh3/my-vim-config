@@ -3,7 +3,8 @@ sf      source     ~/.config/fish/config.fish
 pac     sudo       pacman
 sctl    sudo       systemctl
 gits    git        status
-gita    git        add -f
+gita    git        add
+gitaf   git        add -f
 gitd    git        difftool
 gitr    git        remove 
 gitc    git        commit
