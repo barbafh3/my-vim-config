@@ -7,7 +7,8 @@
 " ____________________________
 
 "set shell=/bin/bash
-
+set encoding=utf-8
+scriptencoding utf-8
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -29,8 +30,8 @@ Plugin 'KabbAmine/vullScreen.vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'diepm/vim-rest-console'
-"Plugin 'pangloss/vim-javascript'
-Plugin 'othree/yajs.vim'
+Plugin 'pangloss/vim-javascript'
+"Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -58,6 +59,8 @@ syntax on
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+
+set list listchars=eol:\¬,tab:\|\·,trail:\·,space:\ 
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -221,9 +224,11 @@ com! WP call WordProcessorMode()
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
-"
+
+
 let g:closetag_filenames = '*.html,*.xml,*.xhtml,*.phtml,*.js,*.snippet,*.py'
 
+let g:jsx_ext_required = 0
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
 "
