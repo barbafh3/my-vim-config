@@ -297,3 +297,5 @@ exec_always --no-startup-id tlp start && notify-send "TLP started"
 exec_always --no-startup-id $HOME/.scripts/utils/random-wallpaper
 # Run Simple X Hotkey Daemon
 exec_always --no-startup-id sxhkd
+# Run Dropbox
+exec --no-statup-id dropbox && notify-send "Dropbox started"
