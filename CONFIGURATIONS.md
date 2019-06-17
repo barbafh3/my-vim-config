@@ -2,6 +2,15 @@
 
 All configurations that I made that are not on files inside my home folder are in this file.
 
+
+------
+
+**Disable Youtube player hotkeys** - Since Youtube hotkeys coflict with vim keys, you can disable them using the uBlock Origin add-on for Firefox, go to its dashboard, then My Filters and add the following line:
+
+```
+youtube.com##+js(addEventListener-defuser.js, /^(?:keypress|keydown|keyup)$/)
+```
+
 ------
 
 **Crackling/buggy sound with pulseaudio** - Edit the file /usr/share/pulseaudio/default.pa and add `tsched=0` to the line:
