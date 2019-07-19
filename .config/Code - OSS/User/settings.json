@@ -8,11 +8,19 @@
         "editor.formatOnSave": true
     },
     "keyboard.dispatch": "keyCode",
-    "workbench.colorTheme": "Gruvbox Dark (Soft)",
+    "workbench.colorTheme": "Dracula",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "vim.leader": "<space>",
     "sync.gist": "0f51f60880f3c9b4ed3c0fab7db02810",
     "editor.lineNumbers": "relative",
     "python.pythonPath": "${workspaceFolder}/.venv",
     "window.menuBarVisibility": "toggle",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.associations": {
+        "actions": "Redux-actions",
+        "store": "Redux-store",
+        "components": "React-components",
+        "requests": "Other"
+    }
 }
