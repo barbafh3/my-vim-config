@@ -1,0 +1,5 @@
+#!/bin/bash
+weekDay=$(date +%A)
+month=$(date +%B)
+date=$(date +%A,\ %d\ de\ %b\ de\ %Y)
+notify-send "          ${weekDay^}, $(date +%d) de ${month^} de $(date +%Y) - $(date +%H:%M)"

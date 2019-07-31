@@ -1,26 +1,49 @@
 {
-    "editor.fontFamily": "'Hasklig'",
+    "editor.fontFamily": "'Fira Code'",
     "editor.fontSize": 18,
+    "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
-    "[javascript]": {
-        "editor.formatOnSave": true
-    },
-    "keyboard.dispatch": "keyCode",
-    "workbench.colorTheme": "Dracula",
+    "editor.lineNumbers": "relative",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "window.menuBarVisibility": "toggle",
+    "keyboard.dispatch": "keyCode",
     "vim.leader": "<space>",
     "sync.gist": "0f51f60880f3c9b4ed3c0fab7db02810",
-    "editor.lineNumbers": "relative",
     "python.pythonPath": "${workspaceFolder}/.venv",
-    "window.menuBarVisibility": "toggle",
     "java.configuration.checkProjectSettingsExclusions": false,
-    "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.associations": {
         "actions": "Redux-actions",
         "store": "Redux-store",
         "components": "React-components",
         "requests": "Other"
-    }
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "[java]": {
+        "editor.formatOnSave": true
+    },
+    "[php]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.formatOnSave": true
+    },
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "terminal.integrated.shell.linux": "/bin/bash",
 }

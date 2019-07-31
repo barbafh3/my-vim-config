@@ -1,1 +1,4 @@
-echo "  $(date +%d/%m/%y)  $(date +%H:%M:%S)"
+#!/bin/bash
+# echo "  $(date +%a,\ %d\ de\ %b)  $(date +%H:%M)"
+day=$(date +%a)
+echo "${day^} $(date +%H:%M)"

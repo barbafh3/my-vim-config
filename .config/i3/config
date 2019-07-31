@@ -85,7 +85,7 @@ hide_edge_borders both
 
 #windows which should never have title and edge bar
 for_window [class="qutebrowser"] border pixel 2
-for_window [class="Firefox"] border pixel 2
+for_window [class="firefox"] border pixel 2
 for_window [class="Spotify"] border pixel 2
 for_window [class="discord"] border pixel 2
 for_window [class="terminology"] border pixel 2

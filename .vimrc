@@ -48,12 +48,19 @@ Plugin 'prabirshrestha/async.vim'
 Plugin 'christianrondeau/vim-base64'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'kovetskiy/sxhkd-vim'
+Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype on
 syntax on
+
+" Enable format on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 "Set true colors to work with tmux aswell
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -66,6 +73,8 @@ set list listchars=eol:\¬,tab:\|\·,trail:\·,space:\
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<c-Space>"
@@ -110,12 +119,12 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "cd /home/barbafh/Dev
 
-set guifont=Hasklig\ 12
+set guifont=Fira\ Code\ 14
 set bg=dark 
 set splitbelow splitright 
-set tabstop=4
+set tabstop=2
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
