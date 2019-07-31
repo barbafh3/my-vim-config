@@ -161,7 +161,7 @@ bindsym $mod+Ctrl+9 move container to workspace $workspace9
 bindsym $mod+Ctrl+0 move container to workspace $workspace10
 
 #assign windows to different workspaces
-assign [class="Firefox"] $workspace2
+assign [class="firefox"] $workspace2
 assign [class="qutebrowser"] $workspace2
 assign [class="discord"] $workspace5
 assign [class="Clementine"] $workspace3
