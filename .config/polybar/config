@@ -61,9 +61,8 @@ font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
 modules-left = left-icon i3
-modules-center = date-info mydate 
-modules-right = volume sep battery battery-info sep wireless-network sep updates sep
-
+modules-center = mydate 
+modules-right = updates pulseaudio sep battery battery-info sep wireless-network sep sep
 
 tray-position = right
 tray-background = ${colors.background}
@@ -179,6 +178,49 @@ content-background = #027dff
 ;-------------------------------------------------------------------------------;
 ;								M O D U L E S				 					;
 ;-------------------------------------------------------------------------------;
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;label-muted = 🔇 muted
+label-muted = 🔇
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -361,7 +403,7 @@ label = %output%
 label-margin = 2
 exec = $HOME/.scripts/polybar/date-module
 interval = 30
-click-left = kitty -e calcurse
+click-left = $HOME/.scripts/polybar/my-calendar
 label-foreground = ${colors.foreground}
 ;label-underline = ${colors.white}
 
@@ -397,14 +439,16 @@ time-format = %H:%M
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-charging>
-format-charging = <animation-charging> <label-charging>
+;format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging>
 
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity>
 
 label-foreground = ${colors.foreground}
 ;format-charging-underline = #ffa500
@@ -415,7 +459,8 @@ label-foreground = ${colors.foreground}
 ;   <label-full> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
-format-full = <ramp-capacity> <label-full>
+;format-full = <ramp-capacity> <label-full>
+format-full = <ramp-capacity>
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -523,7 +568,7 @@ click-left = playerctl --player=spotify next
 type = custom/script
 format = "<label> " 
 ;format-prefix = "  "
-format-prefix = "  "
+;format-prefix = "  "
 format-foreground = ${colors.foreground}
 ;format-underline = #027dff
 format-prefix-foreground = ${colors.foreground}

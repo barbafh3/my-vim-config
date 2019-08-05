@@ -11,7 +11,7 @@
     "window.menuBarVisibility": "toggle",
     "keyboard.dispatch": "keyCode",
     "vim.leader": "<space>",
-    "sync.gist": "0f51f60880f3c9b4ed3c0fab7db02810",
+    // "sync.gist": "0f51f60880f3c9b4ed3c0fab7db02810",
     "python.pythonPath": "${workspaceFolder}/.venv",
     "java.configuration.checkProjectSettingsExclusions": false,
     "material-icon-theme.folders.associations": {
@@ -46,4 +46,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "explorer.confirmDelete": false,
     "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.external.linuxExec": "kitty",
 }

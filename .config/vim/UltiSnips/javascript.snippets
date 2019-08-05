@@ -1,10 +1,10 @@
 snippet ;cl
 console.log($1);
 endsnippet
-snippet ;react-index
+
+snippet ;rai "React Index file"
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import 'semantic-ui-css/semantic.min.css';
 
 // Imports base component App
 import App from './components/App';
@@ -13,7 +13,7 @@ import App from './components/App';
 ReactDOM.render(<App />, document.querySelector('#root'));
 endsnippet
 
-snippet ;react-component
+snippet ;racc "Basic class based React Component"
 import React, { Component } from 'react';
 
 class $1 extends Component{
@@ -31,7 +31,7 @@ class $1 extends Component{
 export default $1;
 endsnippet
 
-snippet ;react-redux-component
+snippet ;rarxc "Basic class based React-Redux Component"
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -49,7 +49,7 @@ class $1 extends Component{
 export default connect(null, {})($1);
 endsnippet
 
-snippet ;react-f-component
+snippet ;rafc "Basic function based React Component"
 import React from 'react';
 
 const $1 = () => {
@@ -59,10 +59,12 @@ const $1 = () => {
 export default $1;
 endsnippet
 
-snippet ;redux-main-reducer
-import { combineReducers } from 'redux';
+snippet ;rxs "Basic store with placeholder reducer"
+import { combineReducers, createStore } from 'redux';
 
-export default combineReducers({
+const reducers = combineReducers({
 	replaceMe: () => 'Replace Me!'	
 });
+
+export default store = createStore(reducers);
 endsnippet

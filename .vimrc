@@ -7,7 +7,7 @@
 " ____________________________
 
 "set shell=/bin/bash
-set encoding=utf-8
+set encoding=UTF-8
 scriptencoding utf-8
 filetype off                  " required
 
@@ -19,8 +19,6 @@ call vundle#begin('~/.config/vim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
@@ -42,15 +40,25 @@ Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-user'
-Plugin 'sjl/badwolf'
 Plugin 'previm/previm'
 Plugin 'prabirshrestha/async.vim'
 Plugin 'christianrondeau/vim-base64'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'kovetskiy/sxhkd-vim'
-Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
-Plugin 'leafgarland/typescript-vim'
+"Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
+"Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'sbdchd/neoformat'
+" Colorschemes
+Plugin 'morhetz/gruvbox'
+Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
+Plugin 'jacoborus/tender.vim'
+Plugin 'larsbs/vimterial_dark'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
+" Vim-Devicons is required to be the last plugin
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,9 +66,18 @@ filetype plugin indent on    " required
 filetype on
 syntax on
 
+" Enable relative numbers in NERDTree
+let NERDTreeShowLineNumbers=1
+
 " Enable format on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+autocmd BufWritePre,InsertLeave *.js,*.jsx,*.ts,*.tsx,*.css,*.json,*.html Neoformat
+
+" Generates an import to the word at cursor location
+nnoremap <C-i> :TsuImport<CR>
+
+" let g:prettier#bracket_spacing = 'true'
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "Set true colors to work with tmux aswell
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -71,7 +88,7 @@ set list listchars=eol:\¬,tab:\|\·,trail:\·,space:\
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
@@ -94,8 +111,12 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
-let g:gruvbox_italic=1
-colorscheme gruvbox
+ let g:gruvbox_italic=1
+ colorscheme gruvbox
+
+"colorscheme vimterial_dark
+"colorscheme tender
+"colorscheme molokai
 "colorscheme solarized8
 "colorscheme badwolf
 "colorscheme tone

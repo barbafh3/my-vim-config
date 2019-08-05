@@ -37,6 +37,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+Tab focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -106,9 +107,10 @@ for_window [class="Pamac-manager"] border pixel 2
 for_window[class="konsole"] border pixel 2
 for_window[class="Eclipse"] border pixel 2
 for_window[class="Xfce4-terminal"] border pixel 2
-for_window[class="code-oss"] border pixel 2
+for_window[class="Code"] border pixel 2
 for_window[class="Google-chrome"] border pixel 2
 for_window [class="Rambox"] border pixel 2
+for_window [class="Gnome-terminal"] border pixel 2
 
 #----------------------------------------
 #Workspaces
@@ -121,7 +123,7 @@ bindsym $mod+Shift+grave workspace prev
 bindsym $mod+comma workspace prev
 bindsym $mod+shift+period move container to workspace next
 bindsym $mod+shift+comma move container to workspace prev
-bindsym $mod+Tab workspace next
+#bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace back_and_forth
 
 #assign names to workspaces
@@ -178,15 +180,18 @@ for_window [class="ranger"] move to workspace $workspace5
 assign [class="Lutris"] $workspace7
 assign [class="Steam"] $workspace7
 assign [class="Zathura"] $workspace4
+assign [class="Code"] $workspace1
+for_window [class="Spotify"] move to workspace $workspace3
+for_window [class="spotify"] move to workspace $workspace3
 
 #if window with particular class is in another workspace, switch to it immediately
 for_window [class="Terminology"] focus  
 for_window [class="Discord"] focus  
-for_window [class="Firefox"] focus
-for_window [class="Spotify"] focus
+for_window [class="firefox"] focus
 for_window [class="Vlc"] focus
 for_window [class="Evince"] focus
 for_window [class="feh"] focus
+for_window [class="Code"] focus
 
 # reload the configuration file
 
@@ -267,9 +272,10 @@ client.background       #2B2C2B
 #exec_always --no-startup-id xmodmap ~/.Xmodmap 
 
 exec_always export PATH="${PATH}:${HOME}/.local/bin/"
+exec_always export PATH="${TERMINAL}:/usr/bin/kitty"
 
 # Set Caps Lock to Escape and PrtSc to Super key
-exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option altwin:prtsc_rwin && notify-send "Keys remapped"
+exec_always --no-startup-id setxkbmap -option caps:escape && setxkbmap -option altwin:prtsc_rwin && notify-send -t 5000 "Keys remapped"
 # Load Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Enable compton for all applications
@@ -283,7 +289,7 @@ exec_always --no-startup-id udiskie &
 # Run dunst for desktop notifications
 exec_always --no-startup-id dunst
 # Start KDE Connect 
-exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send "KDE Connect is running" &> /dev/null
+exec_always --no-startup-id /usr/lib/kdeconnectd | notify-send -t 5000 "KDE Connect is running" &> /dev/null
 # Start KDE Connect tray indicator
 exec_always --no-startup-id /usr/bin/indicator-kdeconnect
 # Disable suspend and energy saving
@@ -298,5 +304,7 @@ exec_always --no-startup-id tlp start && notify-send "TLP started"
 exec_always --no-startup-id $HOME/.scripts/utils/random-wallpaper
 # Run Simple X Hotkey Daemon
 exec_always --no-startup-id sxhkd
-# Run Dropbox
-exec --no-statup-id dropbox && notify-send "Dropbox started"
+# Run Dropbox - Icon is broken, try to see if it is fixed
+# exec --no-startup-id dropbox && notify-send "Dropbox started"
+# Run Albert Launcher
+exec --no-startup-id  albert

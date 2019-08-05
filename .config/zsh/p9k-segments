@@ -46,6 +46,9 @@ getLanguageOrFramework(){
     if [[ $dir == *".vim"* ]] ; then
         echo "vim";
     fi
+    if [[ $dir == *"dev/c" ]] ; then
+        echo "c"
+    fi
 }
 
 prompt_lang_segment () {
@@ -102,6 +105,10 @@ prompt_lang_segment () {
         content="\ue7c5 Vim%f"
 		"$1_prompt_segment" "$0" "$2" "green" "gray" "$content" "#"
     fi
+	if [[ $dir == *"dev/c"* ]] ; then
+        content="\ue61e C%f"
+		"$1_prompt_segment" "$0" "$2" "green" "gray" "$content" "#"
+  fi
 }
 
 prompt_internet_signal(){

@@ -9,11 +9,11 @@ XF86MonBrightnessDown
 XF86ScreenSaver
 	i3lock-fancy
 super + Return
-    $TERMINAL
+	/usr/bin/kitty
 super + shift + s
 	system-rofi &
-super + d
-	rofi -show drun -show-icons
+# super + d
+# 	rofi -show drun -show-icons
 # Takes screenshots - requires scrot
 super + F12
 	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
