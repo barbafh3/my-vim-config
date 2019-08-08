@@ -32,6 +32,7 @@ Plugin 'pangloss/vim-javascript'
 "Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf'
@@ -66,8 +67,13 @@ filetype plugin indent on    " required
 filetype on
 syntax on
 
-" Enable relative numbers in NERDTree
+" NERDTree Configurations
 let NERDTreeShowLineNumbers=1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+let NERDTreeWinSize=25
 
 " Enable format on save
 autocmd BufWritePre,InsertLeave *.js,*.jsx,*.ts,*.tsx,*.css,*.json,*.html Neoformat
