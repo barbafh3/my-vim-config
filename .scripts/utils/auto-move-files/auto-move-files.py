@@ -1,3 +1,18 @@
+#
+#
+#
+#  Auto-move-files
+#
+#  Moves recently created or moved files on your Downloads folder 
+#  into their content specific folders (Music, Video, etc)
+#
+#  Modify 'user' and folder paths to match your folder structure
+#
+#  Created by Gilberto "Onizudo" Timotheo
+#
+#
+#
+
 from time import localtime, strftime, sleep
 import os
 import shutil
@@ -5,7 +20,9 @@ import mimetypes
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-homeFolder = "/home/junior"
+# All folder locations
+user = "junior"
+homeFolder = "/home/{}".format(user)
 downloadPath = "{}/Downloads".format(homeFolder)
 soundPath = "{}/Música".format(homeFolder)
 imagePath = "{}/Imagens".format(homeFolder)
