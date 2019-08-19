@@ -1,0 +1,11 @@
+[Unit]
+Description=Auto-move files from Downloads folder
+
+[Service]
+Type=simple
+Environment=DISPLAY=:1
+ExecStart=%h/.scripts/utils/auto-move-files/run-script
+
+[Install]
+WantedBy=default.target
+

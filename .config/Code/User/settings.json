@@ -31,8 +31,14 @@
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
   ],
   "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
@@ -41,8 +47,11 @@
   "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDelete": false,
-  "terminal.integrated.shell.linux": "/bin/bash",
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
   "terminal.explorerKind": "external",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.external.linuxExec": "kitty"
+  "terminal.external.linuxExec": "kitty",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false
 }
