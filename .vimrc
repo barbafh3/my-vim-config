@@ -47,10 +47,15 @@ Plugin 'christianrondeau/vim-base64'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'kovetskiy/sxhkd-vim'
 "Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
 "Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
+"Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'dense-analysis/ale'
+"Plugin 'Quramy/tsuquyomi'
 Plugin 'sbdchd/neoformat'
 " Colorschemes
+Plugin 'dracula/vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
@@ -66,6 +71,14 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 filetype on
 syntax on
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+ \ 'javascript': ['prettier', 'eslint'],
+ \ 'typescript': ['prettier', 'eslint']
+ \ }
 
 " NERDTree Configurations
 let NERDTreeShowLineNumbers=1
@@ -120,6 +133,7 @@ augroup END
  let g:gruvbox_italic=1
  colorscheme gruvbox
 
+"colorscheme dracula
 "colorscheme vimterial_dark
 "colorscheme tender
 "colorscheme molokai

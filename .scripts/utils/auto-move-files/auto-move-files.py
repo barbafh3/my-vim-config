@@ -1,17 +1,15 @@
-#
-#
+####
 #
 #  Auto-move-files
 #
-#  Moves recently created or moved files on your Downloads folder 
+#  Moves recently created or moved files on your Downloads folder
 #  into their content specific folders (Music, Video, etc)
 #
 #  Modify 'user' and folder paths to match your folder structure
 #
 #  Created by Gilberto "Onizudo" Timotheo
 #
-#
-#
+####
 
 from time import localtime, strftime, sleep
 import os
@@ -88,7 +86,8 @@ class moveFile(FileSystemEventHandler):
         if self.isVideoFile(ext):
             path = videoPath
             hasPath = True
-        if !hasPath:
+        # If it doesn't fit the other types, move to Documents folder
+        if (not hasPath):
             path = docPath
         oldFile = "{}/{}{}".format(downloadPath, fileName, ext)
         newFile = "{}/{}{}".format(path, newFileName, ext)
@@ -106,6 +105,7 @@ class moveFile(FileSystemEventHandler):
 
     def on_created(self, event):
         self.handleFile(event)
+
 
 # Main Method
 if __name__ == "__main__":
