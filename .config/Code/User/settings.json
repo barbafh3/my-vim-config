@@ -40,7 +40,7 @@
   //     "autoFix": true
   //   }
   // ],
-  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "workbench.colorTheme": "Wal Bordered",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "javascript.preferences.quoteStyle": "single",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,

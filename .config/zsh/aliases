@@ -43,6 +43,7 @@ alias mp="cd ~/MyProjects"
 
 alias zrc="vim ~/.config/zsh/zshrc"
 alias vrc="vim ~/.vimrc"
+alias nvrc="vim ~/.config/nvim/init.vim"
 alias frc="vim ~/.config/fish/config.fish"
 alias txcf="vim ~/.config/tmux/tmux.conf"
 alias i3cf="vim ~/.config/i3/config"

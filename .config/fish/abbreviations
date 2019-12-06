@@ -25,6 +25,7 @@ abbr mp "cd ~/MyProjects"
 
 abbr zrc "vim ~/.config/zsh/zshrc"
 abbr vrc "vim ~/.vimrc"
+abbr nvrc "vim ~/.config/nvim/init.vim"
 abbr frc "vim ~/.config/fish/config.fish"
 abbr txcf "vim ~/.config/tmux/tmux.conf"
 abbr i3cf "vim ~/.config/i3/config"

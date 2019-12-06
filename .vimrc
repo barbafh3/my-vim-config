@@ -101,7 +101,7 @@ nnoremap <C-i> :TsuImport<CR>
 "Set true colors to work with tmux aswell
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
+"set termguicolors
 
 set list listchars=eol:\¬,tab:\|\·,trail:\·,space:\ 
 
@@ -130,8 +130,8 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
- let g:gruvbox_italic=1
- colorscheme gruvbox
+"let g:gruvbox_italic=1
+"colorscheme gruvbox
 
 "colorscheme dracula
 "colorscheme vimterial_dark
@@ -141,7 +141,7 @@ augroup END
 "colorscheme badwolf
 "colorscheme tone
 "colorscheme goodwolf
-"colorscheme wal
+colorscheme wal
 
 set noshowmode
 set timeoutlen=300
