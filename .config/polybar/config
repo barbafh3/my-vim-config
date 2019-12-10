@@ -60,9 +60,12 @@ font-3 = Weather Icons:size=12;1
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 
-modules-left = left-icon i3
+modules-left = left-icon bspwm
 modules-center = mydate 
-modules-right = updates pulseaudio sep battery battery-info sep wireless-network bar-sep
+; PC
+modules-right = updates pulseaudio sep wired-network bar-sep
+; Laptop
+;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
 tray-position = right
 tray-background = ${colors.background}
@@ -183,6 +186,91 @@ content-background = #027dff
 ;-------------------------------------------------------------------------------;
 ;								M O D U L E S				 					;
 ;-------------------------------------------------------------------------------;
+
+[module/wired-network]
+type = internal/network
+interface = enp3s0
+
+; Default: %ifname% %local_ip%
+label-connected = 
+label-connected-foreground = #eefafafa
+
+; Default: (none)
+label-disconnected = 
+label-disconnected-foreground = #66ffffff
+
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; Default: true
+pin-workspaces = true
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+ws-icon-0 = code;
+ws-icon-1 = browser;爵
+ws-icon-2 = music;ﱘ
+ws-icon-3 = chat;ﮠ
+ws-icon-default = 
+
+label-occupied = %icon%
+label-occupied-foreground = #dd
+label-occupied-underline = #f7ed91
+label-occupied-font = 4
+;label-occupied-padding = 1
+
+
+label-empty = %icon%
+label-empty-foreground = #55
+label-empty-font = 4
+;label-empty-padding = 1
+
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
+;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
+; Default: <label-state>
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-focused = %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-font = 4
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 1
+;label-separator-foreground = #ffb52a
 
 [module/pulseaudio]
 type = internal/pulseaudio
