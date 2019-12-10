@@ -19,8 +19,6 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Firefox -o desktop='^browser' follow=on
 bspc rule -a Spotify -o desktop='^music' follow=on
 
-albert &
-
 ~/.config/polybar/launch.sh &
 
 compton -f --config ~/.config/compton/compton.conf &
@@ -28,3 +26,5 @@ compton -f --config ~/.config/compton/compton.conf &
 udiskie &
 
 dunst &
+
+setxkbmap -option casp:escape

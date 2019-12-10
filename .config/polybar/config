@@ -63,7 +63,7 @@ font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
 modules-left = left-icon bspwm
 modules-center = player-mpris-tail 
 ; PC
-modules-right = mydate sep updates pulseaudio sep wired-network bar-sep
+modules-right = updates pulseaudio sep wired-network sep mydate
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 

@@ -41,6 +41,8 @@ Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'kovetskiy/sxhkd-vim'
+
 " Prettier
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',

@@ -31,8 +31,8 @@ super + {_,shift + }{h,j,k,l}
 super + shift + r
 	bspc wm -r
 
-# super + d
-# 	rofi -show drun -show-icons
+super + d
+ 	rofi -modi drun -show drun -show-icons
 #
 # Takes screenshots - requires scrot
 super + F12
