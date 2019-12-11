@@ -37,11 +37,14 @@ Plug 'dylanaraps/wal.vim'
 Plug 'sjl/badwolf'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 
-" Highliting
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'kovetskiy/sxhkd-vim'
+" " Highliting
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'kovetskiy/sxhkd-vim'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
@@ -160,6 +163,22 @@ set autoindent
 set smartindent
 set number relativenumber
 
+"""""""""""""""""""""""""""""""""""""""""" COC.VIM
+
+" Tab completion, completion confirm and snippet expand
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Better display for messages
@@ -191,6 +210,9 @@ nmap <leader>rn <Plug>(coc-rename)
 
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
 
 """"""""""""""""""""""""""""""""""""""""""""""" VIM-CLOSETAG
 
