@@ -39,10 +39,17 @@ class moveFile(FileSystemEventHandler):
                 '.ods', '.fods', '.odp', '.fodp', '.odg', '.fodg', '.odf', '.pdf',
                 '.ms', '.groff', '.txt', '.tar', '.tar.gz', '.rar', '.zip', '.7z',
                 '.deb', '.rpm', '.AppImage', '.tgz', '.exe', '.iso', '.otf'],
-        'sound': ['.wav', '.mid', '.ogg', '.mp3', '.raw', '.wma', '.m4a', '.webm']
+        'sound': ['.wav', '.mid', '.ogg', '.mp3', '.raw', '.wma', '.m4a', '.webm'],
+        'temp': ['.temp', '.part']
     }
 
-    # Check for content types (image, video, sound, document)
+    # Check for content types (image, video, sound, document or temp file)
+    def isTempFile(self, ext):
+        if ext in self.extensions['temp']:
+            return True
+        else:
+            return False
+
     def isImageFile(self, ext):
         if ext in self.extensions['image']:
             return True
@@ -74,25 +81,26 @@ class moveFile(FileSystemEventHandler):
         newFileName = "{}_{}".format(currentDate, fileName)
         path = ""
         hasPath = False
-        if self.isImageFile(ext):
-            path = imagePath
-            hasPath = True
-        if self.isDocFile(ext):
-            path = docPath
-            hasPath = True
-        if self.isSoundFile(ext):
-            path = soundPath
-            hasPath = True
-        if self.isVideoFile(ext):
-            path = videoPath
-            hasPath = True
-        # If it doesn't fit the other types, move to Documents folder
-        if (not hasPath):
-            path = docPath
-        oldFile = "{}/{}{}".format(downloadPath, fileName, ext)
-        newFile = "{}/{}{}".format(path, newFileName, ext)
-        shutil.move(oldFile, newFile)
-        print("File {}{} moved to {}".format(newFileName, ext, path))
+        if not self.isTempFile(ext):
+            if self.isImageFile(ext):
+                path = imagePath
+                hasPath = True
+            if self.isDocFile(ext):
+                path = docPath
+                hasPath = True
+            if self.isSoundFile(ext):
+                path = soundPath
+                hasPath = True
+            if self.isVideoFile(ext):
+                path = videoPath
+                hasPath = True
+            # If it doesn't fit the other types, move to Documents folder
+            if (not hasPath):
+                path = docPath
+            oldFile = "{}/{}{}".format(downloadPath, fileName, ext)
+            newFile = "{}/{}{}".format(path, newFileName, ext)
+            shutil.move(oldFile, newFile)
+            print("File {}{} moved to {}".format(newFileName, ext, path))
 
     def handleFile(self, event):
         eventFile = os.path.basename(event.src_path)

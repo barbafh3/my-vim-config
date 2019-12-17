@@ -2,9 +2,9 @@
 Description=Change wallpaper every 15min
 
 [Service]
-Type=forking
-Environment=DISPLAY=:1
-ExecStart=%h/.scripts/utils/random-wallpaper
+Type=simple
+# Environment=DISPLAY=:1
+ExecStart=/home/junior/.scripts/utils/random-wallpaper
 
 [Install]
 WantedBy=default.target

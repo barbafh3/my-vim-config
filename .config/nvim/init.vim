@@ -44,6 +44,7 @@ Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 " Plug 'kovetskiy/sxhkd-vim'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'OrangeT/vim-csharp'
 Plug 'mattn/emmet-vim'
 
 " Prettier
@@ -129,6 +130,10 @@ inoremap <Right> <NOP>
 
 nnoremap ; :
 
+" Change 0 from line start to first non-space character
+nnoremap 0 ^
+vnoremap 0 ^
+
 " set leader key to space
 :let mapleader = " "
 
@@ -137,7 +142,14 @@ nnoremap <leader>l :bn<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>d :bd<CR>
 
-let g:NERDTreeIgnore = ['^node_modules$']
+" Compile current C# file
+nnoremap <leader>csc :!mcs %<CR>
+" Run current file .exe 
+nnoremap <leader>csr :!mono %:t:r.exe<CR>
+" Compile and run C# file
+nnoremap <leader>cscr :!mcs % && mono %:t:r.exe<CR>
+
+" let g:NERDTreeIgnore = ['^node_modules$']
 let NERDTreeShowLineNumbers=1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
