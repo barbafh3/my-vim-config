@@ -2,6 +2,9 @@
 
 All configurations that I made that are not on files inside my home folder are in this file.
 
+------
+
+**Enable Bluetooth with AutoEnable on boot for Bluetooth Keyboards** - Since archlinux doesn't have bluetooth enable by default, follow the instructions on the arch wiki https://wiki.archlinux.org/index.php/Bluetooth_keyboard
 
 ------
 
