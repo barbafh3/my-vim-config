@@ -1,5 +1,7 @@
 #! /bin/sh
 
+killall sxhkd
+
 sxhkd &
 
 bspc monitor -d code browser music chat ws5 ws6 ws7 ws8 ws9 ws10
@@ -16,8 +18,11 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Firefox -o desktop='^browser' follow=on
-bspc rule -a Spotify -o desktop='^music' follow=on
+bspc rule -a *:firefox desktop='^browser' follow=on focus=on
+bspc rule -a *:Spotify desktop=^music follow=on focus=on
+bspc rule -a *:discord desktop=^chat follow=on focus=on
+
+random-wallpaper
 
 ~/.config/polybar/launch.sh &
 
@@ -27,4 +32,4 @@ udiskie &
 
 dunst &
 
-setxkbmap -option casp:escape
+# setxkbmap -option casp:escape

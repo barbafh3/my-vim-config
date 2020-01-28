@@ -28,6 +28,9 @@ super + {1-9,0}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+super + ctrl + {1-9,0}
+  bspc node -d {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
+
 super + shift + r
 	bspc wm -r
 

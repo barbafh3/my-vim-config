@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
 
 " Visual
 Plug 'vim-airline/vim-airline'
@@ -46,27 +47,30 @@ Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'sheerun/vim-polyglot'
 Plug 'OrangeT/vim-csharp'
 Plug 'mattn/emmet-vim'
+Plug 'OmniSharp/omnisharp-vim'
+" Plug 'chiel92/vim-autoformat'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'graphql',
-    \ 'markdown',
-    \ 'vue',
-    \ 'lua',
-    \ 'php',
-    \ 'python',
-    \ 'ruby',
-    \ 'html',
-    \ 'swift' ] }
+      \ 'do': 'yarn install',
+      \ 'branch': 'release/1.x',
+      \ 'for': [
+      \ 'javascript',
+      \ 'typescript',
+      \ 'csharp',
+      \ 'css',
+      \ 'less',
+      \ 'scss',
+      \ 'json',
+      \ 'graphql',
+      \ 'markdown',
+      \ 'vue',
+      \ 'lua',
+      \ 'php',
+      \ 'python',
+      \ 'ruby',
+      \ 'html',
+      \ 'swift' ] }
 
 
 " All of your Plugins must be added before the following line
@@ -137,14 +141,13 @@ vnoremap 0 ^
 " set leader key to space
 :let mapleader = " "
 
-" Mappings for next buffer(bn), previous buffer(bp) and close buffer(bd)
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>l :tabn<CR>
+nnoremap <leader>h :tabp<CR>
+" nnoremap <leader>d :bd<CR>
 
 " Compile current C# file
 nnoremap <leader>csc :!mcs %<CR>
-" Run current file .exe 
+" Run current file .exe
 nnoremap <leader>csr :!mono %:t:r.exe<CR>
 " Compile and run C# file
 nnoremap <leader>cscr :!mcs % && mono %:t:r.exe<CR>
@@ -157,16 +160,27 @@ let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-set list listchars=eol:\¬,tab:\|\·,trail:\·,space:\ 
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_highlight_types = 2
+let g:OmniSharp_server_use_mono = 1
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.config/nvim/snippets"]
+
+" set list listchars=eol:¬,tab:|·,trail:·,space:\
+" set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+
+let g:fzf_action = {
+  \ 'return': 'tabedit' }
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP ~/Dev'
 
 set guifont=Fira\ Code\ 14
-set bg=dark 
-set splitbelow splitright 
+set bg=dark
+set splitbelow splitright
 set tabstop=2
 set expandtab
 set shiftwidth=2
@@ -260,9 +274,9 @@ let g:closetag_emptyTags_caseSensitive = 1
 " Disables auto-close if not in a "valid" region (based on filetype)
 "
 let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-        \ 'javascript.jsx': 'jsxRegion',
-            \ }
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ }
 
 " Shortcut for closing tags, default is '>'
 "

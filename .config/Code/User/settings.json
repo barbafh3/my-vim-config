@@ -1,16 +1,17 @@
 {
   "editor.fontFamily": "'Fira Code'",
-  "editor.fontSize": 18,
+  "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
   "editor.lineNumbers": "relative",
   "editor.autoClosingBrackets": "languageDefined",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "window.menuBarVisibility": "toggle",
   "keyboard.dispatch": "keyCode",
+  "csharp.referencesCodeLens.enabled": false,
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
     {
@@ -84,5 +85,30 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "omnisharp.path": "latest",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
-  "workbench.colorTheme": "Gruvbox Dark Hard"
+  "workbench.colorTheme": "Monokai Dimmed",
+  "terminal.integrated.rendererType": "dom",
+  "omnisharp.useGlobalMono": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  // "editor.tokenColorCustomizations": {
+  //   "textMateRules": [
+  //     {
+  //       "scope": "variable.other",
+  //       "settings": {
+  //         "foreground": "#539479",
+  //       }
+  //     },
+  //     {
+  //       "scope": "entity.name",
+  //       "settings": {
+  //         "foreground": "#67a33f",
+  //       }
+  //     },
+  //     {
+  //       "scope": "entity.name.type",
+  //       "settings": {
+  //         "foreground": "#dddddd",
+  //       }
+  //     },
+  //   ]
+  // }
 }

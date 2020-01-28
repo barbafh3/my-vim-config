@@ -11,11 +11,15 @@ set fish_greeting ''
 
 set EDITOR /usr/bin/vim
 set JAVA_HOME /usr/lib/jvm/java-11-openjdk/bin
+set MSBuildSDKsPath /usr/share/dotnet/sdk/(dotnet --version)
+set FrameworkPathOverride /lib/mono/4.5
 
 set PATH ~/.scripts/bin $PATH
 set PATH /snap/bin $PATH
 set PATH ~/.local/bin $PATH
 set PATH ~/.gem/ruby/2.6.0/bin $PATH
+set PATH /home/manjaro/.dotnet/tools $PATH
+
 set TERMINAL /usr/bin/kitty $TERMINAL
 set IMAGE ~/Imagens/wallpapers/Mountain-1080p-wallpaper.jpg
 
