@@ -53,23 +53,25 @@ line-size = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3
+/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+font-0 = Fira Code:pixelsize=14;0
 font-1 = NotoSans Symbols2:pixelsize=16;3
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=12;1
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
+font-6 = Fira Code:pixelsize=14;0
 
-modules-left = left-icon bspwm
-modules-center = player-mpris-tail 
+modules-left = left-icon sep bspwm 
+modules-center = mydate
 ; PC
-modules-right = updates pulseaudio sep wired-network sep mydate
+modules-right = wired-network bar-sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
 tray-position = right
 tray-background = ${colors.background}
-tray-padding = 1
+tray-padding = 10
 tray-detached = false
 tray-maxsize = 25
 ;tray-offset-x = -4
@@ -113,7 +115,7 @@ content-background = ${colors.background}
 
 [module/bar-sep]
 type = custom/text
-content = " ⏽ "
+content = " ⏽"
 content-background = ${colors.background}
 
 [module/arrowi3]
@@ -187,6 +189,9 @@ content-background = #027dff
 ;								M O D U L E S				 					;
 ;-------------------------------------------------------------------------------;
 
+[module/title]
+type = internal/xwindow
+
 [module/player-mpris-tail]
 type = custom/script
 exec = ~/.scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/polybar-scripts/player-mpris-tail.py previous -b vlc -b plasma-browser-integration:} ⏮ %{A} %{A1:~/polybar-scripts/player-mpris-tail.py play-pause -b vlc -b plasma-browser-integration:} {icon-reversed} %{A} %{A1:~/polybar-scripts/player-mpris-tail.py next -b vlc -b plasma-browser-integration:} ⏭ %{A}' -b vlc -b plasma-browser-integration
@@ -236,10 +241,14 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = code;
-ws-icon-1 = browser;爵
-ws-icon-2 = music;ﱘ
-ws-icon-3 = chat;ﮠ
-ws-icon-default = 
+ws-icon-1 = browser;
+ws-icon-2 = music;
+ws-icon-3 = chat;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-default = 
 
 label-occupied = %icon%
 label-occupied-foreground = #dd
@@ -274,6 +283,7 @@ label-focused-font = 4
 
 ; Separator in between workspaces
 label-separator = |
+label-separator-font = 4
 label-separator-padding = 1
 ;label-separator-foreground = #ffb52a
 

@@ -158,6 +158,7 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
+let NERDTreeMapOpenInTab='<ENTER>'
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 let g:OmniSharp_server_stdio = 1
@@ -175,8 +176,8 @@ silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 let g:fzf_action = {
   \ 'return': 'tabedit' }
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP ~/Dev'
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP ~/Dev'
 
 set guifont=Fira\ Code\ 14
 set bg=dark

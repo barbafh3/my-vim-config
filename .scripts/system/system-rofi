@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPTIONS='Cancelar\nDesligar\nReiniciar\nBloquear\nSuspender\nSair\n'
+OPTIONS='Cancelar\nDesligar\nReiniciar\nSuspender\nSair\n'
 CONFIRM='Não\nSim'
 
 CHOICE=$(echo -e $OPTIONS | rofi -dmenu -i -p "Sistema")
@@ -10,11 +10,8 @@ if [ "$CHOICE" != "Cancelar" ] && [ "$CHOICE" != "" ] ; then
     OUTPUT=$(echo -e $CONFIRM | rofi -dmenu -i -p "Tem certeza?")
     if [ "$OUTPUT" = "Sim" ] ; then
         case $CHOICE in
-            "Bloquear")
-                i3lock-fancy
-                ;;
             "Sair")
-                i3-msg exit
+                bspc exit
                 ;;
             "Reiniciar")
                 reboot

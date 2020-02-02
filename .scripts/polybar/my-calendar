@@ -2,4 +2,4 @@
 weekDay=$(date +%A)
 month=$(date +%B)
 date=$(date +%A,\ %d\ de\ %b\ de\ %Y)
-notify-send -t 4000 "      ${weekDay^}, $(date +%d) de ${month^} de $(date +%Y) - $(date +%H:%M)"
+notify-send -t 4000 --icon=calendar " ${weekDay^}, $(date +%d) de ${month^} de $(date +%Y) - $(date +%H:%M)"
