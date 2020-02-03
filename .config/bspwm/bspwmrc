@@ -1,6 +1,5 @@
 #! /bin/sh
 
-setxkbmap -option caps:escape
 
 xsetroot -cursor_name left_ptr &
 
