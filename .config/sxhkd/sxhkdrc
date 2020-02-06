@@ -1,7 +1,7 @@
 # General Bindings
 
 super + Return
-  $TERMINAL
+  /usr/bin/kitty
 
 super + shift + s
 	system-rofi &

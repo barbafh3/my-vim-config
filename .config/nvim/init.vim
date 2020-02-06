@@ -38,15 +38,12 @@ Plug 'dylanaraps/wal.vim'
 Plug 'sjl/badwolf'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 
-" " Highliting
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'kovetskiy/sxhkd-vim'
-
 Plug 'sheerun/vim-polyglot'
-Plug 'OrangeT/vim-csharp'
 Plug 'mattn/emmet-vim'
+Plug 'nickspoons/vim-sharpenup'
+
+" " C# 
+Plug 'OrangeT/vim-csharp'
 Plug 'OmniSharp/omnisharp-vim'
 " Plug 'chiel92/vim-autoformat'
 
@@ -106,10 +103,12 @@ highlight SignColumn ctermbg=none
 
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
 
-"colorscheme badwolf
-"colorscheme wal
+
+colorscheme one
+" colorscheme gruvbox
+" colorscheme badwolf
+" colorscheme wal
 
 set noshowmode
 set timeoutlen=300
@@ -165,6 +164,9 @@ let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_highlight_types = 2
 let g:OmniSharp_server_use_mono = 1
 
+let g:sharpenup_map_prefix = ','
+
+let g:UltiSnipsExpandTrigger = '<C-t>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.config/nvim/snippets"]
 
 " set list listchars=eol:¬,tab:|·,trail:·,space:\
@@ -191,20 +193,15 @@ set smartindent
 set number relativenumber
 
 """""""""""""""""""""""""""""""""""""""""" COC.VIM
+" Ctrl-Space open auto-complete panel
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" Tab completion, completion confirm and snippet expand
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" Use j and k to cycle through auto-complete options
+" when panel is open
+inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
+" let g:coc_snippet_next = '<tab>'
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
