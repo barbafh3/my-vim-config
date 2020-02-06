@@ -12,6 +12,16 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"Interface": {
+		"prefix": "interface",
+		"body": [
+			"public interface I$1",
+			"{",
+			"$0",
+			"}"
+		],
+		"description": "Basic interface"
+	},
 	"ScriptableObject - Unity": {
 		"prefix": "scriptableobject",
 		"body": [

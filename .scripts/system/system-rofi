@@ -11,7 +11,7 @@ if [ "$CHOICE" != "Cancelar" ] && [ "$CHOICE" != "" ] ; then
     if [ "$OUTPUT" = "Sim" ] ; then
         case $CHOICE in
             "Sair")
-                bspc exit
+                bspc quit
                 ;;
             "Reiniciar")
                 reboot

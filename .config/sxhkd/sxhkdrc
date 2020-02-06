@@ -1,17 +1,7 @@
 # General Bindings
 
-# Brightness controls - requires xorg-xbacklight
-XF86MonBrightnessUp
-	xbacklight -inc 10
-
-XF86MonBrightnessDown
-	xbacklight -dec 10
-
-XF86ScreenSaver
-	i3lock-fancy
-
 super + Return
-	/usr/bin/kitty
+  $TERMINAL
 
 super + shift + s
 	system-rofi &
@@ -45,6 +35,17 @@ super + F12
 ctrl + alt + Delete
 	gnome-system-monitor
 
+# Brightness controls - requires xorg-xbacklight
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+XF86ScreenSaver
+	i3lock-fancy
+
 # Media Bindings - requires pactl and playerctl
 
 XF86AudioRaiseVolume
@@ -62,6 +63,6 @@ XF86AudioPrev
 
 # Program Bindings
 
-super + shift + {1-7}
+super + shift  + o ; {1-7}
 	{nemo,firefox,spotify,discord,steam,lutris,manjaro-settings-manager}
 

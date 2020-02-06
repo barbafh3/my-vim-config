@@ -19,9 +19,14 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Code desktop=^1
-bspc rule -a Firefox desktop=^2 follow=on focus=on
+bspc rule -a Firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
-bspc rule -a Spotify desktop=^3 follow=on focus=on
+
+# Requires spotifywm-git to define WM_CLASS before the window opens.
+# Without it, bspwm doesn't have the WM_CLASS from spotify when the window opens,
+# making the rule ineffective
+bspc rule -a Spotify desktop=^3
+
 bspc rule -a discord desktop=^4
 bspc rule -a UnityHub desktop=^5
 bspc rule -a Unity desktop=^5
@@ -39,5 +44,7 @@ udiskie &
 
 dunst &
 
-killall dropbox
-dropbox &
+# killall dropbox
+# dropbox &
+
+setxkbmap -option caps:escape
