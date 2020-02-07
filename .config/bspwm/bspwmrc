@@ -1,8 +1,7 @@
 #! /bin/sh
 
 
-xsetroot -cursor_name left_ptr &
-
+xsetroot -cursor_name left_ptr & 
 killall polybar
 ~/.config/polybar/launch.sh &
 
@@ -35,6 +34,8 @@ bspc rule -a Aseprite desktop=^7
 bspc rule -a Krita desktop=^7
 bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
+
+bspc rule -a Peek state=floating
 
 random-wallpaper
 
