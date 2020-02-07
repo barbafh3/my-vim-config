@@ -1,4 +1,4 @@
-;-------------------------------------------------------------------------------;
+
 ;                                  _       _                                    ;
 ;                                 | |     | |                                   ;
 ;                      _ __   ___ | |_   _| |__   __ _ _ __                     ;
@@ -25,6 +25,17 @@ foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
+x4 = ${xrdb:color4:#222}
+x5 = ${xrdb:color5:#222}
+x6 = ${xrdb:color6:#222}
+x8 = ${xrdb:color8:#222}
+x9 = ${xrdb:color9:#222}
+x10 = ${xrdb:color10:#222}
+x11 = ${xrdb:color11:#222}
+x12 = ${xrdb:color12:#222}
+x13 = ${xrdb:color13:#222}
+x14 = ${xrdb:color14:#222}
+x15 = ${xrdb:color15:#222}
 ;white = #fff
 ;red = #f00
 ;black = #000
@@ -54,12 +65,12 @@ line-size = 2
 background = ${colors.background}
 foreground = ${colors.foreground}
 /* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
-font-0 = Fira Code:pixelsize=14;0
+font-0 = Fira Code:pixelsize=18;0
 font-1 = NotoSans Symbols2:pixelsize=16;3
 font-2 = FontAwesome:pixelsize=12;3
-font-3 = Weather Icons:size=12;1
+font-3 = Weather Icons:size=12;4
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
-font-5 = DejaVuSansMono Nerd Font:pixelsize=14;3
+font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
 font-6 = Fira Code:pixelsize=14;0
 font-7 = DejaVuSansMono Nerd Font:pixelsize=10;3
 font-8 = DejaVuSansMono Nerd Font:pixelsize=10;6
@@ -67,7 +78,7 @@ font-8 = DejaVuSansMono Nerd Font:pixelsize=10;6
 modules-left = left-icon sep bspwm
 modules-center = mydate
 ; PC
-modules-right = updates sep wired-network sep power-icon bar-sep
+modules-right = openweathermap-simple bar-sep updates sep wired-network sep power-icon bar-sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
@@ -243,26 +254,27 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = code;
-ws-icon-1 = browser;
-ws-icon-2 = music;
-ws-icon-3 = chat;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-default = 
+ws-icon-1 = browser; 
+ws-icon-2 = music; 
+ws-icon-3 = chat; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6; 
+ws-icon-6 = 7; 
+ws-icon-7 = 8; 
+ws-icon-8 = 9;
+ws-icon-default = ""
 
 label-occupied = %icon%
-label-occupied-foreground = #dd
-label-occupied-underline = #f7ed91
-label-occupied-font = 4
-;label-occupied-padding = 1
+label-occupied-foreground = ${colors.foreground}
+label-occupied-underline = ${colors.foreground}
+label-occupied-font = 1
+label-occupied-padding = 1
 
 
 label-empty = %icon%
 label-empty-foreground = #55
-label-empty-font = 4
-;label-empty-padding = 1
+label-empty-font = 1
+label-empty-padding = 1
 
 
 ; Available tags:
@@ -277,16 +289,17 @@ format = <label-state> <label-mode>
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #fba922
-label-focused-font = 4
+label-focused = %icon% 
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.x9}
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 1
+label-focused-font = 1
 
 ; Separator in between workspaces
-label-separator = |
-label-separator-font = 4
-label-separator-padding = 1
+label-separator = "|"
+label-separator-font = 6
+;label-separator-padding = 1
 ;label-separator-foreground = #ffb52a
 
 [module/pulseaudio]
@@ -634,15 +647,12 @@ exec = $HOME/.scripts/polybar/spotify-song
 ;label-underline = #39ff14
 ;format-prefix-underline = #39ff14
 
-[module/openweathermap-detailed]
+[module/openweathermap-simple]
 type = custom/script
-format-prefix = "  "
-format-prefix-background = #0b6623
-exec = ~/.scripts/openweathermap-detailed.sh
+exec = ~/.scripts/openweathermap-simple.sh
 interval = 600
-label-font = 1
-label-foreground = #ffffff
-label-background = #39ff14
+label-font = 4
+label-foreground = ${colors.foreground}
 
 [module/updates]
 type = custom/script
