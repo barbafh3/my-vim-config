@@ -88,32 +88,22 @@ set smartindent
 set number relativenumber
 
 "Set true colors to work with tmux aswell
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
-
-highlight clear CursorLine
-highlight Normal ctermbg=none
-highlight LineNr ctermbg=none
-highlight Folded ctermbg=none
-highlight NonText ctermbg=none
-highlight SpecialKey ctermbg=none
-highlight VertSplit ctermbg=none
-highlight SignColumn ctermbg=none
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
 
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 
-
-colorscheme one
-" colorscheme gruvbox
+" colorscheme one
+colorscheme gruvbox
 " colorscheme badwolf
 " colorscheme wal
 
 set noshowmode
 set timeoutlen=300
-"let g:airline_theme='wal'
-let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_theme='wal'
+"let g:airline_theme='base16_gruvbox_dark_hard'
 "let g:airline_theme='onedark'
 "let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
@@ -285,3 +275,13 @@ let g:closetag_shortcut = '>'
 "
 let g:closetag_close_shortcut = '<leader>>'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+highlight clear CursorLine
+highlight Normal ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight NonText ctermbg=none
+highlight SpecialKey ctermbg=none
+highlight VertSplit ctermbg=none
+highlight SignColumn ctermbg=none
