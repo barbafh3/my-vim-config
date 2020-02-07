@@ -1,4 +1,5 @@
 # vi: syntax=sh
+# #
 
 # Folder aliases
 
@@ -52,17 +53,19 @@ abbr lgbs "nvim ~/MyProjects/aliases/log-base"
 
 # Command aliases
 
+abbr nv "nvim"
+abbr v "vim"
 abbr sz "source ~/.zshrc"
 abbr sf "source ~/.config/fish/config.fish"
 abbr pac "sudo pacman"
 abbr sctl "sudo systemctl"
-abbr gits "git status"
-abbr gita "git add"
-abbr gitaf "git add -f"
-abbr gitd "git difftool"
-abbr gitr "git remove"
-abbr gitc "git commit"
-abbr gitp "git push"
+abbr gs "git status --short"
+abbr ga "git add"
+abbr gaf "git add -f"
+abbr gd "git difftool"
+abbr gr "git remove"
+abbr gc "git commit"
+abbr gp "git push"
 abbr mv "mv -i"
 abbr cp "cp -i"
 abbr rm "rm -i"

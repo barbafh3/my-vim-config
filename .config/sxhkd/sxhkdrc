@@ -23,8 +23,12 @@ super + shift + q
   xdo close
 
 # focus or send to the given desktop
-super + {1-4,q,w,e,a,s,0}
+super + {1-4,q,w,e,a,s,z}
 	bspc desktop -f {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
+
+# move window to desktop
+super + ctrl + {1-4,q,w,e,a,s,z}
+  bspc node -d {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10} && bspc desktop -f {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -41,10 +45,6 @@ ctrl + super + {h,j,k,l}
 # retract window on direction
 ctrl + shift + {h,j,k,l}
   bspc node -z {right -20 0,up 0 20,bottom 0 -20,left 20 0}
-
-# move window to desktop
-super + ctrl + {1-4,q,w,e,a,s,0}
-  bspc node -d {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10} && bspc desktop -f {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
 
 # toggle tiled/floating
 super + o
@@ -69,8 +69,8 @@ ctrl + alt + Delete
 
 # Program Bindings
 
-super + shift  + o ; {1-7}
-	{nemo,firefox,spotify,discord,steam,lutris,manjaro-settings-manager}
+ctrl + shift + {f,b,s,d,t,l,m}
+	{kitty -e ranger,brave,spotify,discord,steam,lutris,manjaro-settings-manager}
 
 # Brightness controls - requires xorg-xbacklight
 
