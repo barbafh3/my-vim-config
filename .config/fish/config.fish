@@ -26,3 +26,5 @@ set IMAGE ~/Imagens/wallpapers/Mountain-1080p-wallpaper.jpg
 powerline-daemon -q
 
 neofetch
+
+# terminal-blur

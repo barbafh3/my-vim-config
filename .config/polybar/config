@@ -75,10 +75,10 @@ font-6 = Fira Code:pixelsize=14;0
 font-7 = DejaVuSansMono Nerd Font:pixelsize=10;3
 font-8 = DejaVuSansMono Nerd Font:pixelsize=10;6
 
-modules-left = left-icon sep bspwm
+modules-left = bspwm
 modules-center = mydate
 ; PC
-modules-right = openweathermap-simple bar-sep updates sep wired-network sep power-icon bar-sep
+modules-right = openweathermap-simple sep updates sep wired-network sep power-icon bar-sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
@@ -94,9 +94,13 @@ tray-maxsize = 25
 ;-------------------------------------------------------------------------------;
 [module/left-icon]
 type = custom/text
-content = "%{T6}  %{T6}"
+content = " "
 ;content-background = #222d32
-content-foreground = #2e8b57
+;content-foreground = #2e8b57
+content-background = ${colors.foreground}
+content-foreground = ${colors.background}
+content-font = 6
+content-padding = 1
 ;content-background = #ffffff
 click-left = rofi -modi drun -show drun -show-icons
 
@@ -257,10 +261,10 @@ ws-icon-0 = code;
 ws-icon-1 = browser; 
 ws-icon-2 = music; 
 ws-icon-3 = chat; 
-ws-icon-4 = 5; 
-ws-icon-5 = 6; 
-ws-icon-6 = 7; 
-ws-icon-7 = 8; 
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = ""

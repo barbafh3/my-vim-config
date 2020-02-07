@@ -2,10 +2,11 @@
 
 
 xsetroot -cursor_name left_ptr & 
-killall polybar
+
+killall polybar 
 ~/.config/polybar/launch.sh &
 
-killall sxhkd
+killall sxhkd 
 sxhkd &
 
 bspc monitor -d code browser music chat ws5 ws6 ws7 ws8 ws9 ws10
@@ -39,10 +40,10 @@ bspc rule -a Peek state=floating
 
 random-wallpaper
 
-compton -f --config ~/.config/compton/compton.conf &
-
 udiskie &
 
 dunstwal &
 
 setxkbmap -option caps:escape
+
+picom --experimental-backends
