@@ -204,12 +204,12 @@ type = internal/network
 interface = enp3s0
 
 ; Default: %ifname% %local_ip%
-label-connected = 
-label-connected-foreground = #eefafafa
+label-connected = 
+label-connected-foreground = ${colors.foreground}
 
 ; Default: (none)
-label-disconnected = 
-label-disconnected-foreground = #66ffffff
+label-disconnected = 
+label-disconnected-foreground = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
@@ -488,13 +488,6 @@ label-disconnected-underline = #ff0800
 ;label = %gb_used%
 ;label-foreground = ${colors.black}
 ;label-background = #027dff
-
-;[module/memory]
-;type = custom/script
-;label = %output%
-;exec = ~/.scripts/updates-arch.sh
-;format-prefix = "  "
-;interval = 600
 
 [module/date]
 type = internal/date
