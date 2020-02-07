@@ -1,0 +1,5 @@
+#!/bin/bash
+
+killall polybar
+notify-send "Polybar reloaded"
+~/.config/polybar/launch.sh &

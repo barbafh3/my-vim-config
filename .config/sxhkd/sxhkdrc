@@ -1,14 +1,26 @@
 # General Bindings
 
+# restart bspwm
+super + shift + r
+	bspc wm -r
+
+super + shift + o
+  reload-polybar
+
+super + shift + x
+  killall sxhkd && notify-send "Sxhkd reloaded" && sxhkd &
+
+# run terminal
 super + Return
   /usr/bin/kitty
 
+# run rofi for system actions (logout, turn off, restart, etc)
 super + shift + s
 	system-rofi &
-#
+
 # close and kill
 super + shift + q
-	bspc node -c
+  xdo close
 
 # focus or send to the given desktop
 super + {1-4,q,w,e,a,s,0}
@@ -18,22 +30,47 @@ super + {1-4,q,w,e,a,s,0}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+# swap window with direction
+super + shift + {h,j,k,l}
+  bspc node -s {west,south,north,east}
+
+# expand window on direction
+ctrl + super + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,up 0 -20,right 20 0}
+
+# retract window on direction
+ctrl + shift + {h,j,k,l}
+  bspc node -z {right -20 0,up 0 20,bottom 0 -20,left 20 0}
+
+# move window to desktop
 super + ctrl + {1-4,q,w,e,a,s,0}
-  bspc node -d {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
+  bspc node -d {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10} && bspc desktop -f {code,browser,music,chat,ws5,ws6,ws7,ws8,ws9,ws10}
 
-super + shift + r
-	bspc wm -r
+# toggle tiled/floating
+super + o
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
+# move floating window
+ctrl + alt + {h,j,k,l}
+  xdo move {-x -20, -y +20, -y -20, -x +20}
+
+# run rofi
 super + d
  	rofi -modi drun -show drun -show-icons
-#
-# Takes screenshots - requires scrot
+
+# takes screenshots - requires scrot
 super + F12
 	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
 			-e 'mv $f ~/Imagens/screenshots/' \
 			&& notify-send 'Screenshot Taken'
+
 ctrl + alt + Delete
 	gnome-system-monitor
+
+# Program Bindings
+
+super + shift  + o ; {1-7}
+	{nemo,firefox,spotify,discord,steam,lutris,manjaro-settings-manager}
 
 # Brightness controls - requires xorg-xbacklight
 
@@ -60,9 +97,3 @@ XF86AudioNext
 	playerctl -p spotify next
 XF86AudioPrev
 	playerctl -p spotify previous
-
-# Program Bindings
-
-super + shift  + o ; {1-7}
-	{nemo,firefox,spotify,discord,steam,lutris,manjaro-settings-manager}
-

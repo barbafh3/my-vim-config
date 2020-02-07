@@ -43,9 +43,6 @@ compton -f --config ~/.config/compton/compton.conf &
 
 udiskie &
 
-dunst &
-
-# killall dropbox
-# dropbox &
+dunstwal &
 
 setxkbmap -option caps:escape

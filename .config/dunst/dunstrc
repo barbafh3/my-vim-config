@@ -1,5 +1,5 @@
 [global]
-    font = "DejaVu Sans Mono 10"
+    font = "JetBrains Mono Regular 10"
     markup = yes
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -30,7 +30,7 @@
     icon_path = /usr/share/icons/Notifications
     icon_position = left
     frame_width = 1
-    frame_color = "#222D32"
+    frame_color = "#9EA09F"
 
 [shortcuts]
     close = ctrl+space
@@ -39,18 +39,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#222D32"
-    foreground = "#FFFFFF"
+    background = "#0e0f0d"
+    foreground = "#9EA09F"
     timeout = 5
 
 [urgency_normal]
-    background = "#222D32"
-    foreground = "#FFFFFF"
+    background = "#0e0f0d"
+    foreground = "#9EA09F"
     timeout = 10
 
 [urgency_critical]
-    background = "#222D32"
-    foreground = "#FFFFFF"
+    background = "#0e0f0d"
+    foreground = "#9EA09F"
     timeout = 0
 
 [Spotify]
