@@ -8,7 +8,7 @@ super + shift + o
   reload-polybar
 
 super + shift + x
-  killall sxhkd && notify-send "Sxhkd reloaded" && sxhkd &
+  killall sxhkd && notify-send "Sxhkd" "Keybindings reloaded" && sxhkd &
 
 # run terminal
 super + Return

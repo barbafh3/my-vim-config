@@ -65,10 +65,10 @@ line-size = 2
 background = ${colors.background}
 foreground = ${colors.foreground}
 /* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
-font-0 = Fira Code:pixelsize=18;0
+font-0 = Fira Code:pixelsize=13;4
 font-1 = NotoSans Symbols2:pixelsize=16;3
 font-2 = FontAwesome:pixelsize=12;3
-font-3 = Weather Icons:size=12;4
+font-3 = Weather Icons:size=16;4
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
 font-6 = Fira Code:pixelsize=14;0
@@ -78,7 +78,7 @@ font-8 = DejaVuSansMono Nerd Font:pixelsize=10;6
 modules-left = bspwm
 modules-center = mydate
 ; PC
-modules-right = openweathermap-simple sep updates sep wired-network sep power-icon bar-sep
+modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon bar-sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
@@ -206,6 +206,17 @@ content-background = #027dff
 ;								M O D U L E S				 					;
 ;-------------------------------------------------------------------------------;
 
+[module/mutt-wizard]
+
+type = custom/script
+exec = mailbox
+interval = 5
+format-prefix = " "
+format-font = 1
+;format-underline = ${colors.red}
+
+click-left = kitty -e neomutt
+
 [module/title]
 type = internal/xwindow
 
@@ -221,6 +232,7 @@ interface = enp3s0
 ; Default: %ifname% %local_ip%
 label-connected = 
 label-connected-foreground = ${colors.foreground}
+label-connected-font = 6
 
 ; Default: (none)
 label-disconnected = 
@@ -655,14 +667,14 @@ exec = $HOME/.scripts/polybar/spotify-song
 [module/openweathermap-simple]
 type = custom/script
 exec = ~/.scripts/openweathermap-simple.sh
+format = <label>
 interval = 600
-label-font = 4
 label-foreground = ${colors.foreground}
 
 [module/updates]
 type = custom/script
 format = "<label> " 
-format-font = 6
+format-font = 7
 format-foreground = ${colors.foreground}
 format-prefix-foreground = ${colors.foreground}
 exec = ~/.scripts/updates-arch-combined.sh

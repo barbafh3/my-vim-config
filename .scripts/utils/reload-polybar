@@ -1,5 +1,5 @@
 #!/bin/bash
 
 killall polybar
-notify-send "Polybar reloaded"
+notify-send "Polybar" "Status bar reloaded"
 ~/.config/polybar/launch.sh &
