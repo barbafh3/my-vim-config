@@ -1,3 +1,5 @@
+# vim:ft=dosini
+
 [global]
     font = "JetBrains Mono Regular 10"
     markup = yes
@@ -11,7 +13,8 @@
     word_wrap = yes
     ignore_newline = no
     #geometry = "200x5-6+30"
-    geometry = "400x10-15+37"
+    #geometry = "400x10-15+37"
+    geometry = "0x0-15+37"
     transparency = 0
     idle_threshold = 120
     monitor = 0

@@ -1,7 +1,8 @@
 #! /bin/sh
 
-
 xsetroot -cursor_name left_ptr & 
+
+random-wallpaper
 
 killall polybar 
 ~/.config/polybar/launch.sh &
@@ -37,8 +38,6 @@ bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
 
 bspc rule -a Peek state=floating
-
-random-wallpaper
 
 udiskie &
 

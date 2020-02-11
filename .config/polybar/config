@@ -1,5 +1,5 @@
 ; vim:ft=dosini
-;
+
 ;-------------------------------------------------------------------------------;
 ;                                  _       _                                    ;
 ;                                 | |     | |                                   ;
@@ -213,7 +213,7 @@ content-background = #027dff
 type = custom/script
 exec = ~/.scripts/polybar/mailbox
 interval = 5
-format-prefix = " "
+;format-prefix = " "
 ;format-font = 1
 click-left = kitty -e neomutt
 
@@ -533,8 +533,8 @@ label-underline = ${colors.white}
 [module/mydate]
 type = custom/script
 label = %output%
-label-margin = 5
-label-font = 6
+label-margin = 4
+label-font = 1
 exec = $HOME/.scripts/polybar/date-module
 interval = 30
 click-left = $HOME/.scripts/polybar/my-calendar

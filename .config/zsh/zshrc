@@ -18,7 +18,7 @@
 #imageSize=500px
 #neofetch --kitty --size $imageSize  --source $imageSource
 
-export PS1='%{^[[01;38;05;214;48;05;123m%}%m%{^[[0m%} '
+neofetch
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,7 +30,12 @@ export PATH=~/.scripts/bin:$PATH
 export PATH=/snap/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
+# export PATH /home/manjaro/.dotnet/tools $PATH
+
 export TERMINAL=/usr/bin/kitty
+export EDITOR=/usr/bin/nvim
+
+export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)
 
 export PAGER=most
 # Set vim as default editor
@@ -43,14 +48,16 @@ TRAPALRM() {
 }
 
 #ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Loading Oh-My-ZSH plugins
 plugins=(
   git
-  tmux
   vi-mode
 )
+
+# Loads alias file
+source $HOME/.config/zsh/aliases
 
 # Load Antigen config
 source $HOME/antigen.zsh
@@ -72,21 +79,19 @@ antigen bundle momo-lab/zsh-abbrev-alias
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-#antigen theme robbyrussell
+antigen theme robbyrussell
 #antigen theme commanderkelso/oh-my-zsh-gruvbox-powerline-theme gruvbox-powerline
-antigen theme agnoster
+#antigen theme agnoster
 
 # Tell Antigen that you're done.
 antigen apply
 
 # Load Powerline9k custom segments
-source $HOME/.config/zsh/p9k-segments
+# source $HOME/.config/zsh/p9k-segments
 
 # Load Powerlevel9k settings
-source $HOME/.config/zsh/p9krc
+# source $HOME/.config/zsh/p9krc
 
 # Load Oh-My-Zsh
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
-# Loads alias file
-source $HOME/.config/zsh/aliases

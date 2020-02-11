@@ -10,6 +10,9 @@ super + shift + o
 super + shift + x
   killall sxhkd && notify-send "Sxhkd" "Keybindings reloaded" && sxhkd &
 
+super + shift + p
+  killall picom && notify-send "Picom" "Picom restarted" && picom --experimental-backends &
+
 # run terminal
 super + Return
   /usr/bin/kitty
@@ -66,11 +69,6 @@ super + F12
 
 ctrl + alt + Delete
 	gnome-system-monitor
-
-# Program Bindings
-
-ctrl + shift + {f,b,s,d,t,l,m}
-	{kitty -e ranger,brave,spotify,discord,steam,lutris,manjaro-settings-manager}
 
 # Brightness controls - requires xorg-xbacklight
 

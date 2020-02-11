@@ -9,9 +9,14 @@
 set encoding=UTF-8
 scriptencoding utf-8
 
+" Source changes to init.vim
+nnoremap <C-n> :so ~/.config/nvim/init.vim<Cr>
+
+set shell=/usr/bin/zsh
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " NerdTree plugins"
 Plug 'scrooloose/nerdtree'
@@ -130,9 +135,16 @@ vnoremap 0 ^
 " set leader key to space
 :let mapleader = " "
 
-nnoremap <leader>l :tabn<CR>
-nnoremap <leader>h :tabp<CR>
-" nnoremap <leader>d :bd<CR>
+" Change tabs
+nnoremap <leader><S-l> :tabn<CR>
+nnoremap <leader><S-h> :tabp<CR>
+
+" Change buffers
+nnoremap <leader>l :bn<Cr>
+nnoremap <leader>h :bp<Cr>
+
+" Close buffer
+nnoremap <leader>d :bd<CR>
 
 " Compile current C# file
 nnoremap <leader>csc :!mcs %<CR>
@@ -165,8 +177,8 @@ set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
-let g:fzf_action = {
-  \ 'return': 'tabedit' }
+" let g:fzf_action = {
+"   \ 'return': 'tabedit' }
 
 " let g:ctrlp_map = '<c-p>'
 " let g:ctrlp_cmd = 'CtrlP ~/Dev'
@@ -181,6 +193,13 @@ set smarttab
 set autoindent
 set smartindent
 set number relativenumber
+
+"""""""""""""""""""""""""""""""""""""""""" OMNISHARP
+
+autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>zz
+autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>zz
+autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>zz
+autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>zz
 
 """""""""""""""""""""""""""""""""""""""""" COC.VIM
 " Ctrl-Space open auto-complete panel

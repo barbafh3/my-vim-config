@@ -1,6 +1,6 @@
-# vi: syntax=zsh
+#!/bin/zsh
 
-# Function based aliases
+#### Function based aliases
 
 # Return the glyph from given NerdFont code
 function glyph(){
@@ -11,14 +11,8 @@ function glyph(){
 function mkd(){
     mkdir $1 && cd $1    
 }
-# Lists all files including hidden, with color and listing folders first
-alias ls="ls -ahN --color=auto --group-directories-first"
-# Lists all processes with given text
-alias proc="ps aux | grep"
 
-alias ga="git add -f"
-
-# Folder aliases
+#### Folder aliases
 
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documentos"
@@ -34,24 +28,26 @@ alias rorf="cd ~/dev/rubyonrails"
 alias njsf="cd ~/dev/nodejs"
 alias jv="cd ~/dev/java"
 alias vuef="cd ~/dev/vuejs"
+alias untf="cd ~/dev/Unity"
 alias dbx="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
 alias mp="cd ~/MyProjects"
 
-# Config files aliases
+#### Config files aliases
 
 alias zrc="nvim ~/.config/zsh/zshrc"
 alias vrc="nvim ~/.vimrc"
 alias nvrc="nvim ~/.config/nvim/init.vim"
 alias frc="nvim ~/.config/fish/config.fish"
 alias txcf="nvim ~/.config/tmux/tmux.conf"
-alias bspwmrc="nvim ~/.config/bspwm/bspwmrc"
+alias bsprc="nvim ~/.config/bspwm/bspwmrc"
 alias i3cf="nvim ~/.config/i3/config"
-alias sxhkdrc="nvim ~/.config/sxhkd/sxhkdrc"
+alias sxhrc="nvim ~/.config/sxhkd/sxhkdrc"
 alias pbcf="nvim ~/.config/polybar/config"
 alias pbsh="nvim ~/.config/polybar/launch.sh"
 alias ctcf="nvim ~/.config/compton/compton.conf"
+alias pcmcf="nvim ~/.config/picom/picom.conf"
 alias rgcf="nvim ~/.config/ranger/rc.conf"
 alias ktcf="nvim ~/.config/kitty/kitty.conf"
 alias rfcf="nvim ~/.config/rofi/config.rasi"
@@ -68,19 +64,23 @@ alias fsbs="nvim ~/MyProjects/aliases/fish-base"
 alias zbs="nvim ~/MyProjects/aliases/zsh-base"
 alias lgbs="nvim ~/MyProjects/aliases/log-base"
 
-# Command aliases
+#### Command aliases
 
+alias nv="nvim"
 alias sz="source ~/.zshrc"
 alias sf="source ~/.config/fish/config.fish"
-alias pac="sudo pacman"
+alias pc="sudo pacman"
+alias pci="sudo pacman -S"
+alias pcr="sudo pacman -R"
+alias pcu="sudo pacman -Syyu"
 alias sctl="sudo systemctl"
-alias gits="git status"
-alias gita="git add"
-alias gitaf="git add -f"
-alias gitd="git difftool"
-alias gitr="git remove"
-alias gitc="git commit"
-alias gitp="git push"
+alias gst="git status --short"
+alias ga="git add"
+alias gaf="git add -f"
+alias gd="git difftool"
+alias gr="git remove"
+alias gc="git commit"
+alias gp="git push"
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
@@ -89,7 +89,6 @@ alias z="zathura"
 alias eop="sudo eopkg"
 alias mkdir="mkdir -p"
 alias ls="ls --color --group-directories-first -a"
-alias glyph="nerd-font-glyph-gen"
 alias yu="yay -Syyu"
 alias tx="tmux -f ~/.config/tmux/tmux.conf"
 alias svu="playerctl -p spotify volume +0.05"
@@ -99,4 +98,5 @@ alias dv="run-fzf dev"
 alias dc="run-fzf documents"
 alias img="run-fzf images"
 alias dls="run-fzf downloads"
-alias pacu="sudo pacman -Syyu"
+alias proc="ps aux | grep"
+alias ls="ls -ahN --color=auto --group-directories-first"
