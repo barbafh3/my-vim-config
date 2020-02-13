@@ -1,11 +1,16 @@
 #!/bin/bash
 
 FILE=~/Documentos/twitch-favorites
-ICON=~/Imagens/icones/twitch-icon-10.png
+ICON=~/Dropbox/imagens/icones/twitch-purple-logo.png
 
 OUTPUT=$(cat $FILE | rofi -dmenu -i -p "Twitch Favorites")
 
 notify-send -i $ICON "Streamlink" "Loading channel $OUTPUT..." &&
-    streamlink -p mpv twitch.tv/$OUTPUT best || 
-    notify-send "Streamlink" "$OUTPUT is offline"
+  streamlink -p mpv twitch.tv/$OUTPUT best 
+
+CODE=$(echo $?)
+
+if [ $CODE != 0 ]; then
+  notify-send -i $ICON "Streamlink" "$OUTPUT is offline"
+fi
 
