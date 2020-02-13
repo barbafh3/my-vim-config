@@ -3,14 +3,16 @@
 FILE=~/Documentos/twitch-favorites
 ICON=~/Dropbox/imagens/icones/twitch-purple-logo.png
 
-OUTPUT=$(cat $FILE | rofi -dmenu -i -p "Twitch Favorites")
+CHOICE=$(cat $FILE | rofi -dmenu -i -p "Twitch Favorites")
 
-notify-send -i $ICON "Streamlink" "Loading channel $OUTPUT..." &&
-  streamlink -p mpv twitch.tv/$OUTPUT best 
+if [ "$CHOICE" != "" ] ; then
+  notify-send -i $ICON "Streamlink" "Loading channel $CHOICE..."
+  OUTPUT=$(streamlink -p mpv twitch.tv/$CHOICE best)
 
-CODE=$(echo $?)
+  COUNT=$(echo $OUTPUT | grep -c "error")
 
-if [ $CODE != 0 ]; then
-  notify-send -i $ICON "Streamlink" "$OUTPUT is offline"
+  if [ $COUNT -gt 0 ] ; then
+    notify-send -i $ICON "Streamlink" "$CHOICE is offline"
+  fi
 fi
 
