@@ -9,6 +9,10 @@
 set encoding=UTF-8
 scriptencoding utf-8
 
+set shortmess=a
+" Better display for messages
+set cmdheight=3
+
 " Source changes to init.vim
 nnoremap <C-n> :so ~/.config/nvim/init.vim<Cr>
 
@@ -213,9 +217,6 @@ inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
 " let g:coc_snippet_next = '<tab>'
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Better display for messages
-set cmdheight=2
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

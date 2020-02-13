@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ICON=~/Imagens/icones/refresh-2-xxl.png
+
+killall sxhkd
+
+notify-send -i $ICON "Sxhkd" "Sxhkdd reloaded"
+
+sxhkd &

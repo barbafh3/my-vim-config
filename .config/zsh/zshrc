@@ -37,6 +37,8 @@ export EDITOR=/usr/bin/nvim
 
 export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)
 
+export TWITCH_FAVORITES=~/Documentos/twitch-favorites
+
 export PAGER=most
 # Set vim as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
@@ -56,9 +58,6 @@ plugins=(
   vi-mode
 )
 
-# Loads alias file
-source $HOME/.config/zsh/aliases
-
 # Load Antigen config
 source $HOME/antigen.zsh
 
@@ -74,6 +73,7 @@ antigen bundle command-not-found
 antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle momo-lab/zsh-abbrev-alias
+antigen bundle softmoth/zsh-vim-mode
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -95,3 +95,5 @@ antigen apply
 # Load Oh-My-Zsh
 # source $ZSH/oh-my-zsh.sh
 
+# Loads alias file
+source $HOME/.config/zsh/aliases

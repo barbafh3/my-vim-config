@@ -33,9 +33,10 @@ bspc rule -a UnityHub desktop=^5
 bspc rule -a Unity desktop=^5
 bspc rule -a obs desktop=^6
 bspc rule -a Aseprite desktop=^7
-bspc rule -a Krita desktop=^7
+bspc rule -a krita desktop=^7
 bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
+bspc rule -a mpv desktop=^10 follow=on
 
 bspc rule -a Peek state=floating
 
@@ -46,3 +47,7 @@ dunstwal &
 setxkbmap -option caps:escape
 
 picom --experimental-backends
+
+export TEST="jajaja"
+
+export TWITCH_FAVORITES=~/Documentos/twitch-favorites

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ICON=~/Imagens/icones/refresh-2-xxl.png
+
 killall polybar
-notify-send "Polybar" "Status bar reloaded"
+notify-send -i $ICON "Polybar" "Status bar reloaded"
 ~/.config/polybar/launch.sh &

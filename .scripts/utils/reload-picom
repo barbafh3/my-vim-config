@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ICON=~/Imagens/icones/refresh-2-xxl.png
+
+killall picom
+notify-send -i $ICON "Picom" "Picom reloaded"
+picom --experimental-backends &

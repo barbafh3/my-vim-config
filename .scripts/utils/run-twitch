@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILE=~/Documentos/twitch-favorites
+ICON=~/Imagens/icones/twitch-icon-10.png
+
+OUTPUT=$(cat $FILE | rofi -dmenu -i -p "Twitch Favorites")
+
+notify-send -i $ICON "Streamlink" "Loading channel $OUTPUT..." &&
+    streamlink -p mpv twitch.tv/$OUTPUT best || 
+    notify-send "Streamlink" "$OUTPUT is offline"
+

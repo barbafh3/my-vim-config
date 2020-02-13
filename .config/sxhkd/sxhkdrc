@@ -8,14 +8,21 @@ super + shift + o
   reload-polybar
 
 super + shift + x
-  killall sxhkd && notify-send "Sxhkd" "Keybindings reloaded" && sxhkd &
+  reload-sxhkd
 
 super + shift + p
-  killall picom && notify-send "Picom" "Picom restarted" && picom --experimental-backends &
+  reload-picom
+
+super + shift + i
+  setxkbmap -option caps:escape && notify-send "Keybindings" "Caps set to Escape"
 
 # run terminal
 super + Return
   /usr/bin/kitty
+
+# run rofi
+super + d
+ 	rofi -modi run -show run -show-icons
 
 # run rofi for system actions (logout, turn off, restart, etc)
 super + shift + s
@@ -56,10 +63,6 @@ super + o
 # move floating window
 ctrl + alt + {h,j,k,l}
   xdo move {-x -20, -y +20, -y -20, -x +20}
-
-# run rofi
-super + d
- 	rofi -modi drun -show drun -show-icons
 
 # takes screenshots - requires scrot
 super + F12

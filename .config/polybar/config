@@ -212,7 +212,7 @@ content-background = #027dff
 [module/mutt-wizard]
 type = custom/script
 exec = ~/.scripts/polybar/mailbox
-interval = 5
+interval = 2
 ;format-prefix = " "
 ;format-font = 1
 click-left = kitty -e neomutt
