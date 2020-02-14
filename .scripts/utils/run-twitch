@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=~/Documentos/twitch-favorites
+FILE=~/Documentos/Favoritos/twitch-favorites
 ICON=~/Dropbox/imagens/icones/twitch-purple-logo.png
 
 CHOICE=$(cat $FILE | rofi -dmenu -i -p "Twitch Favorites")

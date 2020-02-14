@@ -20,9 +20,13 @@ super + shift + i
 super + Return
   /usr/bin/kitty
 
-# run rofi
+# run rofi - select with enter
 super + d
- 	rofi -modi run -show run -show-icons
+ 	rofi -show drun -show-icons
+
+# run rofi for terminal applications - select with shift + enter
+super + shift + d
+ 	rofi -modi run -show run -show-icons -run-shell-command "$TERMINAL -e {cmd}"
 
 # run rofi for system actions (logout, turn off, restart, etc)
 super + shift + s

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILE=~/Documentos/Favoritos/browser-favorites
+ICON=~/Dropbox/imagens/icones/qutebrowser.png
+
+# TITLES=$(cat $FILE | awk -F'"' '$0=$2') 
+OPTION=$(cat $FILE | awk -F'"' '$0=$2' | rofi -dmenu -l 30 -p "Sites favoritos")
+
+URL=$(grep "$OPTION" $FILE | sed -e "s/\".*\"//g" -e "s/ //g")
+
+notify-send -i $ICON "Qutebrowser" "Opening page '$OPTION'" && qutebrowser $URL &
