@@ -53,8 +53,11 @@ x15 = ${xrdb:color15:#222}
 ;							        B A R S										;
 ;-----------------------------------------------;
 [bar/right]
-width = 100%
-height = 27
+offset-y = 12
+offset-x = 10%
+width = 80%
+height = 35
+radius = 12
 fixed-center = true
 
 line-size = 2
@@ -69,28 +72,28 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 /* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
 font-0 = Fira Code:pixelsize=13;4
-font-1 = NotoSans Symbols2:pixelsize=16;3
+font-1 = IPAGothic:pixelsize=16;4
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=16;4
 font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
-font-6 = Fira Code:pixelsize=14;0
-font-7 = DejaVuSansMono Nerd Font:pixelsize=10;3
-font-8 = DejaVuSansMono Nerd Font:pixelsize=10;6
+font-6 = JetBrains Mono Regular:pixelsize=14;0
+font-7 = Fira Code:pixelsize=18;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
 
 modules-left = bspwm
 modules-center = mydate
 ; PC
-modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon bar-sep
+modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
-tray-position = right
-tray-background = ${colors.background}
-tray-padding = 10
-tray-detached = false
-tray-maxsize = 25
-;tray-offset-x = -4
+tray-position = none
+; tray-foreground = ${colors.foreground}
+; tray-background = ${colors.background}
+; tray-padding = 10
+; tray-detached = false
+; tray-maxsize = 25
 
 ;-----------------------------------------------;
 ;          		D E C O R A T I O N S		          ;
@@ -248,7 +251,7 @@ pin-workspaces = true
 
 ; Output mode flags after focused state label
 ; Default: false
-inline-mode = false
+inline-mode = true
 
 ; Create click handler used to focus workspace
 ; Default: true
@@ -269,54 +272,49 @@ reverse-scroll = false
 ; Default: false
 fuzzy-match = true
 
-ws-icon-0 = code;
-ws-icon-1 = browser; 
-ws-icon-2 = music; 
-ws-icon-3 = chat; 
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+# bspc monitor -d 
+ws-icon-0 = 1;一  
+ws-icon-1 = 2;二  
+ws-icon-2 = 3;三  
+ws-icon-3 = 4;四  
+ws-icon-4 = 5;五 
+ws-icon-5 = 6;六 
+ws-icon-6 = 7;七 
+ws-icon-7 = 8;八 
+ws-icon-8 = 9;九 
+ws-icon-9 = 0;十
 ws-icon-default = ""
-
-label-occupied = %icon%
-label-occupied-foreground = ${colors.foreground}
-label-occupied-underline = ${colors.foreground}
-label-occupied-font = 1
-label-occupied-padding = 1
-
-
-label-empty = %icon%
-label-empty-foreground = #55
-label-empty-font = 1
-label-empty-padding = 1
-
 
 ; Available tags:
 ;   <label-monitor>
 ;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
 ;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
 ; Default: <label-state>
-format = <label-state> <label-mode>
+; format = <label-state> <label-mode>
 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-focused = %icon% 
+label-occupied = %icon%
+label-occupied-foreground = ${colors.foreground}
+; label-occupied-underline = ${colors.foreground}
+label-occupied-padding = 1
+label-occupied-font = 9
+
+
+label-empty = %icon%
+label-empty-foreground = #55
+label-empty-padding = 1
+label-empty-font = 9
+
+label-focused = "%icon%" 
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.x9}
-label-focused-underline = ${colors.foreground}
+; label-focused-underline = ${colors.foreground}
 label-focused-padding = 1
-label-focused-font = 1
+label-focused-font = 9
 
 ; Separator in between workspaces
 label-separator = "|"
 label-separator-font = 6
-;label-separator-padding = 1
+; label-separator-padding = 1
 ;label-separator-foreground = #ffb52a
 
 [module/pulseaudio]
@@ -537,7 +535,9 @@ label-margin = 4
 label-font = 1
 exec = $HOME/.scripts/polybar/date-module
 interval = 30
-click-left = $HOME/.scripts/polybar/my-calendar
+; click-left = $HOME/.scripts/polybar/my-calendar
+click-left = ~/.scripts/popup-calendar.sh --popup &
+; click-left = ~/.scripts/rofi-calendar.sh
 label-foreground = ${colors.foreground}
 ;label-underline = ${colors.white}
 

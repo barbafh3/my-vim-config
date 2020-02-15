@@ -16,7 +16,7 @@ fi
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates"
+    echo "%{T5}%{T9} $updates%{T1}"
 else
     echo "%{T5}%{T1}"
 fi

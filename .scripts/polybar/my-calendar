@@ -1,5 +1,11 @@
 #!/bin/bash
-weekDay=$(date +%A)
-month=$(date +%B)
+LC_ALL=de_DE.utf8
+# weekDay=$(date +%A)
+# month=$(date +%B)
+
+weekDay=$(LC_ALL=ja_JP.utf8 date +%A)
+month=$(LC_ALL=ja_JP.utf8 date +%B)
 date=$(date +%A,\ %d\ de\ %b\ de\ %Y)
-notify-send -t 4000  "Calendar" "${weekDay^}, ${month^} $(date +%d), $(date +%Y) - $(date +%H:%M)"
+
+# notify-send -t 4000  "Calendar" "${weekDay^}, ${month^} $(date +%d), $(date +%Y) - $(date +%H:%M)"
+notify-send -t 4000 "カレンダー" "$(LC_ALL=ja_JP.utf8 date +%y年%m月%d日\ \(%a\)) - $(date +%H:%M)"

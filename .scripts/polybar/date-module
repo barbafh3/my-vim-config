@@ -1,4 +1,5 @@
 #!/bin/bash
 # echo "  $(date +%a,\ %d\ de\ %b)  $(date +%H:%M)"
-day=$(date +%a\ %e)
-echo "${day^} $(date +%H:%M)"
+day=$(LC_ALL=ja_JP.utf8 date +%m月%e日\(%a\))
+# echo "%{T9}${day^} $(date +%H:%M)%{T-}"
+echo "%{T9}${day^} $(date +%H:%M)%{T-}"
