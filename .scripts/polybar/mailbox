@@ -13,7 +13,7 @@ MAILCOUNT=$(du -a ~/.local/share/mail/g_barbafh/INBOX/new/* 2>/dev/null | sed -n
 # MAILCOUT="$(du -a ~/.local/share/mail/g_barbafh/INBOX/new/ | sed -n '$=')$(cat /tmp/imapsyncicon_$USER 2>/dev/null)"
 
 if [ $MAILCOUNT > 0 ] ; then
-    echo "%{T5} %{T9}$MAILCOUNT"
+    echo "%{T5}  %{T9}$MAILCOUNT"
 else
-    echo "%{T5} "
+    echo "%{T5}  "
 fi

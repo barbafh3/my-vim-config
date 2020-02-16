@@ -52,24 +52,34 @@ x15 = ${xrdb:color15:#222}
 ;-----------------------------------------------;
 ;							        B A R S										;
 ;-----------------------------------------------;
-[bar/right]
+[bar/tray]
 offset-y = 12
-offset-x = 10%
-width = 80%
+offset-x = 86%
+width = 12%
 height = 35
 radius = 12
-fixed-center = true
 
-line-size = 2
+background = ${colors.background}
 
-;radius = 5.0
-;border-color = #00000000
-;border-left-size = 20
-;border-right-size = 20
-;border-top-size = 10
+modules-right = tray-sep
+
+tray-position = center
+tray-foreground = ${colors.foreground}
+tray-background = ${colors.background}
+tray-padding = 10
+tray-detached = false
+tray-maxsize = 25
+
+[bar/calendar]
+offset-y = 12
+offset-x = 42%
+width = 15%
+height = 35
+radius = 12
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+
 /* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
 font-0 = Fira Code:pixelsize=13;4
 font-1 = IPAGothic:pixelsize=16;4
@@ -81,23 +91,71 @@ font-6 = JetBrains Mono Regular:pixelsize=14;0
 font-7 = Fira Code:pixelsize=18;4
 font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
 
-modules-left = bspwm
 modules-center = mydate
+
+[bar/modules]
+offset-y = 12
+offset-x = 65%
+width = 15%
+height = 35
+radius = 12
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+font-0 = Fira Code:pixelsize=13;4
+font-1 = IPAGothic:pixelsize=16;4
+font-2 = FontAwesome:pixelsize=12;3
+font-3 = Weather Icons:size=16;4
+font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
+font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
+font-6 = JetBrains Mono Regular:pixelsize=14;0
+font-7 = Fira Code:pixelsize=18;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+
+modules-center = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon
+
+[bar/desktops]
+offset-y = 12
+offset-x = 2%
+width = 27%
+height = 35
+radius = 12
+fixed-center = true
+line-size = 2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+font-0 = Fira Code:pixelsize=13;4
+font-1 = IPAGothic:pixelsize=16;4
+font-2 = FontAwesome:pixelsize=12;3
+font-3 = Weather Icons:size=16;4
+font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
+font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
+font-6 = JetBrains Mono Regular:pixelsize=14;0
+font-7 = Fira Code:pixelsize=18;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+
+modules-center = sep sep bspwm sep sep
+; modules-center = mydate
 ; PC
-modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep
+; modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep
 ; Laptop
 ;modules-right = updates pulseaudio sep battery battery-info sep wireless-network wired-network bar-sep
 
 tray-position = none
-; tray-foreground = ${colors.foreground}
-; tray-background = ${colors.background}
-; tray-padding = 10
-; tray-detached = false
-; tray-maxsize = 25
 
 ;-----------------------------------------------;
 ;          		D E C O R A T I O N S		          ;
 ;-----------------------------------------------;
+[module/tray-sep]
+type = custom/text
+content = " "
+content-blacklistground = ${colors.x9}
+
 [module/left-icon]
 type = custom/text
 content = " "
@@ -112,7 +170,7 @@ click-left = rofi -modi drun -show drun -show-icons
 
 [module/power-icon]
 type = custom/text
-content = "%{T5} ⏻%{T1}"
+content = "%{T5} ⏻ %{T1}"
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 click-left = bash ~/.scripts/system/system-rofi
@@ -305,9 +363,8 @@ label-empty-padding = 1
 label-empty-font = 9
 
 label-focused = "%icon%" 
-label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.x9}
-; label-focused-underline = ${colors.foreground}
+label-focused-foreground = ${colors.foreground}
 label-focused-padding = 1
 label-focused-font = 9
 

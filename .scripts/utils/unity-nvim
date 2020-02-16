@@ -3,5 +3,5 @@
 kitty -e nvim -c ":cd Assets/Scripts" $1 & 
 # sleep time may vary, 
 # depends on terminal open time
-sleep 0.4
-bspc node -d code --follow
+sleep 0.6
+bspc node -d 1 --follow
