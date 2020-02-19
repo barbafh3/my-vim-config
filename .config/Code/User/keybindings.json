@@ -6,6 +6,16 @@
         "when": "editorTextFocus && vim.mode != 'Insert'"
     },
     {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "editorFocus && suggestWidgetMultipleSuggestions"
+    },
+    {
+        "key": "alt+k",
+        "command": "selectPrevSuggestion",
+        "when": "editorFocus && suggestWidgetMultipleSuggestions"
+    },
+    {
         "key": "ctrl+h",
         "command": "workbench.action.focusSideBar",
     },
@@ -60,5 +70,17 @@
     {
         "key": "ctrl+shift+m",
         "command": "workbench.view.extension.project-manager"
-    }
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
 ]

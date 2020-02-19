@@ -85,30 +85,78 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "omnisharp.path": "latest",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
-  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "terminal.integrated.rendererType": "dom",
   "omnisharp.useGlobalMono": "always",
   "vsicons.dontShowNewVersionMessage": true,
-  // "editor.tokenColorCustomizations": {
-  //   "textMateRules": [
-  //     {
-  //       "scope": "variable.other",
-  //       "settings": {
-  //         "foreground": "#539479",
-  //       }
-  //     },
-  //     {
-  //       "scope": "entity.name",
-  //       "settings": {
-  //         "foreground": "#67a33f",
-  //       }
-  //     },
-  //     {
-  //       "scope": "entity.name.type",
-  //       "settings": {
-  //         "foreground": "#dddddd",
-  //       }
-  //     },
-  //   ]
-  // }
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "variable.other",
+        "settings": {
+          "foreground": "#75a7a5",
+        }
+      },
+      {
+        "scope": "variable.other.object.cs",
+        "settings": {
+          "foreground": "#f4a701",
+        }
+      },
+      // {
+      //   "scope": "variable.other.readwrite.cs",
+      //   "settings": {
+      //     "foreground": "#ffd6ad",
+      //   }
+      // },
+      {
+        "scope": "entity.name",
+        "settings": {
+          "foreground": "#88afaf",
+        }
+      },
+      {
+        "scope": "entity.name.variable.parameter.cs",
+        "settings": {
+          "foreground": "#ffd6ad",
+        }
+      },
+      {
+        "scope": "entity.name.type",
+        "settings": {
+          "foreground": "#ffd6ad",
+        }
+      },
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#adad00",
+        }
+      },
+      {
+        "scope": "storage.type.cs",
+        "settings": {
+          "foreground": "#f4a701",
+        }
+      },
+      {
+        "scope": "keyword.type.cs",
+        "settings": {
+          "foreground": "#f4a701",
+        }
+      },
+      {
+        "scope": "keyword.other.new.cs",
+        "settings": {
+          "foreground": "#f80",
+        }
+      },
+      {
+        "scope": "keyword.other.var.cs",
+        "settings": {
+          "foreground": "#f4a701",
+        }
+      },
+    ]
+  }
 }

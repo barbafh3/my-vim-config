@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-kitty -e nvim -c ":cd Assets/Scripts" $1 & 
+kitty -e nvim -c ":cd Assets/Scripts" $@ &
 # sleep time may vary, 
 # depends on terminal open time
 sleep 0.6

@@ -175,12 +175,18 @@ let g:sharpenup_map_prefix = ','
 
 let g:UltiSnipsExpandTrigger = '<C-t>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.config/nvim/snippets"]
+nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>
 
 " set list listchars=eol:¬,tab:|·,trail:·,space:\
 " set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+
+"""""""""""""""""""""""""""""""""""""""" MARKDOWN
+
+autocmd BufWritePost,FileWritePost *.md silent! !pandoc %:r.md -o %:r.pdf
+nnoremap <leader>z :!zathura %:r.pdf<Cr>
 
 " let g:fzf_action = {
 "   \ 'return': 'tabedit' }
@@ -212,8 +218,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use j and k to cycle through auto-complete options
 " when panel is open
-inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
+inoremap <expr> <M-j> pumvisible() ? "\<C-n>" : ""
+inoremap <expr> <M-k> pumvisible() ? "\<C-p>" : ""
 
 " let g:coc_snippet_next = '<tab>'
 

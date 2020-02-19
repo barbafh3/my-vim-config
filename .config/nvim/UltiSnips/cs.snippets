@@ -1,3 +1,7 @@
+snippet dl "Debug log"
+Debug.Log($0);
+endsnippet
+
 snippet Scriptable "Creates a basic Scriptable Object"
 using UnityEngine;
 
@@ -12,6 +16,34 @@ snippet Monobehaviour "Creates a basic MonoBehaviour"
 using UnityEngine;
 
 public class $1 : MonoBehaviour
+{
+	$0
+}
+endsnippet
+
+snippet OnTriggerEnter2D	"Create trigger enter event method"
+void OnTriggerEnter2D(Collider2D other)
+{
+	$0
+}
+endsnippet
+
+snippet OnTriggerExit2D	"Create trigger exit event method"
+void OnTriggerExit2D(Collider2D other)
+{
+	$0
+}
+endsnippet
+
+snippet OnCollisionEnter2D	"Create collision enter event method"
+void OnCollisionEnter2D(Collision2D other)
+{
+	$0
+}
+endsnippet
+
+snippet OnCollisionExit2D	"Create collision exit event method"
+void OnCollisionExit2D(Collision2D other)
 {
 	$0
 }
