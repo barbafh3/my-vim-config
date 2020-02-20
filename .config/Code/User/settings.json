@@ -1,12 +1,13 @@
 {
   "editor.fontFamily": "'Jetbrains Mono'",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
   "editor.lineNumbers": "relative",
   "editor.autoClosingBrackets": "languageDefined",
+  "git.decorations.enabled": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "window.menuBarVisibility": "toggle",
@@ -89,6 +90,14 @@
   "terminal.integrated.rendererType": "dom",
   "omnisharp.useGlobalMono": "always",
   "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorCustomizations": {
+    "editor.background": "#0d0b0e",
+    "activityBar.activeBackground": "#0d0b0e",
+    "activityBar.background": "#0d0b0e",
+    "tab.inactiveBackground": "#0d0b0e",
+    "panel.background": "#0d0b0e",
+    "statusBar.background": "#0d0b0e",
+  },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {

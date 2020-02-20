@@ -1,0 +1,21 @@
+#!/bin/bash
+
+FILE=""
+ICON=~/Dropbox/imagens/icones/qutebrowser.png
+
+if [ "$1" = "-f" ] || [ "$1" = "--favorites" ] ; then
+  FILE=~/Documentos/Favoritos/browser-favorites
+else
+  FILE=~/Documentos/Favoritos/browser-most-used
+fi
+
+OPTION=$(sort $FILE | awk -F'"' '$0=$2' | rofi -dmenu -i -l30 -p "Web")
+echo $OPTION
+
+if [ "$OPTION" != "" ] ; then
+
+  URL=$(grep "$OPTION" $FILE | sed -e "s/\".*\"//g" -e "s/ //g")
+
+  notify-send -i $ICON "Qutebrowser" "Opening page '$OPTION'" && qutebrowser $URL &
+
+fi

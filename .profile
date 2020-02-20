@@ -8,4 +8,6 @@ export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/bin/kitty
 
 export TWITCH_FAVORITES=~/Documentos/twitch-favorites
+export BROWSER_FAVORITES=~/Documentos/browser-favorites
+export BROWSER_MOST_USED=~/Documentos/browser-most-used
 export GTK_THEME="Adwaita-dark"
