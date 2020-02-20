@@ -5,6 +5,7 @@
 
 abbr dl "cd ~/Downloads"
 abbr doc "cd ~/Documentos"
+abbr fav "cd ~/Documentos/Favoritos"
 abbr dev "cd ~/dev"
 abbr pyf "cd ~/dev/python"
 abbr jsf "cd ~/dev/js"
