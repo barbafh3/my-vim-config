@@ -18,7 +18,11 @@ case $mode in
         ;;
     downloads)
         folder+=/Downloads
+        ;;
+    unity)
+        folder+=/Documentos/UnityProjects
+        ;;
 esac
 
 du -a --exclude={*node_modules,*venv,*.git,*python3*} $folder/* | 
-    awk '{print $2}' | fzf | xargs -r $EDITOR
+    awk '{print $2}' | fzf | xargs -ro $EDITOR

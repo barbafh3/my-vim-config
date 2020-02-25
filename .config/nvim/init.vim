@@ -57,6 +57,12 @@ Plug 'OrangeT/vim-csharp'
 Plug 'OmniSharp/omnisharp-vim'
 " Plug 'chiel92/vim-autoformat'
 
+" ORG-MODE
+Plug 'jceb/vim-orgmode'
+Plug 'mattn/calendar-vim'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-repeat'
+
 " Prettier
 Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
@@ -139,6 +145,7 @@ vnoremap 0 ^
 
 " set leader key to space
 :let mapleader = " "
+:let maplocalleader = ","
 
 " Change tabs
 nnoremap <leader><S-l> :tabn<CR>
@@ -183,10 +190,13 @@ set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
+"""""""""""""""""""""""""""""""""""""""" ORG-MODE
+
+nnoremap <leader>c <localleader>cc
+
 """""""""""""""""""""""""""""""""""""""" MARKDOWN
 
-autocmd BufWritePost,FileWritePost *.md silent! !pandoc %:r.md -o %:r.pdf
-nnoremap <leader>z :!zathura %:r.pdf<Cr>
+jkj
 
 " let g:fzf_action = {
 "   \ 'return': 'tabedit' }
