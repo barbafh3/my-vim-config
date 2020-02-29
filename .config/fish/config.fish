@@ -1,4 +1,4 @@
-# vi: syntax=zsh
+# vi: syntax=sh
 
 # Enable vim like keybindings
 fish_vi_key_bindings
@@ -9,8 +9,8 @@ source $HOME/.config/fish/abbreviations
 
 set fish_greeting ''
 
-set JAVA_HOME /usr/lib/jvm/java-11-openjdk/bin $JAVA_HOME
-set MSBuildSDKsPath /usr/share/dotnet/sdk/(dotnet --version) $MSBuildSDKsPath
+# set JAVA_HOME /usr/lib/jvm/java-11-openjdk/bin $JAVA_HOME
+# set MSBuildSDKsPath /usr/share/dotnet/sdk/(dotnet --version) $MSBuildSDKsPath
 # set FrameworkPathOverride /lib/mono/4.5
 
 set PATH ~/.local/bin $PATH

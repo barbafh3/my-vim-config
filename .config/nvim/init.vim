@@ -145,7 +145,7 @@ vnoremap 0 ^
 
 " set leader key to space
 :let mapleader = " "
-:let maplocalleader = ","
+:let maplocalleader = "ç"
 
 " Change tabs
 nnoremap <leader><S-l> :tabn<CR>
@@ -174,10 +174,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeMapOpenInTab='<ENTER>'
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_highlight_types = 2
-let g:OmniSharp_server_use_mono = 1
-
 let g:sharpenup_map_prefix = ','
 
 let g:UltiSnipsExpandTrigger = '<C-t>'
@@ -192,11 +188,9 @@ silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
 """""""""""""""""""""""""""""""""""""""" ORG-MODE
 
-nnoremap <leader>c <localleader>cc
+nnoremap <leader>x <localleader>cc
 
 """""""""""""""""""""""""""""""""""""""" MARKDOWN
-
-jkj
 
 " let g:fzf_action = {
 "   \ 'return': 'tabedit' }
@@ -216,6 +210,12 @@ set smartindent
 set number relativenumber
 
 """""""""""""""""""""""""""""""""""""""""" OMNISHARP
+
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_highlight_types = 2
+let g:OmniSharp_server_use_mono = 1
+" let g:OmniSharp_server_loading_timeout = 5
+" let g:OmniSharp_start_without_solution = 1
 
 autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>zz
 autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>zz

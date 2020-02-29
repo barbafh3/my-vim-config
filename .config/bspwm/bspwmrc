@@ -57,8 +57,4 @@ setxkbmap -option caps:escape
 
 picom --experimental-backends
 
-export TEST="jajaja"
-
-export TWITCH_FAVORITES=~/Documentos/twitch-favorites
-
 xset -dpms s off

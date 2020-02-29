@@ -1,21 +1,17 @@
 #!/bin/bash
 
 FILE=""
-# TODO: Use global variable $BROWSER
 BROWSER=qutebrowser
 ICON=~/Dropbox/imagens/icones/qutebrowser.png
 
 # TODO: Use global variables for both url files
 if [ "$1" = "-f" ] || [ "$1" = "--favorites" ] ; then
-  # FILE=$BROWSER_FAVORITES
-  FILE=~/Documentos/Favoritos/browser-favorites
+  FILE=$BROWSER_FAVORITES
 else
-  # FILE=$BROWSER_MOST_USED
-  FILE=~/Documentos/Favoritos/browser-most-used
+  FILE=$BROWSER_MOST_USED
 fi
 
 OPTION=$(sort $FILE | awk -F'"' '$0=$2' | rofi -dmenu -i -l 30 -p "Web")
-echo $OPTION
 
 if [ "$OPTION" != "" ] ; then
 

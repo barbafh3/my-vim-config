@@ -16,10 +16,6 @@
 ;								V A R I A B L E S								;
 ;-----------------------------------------------;
 
-;[colors]
-;background = #282828
-;foreground = #ebdbb2
-;alert = #cc241d
 
 [colors]
 background = ${xrdb:color0:#222}
@@ -58,6 +54,7 @@ offset-x = 86%
 width = 12%
 height = 35
 radius = 12
+wm-restack = bspwm
 
 background = ${colors.background}
 
@@ -76,6 +73,7 @@ offset-x = 42%
 width = 15%
 height = 35
 radius = 12
+wm-restack = bspwm
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -99,6 +97,7 @@ offset-x = 65%
 width = 15%
 height = 35
 radius = 12
+wm-restack = bspwm
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -122,6 +121,7 @@ offset-x = 2%
 width = 27%
 height = 35
 radius = 12
+wm-restack = bspwm
 fixed-center = true
 line-size = 2
 
