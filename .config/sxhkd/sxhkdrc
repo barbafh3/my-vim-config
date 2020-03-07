@@ -24,7 +24,7 @@ super + shift + i
 
 # run terminal
 super + Return
-  /usr/bin/kitty
+  $TERMINAL
 
 # run rofi - select with enter
 super + d
@@ -39,6 +39,10 @@ super + shift + b
 
 super + shift + f
   web --favorites
+
+# run defined programs
+ctrl + {r,b,t,d,s}
+  {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
 
 # run rofi for system actions (logout, turn off, restart, etc)
 super + shift + s

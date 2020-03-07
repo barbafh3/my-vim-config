@@ -23,6 +23,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 
 bspc rule -a Code desktop=^1
+bspc rule -a Anki desktop=^1
 bspc rule -a Firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
 bspc rule -a Epiphany desktop=^2

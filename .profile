@@ -1,7 +1,8 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export XDG_CONFIG_HOME="$HOME/.config"
 export SXHKD_SHELL=/bin/bash
-export GTK_THEME="Adwaita-dark"
+#export GTK_THEME="Adwaita-dark"
+export GTK2_RC_FILES=/home/junior/.gtkrc-2.0
 
 export PATH=$PATH:~/.scripts/bin
 export PATH=$PATH:~/bin
@@ -17,6 +18,7 @@ export FrameworkPathOverride=/lib/mono/4.5
 export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/bin/kitty
 export BROWSER=/usr/bin/qutebrowser
+export FILE_MANAGER="kitty -e ranger"
 
 export DOCS=$HOME/Documentos
 export FAV=$DOCS/Favoritos
