@@ -7,15 +7,11 @@ random-wallpaper
 killall polybar 
 ~/.config/polybar/launch.sh &
 
-killall dzen2
-killall bspwm-bar-vertical
-# bspwm-bar-vertical | dzen2 -l '10' -sa c -e 'onstart=uncollapse' -w '32' -title-name 'jose' &
-
 killall sxhkd 
 sxhkd &
 
 bspc config border_width         1
-bspc config window_gap          12
+bspc config window_gap          12 
 bspc config border_radius       10
 
 bspc config split_ratio          0.52
@@ -32,9 +28,6 @@ bspc rule -a Firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
 bspc rule -a Epiphany desktop=^2
 bspc rule -a qutebrowser desktop=^2 follow=on
-
-# Epiphany installed websites
-bspc rule -a epiphany-amazon-brasil-775f4cd0af28ccf52cfce19ba063c2c16dca2d79 desktop=^2
 
 # Requires spotifywm-git to define WM_CLASS before the window opens.
 # Without it, bspwm doesn't have the WM_CLASS from spotify when the window opens,
@@ -65,3 +58,5 @@ setxkbmap -option caps:escape
 picom --experimental-backends
 
 xset -dpms s off
+
+dropbox &

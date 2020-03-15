@@ -51,10 +51,11 @@ x15 = ${xrdb:color15:#222}
 [bar/complete]
 height = 35
 wm-restack = bspwm
+override-redirect = false
 
 modules-left = sep sep bspwm
 modules-center = mydate
-modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep
+modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep sep
 
 background = ${colors.background}
 

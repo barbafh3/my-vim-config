@@ -23,8 +23,8 @@ super + shift + i
   setxkbmap -option caps:escape && notify-send "Keybindings" "Caps set to Escape"
 
 # run terminal
-super + Return
-  $TERMINAL
+super + {_,shift +} Return
+  {$TERMINAL,bspc rule -a \* -o state=floating && $TERMINAL} 
 
 # run rofi - select with enter
 super + d
