@@ -7,6 +7,10 @@ random-wallpaper
 killall polybar 
 ~/.config/polybar/launch.sh &
 
+killall dzen2
+killall bspwm-bar-vertical
+# bspwm-bar-vertical | dzen2 -l '10' -sa c -e 'onstart=uncollapse' -w '32' -title-name 'jose' &
+
 killall sxhkd 
 sxhkd &
 

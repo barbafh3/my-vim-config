@@ -7,9 +7,10 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
-polybar desktops &
-polybar calendar &
-polybar modules &
-polybar tray &
+# polybar desktops &
+# polybar calendar &
+# polybar modules &
+# polybar tray &
+polybar complete &
 
 echo "Bars launched..."

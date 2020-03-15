@@ -48,6 +48,33 @@ x15 = ${xrdb:color15:#222}
 ;-----------------------------------------------;
 ;							        B A R S										;
 ;-----------------------------------------------;
+[bar/complete]
+height = 35
+wm-restack = bspwm
+
+modules-left = sep sep bspwm
+modules-center = mydate
+modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep
+
+background = ${colors.background}
+
+font-0 = Fira Code:pixelsize=13;4
+font-1 = IPAGothic:pixelsize=16;4
+font-2 = FontAwesome:pixelsize=12;3
+font-3 = Weather Icons:size=16;4
+font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
+font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
+font-6 = JetBrains Mono Regular:pixelsize=14;0
+font-7 = Fira Code:pixelsize=18;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+
+tray-position = right
+tray-foreground = ${colors.foreground}
+tray-background = ${colors.background}
+tray-padding = 10
+tray-detached = false
+tray-maxsize = 25
+
 [bar/tray]
 offset-y = 12
 offset-x = 86%
@@ -60,7 +87,7 @@ background = ${colors.background}
 
 modules-right = tray-sep
 
-tray-position = center
+tray-position = right
 tray-foreground = ${colors.foreground}
 tray-background = ${colors.background}
 tray-padding = 10
@@ -140,6 +167,7 @@ font-7 = Fira Code:pixelsize=18;4
 font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
 
 modules-center = sep sep bspwm sep sep
+; modules-left = sep sep bspwm sep sep
 ; modules-center = mydate
 ; PC
 ; modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep

@@ -41,7 +41,7 @@ super + shift + f
   web --favorites
 
 # run defined programs
-ctrl + {r,b,t,d,s}
+shift + ctrl + {r,b,t,d,s}
   {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
 
 # run rofi for system actions (logout, turn off, restart, etc)
@@ -53,12 +53,13 @@ super + shift + q
   xdo close
 
 # focus or send to the given desktop
-super + {1-4,q,w,e,a,s,z}
-	bspc desktop -f {1,2,3,4,5,6,7,8,9,0}
+super + {_,ctrl + } {1-4,q,w,e,a,s,z}
+	bspc {desktop -f, node -d} '^{1,2,3,4,5,6,7,8,9,0}'; \
+  refbar;
 
 # move window to desktop
-super + ctrl + {1-4,q,w,e,a,s,z}
-  bspc node -d {1,2,3,4,5,6,7,8,9,0} 
+#super + ctrl + {1-4,q,w,e,a,s,z}
+#  bspc node -d {1,2,3,4,5,6,7,8,9,0} 
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}

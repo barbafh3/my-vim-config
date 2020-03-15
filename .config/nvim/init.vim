@@ -47,6 +47,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'sjl/badwolf'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'ObserverOfTime/coloresque.vim'
+Plug 'calviken/vim-gdscript3'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
