@@ -188,7 +188,7 @@ content-blacklistground = ${colors.x9}
 [module/left-icon]
 type = custom/text
 content = " "
-;content-background = #222d32
+; content-background = #222d32
 ;content-foreground = #2e8b57
 content-background = ${colors.foreground}
 content-foreground = ${colors.background}

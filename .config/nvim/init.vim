@@ -8,6 +8,7 @@
 
 set encoding=UTF-8
 scriptencoding utf-8
+set termguicolors
 
 set shortmess=a
 " Better display for messages
@@ -48,6 +49,7 @@ Plug 'sjl/badwolf'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'ObserverOfTime/coloresque.vim'
 Plug 'calviken/vim-gdscript3'
+Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
@@ -103,6 +105,8 @@ set smarttab
 set autoindent
 set smartindent
 set number relativenumber
+
+let g:Hexokinase_highlighters = ['virtual']
 
 "Set true colors to work with tmux aswell
 " let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
