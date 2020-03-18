@@ -12,7 +12,7 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/home/manjaro/.dotnet.tools
 
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/bin
-export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)
+export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
 export FrameworkPathOverride=/lib/mono/4.5
 
 export EDITOR=/usr/bin/nvim

@@ -55,7 +55,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'nickspoons/vim-sharpenup'
 
-" " C# 
+" C++
+" Plug 'Yohannfra/Vim-Goto-Header'
+Plug 'JBakamovic/cxxd-vim'
+
+" C# 
 Plug 'OrangeT/vim-csharp'
 Plug 'OmniSharp/omnisharp-vim'
 " Plug 'chiel92/vim-autoformat'

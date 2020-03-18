@@ -46,6 +46,7 @@ bspc rule -a mpv desktop=^10 follow=on
 
 bspc rule -a Peek state=floating
 bspc rule -a Yad state=floating
+bspc rule -a Gnome-calculator state=floating
 
 killall udiskie
 udiskie &

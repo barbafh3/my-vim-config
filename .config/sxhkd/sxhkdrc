@@ -1,3 +1,7 @@
+# run rofi for system actions (logout, turn off, restart, etc)
+ctrl + alt + Delete
+  system-rofi &
+
 # restart bspwm
 super + shift + r
 	bspc wm -r
@@ -44,10 +48,6 @@ super + shift + f
 shift + ctrl + {r,b,t,d,s}
   {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
 
-# run rofi for system actions (logout, turn off, restart, etc)
-super + shift + s
-	system-rofi &
-
 # close and kill
 super + shift + q
   xdo close
@@ -90,9 +90,6 @@ super + F12
 	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
 			-e 'mv $f ~/Imagens/screenshots/' \
 			&& notify-send 'Screenshot Taken'
-
-ctrl + alt + Delete
-	gnome-system-monitor
 
 # Brightness controls - requires xorg-xbacklight
 
