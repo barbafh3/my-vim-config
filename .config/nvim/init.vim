@@ -54,10 +54,11 @@ Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'nickspoons/vim-sharpenup'
+Plug 'davisdude/vim-love-docs'
 
 " C++
 " Plug 'Yohannfra/Vim-Goto-Header'
-Plug 'JBakamovic/cxxd-vim'
+" Plug 'JBakamovic/cxxd-vim'
 
 " C# 
 Plug 'OrangeT/vim-csharp'

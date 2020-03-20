@@ -305,6 +305,8 @@ exec = ~/.scripts/polybar/mailbox
 interval = 2
 ;format-prefix = " "
 ;format-font = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 click-left = kitty -e neomutt
 
 [module/title]
