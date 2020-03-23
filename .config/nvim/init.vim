@@ -17,7 +17,7 @@ set cmdheight=3
 " Source changes to init.vim
 nnoremap <C-n> :so ~/.config/nvim/init.vim<Cr>
 
-set shell=/usr/bin/zsh
+set shell=/usr/bin/bash
 
 call plug#begin('~/.vim/plugged')
 

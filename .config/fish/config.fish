@@ -17,7 +17,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.gem/ruby/2.6.0/bin $PATH
 set PATH /home/manjaro/.dotnet/tools $PATH
 
-powerline-daemon -q
+# powerline-daemon -q
 
 # neofetch
 

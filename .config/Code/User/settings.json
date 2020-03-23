@@ -86,7 +86,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "omnisharp.path": "latest",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "terminal.integrated.rendererType": "dom",
   "omnisharp.useGlobalMono": "always",
   "vsicons.dontShowNewVersionMessage": true,
