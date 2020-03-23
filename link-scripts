@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SCRIPTS_FOLDER=$HOME/.scripts
+BIN=$SCRIPTS_FOLDER/bin
+
+SCRIPTS_PATH=$(find $SCRIPTS_FOLDER -type f)
+
+for CMD in $(echo $SCRIPTS_PATH | sed 's/\ /\n/g')
+do
+  NAME=$(basename $CMD)
+  echo "Creating sylink: $CMD -> $BIN/$NAME"
+  ln -sf $CMD "$BIN/$NAME"
+done
+
