@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo $(ls $HOME/.scripts/bin) | sed 's/\ /\n/g' | dmenu -l 30 | bash -
