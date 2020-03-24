@@ -1,6 +1,8 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export XDG_CONFIG_HOME="$HOME/.config"
 export SXHKD_SHELL=/bin/bash
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export HISTFILE="$XDG_DATA_HOME"/bash/history
 export GTK2_RC_FILES=/home/junior/.gtkrc-2.0
 
 export PATH=$PATH:~/.scripts/bin
