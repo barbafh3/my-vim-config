@@ -10,8 +10,8 @@ set encoding=UTF-8
 scriptencoding utf-8
 set termguicolors
 
-set shortmess=a
 " Better display for messages
+set shortmess=a
 set cmdheight=3
 
 " Source changes to init.vim
@@ -23,37 +23,37 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" NerdTree plugins"
+" NerdTree plugins
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" FZF for file search"
+" FZF for file search
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" General code utilities
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
+Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
 
 " Visual
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
-Plug 'dylanaraps/wal.vim'
-Plug 'sjl/badwolf'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
-Plug 'ObserverOfTime/coloresque.vim'
-Plug 'calviken/vim-gdscript3'
-Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 
-Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim'
-Plug 'nickspoons/vim-sharpenup'
+" GDScript
+Plug 'calviken/vim-gdscript3'
+
+" Love2D engine support
 Plug 'davisdude/vim-love-docs'
 
 " C++
@@ -63,13 +63,8 @@ Plug 'davisdude/vim-love-docs'
 " C# 
 Plug 'OrangeT/vim-csharp'
 Plug 'OmniSharp/omnisharp-vim'
-" Plug 'chiel92/vim-autoformat'
+Plug 'nickspoons/vim-sharpenup'
 
-" ORG-MODE
-Plug 'jceb/vim-orgmode'
-Plug 'mattn/calendar-vim'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-repeat'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
@@ -100,7 +95,8 @@ filetype plugin indent on    " required
 filetype on
 syntax on
 
-set guifont=Fira\ Code\ 14
+" set guifont=Fira\ Code\ 14
+set guifont=JetBrains\ Mono\ 14
 set bg=dark
 set splitbelow splitright
 set tabstop=2
@@ -110,28 +106,18 @@ set smarttab
 set autoindent
 set smartindent
 set number relativenumber
+set noshowmode
+set timeoutlen=300
 
 let g:Hexokinase_highlighters = ['virtual']
-
-"Set true colors to work with tmux aswell
-" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-" set termguicolors
 
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 
-" colorscheme one
 colorscheme gruvbox
-" colorscheme badwolf
-" colorscheme wal
 
-set noshowmode
-set timeoutlen=300
-let g:airline_theme='wal'
-"let g:airline_theme='base16_gruvbox_dark_hard'
-"let g:airline_theme='onedark'
-"let g:airline_theme='badwolf'
+" Airline settings
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -147,6 +133,7 @@ inoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
+" Remap : to ;
 nnoremap ; :
 
 " Change 0 from line start to first non-space character
@@ -190,23 +177,11 @@ let g:UltiSnipsExpandTrigger = '<C-t>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.config/nvim/snippets"]
 nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>
 
-" set list listchars=eol:¬,tab:|·,trail:·,space:\
-" set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
-"""""""""""""""""""""""""""""""""""""""" ORG-MODE
-
-nnoremap <leader>x <localleader>cc
-
 """""""""""""""""""""""""""""""""""""""" MARKDOWN
-
-" let g:fzf_action = {
-"   \ 'return': 'tabedit' }
-
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP ~/Dev'
 
 set guifont=Fira\ Code\ 14
 set bg=dark
@@ -224,8 +199,6 @@ set number relativenumber
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_highlight_types = 2
 let g:OmniSharp_server_use_mono = 1
-" let g:OmniSharp_server_loading_timeout = 5
-" let g:OmniSharp_start_without_solution = 1
 
 autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>zz
 autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>zz
@@ -241,8 +214,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
 inoremap <expr> <M-j> pumvisible() ? "\<C-n>" : ""
 inoremap <expr> <M-k> pumvisible() ? "\<C-p>" : ""
-
-" let g:coc_snippet_next = '<tab>'
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
