@@ -8,6 +8,15 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
+**Change K380 Bluetooth keyboard default to FN keys instead of media keys** - Since there is no official software from logitech for this purpose, follow the instructions on this scripts github https://github.com/barbafh3/k380-function-keys-conf
+. To make the changes on startup, use the following command on the script's folder:
+
+```
+sudo cp 80-k380.rules /etc/udev/rules.d/ && sudo udevadm control --reload
+```
+
+------
+
 **Disable Youtube player hotkeys** - Since Youtube default hotkeys conflict with vim keys, you can disable them using the uBlock Origin add-on for Firefox, go to its dashboard, then My Filters and add the following line:
 
 ```
