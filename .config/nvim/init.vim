@@ -28,6 +28,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Ranger in vim
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+
 " FZF for file search
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -42,6 +46,7 @@ Plug 'SirVer/ultisnips'
 Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
+Plug 'unblevable/quick-scope'
 
 " Visual
 Plug 'vim-airline/vim-airline'
