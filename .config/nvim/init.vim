@@ -56,7 +56,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 
 " GDScript
-Plug 'calviken/vim-gdscript3'
+Plug 'clktmr/vim-gdscript3'
 
 " Love2D engine support
 Plug 'davisdude/vim-love-docs'
@@ -100,8 +100,9 @@ filetype plugin indent on    " required
 filetype on
 syntax on
 
-" set guifont=Fira\ Code\ 14
-set guifont=JetBrains\ Mono\ 14
+set guifont=Fira\ Code\ 14
+" set guifont=JetBrains\ Mono\ 14
+" set guifont=Ubuntu\ Mono\ Regular\ 14
 set bg=dark
 set splitbelow splitright
 set tabstop=2
@@ -185,6 +186,14 @@ nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+
+" Copy from neovim to system clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from system clipboard to neovim
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 
 """""""""""""""""""""""""""""""""""""""" MARKDOWN
 
