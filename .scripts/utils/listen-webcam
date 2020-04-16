@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nc -l -u -p 5000 | \
+  ffplay -fflags nobuffer \
+  -fflags discardcorrupt \
+  -flags low_delay \
+  -strict experimental \
+  -framedrop \
+  -i -

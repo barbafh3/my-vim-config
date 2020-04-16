@@ -9,8 +9,10 @@ settings:
   bindings.commands:
     global:
       normal:
-        M: hint links spawn mpv {hint-url}
-        m: spawn mpv {url}
+        M: hint links spawn mpv --volume=50 {hint-url}
+        m: spawn mpv --volume=50 {url}
+  content.media_capture:
+    https://hangouts.google.com: true
   content.notifications:
     https://www.reddit.com: false
   content.register_protocol_handler:

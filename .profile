@@ -11,6 +11,7 @@ export PATH=$PATH:~/.bin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/home/manjaro/.dotnet.tools
+export PATH=$PATH:/opt/mono/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/bin
 export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks

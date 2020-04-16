@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ffmpeg -f v4l2 \
+  -i /dev/video0 \
+  -preset ultrafast \
+  -tune -zerolatency \
+  -pix_fmt yuv420p \
+  -f avi - | netcat -u 192.168.1.130 5000
+
