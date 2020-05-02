@@ -46,5 +46,35 @@
 			"}"
 		],
 		"description": "Basic MonoBehaviour for Unity scripts"
-	}
+	},
+	"Ready function - Godot": {
+		"prefix": "_Ready",
+		"body": [
+			"public override void _Ready()",
+			"{",
+			"$0",
+			"}"
+		],
+		"description": "_Ready function structure from Godot"
+	},
+	"Process function - Godot": {
+		"prefix": "_Process",
+		"body": [
+			"public override void _Process(float delta)",
+			"{",
+			"$0",
+			"}"
+		],
+		"description": "_Process function structure from Godot"
+	},
+	"Physics Process function - Godot": {
+		"prefix": "_PhysicsProcess",
+		"body": [
+			"public override void _PhysicsProcess(float delta)",
+			"{",
+			"$0",
+			"}"
+		],
+		"description": "_PhysicsProcess function structure from Godot"
+	},
 }

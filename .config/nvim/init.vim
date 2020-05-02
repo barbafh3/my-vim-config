@@ -56,7 +56,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 
 " GDScript
-Plug 'clktmr/vim-gdscript3'
+" Plug 'clktmr/vim-gdscript3'
+Plug 'habamax/vim-godot'
 
 " Love2D engine support
 Plug 'davisdude/vim-love-docs'
@@ -194,6 +195,25 @@ nnoremap  <leader>yy  "+yy
 " Paste from system clipboard to neovim
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+
+"""""""""""""""""""""""""""""""""""""""" GODOT
+
+
+nnoremap <leader>gdr :call OpenMainScene()<CR>
+
+function!  OpenMainScene()
+  let godot_version = ""
+  if executable("godot-mono")
+    let godot_version = "godot-mono"
+  elseif executable("godot")
+    let godot_version = "godot"
+  endif
+  if godot_version != ""
+    let grep_value = system("grep run/main_scene ./project.godot | sed 's@run/main_scene=@@g' | sed 's@\"@@g'")
+    silent execute "!" . godot_version . " " . grep_value
+  endif
+endfunction
+
 
 """""""""""""""""""""""""""""""""""""""" MARKDOWN
 

@@ -154,8 +154,9 @@
     ]
   },
   "extensions.ignoreRecommendations": true,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "godot-tool.check_status": "true",
   "omnisharp.useGlobalMono": "always",
-  "omnisharp.monoPath": "/opt/mono/bin"
+  "omnisharp.monoPath": "/opt/mono/bin",
+  "window.zoomLevel": 0
 }
