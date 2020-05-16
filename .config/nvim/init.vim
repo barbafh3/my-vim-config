@@ -1,20 +1,22 @@
-"        _
-" __   _(_)_ __ ___  _ __ ___
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__
-"   \_/ |_|_| |_| |_|_|  \___|
-"
-" ____________________________
+"   _   _                 _           
+"  | \ | |               (_)          
+"  |  \| | ___  _____   ___ _ __ ___  
+"  | . ` |/ _ \/ _ \ \ / / | '_ ` _ \ 
+"  | |\  |  __/ (_) \ V /| | | | | | |
+"  |_| \_|\___|\___/ \_/ |_|_| |_| |_|
+"                                    
+" _____________________________________
 
 
+" General configurations
 source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/keybinds.vim
 
+" Plugin specific configurations and keybindings
 source $HOME/.config/nvim/nerdtree.vim
 source $HOME/.config/nvim/ultisnips.vim
-
 source $HOME/.config/nvim/godot.vim
 source $HOME/.config/nvim/omnisharp.vim
 source $HOME/.config/nvim/coc.vim
