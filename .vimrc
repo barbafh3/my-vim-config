@@ -15,9 +15,10 @@ set shortmess=a
 set cmdheight=3
 
 set mouse=a
+set cursorline
 
 " Source changes to init.vim
-nnoremap <C-n> :so ~/.config/nvim/init.vim<Cr>
+nnoremap <C-n> :so ~/.vimrc<CR>
 
 set shell=/usr/bin/bash
 
@@ -25,10 +26,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" NerdTree plugins
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" " NerdTree plugins
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Ranger in vim
 Plug 'francoiscabrol/ranger.vim'
@@ -45,7 +46,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
+" Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'unblevable/quick-scope'
@@ -56,14 +57,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
-Plug 'sjl/badwolf'
 
 " GDScript
 Plug 'clktmr/vim-gdscript3'
 " Plug 'habamax/vim-godot'
 
 " Love2D engine support
-Plug 'davisdude/vim-love-docs'
+" Plug 'davisdude/vim-love-docs'
 
 " C++
 " Plug 'Yohannfra/Vim-Goto-Header'
@@ -120,13 +120,14 @@ set number relativenumber
 set noshowmode
 set timeoutlen=300
 
-let g:Hexokinase_highlighters = ['virtual']
+"" let g:Hexokinase_highlighters = ['virtual']
 
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" let g:gruvbox_italic=1
+" let g:gruvbox_contrast_dark='hard'
 
 " colorscheme dracula
+
+colorscheme gruvbox
 
 set cursorline
 
@@ -136,7 +137,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Removes arrow movement
 vnoremap <Up> <NOP>
@@ -339,7 +339,7 @@ let g:closetag_close_shortcut = '<leader>>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" highlight clear CursorLine
+highlight clear CursorLine
 highlight Normal ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
