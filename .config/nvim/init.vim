@@ -9,17 +9,17 @@
 
 
 " General configurations
-source $HOME/.config/nvim/general.vim
-source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/theme.vim
-source $HOME/.config/nvim/keybinds.vim
+source $HOME/.config/nvim/config/plugins.vim
+source $HOME/.config/nvim/config/general.vim
+source $HOME/.config/nvim/config/theme.vim
+source $HOME/.config/nvim/config/keybindings.vim
 
 " Plugin specific configurations and keybindings
-source $HOME/.config/nvim/nerdtree.vim
-source $HOME/.config/nvim/ultisnips.vim
-source $HOME/.config/nvim/godot.vim
-source $HOME/.config/nvim/omnisharp.vim
-source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/config/nerdtree.vim
+source $HOME/.config/nvim/config/ultisnips.vim
+source $HOME/.config/nvim/config/godot.vim
+source $HOME/.config/nvim/config/omnisharp.vim
+source $HOME/.config/nvim/config/coc.vim
 
 
 " highlight clear CursorLine
