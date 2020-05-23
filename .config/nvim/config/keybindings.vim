@@ -33,8 +33,6 @@ nnoremap <leader>h :bp<Cr>
 " Close buffer
 nnoremap <leader>d :bd<CR>
 
-set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
-
 silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 
 " Copy from neovim to system clipboard

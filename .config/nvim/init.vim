@@ -10,7 +10,6 @@
 
 " General configurations
 source $HOME/.config/nvim/config/plugins.vim
-source $HOME/.config/nvim/config/general.vim
 source $HOME/.config/nvim/config/theme.vim
 source $HOME/.config/nvim/config/keybindings.vim
 
@@ -21,12 +20,4 @@ source $HOME/.config/nvim/config/godot.vim
 source $HOME/.config/nvim/config/omnisharp.vim
 source $HOME/.config/nvim/config/coc.vim
 
-
-" highlight clear CursorLine
-highlight Normal ctermbg=none
-highlight LineNr ctermbg=none
-highlight Folded ctermbg=none
-highlight NonText ctermbg=none
-highlight SpecialKey ctermbg=none
-highlight VertSplit ctermbg=none
-highlight SignColumn ctermbg=none
+source $HOME/.config/nvim/config/general.vim

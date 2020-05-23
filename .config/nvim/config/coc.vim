@@ -1,9 +1,20 @@
 " Ctrl-Space open auto-complete panel
 inoremap <silent><expr> <c-space> coc#refresh()
 
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use j and k to cycle through auto-complete options
 " when panel is open
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
+" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
 inoremap <expr> <M-j> pumvisible() ? "\<C-n>" : ""
 inoremap <expr> <M-k> pumvisible() ? "\<C-p>" : ""
 
@@ -39,3 +50,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@

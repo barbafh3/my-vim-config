@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'ThePrimeagen/vim-be-good'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " NerdTree plugins
@@ -26,6 +28,7 @@ Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'unblevable/quick-scope'
+Plug 'voldikss/vim-floaterm'
 
 " Visual
 Plug 'vim-airline/vim-airline'
