@@ -48,3 +48,28 @@ void OnCollisionExit2D(Collision2D other)
 	$0
 }
 endsnippet
+
+snippet _rdy "Create _Ready method"
+public override void _Ready()
+{
+	$0
+}
+endsnippet
+
+snippet _proc "Create _Process method"
+public override void _Process(float delta)
+{
+	$0
+}
+endsnippet
+
+snippet _phyproc "Create _PhysicsProcess method"
+public override void _PhysicsProcess(float delta)
+{
+	$0
+}
+endsnippet
+
+snippet gdp "Godot's print"
+GD.Print($0);
+endsnippet
