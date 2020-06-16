@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'mhinz/vim-startify'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -29,6 +30,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
+
+" Org mode
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
 
 " Visual
 Plug 'vim-airline/vim-airline'

@@ -20,7 +20,11 @@ vnoremap 0 ^
 
 " set leader key to space
 :let mapleader = " "
-:let maplocalleader = "ç"
+:let maplocalleader = "//"
+
+" Change splits
+nnoremap <leader>ll <C-w>l
+nnoremap <leader>hh <C-w>h
 
 " Change tabs
 nnoremap <leader><S-l> :tabn<CR>

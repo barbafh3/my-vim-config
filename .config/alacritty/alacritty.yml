@@ -1,9 +1,15 @@
 font:
   normal:
+    # family: Source Code Pro
+    family: Ubuntu Mono
     # family: FiraCode Nerd Font
-    family: JetBrains Mono
+    # family: JetBrains Mono
+    # family: Mononoki
+  italic:
+    # family: Source Code Pro
+    family: Mononoki
 
-  size: 12.0
+  size: 14.0
 
 # Colors (Dracula)
 colors:
