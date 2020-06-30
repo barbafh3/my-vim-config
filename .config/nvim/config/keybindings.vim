@@ -46,3 +46,6 @@ nnoremap  <leader>yy  "+yy
 " Paste from system clipboard to neovim
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+
+" Run monogame project
+nnoremap <leader>mg !dotnet run

@@ -53,13 +53,13 @@ super + shift + q
   xdo close
 
 # focus or send to the given desktop
-super + {_,ctrl + } {1-4,q,w,e,a,s,z}
-	bspc {desktop -f, node -d} '^{1,2,3,4,5,6,7,8,9,0}'; \
-  refbar;
+super + {1,2,3,4,q,w,e,a,s,0}
+	bspc desktop -f '^{1,2,3,4,5,6,7,8,9,10}'
+	#bspc desktop -f '^{I,II,III,IV,V,VI,VII,VIII,IX,X}' 
 
 # move window to desktop
-#super + ctrl + {1-4,q,w,e,a,s,z}
-#  bspc node -d {1,2,3,4,5,6,7,8,9,0} 
+super + ctrl + {1,2,3,4,q,w,e,a,s,z} 
+  bspc node -d {1,2,3,4,5,6,7,8,9,0} 
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}

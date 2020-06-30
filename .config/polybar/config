@@ -52,10 +52,11 @@ x15 = ${xrdb:color15:#222}
 height = 35
 wm-restack = bspwm
 override-redirect = false
+monitor = DVI-D-0
 
 modules-left = sep sep bspwm
 modules-center = mydate
-modules-right = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon sep sep sep
+modules-right = volume sep wired-network sep power-icon sep
 
 background = ${colors.background}
 
@@ -69,12 +70,12 @@ font-6 = JetBrains Mono Regular:pixelsize=14;0
 font-7 = Fira Code:pixelsize=18;4
 font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
 
-tray-position = right
-tray-foreground = ${colors.foreground}
-tray-background = ${colors.background}
-tray-padding = 10
-tray-detached = false
-tray-maxsize = 25
+;tray-position = right
+;tray-foreground = ${colors.foreground}
+;tray-background = ${colors.background}
+;tray-padding = 10
+;tray-detached = false
+;tray-maxsize = 25
 
 [bar/tray]
 offset-y = 12
@@ -106,7 +107,7 @@ wm-restack = bspwm
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+; font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
 font-0 = Fira Code:pixelsize=13;4
 font-1 = IPAGothic:pixelsize=16;4
 font-2 = FontAwesome:pixelsize=12;3
@@ -130,7 +131,7 @@ wm-restack = bspwm
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+; font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
 font-0 = Fira Code:pixelsize=13;4
 font-1 = IPAGothic:pixelsize=16;4
 font-2 = FontAwesome:pixelsize=12;3
@@ -153,10 +154,12 @@ wm-restack = bspwm
 fixed-center = true
 line-size = 2
 
+monitor = HDMI-0
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-/* font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
+; font-0 = DejaVuSansMono Nerd Font:pixelsize=12;3 */
 font-0 = Fira Code:pixelsize=13;4
 font-1 = IPAGothic:pixelsize=16;4
 font-2 = FontAwesome:pixelsize=12;3
@@ -215,6 +218,7 @@ click-left = $HOME/.scripts/polybar/battery-info
 type = custom/text
 content = ""
 content-foreground = ${colors.foreground}
+content-font = 2
 ;content-underline = #ffa500
 click-left = $HOME/.scripts/polybar/my-calendar
 
@@ -362,16 +366,16 @@ reverse-scroll = false
 fuzzy-match = true
 
 # bspc monitor -d 
-ws-icon-0 = 1;一  
-ws-icon-1 = 2;二  
-ws-icon-2 = 3;三  
-ws-icon-3 = 4;四  
-ws-icon-4 = 5;五 
-ws-icon-5 = 6;六 
-ws-icon-6 = 7;七 
-ws-icon-7 = 8;八 
-ws-icon-8 = 9;九 
-ws-icon-9 = 0;十
+ws-icon-0 = 0;0 
+ws-icon-1 = 1;1  
+ws-icon-2 = 2;2  
+ws-icon-3 = 3;3  
+ws-icon-4 = 4;4 
+ws-icon-5 = 5;Q 
+ws-icon-6 = 6;W 
+ws-icon-7 = 7;E 
+ws-icon-8 = 8;A 
+ws-icon-9 = 9;S 
 ws-icon-default = ""
 
 ; Available tags:
@@ -435,13 +439,14 @@ format-volume = <bar-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-;label-volume = %percentage%%
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %percentage% (default)
 ;label-muted = 🔇 muted
 label-muted = 🔇
-label-muted-foreground = #666
+label-muted-foreground = ${colors.foreground}
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 🔈
@@ -733,9 +738,10 @@ type = internal/volume
 ; mapping = true
 ;format-volume = <ramp-volume><label-volume>
 label-volume = "  %percentage%% "
-;label-volume-foreground = ${colors.white}
+label-volume-foreground = ${colors.foreground}
 ;label-volume-underline = #02bdff
 label-muted = "  %percentage%% "
+label-muted-foreground = ${colors.foreground}
 ;label-muted-underline = #02bdff
 label-foreground = ${colors.foreground}
 
@@ -762,7 +768,7 @@ label-foreground = ${colors.foreground}
 [module/updates]
 type = custom/script
 format = "<label> " 
-format-font = 1
+format-font = 3
 format-foreground = ${colors.foreground}
 format-prefix-foreground = ${colors.foreground}
 exec = ~/.scripts/updates-arch-combined.sh
