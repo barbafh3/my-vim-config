@@ -54,9 +54,6 @@ bspc rule -a Gnome-calculator state=floating
 killall udiskie
 udiskie &
 
-dunst
-
-killall dunstwal
 dunstwal &
 
 picom --experimental-backends

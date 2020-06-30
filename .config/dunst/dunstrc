@@ -33,7 +33,7 @@
     icon_path = /usr/share/icons/Notifications
     icon_position = left
     frame_width = 1
-    frame_color = "#C3B9BF"
+    frame_color = "#695949"
 
 [shortcuts]
     close = ctrl+space
@@ -42,18 +42,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#131212"
-    foreground = "#C3B9BF"
+    background = "#121212"
+    foreground = "#695949"
     timeout = 5
 
 [urgency_normal]
-    background = "#131212"
-    foreground = "#C3B9BF"
+    background = "#121212"
+    foreground = "#695949"
     timeout = 10
 
 [urgency_critical]
-    background = "#131212"
-    foreground = "#C3B9BF"
+    background = "#121212"
+    foreground = "#695949"
     timeout = 0
 
 [Spotify]
