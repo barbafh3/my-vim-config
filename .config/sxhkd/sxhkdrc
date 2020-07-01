@@ -45,8 +45,8 @@ super + shift + f
   web --favorites
 
 # run defined programs
-shift + ctrl + {r,b,t,d,s}
-  {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
+#shift + ctrl + {r,b,t,d,s}
+#  {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
 
 # close and kill
 super + shift + q
@@ -88,7 +88,7 @@ ctrl + alt + {h,j,k,l}
 # takes screenshots - requires scrot
 super + F12
 	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -q 100 \
-			-e 'mv $f ~/Imagens/screenshots/' \
+			-e 'mv $f ~/Imagens/Screenshots/' \
 			&& notify-send 'Screenshot Taken'
 
 # Brightness controls - requires xorg-xbacklight

@@ -1,5 +1,8 @@
 #! /bin/sh
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 xsetroot -cursor_name left_ptr & 
 
 random-wallpaper
@@ -45,6 +48,7 @@ bspc rule -a krita desktop=^7
 bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
 bspc rule -a mpv desktop=^10 follow=on
+
 
 bspc rule -a dotnet state=floating
 bspc rule -a Peek state=floating
