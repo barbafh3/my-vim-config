@@ -4,7 +4,7 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
-**Caps to escape permanently, even when pluging/unppluging/reconnecting keyboards** - Since the setxkbmap is lost after keyboard disconnection, i started using a plugin for Interception Tools called caps2esc. Follow the instructions on the plugin's gitlab https://gitlab.com/interception/linux/plugins/caps2esc
+**Caps to escape permanently, even when pluging/unppluging/reconnecting keyboards** - Since the setxkbmap is lost after keyboard disconnection, i started using a tool called Interception Tools with a plugin named caps2esc. Follow the instructions on the plugin's gitlab https://gitlab.com/interception/linux/plugins/caps2esc
 
 ------
 
