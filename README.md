@@ -9,13 +9,13 @@ These files are open to everyone and can be used freely at your own discretion.
 
 ### Other relevant information
 
-[Configurations](https://www.github.com/barbafh3/dotfiles/blob/laptop/CONFIGURATIONS.md) - This section holds all configurations that are not in my home folder
+[Configurations](https://www.github.com/barbafh3/dotfiles/blob/desktop/CONFIGURATIONS.md) - This section holds all configurations that are not in my home folder
     
-[Packages](https://www.github.com/barbafh3/dotfiles/blob/laptop/PACKAGES.md) - This section has all packages I have installed currently
+[Packages](https://www.github.com/barbafh3/dotfiles/blob/desktop/PACKAGES.md) - This section has all packages I have installed currently
 
-[Games](https://www.github.com/barbafh3/dotfiles/blob/laptop/GAMES.md) - This section has game specific configurations
+[Games](https://www.github.com/barbafh3/dotfiles/blob/desktop/GAMES.md) - This section has game specific configurations
 
-[Fedora](https://www.github.com/barbafh3/dotfiles/blob/laptop/FEDORA.md) - This section has Fedora specific configurations and package installation
+[Fedora](https://www.github.com/barbafh3/dotfiles/blob/desktop/FEDORA.md) - This section has Fedora specific configurations and package installation
 
-[Solus OS](https://www.github.com/barbafh3/dotfiles/blob/laptop/SOLUS.md) - This section has Solus OS specific configurations and package installation
+[Solus OS](https://www.github.com/barbafh3/dotfiles/blob/desktop/SOLUS.md) - This section has Solus OS specific configurations and package installation
 
