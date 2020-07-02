@@ -31,7 +31,7 @@ bspc rule -a Anki desktop=^1
 bspc rule -a Firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
 bspc rule -a Epiphany desktop=^2
-bspc rule -a qutebrowser desktop=^2 follow=on
+# bspc rule -a qutebrowser desktop=^2 follow=on
 
 # Requires spotifywm-git to define WM_CLASS before the window opens.
 # Without it, bspwm doesn't have the WM_CLASS from spotify when the window opens,
