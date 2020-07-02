@@ -2,6 +2,17 @@
 
 All configurations that I made that are not on files inside my home folder are in this file.
 
+------
+
+**Caps to escape permanently, even when pluging/unppluging/reconnecting keyboards** - Since the setxkbmap is lost after keyboard disconnection, i started using a plugin for Interception Tools called caps2esc. Follow the instructions on the plugin's gitlab https://gitlab.com/interception/linux/plugins/caps2esc
+
+------
+
+**Enable Bluetooth with AutoEnable on boot for Bluetooth Keyboards** - Since archlinux doesn't have bluetooth enable by default, follow the instructions on the arch wiki https://wiki.archlinux.org/index.php/Bluetooth_keyboard
+
+------
+
+**Change K380 Bluetooth keyboard default to FN keys instead of media keys** - Since there is no official software from logitech for this purpose, follow the instructions on this scripts github https://github.com/barbafh3/k380-function-keys-conf
 
 ------
 
