@@ -4,6 +4,16 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
+**Media keys with delay on Gnome** - Media keys have a delay when using two keyboards and one of them being ABNT/ABNT2 format. To solve this, disable Scroll Lock from the ABNT keyboard by commenting the following line on the file /usr/share/X11/xkb/symbols/br and relog/restart:
+
+```modifier_map Mod3 { Scroll_Lock };```
+
+to
+
+```// modifier_map Mod3 { Scroll_Lock };```
+
+------
+
 **Caps to escape permanently, even when pluging/unppluging/reconnecting keyboards** - Since the setxkbmap is lost after keyboard disconnection, i started using a plugin for Interception Tools called caps2esc. Follow the instructions on the plugin's gitlab https://gitlab.com/interception/linux/plugins/caps2esc
 
 ------
