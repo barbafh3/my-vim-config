@@ -41,12 +41,10 @@ fi
 if [ $PERCENT -eq 100 ] ; then
     icon=""
 fi
-
 # If charging, show charging icon, else shows selected icon
 if [ "$MODE" = "Charging" ] 
 then
-    notify-send "$(acpi -b | sed "s/,//g" | awk -v x=$c_icon '{print x " "$3" - "$4" - Time remaining: "$5""}')" 
+    notify-send "Battery" "$(acpi -b | grep "Battery 0" | sed "s/,//g" | awk -v x=$c_icon '{print x " "$3" - "$4" - Time remaining: "$5""}')" 
 else
-    notify-send "$(acpi -b | sed "s/,//g" | awk -v x=$icon '{print x " "$3" - "$4" - Time remaining: "$5""}')" 
+    notify-send "Battery" "$(acpi -b | grep "Battery 0" | sed "s/,//g" | awk -v x=$icon '{print x " "$3" - "$4" - Time remaining: "$5""}')" 
 fi
-

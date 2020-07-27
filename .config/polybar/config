@@ -48,6 +48,35 @@ x15 = ${xrdb:color15:#222}
 ;-----------------------------------------------;
 ;							        B A R S										;
 ;-----------------------------------------------;
+[bar/complete-laptop]
+height = 30
+wm-restack = bspwm
+override-redirect = false
+; monitor = DVI-D-0
+
+modules-left = sep sep bspwm
+modules-center = mydate
+modules-right = battery battery-info sep wireless-network power-icon volume sep
+
+background = ${colors.background}
+
+font-0 = Fira Code:pixelsize=13;4
+font-1 = IPAGothic:pixelsize=16;4
+font-2 = FontAwesome:pixelsize=12;3
+font-3 = Weather Icons:size=16;4
+font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
+font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
+font-6 = JetBrains Mono Regular:pixelsize=14;0
+font-7 = Fira Code:pixelsize=18;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+
+;tray-position = right
+;tray-foreground = ${colors.foreground}
+;tray-background = ${colors.background}
+;tray-padding = 10
+;tray-detached = false
+;tray-maxsize = 25
+
 [bar/complete]
 height = 30
 wm-restack = bspwm
@@ -211,6 +240,7 @@ click-left = bash ~/.scripts/system/system-rofi
 type = custom/text
 content = "  "
 content-foreground = ${colors.foreground}
+content-font = 5
 ;content-underline = #ffa500
 click-left = $HOME/.scripts/polybar/battery-info
 
@@ -635,7 +665,6 @@ label-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
-click-left = $HOME/.scripts/polybar/battery-info
 ; This is useful in case the battery never reports 100% charge
 full-at = 99
 
@@ -693,23 +722,40 @@ format-full = <ramp-capacity>
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
 label-charging = %percentage%%
+label-charging-font = 5
+label-charging-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %percentage% (default)
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
 label-discharging = %percentage%%
+label-discharging-font = 5
+label-discharging-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %percentage% (default)
 label-full = "100%"
+label-full-font = 5
+label-full-foreground = ${colors.foreground}
+
 
 ; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-0-font = 4
+ramp-capacity-0-foreground = ${colors.foreground}
+ramp-capacity-1 = 
+ramp-capacity-1-font = 4
+ramp-capacity-1-foreground = ${colors.foreground}
+ramp-capacity-2 = 
+ramp-capacity-2-font = 4
+ramp-capacity-2-foreground = ${colors.foreground}
+ramp-capacity-3 = 
+ramp-capacity-3-font = 4
+ramp-capacity-3-foreground = ${colors.foreground}
+ramp-capacity-4 = 
+ramp-capacity-4-font = 4
+ramp-capacity-4-foreground = ${colors.foreground}
 
 ; Only applies if <bar-capacity> is used
 bar-capacity-width = 10
@@ -738,9 +784,11 @@ type = internal/volume
 ;format-volume = <ramp-volume><label-volume>
 label-volume = "  %percentage%% "
 label-volume-foreground = ${colors.foreground}
+label-volume-font = 5
 ;label-volume-underline = #02bdff
 label-muted = "  %percentage%% "
 label-muted-foreground = ${colors.foreground}
+label-muted-font = 5
 ;label-muted-underline = #02bdff
 label-foreground = ${colors.foreground}
 

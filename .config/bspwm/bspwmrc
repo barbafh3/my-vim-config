@@ -6,7 +6,7 @@ export SSH_AUTH_SOCK
 xsetroot -cursor_name left_ptr & 
 
 # ~/.config/polybar/launch.sh &
-polybar complete &
+reload-polybar
 
 killall sxhkd 
 sxhkd &
