@@ -6,7 +6,7 @@ export PATH="$PATH:$HOME/.local/bin/"
 #PID=$(pgrep -u $USER gnome-session)
 #export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
 
-files=($HOME/Imagens/wallpapers/*)
+files=($HOME/Imagens/Wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
 gsettings set org.gnome.desktop.background picture-uri file://$image
 feh --bg-scale $image

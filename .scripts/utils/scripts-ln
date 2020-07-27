@@ -12,7 +12,9 @@ mkdir -p $FOLDER/bin
     ln -sf $FOLDER/utils/nerd-font-glyph-gen $FOLDER/bin/nerd-font-glyph-gen
     ln -sf $FOLDER/utils/proc $FOLDER/bin/proc
     ln -sf $FOLDER/utils/random-wallpaper $FOLDER/bin/random-wallpaper
-    ln -sf $FOLDER/utils/run-fzf $FOLDER/bin/run-fzf
+    ln -sf $FOLDER/utils/reload-picom $FOLDER/bin/reload-picom
+    ln -sf $FOLDER/utils/reload-polybar $FOLDER/bin/reload-polybar
+    ln -sf $FOLDER/utils/reload-sxhkd $FOLDER/bin/reload-sxhkd
     echo "Scripts successfully linked to PATH folder"
     exit 0
 } || {

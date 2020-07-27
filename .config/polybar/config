@@ -52,7 +52,7 @@ x15 = ${xrdb:color15:#222}
 height = 30
 wm-restack = bspwm
 override-redirect = false
-monitor = DVI-D-0
+; monitor = DVI-D-0
 
 modules-left = sep sep bspwm
 modules-center = mydate
