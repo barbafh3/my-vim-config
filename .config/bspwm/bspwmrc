@@ -61,7 +61,7 @@ bspc rule -a Spotify desktop=^3
 bspc rule -a discord desktop=^4
 bspc rule -a UnityHub desktop=^5
 bspc rule -a Unity desktop=^5
-bspc rule -a Godot desktop=^5
+bspc rule -a Godot desktop=^5 state=floating
 bspc rule -a obs desktop=^6
 bspc rule -a Aseprite desktop=^7
 bspc rule -a krita desktop=^7

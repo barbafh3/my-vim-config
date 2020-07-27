@@ -4,7 +4,22 @@ All configurations that I made that are not on files inside my home folder are i
 
 ------
 
+**Media keys have delay when used on Gnome** - When using two keyboards and one of them has the ABNT/ABNT2 format, the media keys have a big delay when used. To solve this, open the file /usr/share/X11/xkb/symbols/br and comment the following line:
+
+```
+modifier_map Mod3 { Scroll_Lock };
+```
+
+For the change to take effect either restart, relog or use the following command:
+
+```
+setxkbmap -layout br
+```
+
+------
+
 **Caps to escape permanently, even when pluging/unppluging/reconnecting keyboards** - Since the setxkbmap is lost after keyboard disconnection, i started using a tool called Interception Tools with a plugin named caps2esc. Follow the instructions on the plugin's gitlab https://gitlab.com/interception/linux/plugins/caps2esc
+>>>>>>> 983aa757ab0e3ea209cdbf49d6210c4d2eb2fd16
 
 ------
 
