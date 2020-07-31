@@ -1,9 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'ThePrimeagen/vim-be-good'
 Plug 'mhinz/vim-startify'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug  'dense-analysis/ale'
 
 " NerdTree plugins
 Plug 'scrooloose/nerdtree'
@@ -11,8 +11,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Ranger in vim
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+" Plug 'francoiscabrol/ranger.vim'
+" Plug 'rbgrouleff/bclose.vim'
 
 " FZF for file search
 Plug 'junegunn/fzf'
@@ -25,15 +25,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
+" Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'unblevable/quick-scope'
-Plug 'voldikss/vim-floaterm'
-
-" Org mode
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
+" Plug 'voldikss/vim-floaterm'
 
 " Visual
 Plug 'vim-airline/vim-airline'
@@ -47,41 +43,34 @@ Plug 'sjl/badwolf'
 Plug 'clktmr/vim-gdscript3'
 " Plug 'habamax/vim-godot'
 
-" Love2D engine support
-Plug 'davisdude/vim-love-docs'
-
-" C++
-" Plug 'Yohannfra/Vim-Goto-Header'
-" Plug 'JBakamovic/cxxd-vim'
-
 " C# 
-Plug 'OrangeT/vim-csharp'
+" Plug 'OrangeT/vim-csharp'
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'nickspoons/vim-sharpenup'
+" Plug 'nickspoons/vim-sharpenup'
 
 
-" Prettier
-Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'branch': 'release/1.x',
-      \ 'for': [
-      \ 'gdscript3',
-      \ 'javascript',
-      \ 'typescript',
-      \ 'csharp',
-      \ 'css',
-      \ 'less',
-      \ 'scss',
-      \ 'json',
-      \ 'graphql',
-      \ 'markdown',
-      \ 'vue',
-      \ 'lua',
-      \ 'php',
-      \ 'python',
-      \ 'ruby',
-      \ 'html',
-      \ 'swift' ] }
+" " Prettier
+" Plug 'prettier/vim-prettier', {
+"       \ 'do': 'yarn install',
+"       \ 'branch': 'release/1.x',
+"       \ 'for': [
+"       \ 'gdscript3',
+"       \ 'javascript',
+"       \ 'typescript',
+"       \ 'csharp',
+"       \ 'css',
+"       \ 'less',
+"       \ 'scss',
+"       \ 'json',
+"       \ 'graphql',
+"       \ 'markdown',
+"       \ 'vue',
+"       \ 'lua',
+"       \ 'php',
+"       \ 'python',
+"       \ 'ruby',
+"       \ 'html',
+"       \ 'swift' ] }
 
 
 " All of your Plugins must be added before the following line

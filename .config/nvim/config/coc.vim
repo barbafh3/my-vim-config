@@ -1,17 +1,6 @@
 " Ctrl-Space open auto-complete panel
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -30,8 +19,6 @@ let g:coc_snippet_next = '<tab>'
 " inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
 inoremap <expr> <M-j> pumvisible() ? "\<C-n>" : ""
 inoremap <expr> <M-k> pumvisible() ? "\<C-p>" : ""
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

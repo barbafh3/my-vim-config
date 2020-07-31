@@ -1,19 +1,7 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "csharp", 
-    "css", 
-    "Markdown", 
-    "javascript", 
-    "javascriptreact", 
-    "typescript", 
-    "typescriptreact", 
-    "json", 
-    "cs", 
-    "python", 
-    "gdscript3"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["cs", "json", "gdscript3"],
+  "prettier.tabWidth": 2,
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false
 }
-

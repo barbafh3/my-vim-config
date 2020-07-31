@@ -24,26 +24,32 @@ primary=$(bspc query -M -m --names)
 count=$(bspc query -M | wc -l)
 
 # Checks which monitor is primary to setup either desktop or laptop monitors
+# Assumes the following monitors:
+# - DVI-D-0 and HDMI-0 for Desktop
+# - LVDS1 and VGA1 for Laptop
 if [[ $primary == "LVDS1" ]]; then
   if [[ $count -gt 1 ]]; then
     xrandr --output LVDS1 --mode 1366x768 --rotate normal --output VGA1 --primary --mode 1920x1080 --rotate normal --left-of LVDS1
-    # bspc monitor VGA1 -s LVDS1
     bspc monitor VGA1 -d 1 2 3 4 5 6 7 8 9
     bspc monitor LVDS1 -d 10
   else
-    bspc monitor LVDS1 -d 1 2 3 4 5 6 7 8 9 10
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
   fi
 else 
   if [[ $primary == "DVI-D-0" ]]; then
-    bspc monitor HDMI-0 -s DVI-D-0
-    bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
-    bspc monitor HDMI-0 -d 10
+    if [[ $count -gt 1 ]]; then
+      xrandr --output HDMI-0 --mode 1366x768 --rotate normal --output DVI-D-0 --primary --mode 1920x1080 --rotate normal --right-of HDMI-0
+      # bspc monitor HDMI-0 -s DVI-D-0
+      bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
+      bspc monitor HDMI-0 -d 10
+    else
+      bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+    fi
   fi
 fi
 
 random-wallpaper
 
-# bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
 # bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 
 bspc rule -a Code desktop=^1

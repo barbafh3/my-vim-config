@@ -86,7 +86,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "omnisharp.path": "latest",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "terminal.integrated.rendererType": "dom",
   "vsicons.dontShowNewVersionMessage": true,
   "editor.tokenColorCustomizations": {
@@ -158,5 +158,6 @@
   "godot-tool.check_status": "true",
   "omnisharp.useGlobalMono": "always",
   "omnisharp.monoPath": "/opt/mono/bin",
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "window.titleBarStyle": "custom"
 }
