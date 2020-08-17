@@ -17,6 +17,6 @@ source $HOME/.config/nvim/config/nerdtree.vim
 source $HOME/.config/nvim/config/ultisnips.vim
 source $HOME/.config/nvim/config/godot.vim
 source $HOME/.config/nvim/config/omnisharp.vim
-source $HOME/.config/nvim/config/coc.vim
+" source $HOME/.config/nvim/config/coc.vim
 
 source $HOME/.config/nvim/config/general.vim

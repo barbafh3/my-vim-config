@@ -37,7 +37,8 @@ nnoremap <leader>h :bp<Cr>
 " Close buffer
 nnoremap <leader>d :bd<CR>
 
-silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+silent! nmap <Leader>f :GFiles --exclude-standard --others --cached<CR>
+silent! nmap <Leader>fz :pwd \| Files<CR>
 
 " Copy from neovim to system clipboard
 vnoremap  <leader>y  "+y
@@ -49,3 +50,6 @@ nnoremap <leader>P "+P
 
 " Run monogame project
 nnoremap <leader>mg !dotnet run
+
+" Easy motions
+map <Leader><Leader>w <Plug>(easymotion-bd-w)

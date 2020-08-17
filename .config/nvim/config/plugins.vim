@@ -3,7 +3,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug  'dense-analysis/ale'
+" Plug  'dense-analysis/ale'
+ Plug 'ycm-core/YouCompleteMe'
 
 " NerdTree plugins
 Plug 'scrooloose/nerdtree'
@@ -28,8 +29,9 @@ Plug 'SirVer/ultisnips'
 " Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 " Plug 'mattn/emmet-vim'
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 " Plug 'voldikss/vim-floaterm'
+Plug 'easymotion/vim-easymotion'
 
 " Visual
 Plug 'vim-airline/vim-airline'
@@ -40,7 +42,7 @@ Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'sjl/badwolf'
 
 " GDScript
-Plug 'clktmr/vim-gdscript3'
+" Plug 'clktmr/vim-gdscript3'
 " Plug 'habamax/vim-godot'
 
 " C# 
@@ -76,5 +78,4 @@ Plug 'OmniSharp/omnisharp-vim'
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 filetype plugin indent on    " required
-filetype on
 syntax on
