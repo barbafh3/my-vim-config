@@ -1,13 +1,13 @@
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_highlight_types = 2
-let g:OmniSharp_server_use_mono = 1
+" let g:OmniSharp_server_use_mono = 1
 
-func YCMFormat()
-  exec "YcmCompleter Format"
-endfunction
+" func YCMFormat()
+"   exec "YcmCompleter Format"
+" endfunction
 
 " autocmd BufWritePre <buffer> call :OmniSharpCodeFormat
-autocmd FileType cs autocmd BufWritePre <buffer> call YCMFormat()
+" autocmd FileType cs autocmd BufWritePre <buffer> call YCMFormat()
 " autocmd InsertLeave cs :YcmCompleter Format
 
 " let g:ale_linters = {

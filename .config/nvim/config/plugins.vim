@@ -1,10 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug  'dense-analysis/ale'
- Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 
 " NerdTree plugins
 Plug 'scrooloose/nerdtree'
@@ -21,8 +21,8 @@ Plug 'junegunn/fzf.vim'
 
 " General code utilities
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-surround'
+" Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
@@ -33,10 +33,10 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
 
-" Visual
+  " Visual
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'powerline/powerline'
+" Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'sjl/badwolf'

@@ -1,5 +1,5 @@
 set encoding=UTF-8
-scriptencoding utf-8
+" scriptencoding utf-8
 set termguicolors
 set shortmess=a
 set cmdheight=3
@@ -10,14 +10,14 @@ set bg=dark
 set splitbelow splitright
 set tabstop=2
 set softtabstop=2
-set shiftwidth=2
-set expandtab
-set smarttab
-set autoindent
-set smartindent
+set shiftwidth=0
+" set expandtab
+" set smarttab
+" set autoindent
+" set smartindent
 set number relativenumber
-set noshowmode
-set timeoutlen=300
+" set noshowmode
+" set timeoutlen=300
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 
 " highlight clear CursorLine
