@@ -2,6 +2,7 @@
   "editor.fontFamily": "'Jetbrains Mono'",
   "editor.fontSize": 16,
   "editor.tabSize": 2,
+  "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
@@ -159,5 +160,5 @@
   "omnisharp.useGlobalMono": "always",
   "omnisharp.monoPath": "/opt/mono/bin",
   "window.zoomLevel": 0,
-  "window.titleBarStyle": "custom"
+  "extensions.autoUpdate": true
 }

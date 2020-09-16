@@ -37,7 +37,8 @@ nnoremap <leader>h :bp<Cr>
 " Close buffer
 nnoremap <leader>d :bd<CR>
 
-silent! nmap <Leader>f :GFiles --exclude-standard --others --cached<CR>
+" silent! nmap <Leader>f :GFiles --exclude-standard --others --cached<CR>
+silent! nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 silent! nmap <Leader>fz :pwd \| Files<CR>
 
 " Copy from neovim to system clipboard

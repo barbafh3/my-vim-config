@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug  'dense-analysis/ale'
@@ -8,7 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " NerdTree plugins
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Ranger in vim
@@ -32,6 +32,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'unblevable/quick-scope'
 " Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
+Plug 'jceb/vim-orgmode'
 
   " Visual
 Plug 'vim-airline/vim-airline'
