@@ -2,5 +2,12 @@
   "coc.preferences.formatOnSaveFiletypes": ["cs", "json", "gdscript3"],
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false
+  "explorer.previewAction.onHover": false,
+  "languageserver": {
+      "godot": {
+          "host": "127.0.0.1",
+          "filetypes": ["gdscript"],
+          "port": 6008
+      }
+  }
 }

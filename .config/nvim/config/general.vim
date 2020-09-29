@@ -8,9 +8,9 @@ set cursorline
 set guifont=Fira\ Code\ 14
 set bg=dark
 set splitbelow splitright
-set tabstop=2
-set softtabstop=2
-set shiftwidth=0
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 " set expandtab
 " set smarttab
 " set autoindent

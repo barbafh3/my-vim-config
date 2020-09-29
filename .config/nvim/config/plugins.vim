@@ -1,15 +1,15 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug  'dense-analysis/ale'
 " Plug 'ycm-core/YouCompleteMe'
 
 " NerdTree plugins
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Ranger in vim
 " Plug 'francoiscabrol/ranger.vim'
@@ -31,8 +31,8 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'mattn/emmet-vim'
 " Plug 'unblevable/quick-scope'
 " Plug 'voldikss/vim-floaterm'
-Plug 'easymotion/vim-easymotion'
-Plug 'jceb/vim-orgmode'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'jceb/vim-orgmode'
 
   " Visual
 Plug 'vim-airline/vim-airline'
@@ -44,11 +44,11 @@ Plug 'sjl/badwolf'
 
 " GDScript
 " Plug 'clktmr/vim-gdscript3'
-" Plug 'habamax/vim-godot'
+Plug 'habamax/vim-godot'
 
 " C# 
 " Plug 'OrangeT/vim-csharp'
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 " Plug 'nickspoons/vim-sharpenup'
 
 

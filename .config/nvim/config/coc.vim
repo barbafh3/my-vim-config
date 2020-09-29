@@ -1,11 +1,24 @@
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 " Ctrl-Space open auto-complete panel
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -16,7 +29,6 @@ let g:coc_snippet_next = '<tab>'
 
 " Use j and k to cycle through auto-complete options
 " when panel is open
-" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<TAB>"
 inoremap <expr> <M-j> pumvisible() ? "\<C-n>" : ""
 inoremap <expr> <M-k> pumvisible() ? "\<C-p>" : ""
 
