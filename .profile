@@ -18,9 +18,9 @@ export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
 export FrameworkPathOverride=/lib/mono/4.5
 
 export EDITOR=/usr/bin/nvim
-export TERMINAL=/usr/bin/kitty
+export TERMINAL=/usr/bin/gnome-terminal
 export BROWSER=/usr/bin/qutebrowser
-export FILE_MANAGER="kitty -e ranger"
+export FILE_MANAGER="$TERMINAL -e ranger"
 
 export DOCS=$HOME/Documentos
 export FAV=$DOCS/Favoritos

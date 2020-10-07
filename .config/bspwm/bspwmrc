@@ -29,7 +29,8 @@ count=$(bspc query -M | wc -l)
 # - LVDS1 and VGA1 for Laptop
 if [[ $primary == "LVDS1" ]]; then
   if [[ $count -gt 1 ]]; then
-    xrandr --output LVDS1 --mode 1366x768 --rotate normal --output VGA1 --primary --mode 1920x1080 --rotate normal --left-of LVDS1
+    # HDMI to the left, Mounted monitor to the bottom right
+    xrandr --output LVDS1 --mode 1366x768 --pos 1920x312 --rotate normal --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
     bspc monitor VGA1 -d 1 2 3 4 5 6 7 8 9
     bspc monitor LVDS1 -d 10
   else
@@ -54,7 +55,7 @@ random-wallpaper
 
 bspc rule -a Code desktop=^1
 bspc rule -a Anki desktop=^1
-bspc rule -a Firefox desktop=^2
+bspc rule -a firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
 bspc rule -a Epiphany desktop=^2
 # bspc rule -a qutebrowser desktop=^2 follow=on

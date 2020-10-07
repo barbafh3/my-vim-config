@@ -28,3 +28,6 @@ highlight NonText ctermbg=none
 highlight SpecialKey ctermbg=none
 highlight VertSplit ctermbg=none
 highlight SignColumn ctermbg=none
+
+" highlight Function cterm=bold
+" highlight Identifier cterm=bold

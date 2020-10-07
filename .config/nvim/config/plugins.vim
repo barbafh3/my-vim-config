@@ -21,18 +21,21 @@ Plug 'junegunn/fzf.vim'
 
 " General code utilities
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-surround'
-" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 " Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
-" Plug 'mattn/emmet-vim'
-" Plug 'unblevable/quick-scope'
-" Plug 'voldikss/vim-floaterm'
-" Plug 'easymotion/vim-easymotion'
+Plug 'mattn/emmet-vim'
+Plug 'easymotion/vim-easymotion'
+
+" Org mode and dependencies
 " Plug 'jceb/vim-orgmode'
+" Plug 'mattn/calendar-vim'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-speeddating'
 
   " Visual
 Plug 'vim-airline/vim-airline'
@@ -41,39 +44,35 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'sjl/badwolf'
+Plug 'dracula/vim'
 
 " GDScript
 " Plug 'clktmr/vim-gdscript3'
 Plug 'habamax/vim-godot'
 
 " C# 
-" Plug 'OrangeT/vim-csharp'
-" Plug 'OmniSharp/omnisharp-vim'
-" Plug 'nickspoons/vim-sharpenup'
+Plug 'OmniSharp/omnisharp-vim'
 
-
-" " Prettier
-" Plug 'prettier/vim-prettier', {
-"       \ 'do': 'yarn install',
-"       \ 'branch': 'release/1.x',
-"       \ 'for': [
-"       \ 'gdscript3',
-"       \ 'javascript',
-"       \ 'typescript',
-"       \ 'csharp',
-"       \ 'css',
-"       \ 'less',
-"       \ 'scss',
-"       \ 'json',
-"       \ 'graphql',
-"       \ 'markdown',
-"       \ 'vue',
-"       \ 'lua',
-"       \ 'php',
-"       \ 'python',
-"       \ 'ruby',
-"       \ 'html',
-"       \ 'swift' ] }
+" Prettier
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'branch': 'release/1.x',
+      \ 'for': [
+      \ 'javascript',
+      \ 'typescript',
+      \ 'css',
+      \ 'less',
+      \ 'scss',
+      \ 'json',
+      \ 'graphql',
+      \ 'markdown',
+      \ 'vue',
+      \ 'lua',
+      \ 'php',
+      \ 'python',
+      \ 'ruby',
+      \ 'html',
+      \ 'swift' ] }
 
 
 " All of your Plugins must be added before the following line
