@@ -93,5 +93,5 @@ xset -dpms s off
 
 dropbox &
 
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 
