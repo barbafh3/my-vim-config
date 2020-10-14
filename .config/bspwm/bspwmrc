@@ -12,7 +12,7 @@ killall sxhkd
 sxhkd &
 
 bspc config border_width         1
-bspc config window_gap          12 
+bspc config window_gap          8 
 bspc config border_radius       10
 
 bspc config split_ratio          0.52

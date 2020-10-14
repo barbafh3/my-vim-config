@@ -49,7 +49,7 @@ x15 = ${xrdb:color15:#222}
 ;							        B A R S										;
 ;-----------------------------------------------;
 [bar/complete-laptop]
-height = 30
+height = 20
 wm-restack = bspwm
 override-redirect = false
 ; monitor = DVI-D-0
@@ -60,15 +60,15 @@ modules-right = battery battery-info sep wireless-network power-icon volume sep
 
 background = ${colors.background}
 
-font-0 = Fira Code:pixelsize=13;4
+font-0 = Fira Code:pixelsize=13;2
 font-1 = IPAGothic:pixelsize=16;4
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=16;4
-font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
+font-4 = DejaVuSansMono Nerd Font:pixelsize=14;2
 font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
 font-6 = JetBrains Mono Regular:pixelsize=14;0
 font-7 = Fira Code:pixelsize=18;4
-font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=14;2
 
 ;tray-position = right
 ;tray-foreground = ${colors.foreground}
@@ -169,7 +169,7 @@ font-4 = DejaVuSansMono Nerd Font:pixelsize=18;4
 font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
 font-6 = JetBrains Mono Regular:pixelsize=14;0
 font-7 = Fira Code:pixelsize=18;4
-font-8 = DejaVuSansMono Nerd Font:pixelsize=16;4
+font-8 = DejaVuSansMono Nerd Font:pixelsize=14;4
 
 modules-center = mutt-wizard sep openweathermap-simple sep updates sep wired-network sep power-icon
 
