@@ -60,14 +60,14 @@ modules-right = battery battery-info sep wireless-network power-icon volume sep
 
 background = ${colors.background}
 
-font-0 = Fira Code:pixelsize=13;2
-font-1 = IPAGothic:pixelsize=16;4
+font-0 = Fira Code:pixelsize=12;2
+font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=12;3
-font-3 = Weather Icons:size=16;4
-font-4 = DejaVuSansMono Nerd Font:pixelsize=14;2
+font-3 = Weather Icons:size=12;2
+font-4 = DejaVuSansMono Nerd Font:pixelsize=12;2
 font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
-font-6 = JetBrains Mono Regular:pixelsize=14;0
-font-7 = Fira Code:pixelsize=18;4
+font-6 = JetBrains Mono Regular:pixelsize=12;0
+font-7 = Fira Code:pixelsize=12;2
 font-8 = DejaVuSansMono Nerd Font:pixelsize=14;2
 
 ;tray-position = right
@@ -753,7 +753,7 @@ ramp-capacity-2-foreground = ${colors.foreground}
 ramp-capacity-3 = 
 ramp-capacity-3-font = 4
 ramp-capacity-3-foreground = ${colors.foreground}
-ramp-capacity-4 = 
+ramp-capacity-4 = 
 ramp-capacity-4-font = 4
 ramp-capacity-4-foreground = ${colors.foreground}
 
@@ -782,7 +782,7 @@ animation-discharging-framerate = 500
 type = internal/volume
 ; mapping = true
 ;format-volume = <ramp-volume><label-volume>
-label-volume = "  %percentage%% "
+label-volume = " %percentage%% "
 label-volume-foreground = ${colors.foreground}
 label-volume-font = 5
 ;label-volume-underline = #02bdff
