@@ -8,7 +8,7 @@ function glyph(){
     notify-send "Glyph $(xclip -o) was added to the clipboard" &> /dev/null
 }
 # Creates a directory and moves into it
-function mkd(){
+function mkcd(){
     mkdir $1 && cd $1    
 }
 
@@ -33,10 +33,12 @@ alias dbx="cd ~/Dropbox"
 alias grf="cd ~/.config/groff"
 alias gal="cd ~/.scripts/gen-aliases"
 alias mp="cd ~/MyProjects"
+alias gdtd="cd ~/dev/godot"
+alias untd="cd ~/dev/unity"
 
 #### Config files aliases
 
-alias zrc="nvim ~/.config/zsh/zshrc"
+alias zrc="nvim ~/.zshrc"
 alias vrc="nvim ~/.vimrc"
 alias nvrc="nvim ~/.config/nvim/init.vim"
 alias frc="nvim ~/.config/fish/config.fish"

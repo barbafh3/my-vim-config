@@ -1,12 +1,13 @@
 " let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='medium'
-colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+" colorscheme gruvbox
 
 " colorscheme dracula
+colorscheme dark_purple
 
 " Airline settings
-let g:airline_theme='gruvbox'
-" let g:airline_theme='dracula'
+" let g:airline_theme='gruvbox'
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#left_sep = ' '

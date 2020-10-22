@@ -27,7 +27,7 @@ Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 " Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'easymotion/vim-easymotion'
 
@@ -45,6 +45,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'sjl/badwolf'
 Plug 'dracula/vim'
+Plug 'shapeoflambda/dark-purple.vim'
 
 " GDScript
 " Plug 'clktmr/vim-gdscript3'
@@ -52,6 +53,7 @@ Plug 'habamax/vim-godot'
 
 " C# 
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'OrangeT/vim-csharp'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
