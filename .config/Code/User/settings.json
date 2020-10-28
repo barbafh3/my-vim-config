@@ -14,7 +14,7 @@
     "editor.lineNumbers": "relative",
     "editor.autoClosingBrackets": "languageDefined",
     "git.decorations.enabled": true,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.menuBarVisibility": "toggle",
     "keyboard.dispatch": "keyCode",
@@ -90,8 +90,7 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "omnisharp.path": "latest",
-    "vscode-neovim.neovimPath": "/usr/bin/nvim",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+	"vscode-neovim.neovimPath": "/usr/bin/nvim",
     "terminal.integrated.rendererType": "dom",
     "vsicons.dontShowNewVersionMessage": true,
     "editor.tokenColorCustomizations": {
@@ -166,5 +165,6 @@
     "window.zoomLevel": 0,
     "extensions.autoUpdate": true,
     "files.trimTrailingWhitespace": true,
-    "git.branchWhitespaceChar": ""
+	"git.branchWhitespaceChar": "",
+	"workbench.colorTheme": "One Dark Pro"
 }

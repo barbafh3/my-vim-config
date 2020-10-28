@@ -35,6 +35,7 @@ alias gal="cd ~/.scripts/gen-aliases"
 alias mp="cd ~/MyProjects"
 alias gdtd="cd ~/dev/godot"
 alias untd="cd ~/dev/unity"
+alias rstd="cd ~/dev/rust"
 
 #### Config files aliases
 
@@ -91,7 +92,7 @@ alias z="zathura"
 alias eop="sudo eopkg"
 alias mkdir="mkdir -p"
 alias ls="ls --color --group-directories-first -a"
-alias yu="yay -Syyu"
+alias yu="yay -Syyu --aur"
 alias yi="yay -S"
 alias yr="yay -R"
 alias tx="tmux -f ~/.config/tmux/tmux.conf"

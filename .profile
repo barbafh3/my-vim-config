@@ -28,3 +28,5 @@ export FAV=$DOCS/Favoritos
 export TWITCH_FAVORITES=$FAV/twitch-favorites
 export BROWSER_FAVORITES=$FAV/browser-favorites
 export BROWSER_MOST_USED=$FAV/browser-most-used
+
+export PATH="$HOME/.cargo/bin:$PATH"

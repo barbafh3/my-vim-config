@@ -54,3 +54,6 @@ nnoremap <leader>mg !dotnet run
 
 " Easy motions
 map <Leader><Leader>w <Plug>(easymotion-bd-w)
+
+" Run cargo on current folder
+nnoremap <Leader>cr :!cargo run<CR>

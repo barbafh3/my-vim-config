@@ -32,7 +32,7 @@ Plug 'mattn/emmet-vim'
 Plug 'easymotion/vim-easymotion'
 
 " Org mode and dependencies
-" Plug 'jceb/vim-orgmode'
+Plug 'jceb/vim-orgmode'
 " Plug 'mattn/calendar-vim'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-speeddating'
@@ -54,6 +54,8 @@ Plug 'habamax/vim-godot'
 " C# 
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'OrangeT/vim-csharp'
+
+Plug 'cespare/vim-toml'
 
 " Prettier
 Plug 'prettier/vim-prettier', {

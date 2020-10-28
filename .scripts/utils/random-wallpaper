@@ -28,4 +28,6 @@ feh --bg-scale $image
 # fi
 
 echo "Wallpaper changed!"
-notify-send "Random Wallpaper" "Wallpaper changed!"
+if [[$DESKTOP_SESSION != "gnome"]] ; then
+	notify-send "Random Wallpaper" "Wallpaper changed!"
+fi
