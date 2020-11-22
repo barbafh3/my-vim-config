@@ -1,0 +1,31 @@
+snippet GodotLib "Main lib.rs file base content"
+use gdnative::prelude::*;
+
+fn init(handle: InitHandle) {
+	// Add your classes here:
+	// handle.add_class::<YourClass>();
+	// handle.add_class::<AnotherClass>();
+	$0
+}
+
+godot_int!(init);
+endsnippet
+
+snippet Node "Basic Node script"
+use gdnative::prelude::*;
+
+#[derive(NativeClass)]
+#[inherit(Node)]
+struct $1;
+
+impl $1 {
+	fn new(_owner: &Node) -> Self {
+		$1
+	}
+
+	#[export]
+	fn _ready(&self, _owner: &Node) {
+		$0
+	}
+}
+endsnippet

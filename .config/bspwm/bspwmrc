@@ -76,6 +76,8 @@ bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
 bspc rule -a mpv desktop=^10 follow=on
 
+# Rust project, change the name or add more as needed
+bspc rule -a observer_test desktop=^10 state=floating 
 
 bspc rule -a dotnet state=floating
 bspc rule -a Peek state=floating

@@ -1,7 +1,8 @@
 {
-	"editor.fontFamily": "'Fira Code'",
+	"editor.fontFamily": "'Jetbrains Mono'",
 	"editor.fontSize": 18,
 	"editor.tabSize": 4,
+	"editor.fontWeight": "bold",
 	"editor.rulers": [
 		125
 	],
@@ -165,7 +166,7 @@
 	"extensions.autoUpdate": true,
 	"files.trimTrailingWhitespace": true,
 	"git.branchWhitespaceChar": "",
-	"workbench.colorTheme": "Dracula",
+	"workbench.colorTheme": "Dracula Soft",
 	"powermode.enabled": true,
 	"powermode.enableShake": false,
 }

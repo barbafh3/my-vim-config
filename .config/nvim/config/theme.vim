@@ -2,8 +2,7 @@
 let g:gruvbox_contrast_dark='hard'
 " colorscheme gruvbox
 
-" colorscheme dracula
-colorscheme dark_purple
+colorscheme dracula
 
 " Airline settings
 " let g:airline_theme='gruvbox'
