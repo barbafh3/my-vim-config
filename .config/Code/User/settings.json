@@ -1,6 +1,6 @@
 {
 	"editor.fontFamily": "'Jetbrains Mono'",
-	"editor.fontSize": 18,
+	"editor.fontSize": 15,
 	"editor.tabSize": 4,
 	"editor.fontWeight": "bold",
 	"editor.rulers": [
@@ -14,6 +14,7 @@
 	"editor.renderWhitespace": "selection",
 	"editor.lineNumbers": "relative",
 	"editor.autoClosingBrackets": "languageDefined",
+	"workbench.tree.indent": 25,
 	"git.decorations.enabled": true,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.editor.enablePreviewFromQuickOpen": false,

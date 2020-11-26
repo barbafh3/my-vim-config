@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["cs", "json", "gdscript3"],
+  "coc.preferences.formatOnSaveFiletypes": ["cs", "json", "gdscript3", "rust"],
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,

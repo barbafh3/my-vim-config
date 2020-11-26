@@ -23,8 +23,8 @@ vnoremap 0 ^
 :let maplocalleader = "//"
 
 " Change splits
-nnoremap <leader>ll <C-w>l
-nnoremap <leader>hh <C-w>h
+nnoremap <leader><leader>l <C-w>l
+nnoremap <leader><leader>h <C-w>h
 
 " Change tabs
 nnoremap <leader><S-l> :tabn<CR>
@@ -57,3 +57,5 @@ map <Leader><Leader>w <Plug>(easymotion-bd-w)
 
 " Run cargo on current folder
 nnoremap <Leader>cr :!cargo run<CR>
+" Run cargo on the current folder using Floaterm
+nnoremap <Leader>fcr :FloatermNew --autoclose=2 cargo run<CR>
