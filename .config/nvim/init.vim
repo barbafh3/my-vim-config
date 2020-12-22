@@ -21,4 +21,4 @@ source $HOME/.config/nvim/config/godot.vim
 source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/gitgutter.vim
 " source $HOME/.config/nvim/config/youcompleteme.vim
-
+source $HOME/.config/nvim/config/syntastic.vim

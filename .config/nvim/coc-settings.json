@@ -1,13 +1,67 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["cs", "json", "gdscript3", "rust"],
-  "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
-  "languageserver": {
-      "godot": {
-          "host": "127.0.0.1",
-          "filetypes": ["gdscript"],
-          "port": 6008
-      }
-  }
+	"coc.preferences.formatOnSaveFiletypes": [
+		"cs",
+		"json",
+		"gdscript3",
+		"rust"
+	],
+	"explorer.width": 30,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.previewAction.onHover": false,
+	"languageserver": {
+		"godot": {
+			"host": "127.0.0.1",
+			"filetypes": [
+				"gdscript"
+			],
+			"port": 6008
+		},
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cpp",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"compile_commands.json",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				},
+				"index": {
+					"onChange": true
+				},
+				"highlight": {
+					"lsRanges": true
+				}
+			},
+			"client": {
+				"snippetSupport": true
+			}
+		},
+		"haskell": {
+			"command": "haskell-language-server-wrapper",
+			"args": [
+				"--lsp"
+			],
+			"rootPatterns": [
+				"*.cabal",
+				"stack.yaml",
+				"cabal.project",
+				"package.yaml",
+				"hie.yaml"
+			],
+			"filetypes": [
+				"haskell",
+				"lhaskell"
+			]
+		}
+	}
 }

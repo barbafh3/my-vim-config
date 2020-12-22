@@ -59,3 +59,6 @@ map <Leader><Leader>w <Plug>(easymotion-bd-w)
 nnoremap <Leader>cr :!cargo run<CR>
 " Run cargo on the current folder using Floaterm
 nnoremap <Leader>fcr :FloatermNew --autoclose=2 cargo run<CR>
+
+" C/C++ formatting with llvm
+nnoremap <Leader>fc :<C-u>ClangFormat<CR>

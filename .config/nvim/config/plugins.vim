@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 " Plug 'mhinz/vim-startify'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'ycm-core/YouCompleteMe' 
+Plug 'vim-syntastic/syntastic'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -34,6 +36,9 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'OrangeT/vim-csharp'
 
 Plug 'cespare/vim-toml'
+ 
+Plug 'rhysd/vim-clang-format'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " " Prettier
 " Plug 'prettier/vim-prettier', {
