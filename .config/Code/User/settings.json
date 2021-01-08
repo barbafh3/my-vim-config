@@ -167,7 +167,11 @@
 	"extensions.autoUpdate": true,
 	"files.trimTrailingWhitespace": true,
 	"git.branchWhitespaceChar": "",
-	"workbench.colorTheme": "Dracula Soft",
+	"workbench.colorTheme": "Godot Adaptive",
 	"powermode.enabled": true,
 	"powermode.enableShake": false,
+	"theme-by-language.themes": {
+		"*": "Dracula",
+		"gdscript": "Godot Adaptive"
+	},
 }
