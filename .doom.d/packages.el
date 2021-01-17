@@ -48,3 +48,14 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! elfeed)
+
+(use-package elfeed-org
+  :defer
+  :config
+  (setq rmh-elfeed-org-files (list "~/.config/elfeed-org/feeds.org")))
+(use-package elfeed
+  :defer
+  :config
+  (setq elfeed-db-directory "~/.config/elfeed/db/"))

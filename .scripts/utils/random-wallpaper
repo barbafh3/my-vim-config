@@ -10,7 +10,7 @@ files=($HOME/Imagens/Wallpapers/*)
 image="$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")"
 gsettings set org.gnome.desktop.background picture-uri file://$image
 feh --bg-scale $image
-wal -i $image 
+# wal -i $image 
 
 # . "${HOME}/.cache/wal/colors.sh"
 

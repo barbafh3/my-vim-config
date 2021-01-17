@@ -62,6 +62,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
 ;; gdscript-mode configuration preventing error message spamming when editting gdscript
 (defun lsp--gdscript-ignore-errors (original-function &rest args)
   "Ignore the error message resulting from Godot not replying to the `JSONRPC' request."
@@ -75,3 +77,14 @@
     (apply original-function args)))
 ;; Runs the function `lsp--gdscript-ignore-errors` around `lsp--get-message-type` to suppress unknown notification errors.
 (advice-add #'lsp--get-message-type :around #'lsp--gdscript-ignore-errors)
+
+(map! :leader
+      (:prefix-map ("w" . "my apps")
+       (:prefix ("e" . "elfeed")
+        :desc "Open elfeed" "o" #'elfeed
+        :desc "Add feed" "a" #'elfeed-add-feed
+        :desc "Update feed list" "u" #'elfeed-update)))
+
+(setq elfeed-feeds
+      '("https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA"
+        "https://www.youtube.com/feeds/videos.xml?channel_id=UClseGZiVmeHamsjYmpbiAmQ"))
