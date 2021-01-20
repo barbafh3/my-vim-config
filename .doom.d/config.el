@@ -64,6 +64,9 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
+;; Enable relative line numbers
+(setq display-line-numbers-type 'relative)
+
 ;; gdscript-mode configuration preventing error message spamming when editting gdscript
 (defun lsp--gdscript-ignore-errors (original-function &rest args)
   "Ignore the error message resulting from Godot not replying to the `JSONRPC' request."

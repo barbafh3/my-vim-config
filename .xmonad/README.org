@@ -1,3 +1,8 @@
+#+TITLE: XMonad Config
+#+Property: header-args :tangle xmonad.hs
+
+* Imports
+#+BEGIN_SRC haskell
 import qualified Data.Map as M
 import Data.Monoid
 import System.Exit
@@ -7,7 +12,10 @@ import XMonad.Hooks.ManageDocks
 import qualified XMonad.StackSet as W
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+#+END_SRC
 
+* Variables
+#+BEGIN_SRC haskell
 myTerminal = "kitty"
 
 myFocusFollowsMouse :: Bool
@@ -24,8 +32,16 @@ myNormalBorderColor = "#44475a"
 
 myFocusedBorderColor = "#bd93f9"
 
+ #+END_SRC
+
+* Workspaces
+#+BEGIN_SRC haskell
 myWorkspaces = [" code ", " web ", " music ", " chat ", " engines ", " obs ", " art ", " steam ", " term "]
 
+ #+END_SRC
+
+* Keybindings
+ #+BEGIN_SRC haskell
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
   M.fromList $
     -- launch a terminal
@@ -122,6 +138,11 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
       -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
+#+END_SRC
+
+* Layouts
+#+BEGIN_SRC haskell
+
 myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -135,7 +156,11 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 
     -- Percent of screen to increment by when resizing panes
     delta = 3 / 100
+#+END_SRC
 
+* Hooks
+** ManageHook
+#+BEGIN_SRC haskell
 myManageHook :: Query (Endo WindowSet)
 myManageHook =
   composeAll
@@ -147,13 +172,22 @@ myManageHook =
       resource =? "desktop_window" --> doIgnore,
       resource =? "kdesktop" --> doIgnore
     ]
+#+END_SRC
 
+** EventHook
+#+BEGIN_SRC haskell
 myEventHook :: Event -> X All
 myEventHook = mempty
+#+END_SRC
 
+** LogHook
+#+BEGIN_SRC haskell
 myLogHook :: X ()
 myLogHook = return ()
+#+END_SRC
 
+** StartupHook
+#+BEGIN_SRC haskell
 myStartupHook = do
   spawnOnce "emacs --daemon"
   spawnOnce "xsetroot -cursor_name left_ptr & "
@@ -167,6 +201,10 @@ myStartupHook = do
   spawnOnce "dunst &"
   spawnOnce "dropbox &"
 
+#+END_SRC
+
+* Main
+#+BEGIN_SRC haskell
 main = do
   -- xmproc <- spawnPipe "xmobar -x 0 /home/junior/.config/xmobar/xmobar.config"
   -- xmproc <- spawnPipe "xmobar -x 1 /home/junior/.config/xmobar/xmobar.config"
@@ -200,7 +238,10 @@ main = do
                 },
           startupHook = myStartupHook
         }
+#+END_SRC
 
+* Help
+#+BEGIN_SRC haskell
 -- | Finally, a copy of the default bindings in simple textual tabular format.
 help :: String
 help =
@@ -254,3 +295,4 @@ help =
       "mod-button2  Raise the window to the top of the stack",
       "mod-button3  Set the window to floating mode and resize by dragging"
     ]
+#+END_SRC

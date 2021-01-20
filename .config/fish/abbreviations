@@ -29,6 +29,11 @@ abbr mp "cd ~/MyProjects"
 
 # Config files aliases
 
+abbr dmit "nvim ~/.doom.d/init.el"
+abbr dmcf "nvim ~/.doom.d/config.el"
+abbr dmpkg "nvim ~/.doom.d/packages.el"
+abbr xmnrc "nvim ~/.xmonad/xmonad.hs"
+abbr xmbr "nvim ~/.config/xmobar/xmobar.config"
 abbr pcmcf "nvim ~/.config/picom/picom.conf"
 abbr zrc "nvim ~/.config/zsh/zshrc"
 abbr vrc "nvim ~/.vimrc"
