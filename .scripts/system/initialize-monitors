@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# This script check the connected displays and runs xrandr accordingly
+
+monitors_raw=$(xrandr --query | grep " connected " | awk '{ print $1 }') 
+count=$(xrandr --query | grep " connected " | wc -l) 
+monitors=($monitors_raw)
+
+# Count of displays connected
+if [ $count -gt 1 ] ; then
+    # Enables only the external monitor and turns laptop screen off
+    command="xrandr --output ${monitors[1]} --primary --mode 1920x1080 --rotate normal --output ${monitors[0]} --off"
+    echo $command >> ~/displays.log
+    $command
+else 
+    # Enables laptop screen
+    command="xrandr --output ${monitors[0]} --mode 1366x768 --primary"
+    echo $command >> ~/displays.log
+    $command
+fi

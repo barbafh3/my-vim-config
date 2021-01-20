@@ -155,10 +155,11 @@ myLogHook :: X ()
 myLogHook = return ()
 
 myStartupHook = do
+  spawnOnce "initialize-monitors"
   spawnOnce "emacs --daemon"
   spawnOnce "xsetroot -cursor_name left_ptr & "
   spawnOnce "setxkbmap -option caps:escape && notify-send 'Keybindings' 'Caps set to Escape'"
-  spawnOnce "xrandr --output LDVS1 --mode 1366x768 --rotate normal"
+  -- spawnOnce "xrandr --output LDVS1 --mode 1366x768 --rotate normal"
   -- spawnOnce "xrandr --output LVDS1 --mode 1366x768 --pos 1920x312 --rotate normal --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
   spawnOnce "random-wallpaper"
   spawnOnce "sxhkd &"
@@ -172,7 +173,8 @@ main = do
   -- xmproc <- spawnPipe "xmobar -x 1 /home/junior/.config/xmobar/xmobar.config"
   -- xmonad $ docks defaults
   -- xmonad =<< xmobar defaults
-  h <- spawnPipe "xmobar /home/junior/.config/xmobar/xmobar.config"
+  -- h <- spawnPipe "xmobar /home/junior/.config/xmobar/xmobar.config"
+  h <- spawnPipe "pick-xmobar-config"
   xmonad $
     docks
       def

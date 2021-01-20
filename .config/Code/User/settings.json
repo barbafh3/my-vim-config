@@ -167,7 +167,7 @@
 	"extensions.autoUpdate": true,
 	"files.trimTrailingWhitespace": true,
 	"git.branchWhitespaceChar": "",
-	"workbench.colorTheme": "Godot Adaptive",
+	"workbench.colorTheme": "Dracula",
 	"powermode.enabled": true,
 	"powermode.enableShake": false,
 	"theme-by-language.themes": {
