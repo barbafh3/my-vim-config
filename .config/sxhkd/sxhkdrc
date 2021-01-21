@@ -3,11 +3,11 @@ ctrl + alt + Delete
   system-rofi &
 
 # restart bspwm
-# super + shift + r
-# 	bspc wm -r
+super + shift + r
+	bspc wm -r
 
-# super + shift + o
-#   reload-polybar
+super + shift + o
+  reload-polybar
 
 super + shift + x
   reload-sxhkd
@@ -27,8 +27,8 @@ super + shift + i
   setxkbmap -option caps:escape && notify-send "Keybindings" "Caps set to Escape"
 
 # run terminal
-# super + {_,shift +} Return
-#   {$TERMINAL,bspc rule -a \* -o state=floating && $TERMINAL} 
+super + {_,shift +} Return
+  {$TERMINAL,bspc rule -a \* -o state=floating && $TERMINAL} 
 
 # run rofi - select with enter
 super + d
@@ -45,45 +45,45 @@ super + shift + f
   web --favorites
 
 # run defined programs
-#shift + ctrl + {r,b,t,d,s}
-#  {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
+shift + ctrl + {r,b,t,d,s}
+  {$($FILE_MANAGER), $BROWSER, spotify, discord, steam}
 
 # close and kill
 super + shift + q
   xdo close
 
 # focus or send to the given desktop
-# super + {1,2,3,4,q,w,e,a,s,0}
-# 	bspc desktop -f '^{1,2,3,4,5,6,7,8,9,10}'
+super + {1,2,3,4,q,w,e,a,s,0}
+	bspc desktop -f '^{1,2,3,4,5,6,7,8,9,10}'
 	#bspc desktop -f '^{I,II,III,IV,V,VI,VII,VIII,IX,X}' 
 
 # move window to desktop
-# super + ctrl + {1,2,3,4,q,w,e,a,s,0} 
-#   bspc node -d {1,2,3,4,5,6,7,8,9,10} 
+super + ctrl + {1,2,3,4,q,w,e,a,s,0} 
+  bspc node -d {1,2,3,4,5,6,7,8,9,10} 
 
 # focus the node in the given direction
-# super + {_,shift + }{h,j,k,l}
-# 	bspc node -{f,s} {west,south,north,east}
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
 
 # swap window with direction
-# super + shift + {h,j,k,l}
-#   bspc node -s {west,south,north,east}
+super + shift + {h,j,k,l}
+  bspc node -s {west,south,north,east}
 
 # expand window on direction
-# ctrl + super + {h,j,k,l}
-#   bspc node -z {left -20 0,bottom 0 20,up 0 -20,right 20 0}
+ctrl + super + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,up 0 -20,right 20 0}
 
 # retract window on direction
-# ctrl + shift + {h,j,k,l}
-#   bspc node -z {right -20 0,up 0 20,bottom 0 -20,left 20 0}
+ctrl + shift + {h,j,k,l}
+  bspc node -z {right -20 0,up 0 20,bottom 0 -20,left 20 0}
 
 # toggle tiled/floating
-# super + o
-#   bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+super + o
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
 # move floating window
-# ctrl + alt + {h,j,k,l}
-#   xdo move {-x -20, -y +20, -y -20, -x +20}
+ctrl + alt + {h,j,k,l}
+  xdo move {-x -20, -y +20, -y -20, -x +20}
 
 # takes screenshots - requires scrot
 super + F12

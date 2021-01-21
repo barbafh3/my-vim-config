@@ -18,15 +18,20 @@
 
 
 [colors]
-background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color7:#222}
+; background = ${xrdb:color0:#222}
+background = #44475a
+; foreground = ${xrdb:color7:#222}
+foreground = #f8f8f2
+; foreground-alt = ${xrdb:color7:#222}
+foreground-alt = #6272a4
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 x4 = ${xrdb:color4:#222}
-x5 = ${xrdb:color5:#222}
-x6 = ${xrdb:color6:#222}
+; x5 = ${xrdb:color5:#222}
+x5 = #bd93f9
+; x6 = ${xrdb:color6:#222}
+x6 = #6272a4
 x8 = ${xrdb:color8:#222}
 x9 = ${xrdb:color9:#222}
 x10 = ${xrdb:color10:#222}
@@ -49,12 +54,12 @@ x15 = ${xrdb:color15:#222}
 ;							        B A R S										;
 ;-----------------------------------------------;
 [bar/complete-laptop]
-height = 20
+height = 24
 wm-restack = bspwm
 override-redirect = false
 ; monitor = DVI-D-0
 
-modules-left = sep sep bspwm
+modules-left = left-icon sep bspwm
 modules-center = mydate
 modules-right = battery battery-info sep wireless-network power-icon volume sep
 
@@ -222,8 +227,8 @@ type = custom/text
 content = " "
 ; content-background = #222d32
 ;content-foreground = #2e8b57
-content-background = ${colors.foreground}
-content-foreground = ${colors.background}
+; content-background = ${colors.foreground}
+content-foreground = ${colors.x5}
 content-font = 6
 content-padding = 1
 ;content-background = #ffffff

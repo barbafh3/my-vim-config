@@ -20,7 +20,7 @@ export MSBuildSDKsPath=/usr/share/dotnet/sdk/$(dotnet --version)/Sdks
 export FrameworkPathOverride=/lib/mono/4.5
 
 export EDITOR=/usr/bin/nvim
-export TERMINAL=/usr/bin/gnome-terminal
+export TERMINAL=/usr/bin/kitty
 export BROWSER=/usr/bin/qutebrowser
 export FILE_MANAGER="$TERMINAL -e ranger"
 
