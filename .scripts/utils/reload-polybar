@@ -1,11 +1,12 @@
 #!/bin/bash
 
-ICON=~/Imagens/icones/refresh-2-xxl.png
 
 killall polybar
-notify-send -i $ICON "Polybar" "Status bar reloaded"
+notify-send -i "Polybar" "Status bar reloaded"
 
 primary=$(bspc query -M -m --names)
+
+echo "Polybar queried"
 
 if [ $primary == "LVDS1" ] || [ $primary == "VGA1" ] ; then
   polybar complete-laptop &

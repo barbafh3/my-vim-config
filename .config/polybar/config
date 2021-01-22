@@ -70,7 +70,7 @@ font-1 = IPAGothic:pixelsize=12;2
 font-2 = FontAwesome:pixelsize=12;3
 font-3 = Weather Icons:size=12;2
 font-4 = DejaVuSansMono Nerd Font:pixelsize=12;2
-font-5 = DejaVuSansMono Nerd Font:pixelsize=12;2
+font-5 = Hack Nerd Font:pixelsize=14;2
 font-6 = JetBrains Mono Regular:pixelsize=12;0
 font-7 = Fira Code:pixelsize=12;2
 font-8 = DejaVuSansMono Nerd Font:pixelsize=14;2
@@ -401,7 +401,7 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = 0; 
-ws-icon-1 = 1;  
+ws-icon-1 = 1; 
 ws-icon-2 = 2;爵  
 ws-icon-3 = 3;ﱘ  
 ws-icon-4 = 4; 
@@ -433,6 +433,7 @@ label-empty-font = 9
 
 label-focused = "%icon%" 
 ; label-focused-background = ${colors.x9}
+; label-focused-background = ${colors.x5}
 label-focused-foreground = ${colors.foreground}
 label-focused-padding = 1
 label-focused-font = 9
