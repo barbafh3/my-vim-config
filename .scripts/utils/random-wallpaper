@@ -25,6 +25,6 @@ feh --bg-scale $image
 #     -nf "${color7}" &
 # fi
 
-if [[ $DESKTOP_SESSION != "gnome" ]] ; then
-	notify-send -t 5000 "Random Wallpaper" "Wallpaper changed!"
-fi
+# if [[ $DESKTOP_SESSION != "gnome" ]] ; then
+# 	notify-send -t 5000 "Random Wallpaper" "Wallpaper changed!"
+# fi

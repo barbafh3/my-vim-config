@@ -61,11 +61,6 @@ reload-polybar
 
 echo "Polybar started"
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
-echo "Gnome keyring opened"
-
 killall udiskie
 udiskie &
 
@@ -79,7 +74,7 @@ dropbox &
 
 echo "Dropbox started"
 
-bspc config border_width         1
+bspc config border_width         2
 bspc config window_gap          8 
 bspc config border_radius       8
 
@@ -104,7 +99,6 @@ bspc rule -a Spotify desktop=^3
 bspc rule -a discord desktop=^4
 bspc rule -a UnityHub desktop=^5
 bspc rule -a Unity desktop=^5
-bspc rule -a Godot desktop=^5 state=floating
 bspc rule -a obs desktop=^6
 bspc rule -a Aseprite desktop=^7
 bspc rule -a krita desktop=^7
@@ -112,6 +106,8 @@ bspc rule -a Blender desktop=^7
 bspc rule -a Steam desktop=^8
 bspc rule -a mpv desktop=^10 follow=on
 
+bspc rule -a Godot desktop=^5 state=floating
+bspc rule -a Godot_Engine desktop=^5 state=floating
 # Rust project, change the name or add more as needed
 bspc rule -a observer_test desktop=^10 state=floating 
 
@@ -120,4 +116,9 @@ bspc rule -a Peek state=floating
 bspc rule -a Yad state=floating
 bspc rule -a Gnome-calculator state=floating
 
-echo "bspwm configs changed"
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+echo "Gnome keyring opened"
+
+echo "bspwm loading complete"
