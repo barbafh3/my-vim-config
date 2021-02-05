@@ -2,15 +2,15 @@
 
 
 killall polybar
-notify-send -i "Polybar" "Status bar reloaded"
 
 primary=$(bspc query -M -m --names)
 
-echo "Polybar queried"
-
 if [ $primary == "LVDS1" ] || [ $primary == "VGA1" ] ; then
-  polybar complete-laptop &
+  polybar complete-laptop 2>~/.logs/polybar.log &
 else
-  polybar complete &
+  polybar complete 2>~/.logs/polybar.log &
+
 fi
+
+notify-send -i "Polybar" "Status bar reloaded"
 

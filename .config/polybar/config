@@ -55,7 +55,7 @@ x15 = ${xrdb:color15:#222}
 ;-----------------------------------------------;
 [bar/complete-laptop]
 height = 24
-wm-restack = bspwm
+; wm-restack = bspwm
 override-redirect = false
 ; monitor = DVI-D-0
 

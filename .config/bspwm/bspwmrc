@@ -30,15 +30,9 @@ else
   fi
 fi
 
-echo "Monitors configured"
-
 dunstwal &
 
-echo "Dunst started"
-
 random-wallpaper
-
-echo "Wallpaper loaded"
 
 sxhkd_running=$(proc sxhkd | grep " sxhkd " | wc -l)
 if [ $sxhkd_running -gt 0 ] ; then
@@ -46,33 +40,16 @@ if [ $sxhkd_running -gt 0 ] ; then
 fi
 sxhkd &
 
-echo "Sxhkd started"
-
 xsetroot -cursor_name left_ptr & 
 
-echo "Mouse cursor set"
-
 picom --experimental-backends
-
-echo "Picom started"
-
-# ~/.config/polybar/launch.sh &
-reload-polybar
-
-echo "Polybar started"
 
 killall udiskie
 udiskie &
 
-echo "Udiskie started"
-
 xset -dpms s off
 
-echo "Xset done"
-
 dropbox &
-
-echo "Dropbox started"
 
 bspc config border_width         2
 bspc config window_gap          8 
@@ -119,6 +96,5 @@ bspc rule -a Gnome-calculator state=floating
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-echo "Gnome keyring opened"
-
-echo "bspwm loading complete"
+# ~/.config/polybar/launch.sh &
+reload-polybar
