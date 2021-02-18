@@ -92,3 +92,11 @@
 (setq elfeed-feeds
       '("https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA"
         "https://www.youtube.com/feeds/videos.xml?channel_id=UClseGZiVmeHamsjYmpbiAmQ"))
+
+;; The evil-mode key 's' used to substitute the current characeter wasn't working
+;; This change made it work properly
+(after! evil-snipe
+  (evil-snipe-mode -1))
+
+;; Makes ':W' work the same as ':w'
+(evil-ex-define-cmd "W" #'evil-write)

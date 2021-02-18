@@ -1,98 +1,100 @@
 {
-	"editor.fontFamily": "'Jetbrains Mono'",
-	"editor.fontSize": 15,
-	"editor.tabSize": 4,
-	"editor.fontWeight": "bold",
-	"editor.rulers": [
-		125
-	],
-	"editor.suggestSelection": "first",
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"editor.minimap.enabled": false,
-	"editor.fontLigatures": true,
-	"editor.renderWhitespace": "all",
-	"editor.lineNumbers": "relative",
-	"editor.autoClosingBrackets": "languageDefined",
-	"editor.formatOnSave": true,
-	"workbench.colorTheme": "Gruvbox Dark (Hard)",
-	"workbench.startupEditor": "newUntitledFile",
-	"workbench.activityBar.visible": true,
-	"workbench.tree.indent": 15,
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.editor.enablePreviewFromQuickOpen": false,
-	"explorer.confirmDelete": false,
-	"window.zoomLevel": 0,
-	"window.menuBarVisibility": "toggle",
-	"extensions.ignoreRecommendations": true,
-	"extensions.autoUpdate": true,
-	"terminal.integrated.shell.linux": "/usr/bin/fish",
-	"terminal.explorerKind": "external",
-	"terminal.integrated.cursorBlinking": true,
-	"terminal.external.linuxExec": "gnome-terminal",
-	"terminal.integrated.rendererType": "dom",
-	"files.trimTrailingWhitespace": true,
-	"keyboard.dispatch": "keyCode",
-	"git.decorations.enabled": true,
-	"git.branchWhitespaceChar": "",
-	"csharp.referencesCodeLens.enabled": false,
-	"vim.leader": "<space>",
-	"vim.normalModeKeyBindings": [
-		// {
-		// 	"before": [
-		// 		"0",
-		// 	],
-		// 	"after": [
-		// 		"^"
-		// 	]
-		// },
-		{
-			"before": [
-				";"
-			],
-			"commands": [
-				"vim.showQuickpickCmdLine",
-			]
-		},
-		{
-			"before": [
-				"g",
-				"d"
-			],
-			"commands": [
-				"editor.action.goToImplementation"
-			]
-		},
-		{
-			"before": [
-				"g",
-				"y"
-			],
-			"commands": [
-				"editor.action.goToTypeDefinition"
-			]
-		},
-	],
-	"[typescript]": {
-		"editor.formatOnSave": true
-	},
-	"[typescriptreact]": {
-		"editor.formatOnSave": true
-	},
-	"[csharp]": {
-		"editor.formatOnSave": true
-	},
-	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-	"javascript.preferences.quoteStyle": "double",
-	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-	"javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"typescript.updateImportsOnFileMove.enabled": "always",
-	"omnisharp.path": "latest",
-	"omnisharp.useGlobalMono": "always",
-	"omnisharp.monoPath": "/opt/mono/bin",
-	// "theme-by-language.themes": {
-	// 	"*": "Dracula",
-	// 	"gdscript": "Godot Adaptive"
-	// },
+  "editor.fontFamily": "'Jetbrains Mono'",
+  "editor.fontSize": 15,
+  "editor.tabSize": 2,
+  "editor.fontWeight": "bold",
+  "editor.rulers": [
+    125
+  ],
+  "editor.suggestSelection": "first",
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.minimap.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "all",
+  "editor.lineNumbers": "relative",
+  "editor.autoClosingBrackets": "languageDefined",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Godot Adaptive",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.activityBar.visible": true,
+  "workbench.tree.indent": 15,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "toggle",
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdate": true,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.external.linuxExec": "gnome-terminal",
+  "terminal.integrated.rendererType": "dom",
+  "files.trimTrailingWhitespace": true,
+  "keyboard.dispatch": "keyCode",
+  "git.decorations.enabled": true,
+  "git.branchWhitespaceChar": "",
+  "csharp.referencesCodeLens.enabled": false,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    // {
+    // 	"before": [
+    // 		"0",
+    // 	],
+    // 	"after": [
+    // 		"^"
+    // 	]
+    // },
+    {
+      "before": [
+        ";"
+      ],
+      "commands": [
+        "vim.showQuickpickCmdLine",
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "y"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+  ],
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[csharp]": {
+    "editor.formatOnSave": true
+  },
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.preferences.quoteStyle": "double",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "omnisharp.path": "latest",
+  "omnisharp.useGlobalMono": "always",
+  "omnisharp.monoPath": "/opt/mono/bin",
+  "theme-by-language.themes": {
+    "*": "Gruvbox Dark (Hard)",
+    "haskell": "Dracula",
+    "cabal": "Dracula",
+    "gdscript": "Godot Adaptive"
+  },
 }

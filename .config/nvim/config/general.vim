@@ -7,13 +7,15 @@ set cursorline
 set guifont=Fira\ Code\ 14
 set bg=dark
 set splitbelow splitright
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 set number relativenumber
 set noshowmode
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
 set signcolumn=yes
+" set colorcolumn=125
 
 " C++ syntax highlighting
 let g:cpp_class_scope_highlight = 1

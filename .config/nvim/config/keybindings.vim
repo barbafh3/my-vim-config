@@ -12,7 +12,10 @@ vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
 " Remap : to ;
-nnoremap ; :
+" nnoremap ; :
+
+nnoremap :W :w<cr>
+nnoremap :Q :q<cr>
 
 " Change 0 from line start to first non-space character
 nnoremap 0 ^

@@ -22,11 +22,13 @@ Plug 'tpope/vim-speeddating'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
+" Plug 'rafi/awesome-vim-colorschemes' "includes gruvbox
 Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'sheerun/vim-polyglot'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'dkasak/gruvbox'
+Plug 'gosukiwi/vim-atom-dark'
 
 Plug 'habamax/vim-godot'
 
