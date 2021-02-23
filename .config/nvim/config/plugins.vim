@@ -29,6 +29,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'dkasak/gruvbox'
 Plug 'gosukiwi/vim-atom-dark'
+Plug 'drewtempelmeyer/palenight.vim'
 
 Plug 'habamax/vim-godot'
 

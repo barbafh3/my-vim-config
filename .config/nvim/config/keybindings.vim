@@ -17,6 +17,11 @@ inoremap <Right> <NOP>
 nnoremap :W :w<cr>
 nnoremap :Q :q<cr>
 
+" Convert tabs to spaces
+nnoremap <leader>tts :%s/\t/  /g<CR>
+" Convert spaces to tabs
+nnoremap <leader>stt :%s/  /\t/g<CR>
+
 " Change 0 from line start to first non-space character
 nnoremap 0 ^
 vnoremap 0 ^

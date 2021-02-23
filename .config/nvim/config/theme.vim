@@ -1,10 +1,13 @@
-colorscheme gruvbox
+" colorscheme gruvbox
 let g:gruvbox_italic=1
 " let g:gruvbox_contrast_dark='hard'
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
 
 " colorscheme dracula
 " let g:airline_theme='dracula'
+
+colorscheme palenight
+let g:airline_theme = "palenight"
 
 " Airline settings
 let g:airline_powerline_fonts = 1

@@ -401,7 +401,7 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = 0; 
-ws-icon-1 = 1; 
+ws-icon-1 = 1;
 ws-icon-2 = 2;爵  
 ws-icon-3 = 3;ﱘ  
 ws-icon-4 = 4; 
