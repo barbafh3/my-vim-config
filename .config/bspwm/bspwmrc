@@ -42,7 +42,7 @@ sxhkd &
 
 xsetroot -cursor_name left_ptr & 
 
-picom --experimental-backends
+# picom --experimental-backends
 
 killall udiskie
 udiskie &

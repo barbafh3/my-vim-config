@@ -8,6 +8,7 @@
 	"explorer.width": 30,
 	"explorer.icon.enableNerdfont": true,
 	"explorer.previewAction.onHover": false,
+	"python.linting.pylintEnabled": false,
 	"languageserver": {
 		"godot": {
 			"host": "127.0.0.1",

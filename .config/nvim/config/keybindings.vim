@@ -147,15 +147,18 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+" Code actions keybindings
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)w
 
 " Open coc-explorer
 nmap <silent> <leader>e :CocCommand explorer<CR>
 
 " Ultisnips
 nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>
+
+" Run cabal project
+nnoremap <Leader>cbr :!cabal run<CR>
+
+" Run main.py on current PWD
+nnoremap <leader>rp :!python main.py
