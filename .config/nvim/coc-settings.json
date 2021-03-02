@@ -1,14 +1,22 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": [
 		"cs",
+		"c",
 		"json",
 		"gdscript3",
-		"rust"
+		"rust",
+		"python"
 	],
 	"explorer.width": 30,
 	"explorer.icon.enableNerdfont": true,
 	"explorer.previewAction.onHover": false,
+	"python.pythonPath": "/usr/bin/python",
+	"python.linting.flake8Enabled": true,
 	"python.linting.pylintEnabled": false,
+	"python.formatting.provider": "autopep8",
+	"python.linting.pep8Args": [
+		"--max-line-length=160"
+	],
 	"languageserver": {
 		"godot": {
 			"host": "127.0.0.1",

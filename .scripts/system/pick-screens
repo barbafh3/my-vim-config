@@ -2,17 +2,31 @@
 
 primary=$(bspc query -M -m --names)
 option=$1
+desired_primary=$2
 
 if [[ $primary == "VGA1" ]]; then
   if [[ $option == "single" ]]; then
-    xrandr --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output LVDS1 --off
-    echo "Single monitor for laptop selected."
+      if [[ $desired_primary == "monitor" ]]; then
+        echo "Monitor screen selected for single screen"
+        xrandr --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output LVDS1 --off
+      else
+        if [[ $desired_primary == "laptop" ]]; then
+          xrandr --output LVDS1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output VGA1 --off
+          echo "Laptop screen selected for single screen"
+        else
+          if [[ $desired_primary == "" ]]; then
+            echo "No primary single screen selected. Valid options are 'monitor' or 'laptop'"
+          else
+            echo "Invalid option. For single screen the options are 'monitor' or 'laptop'"
+          fi
+        fi
+      fi
   else
     if [[ $option == "multiple" ]]; then
       xrandr --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output LVDS1 --mode 1366x768 --pos 1920x312 --rotate normal
       echo "Multiple monitors for laptop selected."
     else
-      echo "Invalid option. Valid options are 'single' and 'multiple'"
+      echo "Invalid option. Valid options are 'single' or 'multiple'"
     fi
   fi
 else
@@ -25,7 +39,7 @@ else
         xrandr --output HDMI-0 --primary --mode 1366x768 --rotate normal --output DVI-D-0 --mode 1920x1080 --rotate normal --right-of HDMI-0
         echo "Multiple monitors for desktop selected."
       else
-        echo "Invalid option. Valid options are 'single' and 'multiple'"
+        echo "Invalid option. Valid options are 'single' or 'multiple'"
       fi
     fi
   fi

@@ -161,4 +161,13 @@ nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>
 nnoremap <Leader>cbr :!cabal run<CR>
 
 " Run main.py on current PWD
-nnoremap <leader>rp :!python main.py
+nnoremap <leader>pr :!python main.py<CR>
+
+" Run current python buffer
+nnoremap <leader>prf :!python %<CR>
+
+" Build c files with script
+nnoremap <leader>gccb :!./build.sh<CR>
+
+" Run c program
+nnoremap <leader>gccr :!./run.sh<CR>
