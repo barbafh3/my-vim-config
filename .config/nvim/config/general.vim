@@ -7,10 +7,10 @@ set cursorline
 set guifont=Fira\ Code\ 14
 set bg=dark
 set splitbelow splitright
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" set expandtab
 set number relativenumber
 set noshowmode
 set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎

@@ -1,13 +1,13 @@
 {
   "editor.fontFamily": "'Jetbrains Mono'",
   "editor.fontSize": 15,
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.fontWeight": "bold",
   "editor.rulers": [
     125
   ],
   "editor.suggestSelection": "first",
-  "editor.insertSpaces": true,
+  "editor.insertSpaces": false,
   "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
@@ -95,6 +95,17 @@
     "*": "Gruvbox Dark (Hard)",
     "haskell": "Dracula",
     "cabal": "Dracula",
+    "python": "Dracula",
     "gdscript": "Godot Adaptive"
   },
+  "python.pythonPath": "/usr/bin/python",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.formatting.provider": "autopep8",
+  "python.linting.pep8Args": [
+    "--max-line-length=160"
+  ],
+  "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=pygame"
+  ]
 }

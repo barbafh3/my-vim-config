@@ -12,10 +12,10 @@ if [[ $primary == "LVDS1" ]]; then
   if [[ $count -gt 1 ]]; then
     # HDMI to the left, Mounted monitor to the bottom right
     xrandr --output LVDS1 --mode 1366x768 --pos 1920x312 --rotate normal --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-    bspc monitor VGA1 -d 1 2 3 4 5 6 7 8 9
+    bspc monitor VGA1 -d 1 2 3 4 5 6 7 8 9 I
     bspc monitor LVDS1 -d 10
   else
-    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 I 10
   fi
 else 
   if [[ $primary == "DVI-D-0" ]]; then
@@ -66,6 +66,7 @@ bspc rule -a Anki desktop=^1
 bspc rule -a firefox desktop=^2
 bspc rule -a Brave-browser desktop=^2
 bspc rule -a Epiphany desktop=^2
+bspc rule -a Thunderbird desktop=I
 # bspc rule -a qutebrowser desktop=^2 follow=on
 
 # Requires spotifywm-git to define WM_CLASS before the window opens.
