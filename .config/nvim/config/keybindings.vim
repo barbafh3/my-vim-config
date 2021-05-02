@@ -12,10 +12,10 @@ vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
 " Remap : to ;
-" nnoremap ; :
+nnoremap ; :
 
-nnoremap :W :w<cr>
-nnoremap :Q :q<cr>
+" nnoremap :W :w<cr>
+" nnoremap :Q :q<cr>
 
 " Convert tabs to spaces
 nnoremap <leader>tts :%s/\t/  /g<CR>

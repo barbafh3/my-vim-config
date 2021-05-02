@@ -1,0 +1,61 @@
+#!/bin/sh
+
+FOLDER="/home/junior/dev/godot/engine_versions/"
+VERSION=$1
+OPTION=$2
+ALL_VERSIONS=$(ls $FOLDER)
+
+Help()
+{
+   echo "Run a specific version of the Godot Engine"
+   echo
+   echo "Syntax: run-godot [-f|h|l|<Version>] [--mono]"
+   echo "options:"
+   echo "f             Print the current engines folder"
+   echo "h             Print this help"
+   echo "l			   List all versions present in the engines folder"
+   echo "<Version>     Version you want to run. Eg.: 3.2.3 or 3.3"
+   echo "mono          Runs mono version of the engine"
+   echo
+}
+
+if [[ $VERSION == "" ]] ; then
+	echo "No version provided."
+	echo
+	Help
+	exit 1
+fi
+
+if [[ ($VERSION == "-h") ]] ; then
+	Help
+	exit 0
+fi
+
+if [[ ($VERSION == "-f") ]] ; then
+	echo "Current engines folder:"
+	echo $FOLDER
+	exit 0
+fi
+
+if [[ ($VERSION == "-l") ]] ; then
+	echo "Current available versions:"
+	for version in $ALL_VERSIONS
+	do
+		echo $version
+	done
+	exit 0
+fi
+
+if [[ ($OPTION != "") && ($OPTION == "--mono") ]] ; then
+	FULL_PATH="${FOLDER}${VERSION}/GodotEngineMono.64"
+else
+	FULL_PATH="${FOLDER}${VERSION}/GodotEngine.64"
+fi
+
+if [ -f $FULL_PATH ] ; then
+	$FULL_PATH	
+else
+	echo "Godot Engine file for version does not exist."
+fi
+
+
