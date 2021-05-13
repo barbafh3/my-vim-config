@@ -1,3 +1,5 @@
+########################################### UNITY
+
 snippet dl "Debug log"
 Debug.Log($0);
 endsnippet
@@ -6,8 +8,7 @@ snippet Scriptable "Creates a basic Scriptable Object"
 using UnityEngine;
 
 [CreateAssetMenu(fileName="New $1", menuName="$1")]
-public class $1 : ScriptableObject
-{
+public class $1 : ScriptableObject {
 	$0
 }
 endsnippet
@@ -15,57 +16,76 @@ endsnippet
 snippet Monobehaviour "Creates a basic MonoBehaviour"
 using UnityEngine;
 
-public class $1 : MonoBehaviour
-{
+public class $1 : MonoBehaviour {
 	$0
 }
 endsnippet
 
 snippet OnTriggerEnter2D	"Create trigger enter event method"
-void OnTriggerEnter2D(Collider2D other)
-{
+void OnTriggerEnter2D(Collider2D other) {
 	$0
 }
 endsnippet
 
 snippet OnTriggerExit2D	"Create trigger exit event method"
-void OnTriggerExit2D(Collider2D other)
-{
+void OnTriggerExit2D(Collider2D other) {
 	$0
 }
 endsnippet
 
 snippet OnCollisionEnter2D	"Create collision enter event method"
-void OnCollisionEnter2D(Collision2D other)
-{
+void OnCollisionEnter2D(Collision2D other) {
 	$0
 }
 endsnippet
 
 snippet OnCollisionExit2D	"Create collision exit event method"
-void OnCollisionExit2D(Collision2D other)
-{
+void OnCollisionExit2D(Collision2D other) {
+	$0
+}
+endsnippet
+
+########################################### GODOT
+
+snippet _interface "Creates an interface template"
+namespace $1 {
+	public interface $2 {
+		$0
+	}
+}
+endsnippet
+
+snippet _gdclass "Create a Godot class template"
+using Godot;
+using System;
+
+namespace $1 {
+	public class $2 : $3 {
+		$0
+	}
+}
+endsnippet
+
+snippet _entt "Create _EnterTree method"
+public override void _EnterTree() {
 	$0
 }
 endsnippet
 
 snippet _rdy "Create _Ready method"
-public override void _Ready()
-{
+public override void _Ready() {
 	$0
 }
 endsnippet
 
 snippet _proc "Create _Process method"
-public override void _Process(float delta)
-{
+public override void _Process(float delta) {
 	$0
 }
 endsnippet
 
 snippet _phyproc "Create _PhysicsProcess method"
-public override void _PhysicsProcess(float delta)
-{
+public override void _PhysicsProcess(float delta) {
 	$0
 }
 endsnippet

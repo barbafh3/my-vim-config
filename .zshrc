@@ -117,6 +117,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Aliases
-source ~/.config/zsh/aliases
+source ~/.config/zsh/zsh-abbr.zsh
+# Source the aliases file only once as abbreviation system doesn't need sourcing every time
+# source ~/.config/zsh/aliases 
 
 bindkey "^ " _expand_alias

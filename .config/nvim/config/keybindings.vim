@@ -152,7 +152,7 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)w
 
 " Open coc-explorer
-nmap <silent> <leader>e :CocCommand explorer<CR>
+nmap <silent> <leader>e :CocCommand explorer --width 35<CR>
 
 " Ultisnips
 nnoremap <leader>u :call UltiSnips#RefreshSnippets()<Cr>

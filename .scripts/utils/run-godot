@@ -53,7 +53,7 @@ else
 fi
 
 if [ -f $FULL_PATH ] ; then
-	$FULL_PATH	
+	$FULL_PATH
 else
 	echo "Godot Engine file for version does not exist."
 fi

@@ -7,6 +7,7 @@
 		"rust",
 		"python"
 	],
+	"coc.preferences.hoverTarget": "float",
 	"explorer.width": 30,
 	"explorer.icon.enableNerdfont": true,
 	"explorer.previewAction.onHover": false,
